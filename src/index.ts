@@ -18,7 +18,7 @@ const UNITY_UITK_EXAMPLES_RAW = "https://raw.githubusercontent.com/Unity-Technol
 const TOOLS: Tool[] = [
   {
     name: "get_uitoolkit_documentation",
-    description: "Retrieves Unity UIToolkit documentation for specific topics. Use this to get information about UXML, USS, UIElements, and other UIToolkit concepts.",
+    description: "Provides Unity UIToolkit documentation reference with links and examples for specific topics like UXML, USS, UIElements, and other UIToolkit concepts.",
     inputSchema: {
       type: "object",
       properties: {
@@ -32,7 +32,7 @@ const TOOLS: Tool[] = [
   },
   {
     name: "get_uitoolkit_code_example",
-    description: "Fetches code examples from the Unity UIToolkit manual code examples repository. Returns actual code samples demonstrating UIToolkit usage.",
+    description: "Provides common Unity UIToolkit code example patterns with links to Unity's official examples repository. Returns reference code samples demonstrating UIToolkit usage.",
     inputSchema: {
       type: "object",
       properties: {
@@ -835,36 +835,66 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
   const { name, arguments: args } = request.params;
 
   try {
-    if (!args) {
+    if (!args || typeof args !== "object") {
       throw new Error("Missing required arguments");
     }
 
     let result: string;
 
     switch (name) {
-      case "get_uitoolkit_documentation":
-        result = await handleGetUIToolkitDocumentation(args.topic as string);
+      case "get_uitoolkit_documentation": {
+        const topic = (args as Record<string, unknown>).topic;
+        if (typeof topic !== "string") {
+          throw new Error("Invalid or missing 'topic' argument: expected string");
+        }
+        result = await handleGetUIToolkitDocumentation(topic);
         break;
+      }
 
-      case "get_uitoolkit_code_example":
-        result = await handleGetUIToolkitCodeExample(args.example_name as string);
+      case "get_uitoolkit_code_example": {
+        const exampleName = (args as Record<string, unknown>).example_name;
+        if (typeof exampleName !== "string") {
+          throw new Error("Invalid or missing 'example_name' argument: expected string");
+        }
+        result = await handleGetUIToolkitCodeExample(exampleName);
         break;
+      }
 
-      case "get_unity_script_reference":
-        result = await handleGetUnityScriptReference(args.class_name as string);
+      case "get_unity_script_reference": {
+        const className = (args as Record<string, unknown>).class_name;
+        if (typeof className !== "string") {
+          throw new Error("Invalid or missing 'class_name' argument: expected string");
+        }
+        result = await handleGetUnityScriptReference(className);
         break;
+      }
 
-      case "convert_html_to_uxml":
-        result = handleConvertHtmlToUxml(args.html_snippet as string);
+      case "convert_html_to_uxml": {
+        const htmlSnippet = (args as Record<string, unknown>).html_snippet;
+        if (typeof htmlSnippet !== "string") {
+          throw new Error("Invalid or missing 'html_snippet' argument: expected string");
+        }
+        result = handleConvertHtmlToUxml(htmlSnippet);
         break;
+      }
 
-      case "convert_css_to_uss":
-        result = handleConvertCssToUss(args.css_snippet as string);
+      case "convert_css_to_uss": {
+        const cssSnippet = (args as Record<string, unknown>).css_snippet;
+        if (typeof cssSnippet !== "string") {
+          throw new Error("Invalid or missing 'css_snippet' argument: expected string");
+        }
+        result = handleConvertCssToUss(cssSnippet);
         break;
+      }
 
-      case "list_uitoolkit_components":
-        result = handleListUIToolkitComponents(args.category as string | undefined);
+      case "list_uitoolkit_components": {
+        const category = (args as Record<string, unknown>).category;
+        if (category !== undefined && typeof category !== "string") {
+          throw new Error("Invalid 'category' argument: expected string or undefined");
+        }
+        result = handleListUIToolkitComponents(category as string | undefined);
         break;
+      }
 
       default:
         throw new Error(`Unknown tool: ${name}`);

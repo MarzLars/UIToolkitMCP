@@ -7,12 +7,12 @@ A Model Context Protocol (MCP) server that provides LLM agents with access to Un
 This MCP server provides the following tools for working with Unity UIToolkit:
 
 ### Documentation Tools
-- **get_uitoolkit_documentation**: Retrieve comprehensive Unity UIToolkit documentation for specific topics (UXML, USS, VisualElement, etc.)
+- **get_uitoolkit_documentation**: Provides Unity UIToolkit documentation reference with links and examples for specific topics (UXML, USS, VisualElement, etc.)
 - **get_unity_script_reference**: Access Unity Script API reference documentation for UIToolkit classes and methods
 - **list_uitoolkit_components**: List available UIToolkit components and controls by category
 
 ### Code Examples
-- **get_uitoolkit_code_example**: Fetch real code examples from Unity's official UIToolkit examples repository
+- **get_uitoolkit_code_example**: Provides common Unity UIToolkit code example patterns with links to Unity's official examples repository
 
 ### Conversion Tools
 - **convert_html_to_uxml**: Convert HTML markup to UXML format with guidance and best practices
@@ -73,7 +73,7 @@ Retrieves Unity UIToolkit documentation for specific topics.
 ```
 
 ### 2. get_uitoolkit_code_example
-Fetches code examples from Unity's official repository.
+Provides common Unity UIToolkit code example patterns with links to Unity's official repository.
 
 **Parameters:**
 - `example_name` (string): Name or path of the example (e.g., "simple-list-view", "custom-control")
