@@ -505,18 +505,18 @@ async function handleFetchUnityExampleCode(filePath: string): Promise<string> {
     // Extract just the relevant part after multiple ../
     // E.g., "../../../../Modules/UIElements/Tests/UIElementsExamples/Assets/Examples/Button_clicked.cs"
     // becomes "Button_clicked.cs"
-    const parts = cleanPath.split('/');
+    const parts = cleanPath.split('/').filter(p => p !== '..' && p !== '.');
     const examplesIndex = parts.indexOf('Examples');
     if (examplesIndex !== -1 && examplesIndex < parts.length - 1) {
       cleanPath = parts.slice(examplesIndex + 1).join('/');
     } else {
-      // If 'Examples' not found, remove all '../' sequences and extract from 'Modules/' onwards
+      // If 'Examples' not found, extract from 'Modules/' onwards
       const moduleIndex = parts.findIndex(p => p === 'Modules');
       if (moduleIndex !== -1) {
         cleanPath = parts.slice(moduleIndex).join('/');
       } else {
-        // As a last resort, just remove all '../' sequences
-        cleanPath = cleanPath.replace(/\.\.\//g, '');
+        // As a last resort, join all non-empty parts
+        cleanPath = parts.join('/');
       }
     }
   } else if (cleanPath.startsWith('Modules/')) {
@@ -528,6 +528,9 @@ async function handleFetchUnityExampleCode(filePath: string): Promise<string> {
       cleanPath = parts.slice(examplesIndex + 1).join('/');
     }
   }
+  
+  // Security: Final sanitization - ensure no '../' or '..' sequences remain to prevent path traversal attacks
+  cleanPath = cleanPath.split('/').filter(p => p !== '..' && p !== '.').join('/');
   
   // Try to fetch from ui-toolkit-manual-code-examples repo first
   // This is the public examples repository
