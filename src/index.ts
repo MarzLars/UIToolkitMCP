@@ -835,8 +835,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
   const { name, arguments: args } = request.params;
 
   try {
-    if (!args || typeof args !== "object") {
-      throw new Error("Missing required arguments");
+    if (!args || typeof args !== "object" || Array.isArray(args)) {
+      throw new Error("Invalid arguments: expected object");
     }
 
     let result: string;
