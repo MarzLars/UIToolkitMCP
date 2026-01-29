@@ -1,36 +1,25 @@
 # Enumerator
 
-**Namespace:** `UnityEngine.UIElements`
+**Namespace:** `UnityEngine.UIElements.UIR`
 
-**Source:** [Modules/UIElements/Managed/VisualNodeClassList.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Managed/VisualNodeClassList.cs)
+**Source:** [Modules/UIElements/Core/Renderer/UIRNativePagedList.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Renderer/UIRNativePagedList.cs)
 
 ---
 
-## Documentation
-
-
-readonly struct VisualNodeClassList : IList<string>
-{
-
-
-    readonly VisualManager m_Manager;
-
-The handle to the underlying data.
-
-<param name="handle">The handle to the node.</param>
-
 ## Source Code Reference
 
-For complete source code, see: [Enumerator.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Managed/VisualNodeClassList.cs)
+For complete source code, see: [Enumerator.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Renderer/UIRNativePagedList.cs)
+
+### Public Properties
+
+- **Enumerator**: `struct`
 
 ### Public Methods
 
-- **MoveNext()**: Returns `bool`
+- **Add()**: Returns `void`
+- **GetCount()**: Returns `int`
 - **Reset()**: Returns `void`
 - **Dispose()**: Returns `void`
-- **Add()**: Returns `void`
-- **Remove()**: Returns `bool`
-- **Contains()**: Returns `bool`
-- **Clear()**: Returns `void`
-- **GetEnumerator()**: Returns `Enumerator`
+- **HasNext()**: Returns `bool`
+- **GetNext()**: Returns `T`
 
