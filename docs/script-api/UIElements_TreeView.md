@@ -1,7 +1,7 @@
 # UIElements.TreeView
 
 **Source:** https://docs.unity3d.com/ScriptReference/UIElements.TreeView.html  
-**Last Updated:** Wed, 28 Jan 2026 22:28:38 GMT
+**Last Updated:** Thu, 29 Jan 2026 21:16:06 GMT
 
 ---
 
@@ -326,7 +326,7 @@ recycles VisualElements and re-binds them to new data items.
 Is something described here not working as you expect it to? It might be a **Known Issue**. Please check with the Issue Tracker at
 [issuetracker.unity3d.com](https://issuetracker.unity3d.com).
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 62529304. Built on: 2026-01-28.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 62603599. Built on: 2026-01-29.
 
 [Tutorials](https://unity3d.com/learn)
 [Community Answers](https://answers.unity3d.com)

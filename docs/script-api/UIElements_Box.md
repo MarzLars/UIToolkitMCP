@@ -1,7 +1,7 @@
 # UIElements.Box
 
 **Source:** https://docs.unity3d.com/ScriptReference/UIElements.Box.html  
-**Last Updated:** Thu, 29 Jan 2026 21:16:07 GMT
+**Last Updated:** Wed, 28 Jan 2026 22:28:39 GMT
 
 ---
 
@@ -215,7 +215,7 @@ Styled visual element to match the IMGUI Box Style. For more information, refer 
 Is something described here not working as you expect it to? It might be a **Known Issue**. Please check with the Issue Tracker at
 [issuetracker.unity3d.com](https://issuetracker.unity3d.com).
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 62603599. Built on: 2026-01-29.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 62529304. Built on: 2026-01-28.
 
 [Tutorials](https://unity3d.com/learn)
 [Community Answers](https://answers.unity3d.com)
