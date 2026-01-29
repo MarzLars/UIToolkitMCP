@@ -27,7 +27,7 @@ jobs:
           
       - name: Install dependencies
         run: |
-          pip install markitdown requests
+          pip install requests
           
       - name: Fetch and convert Unity documentation
         run: python fetch_docs.py

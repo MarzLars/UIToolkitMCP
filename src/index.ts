@@ -109,21 +109,16 @@ const TOOLS: Tool[] = [
   },
   {
     name: "read_prerendered_docs",
-    description: "Reads pre-rendered Markdown documentation for Unity UIToolkit. Returns clean, LLM-friendly Markdown content that was converted from Unity's HTML documentation.",
+    description: "Reads pre-rendered documentation for Unity UIToolkit classes. Returns documentation generated from Unity's C# source code with class definitions, properties, methods, and links to source.",
     inputSchema: {
       type: "object",
       properties: {
-        doc_type: {
+        class_name: {
           type: "string",
-          description: "Type of documentation: 'manual' or 'script-api'",
-          enum: ["manual", "script-api"],
-        },
-        doc_name: {
-          type: "string",
-          description: "Name of the documentation file (e.g., 'UXML', 'UIElements', 'UIElements_VisualElement')",
+          description: "Name of the UIToolkit class (e.g., 'Button', 'VisualElement', 'ListView')",
         },
       },
-      required: ["doc_type", "doc_name"],
+      required: ["class_name"],
     },
   },
   {
@@ -848,33 +843,22 @@ To see all components, call this tool without specifying a category.
 }
 
 // Handler for reading pre-rendered documentation
-function handleReadPrerenderedDocs(docType: string, docName: string): string {
+function handleReadPrerenderedDocs(className: string): string {
   try {
-    // Validate docType
-    if (docType !== "manual" && docType !== "script-api") {
-      return `# Invalid Documentation Type
+    // Validate className to prevent path traversal
+    if (className.includes("..") || className.includes("/") || className.includes("\\")) {
+      return `# Invalid Class Name
 
-The doc_type must be either "manual" or "script-api".
+The class_name cannot contain path separators or directory traversal sequences.
 
-You provided: "${docType}"
-`;
-    }
-    
-    // Validate docName to prevent path traversal
-    if (docName.includes("..") || docName.includes("/") || docName.includes("\\")) {
-      return `# Invalid Documentation Name
+You provided: "${className}"
 
-The doc_name cannot contain path separators or directory traversal sequences.
-
-You provided: "${docName}"
-
-Use the \`list_prerendered_docs\` tool to see valid documentation names.
+Use the \`list_prerendered_docs\` tool to see valid class names.
 `;
     }
     
     // Construct the file path
-    const subDir = docType === "manual" ? "manual" : "script-api";
-    const filePath = join(DOCS_DIR, subDir, `${docName}.md`);
+    const filePath = join(DOCS_DIR, "classes", `${className}.md`);
     
     // Verify the resolved path is still within DOCS_DIR (additional safety check)
     const resolvedPath = require('fs').realpathSync(filePath).replace(/\\/g, '/');
@@ -890,12 +874,12 @@ Invalid file path detected.
     if (!existsSync(filePath)) {
       return `# Documentation Not Found
 
-The requested documentation file does not exist: ${docType}/${docName}.md
+The requested documentation file does not exist: classes/${className}.md
 
-Use the \`list_prerendered_docs\` tool to see available documentation files.
+Use the \`list_prerendered_docs\` tool to see available classes.
 
 **Note:** If the documentation hasn't been generated yet, you can:
-1. Trigger the GitHub Actions workflow to fetch and convert documentation
+1. Trigger the GitHub Actions workflow to fetch and convert documentation from Unity's GitHub repository
 2. Or use the legacy tools (get_uitoolkit_documentation, get_unity_script_reference) for reference information
 `;
     }
@@ -918,18 +902,17 @@ Please ensure the documentation has been generated via the GitHub Actions workfl
 // Handler for listing pre-rendered documentation
 function handleListPrerenderedDocs(): string {
   try {
-    let result = "# Available Pre-rendered Unity UIToolkit Documentation\n\n";
+    let result = "# Available Unity UIToolkit Class Documentation\n\n";
     
-    const manualDir = join(DOCS_DIR, "manual");
-    const scriptApiDir = join(DOCS_DIR, "script-api");
+    const classesDir = join(DOCS_DIR, "classes");
     
     // Check if docs directory exists
-    if (!existsSync(DOCS_DIR)) {
+    if (!existsSync(DOCS_DIR) || !existsSync(classesDir)) {
       return `# Documentation Not Available
 
 Pre-rendered documentation has not been generated yet.
 
-The documentation is automatically fetched and converted via GitHub Actions. To generate it:
+The documentation is automatically generated from Unity's GitHub repository via GitHub Actions. To generate it:
 1. Wait for the scheduled weekly run, or
 2. Manually trigger the "Update Unity UIToolkit Documentation" workflow in GitHub Actions
 
@@ -940,44 +923,81 @@ In the meantime, you can use these tools:
 `;
     }
     
-    // List manual pages
-    result += "## Manual Documentation\n\n";
-    if (existsSync(manualDir)) {
-      const manualFiles = readdirSync(manualDir).filter(f => f.endsWith('.md'));
-      if (manualFiles.length > 0) {
-        manualFiles.sort();
-        manualFiles.forEach(file => {
-          const name = file.replace('.md', '');
-          result += `- **${name}** - Use \`read_prerendered_docs\` with doc_type="manual" and doc_name="${name}"\n`;
+    // List class documentation
+    result += "## UIToolkit Classes\n\n";
+    result += "Documentation generated from Unity's C# source code on GitHub.\n\n";
+    
+    const classFiles = readdirSync(classesDir).filter(f => f.endsWith('.md') && f !== 'README.md');
+    if (classFiles.length > 0) {
+      classFiles.sort();
+      
+      // Group by common categories
+      const controls: string[] = [];
+      const containers: string[] = [];
+      const databound: string[] = [];
+      const other: string[] = [];
+      
+      classFiles.forEach(file => {
+        const name = file.replace('.md', '');
+        
+        // Categorize based on common patterns
+        if (['Button', 'Label', 'TextField', 'Toggle', 'Slider', 'SliderInt', 'ProgressBar', 
+             'DropdownField', 'EnumField', 'RadioButton', 'RadioButtonGroup'].includes(name)) {
+          controls.push(name);
+        } else if (['VisualElement', 'ScrollView', 'GroupBox', 'Box', 'Foldout'].includes(name)) {
+          containers.push(name);
+        } else if (['ListView', 'TreeView', 'MultiColumnListView', 'MultiColumnTreeView'].includes(name)) {
+          databound.push(name);
+        } else {
+          other.push(name);
+        }
+      });
+      
+      if (containers.length > 0) {
+        result += "### Containers\n\n";
+        containers.forEach(name => {
+          result += `- **${name}** - Use \`read_prerendered_docs\` with class_name="${name}"\n`;
         });
-      } else {
-        result += "*No manual documentation available yet*\n";
+        result += "\n";
       }
+      
+      if (controls.length > 0) {
+        result += "### Controls\n\n";
+        controls.forEach(name => {
+          result += `- **${name}** - Use \`read_prerendered_docs\` with class_name="${name}"\n`;
+        });
+        result += "\n";
+      }
+      
+      if (databound.length > 0) {
+        result += "### Data-Bound Controls\n\n";
+        databound.forEach(name => {
+          result += `- **${name}** - Use \`read_prerendered_docs\` with class_name="${name}"\n`;
+        });
+        result += "\n";
+      }
+      
+      if (other.length > 0) {
+        result += "### Other Classes\n\n";
+        // Show first 50 to avoid overwhelming output
+        other.slice(0, 50).forEach(name => {
+          result += `- **${name}** - Use \`read_prerendered_docs\` with class_name="${name}"\n`;
+        });
+        if (other.length > 50) {
+          result += `\n*... and ${other.length - 50} more classes*\n`;
+        }
+        result += "\n";
+      }
+      
+      result += `**Total:** ${classFiles.length} classes available\n\n`;
     } else {
-      result += "*Manual documentation directory not found*\n";
+      result += "*No class documentation available yet*\n";
     }
     
-    result += "\n## Script API Documentation\n\n";
-    if (existsSync(scriptApiDir)) {
-      const scriptApiFiles = readdirSync(scriptApiDir).filter(f => f.endsWith('.md'));
-      if (scriptApiFiles.length > 0) {
-        scriptApiFiles.sort();
-        scriptApiFiles.forEach(file => {
-          const name = file.replace('.md', '');
-          const displayName = name.replace(/_/g, '.');
-          result += `- **${displayName}** - Use \`read_prerendered_docs\` with doc_type="script-api" and doc_name="${name}"\n`;
-        });
-      } else {
-        result += "*No script API documentation available yet*\n";
-      }
-    } else {
-      result += "*Script API documentation directory not found*\n";
-    }
-    
-    result += "\n## How to Use\n\n";
-    result += "To read a specific documentation file, use the `read_prerendered_docs` tool with:\n";
-    result += "- `doc_type`: Either \"manual\" or \"script-api\"\n";
-    result += "- `doc_name`: The name shown above (e.g., \"UXML\" or \"UIElements_VisualElement\")\n";
+    result += "## How to Use\n\n";
+    result += "To read documentation for a specific class, use the `read_prerendered_docs` tool with:\n";
+    result += "- `class_name`: The class name shown above (e.g., \"Button\", \"VisualElement\")\n\n";
+    result += "**Source:** Documentation is generated from [Unity-Technologies/UnityCsReference](https://github.com/Unity-Technologies/UnityCsReference) on GitHub\n";
     
     return result;
     
@@ -1075,15 +1095,11 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       }
 
       case "read_prerendered_docs": {
-        const docType = (args as Record<string, unknown>).doc_type;
-        const docName = (args as Record<string, unknown>).doc_name;
-        if (typeof docType !== "string") {
-          throw new Error("Invalid or missing 'doc_type' argument: expected string");
+        const className = (args as Record<string, unknown>).class_name;
+        if (typeof className !== "string") {
+          throw new Error("Invalid or missing 'class_name' argument: expected string");
         }
-        if (typeof docName !== "string") {
-          throw new Error("Invalid or missing 'doc_name' argument: expected string");
-        }
-        result = handleReadPrerenderedDocs(docType, docName);
+        result = handleReadPrerenderedDocs(className);
         break;
       }
 
