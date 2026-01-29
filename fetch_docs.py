@@ -3,21 +3,15 @@
 Fetch Unity UIToolkit documentation HTML pages and convert to Markdown
 This script is used by the GitHub Actions workflow and can be run manually.
 """
-import os
 import sys
 import requests
 from pathlib import Path
+from tempfile import NamedTemporaryFile
 
 try:
     from markitdown import MarkItDown
 except ImportError:
     print("ERROR: markitdown not installed. Run: pip install markitdown")
-    sys.exit(1)
-
-try:
-    from bs4 import BeautifulSoup
-except ImportError:
-    print("ERROR: beautifulsoup4 not installed. Run: pip install beautifulsoup4")
     sys.exit(1)
 
 # Unity documentation base URL
@@ -72,18 +66,20 @@ def fetch_and_convert(url, output_path, title):
         response = requests.get(url, timeout=30)
         response.raise_for_status()
         
-        # Save HTML temporarily
-        temp_html = Path("temp.html")
-        temp_html.write_text(response.text, encoding='utf-8')
+        # Save HTML to temporary file
+        with NamedTemporaryFile(mode='w', suffix='.html', delete=False, encoding='utf-8') as temp_html:
+            temp_html.write(response.text)
+            temp_path = temp_html.name
         
-        # Convert to Markdown using markitdown
-        md = MarkItDown()
-        result = md.convert(str(temp_html))
-        
-        # Clean up the markdown
-        markdown_content = result.text_content
-        
-        # Add metadata header
+        try:
+            # Convert to Markdown using markitdown
+            md = MarkItDown()
+            result = md.convert(temp_path)
+            
+            # Clean up the markdown
+            markdown_content = result.text_content
+            
+            # Add metadata header
         header = f"""# {title}
 
 **Source:** {url}  
@@ -92,15 +88,17 @@ def fetch_and_convert(url, output_path, title):
 ---
 
 """
-        markdown_content = header + markdown_content
-        
-        # Write to output
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-        output_path.write_text(markdown_content, encoding='utf-8')
-        
-        temp_html.unlink()
-        print(f"✓ Converted {title} to {output_path}")
-        return True
+            markdown_content = header + markdown_content
+            
+            # Write to output
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.write_text(markdown_content, encoding='utf-8')
+            
+            print(f"✓ Converted {title} to {output_path}")
+            return True
+        finally:
+            # Clean up temporary file
+            Path(temp_path).unlink(missing_ok=True)
         
     except Exception as e:
         print(f"✗ Error processing {title}: {e}", file=sys.stderr)

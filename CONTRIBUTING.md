@@ -75,7 +75,7 @@ python fetch_docs.py
 
 The workflow fetches and converts:
 - 15 Unity Manual pages related to UIToolkit
-- 18 Unity Script API class references
+- 17 Unity Script API class references
 - Converts HTML to clean Markdown using [markitdown](https://github.com/microsoft/markitdown)
 
 ### Adding Documentation Pages

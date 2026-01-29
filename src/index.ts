@@ -850,9 +850,41 @@ To see all components, call this tool without specifying a category.
 // Handler for reading pre-rendered documentation
 function handleReadPrerenderedDocs(docType: string, docName: string): string {
   try {
+    // Validate docType
+    if (docType !== "manual" && docType !== "script-api") {
+      return `# Invalid Documentation Type
+
+The doc_type must be either "manual" or "script-api".
+
+You provided: "${docType}"
+`;
+    }
+    
+    // Validate docName to prevent path traversal
+    if (docName.includes("..") || docName.includes("/") || docName.includes("\\")) {
+      return `# Invalid Documentation Name
+
+The doc_name cannot contain path separators or directory traversal sequences.
+
+You provided: "${docName}"
+
+Use the \`list_prerendered_docs\` tool to see valid documentation names.
+`;
+    }
+    
     // Construct the file path
     const subDir = docType === "manual" ? "manual" : "script-api";
     const filePath = join(DOCS_DIR, subDir, `${docName}.md`);
+    
+    // Verify the resolved path is still within DOCS_DIR (additional safety check)
+    const resolvedPath = require('fs').realpathSync(filePath).replace(/\\/g, '/');
+    const docsPath = require('fs').realpathSync(DOCS_DIR).replace(/\\/g, '/');
+    if (!resolvedPath.startsWith(docsPath)) {
+      return `# Security Error
+
+Invalid file path detected.
+`;
+    }
     
     // Check if file exists
     if (!existsSync(filePath)) {
