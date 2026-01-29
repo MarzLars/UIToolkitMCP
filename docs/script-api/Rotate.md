@@ -2,23 +2,36 @@
 
 **Namespace:** `UnityEngine.UIElements`
 
-**Source:** [Modules/UIElements/Core/Style/Rotate.PropertyBag.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Style/Rotate.PropertyBag.cs)
+**Source:** [Modules/UIElements/Core/Style/Rotate.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Style/Rotate.cs)
 
 ---
 
+## Documentation
+
+<undoc/>
+
+<undoc/>
+
+<undoc/>
+
+<undoc/>
+
+<undoc/>
+
+<undoc/>
+
 ## Source Code Reference
 
-For complete source code, see: [Rotate.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Style/Rotate.PropertyBag.cs)
+For complete source code, see: [Rotate.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Style/Rotate.cs)
 
 ### Public Properties
 
-- **Name**: `string`
-- **IsReadOnly**: `bool`
-- **Name**: `string`
-- **IsReadOnly**: `bool`
+- **angle**: `Angle`
 
 ### Public Methods
 
-- **GetValue()**: Returns `Angle`
-- **SetValue()**: Returns `void`
+- **None()**: Returns `Rotate`
+- **Equals()**: Returns `bool`
+- **GetHashCode()**: Returns `int`
+- **ToString()**: Returns `string`
 

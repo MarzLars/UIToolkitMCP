@@ -2,23 +2,38 @@
 
 **Namespace:** `UnityEngine.UIElements`
 
-**Source:** [Modules/UIElements/Core/Style/FontDefinition.PropertyBag.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Style/FontDefinition.PropertyBag.cs)
+**Source:** [Modules/UIElements/Core/Style/FontDefinition.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Style/FontDefinition.cs)
 
 ---
 
+## Documentation
+
+<returns>A new FontDefinition object.</returns>
+
+<returns>A new FontDefinition object.</returns>
+
+<undoc/>
+
+<undoc/>
+
+<undoc/>
+
+<undoc/>
+
 ## Source Code Reference
 
-For complete source code, see: [FontDefinition.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Style/FontDefinition.PropertyBag.cs)
+For complete source code, see: [FontDefinition.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Style/FontDefinition.cs)
 
 ### Public Properties
 
-- **Name**: `string`
-- **IsReadOnly**: `bool`
-- **Name**: `string`
-- **IsReadOnly**: `bool`
+- **font**: `Font`
+- **fontAsset**: `FontAsset`
 
 ### Public Methods
 
-- **GetValue()**: Returns `Font`
-- **SetValue()**: Returns `void`
+- **FromFont()**: Returns `FontDefinition`
+- **FromSDFFont()**: Returns `FontDefinition`
+- **ToString()**: Returns `string`
+- **Equals()**: Returns `bool`
+- **GetHashCode()**: Returns `int`
 

@@ -2,25 +2,33 @@
 
 **Namespace:** `UnityEngine.UIElements`
 
-**Source:** [Modules/UIElements/Core/Cursor.PropertyBag.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Cursor.PropertyBag.cs)
+**Source:** [Modules/UIElements/Core/Cursor.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Cursor.cs)
 
 ---
 
+## Documentation
+
+<undoc/>
+
+<undoc/>
+
+<undoc/>
+
 ## Source Code Reference
 
-For complete source code, see: [Cursor.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Cursor.PropertyBag.cs)
+For complete source code, see: [Cursor.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Cursor.cs)
 
 ### Public Properties
 
-- **Name**: `string`
-- **IsReadOnly**: `bool`
-- **Name**: `string`
-- **IsReadOnly**: `bool`
-- **Name**: `string`
-- **IsReadOnly**: `bool`
+- **texture**: `Texture2D`
+- **hotspot**: `Vector2`
+- **isCursorOverriden**: `bool`
 
 ### Public Methods
 
-- **GetValue()**: Returns `Texture2D`
-- **SetValue()**: Returns `void`
+- **Equals()**: Returns `bool`
+- **GetHashCode()**: Returns `int`
+- **ToString()**: Returns `string`
+- **SetCursor()**: Returns `void`
+- **ResetCursor()**: Returns `void`
 

@@ -1,24 +1,31 @@
 # Statistics
 
-**Namespace:** `UnityEngine.UIElements.UIR`
+**Namespace:** `UnityEngine.UIElements`
 
-**Source:** [Modules/UIElements/Core/Renderer/UIRTempAllocator.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Renderer/UIRTempAllocator.cs)
+**Source:** [Modules/UIElements/Core/Renderer/UIRTextureRegistry.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Renderer/UIRTextureRegistry.cs)
 
 ---
 
 ## Source Code Reference
 
-For complete source code, see: [Statistics.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Renderer/UIRTempAllocator.cs)
+For complete source code, see: [Statistics.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Renderer/UIRTextureRegistry.cs)
 
 ### Public Properties
 
+- **instance**: `TextureRegistry`
 - **Statistics**: `struct`
-- **PageStatistics**: `struct`
 
 ### Public Methods
 
-- **Dispose()**: Returns `void`
-- **Alloc()**: Returns `NativeSlice<T>`
-- **Reset()**: Returns `void`
+- **IsValid()**: Returns `bool`
+- **ConvertToGpu()**: Returns `float`
+- **Equals()**: Returns `bool`
+- **GetHashCode()**: Returns `int`
+- **GetTexture()**: Returns `Texture`
+- **AllocAndAcquireDynamic()**: Returns `TextureId`
+- **UpdateDynamic()**: Returns `void`
+- **Acquire()**: Returns `TextureId`
+- **Release()**: Returns `void`
+- **TextureToId()**: Returns `TextureId`
 - **GatherStatistics()**: Returns `Statistics`
 

@@ -2,25 +2,37 @@
 
 **Namespace:** `UnityEngine.UIElements`
 
-**Source:** [Modules/UIElements/Core/BackgroundSize.PropertyBag.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/BackgroundSize.PropertyBag.cs)
+**Source:** [Modules/UIElements/Core/BackgroundSize.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/BackgroundSize.cs)
 
 ---
 
+## Documentation
+
+<undoc/>
+
+<undoc/>
+
+<undoc/>
+
+<undoc/>
+
+<undoc/>
+
+<undoc/>
+
 ## Source Code Reference
 
-For complete source code, see: [BackgroundSize.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/BackgroundSize.PropertyBag.cs)
+For complete source code, see: [BackgroundSize.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/BackgroundSize.cs)
 
 ### Public Properties
 
-- **Name**: `string`
-- **IsReadOnly**: `bool`
-- **Name**: `string`
-- **IsReadOnly**: `bool`
-- **Name**: `string`
-- **IsReadOnly**: `bool`
+- **sizeType**: `BackgroundSizeType`
+- **x**: `Length`
+- **y**: `Length`
 
 ### Public Methods
 
-- **GetValue()**: Returns `BackgroundSizeType`
-- **SetValue()**: Returns `void`
+- **Equals()**: Returns `bool`
+- **GetHashCode()**: Returns `int`
+- **ToString()**: Returns `string`
 
