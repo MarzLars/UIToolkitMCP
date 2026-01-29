@@ -509,6 +509,23 @@ async function handleFetchUnityExampleCode(filePath: string): Promise<string> {
     const examplesIndex = parts.indexOf('Examples');
     if (examplesIndex !== -1 && examplesIndex < parts.length - 1) {
       cleanPath = parts.slice(examplesIndex + 1).join('/');
+    } else {
+      // If 'Examples' not found, remove all '../' sequences and extract from 'Modules/' onwards
+      const moduleIndex = parts.findIndex(p => p === 'Modules');
+      if (moduleIndex !== -1) {
+        cleanPath = parts.slice(moduleIndex).join('/');
+      } else {
+        // As a last resort, just remove all '../' sequences
+        cleanPath = cleanPath.replace(/\.\.\//g, '');
+      }
+    }
+  } else if (cleanPath.startsWith('Modules/')) {
+    // Handle paths that start directly with 'Modules/' (without relative prefix)
+    // Extract just the filename from the Examples folder if present
+    const parts = cleanPath.split('/');
+    const examplesIndex = parts.indexOf('Examples');
+    if (examplesIndex !== -1 && examplesIndex < parts.length - 1) {
+      cleanPath = parts.slice(examplesIndex + 1).join('/');
     }
   }
   
@@ -535,7 +552,8 @@ For more examples, visit: ${UNITY_UITK_EXAMPLES_REPO}
 `;
     }
   } catch (error) {
-    // If fetch fails, continue to alternative approaches
+    // Log error for debugging
+    console.error(`Failed to fetch from public examples repo (${exampleRepoUrl}):`, error);
   }
   
   // If not found in the public examples repo, try the Unity C# Reference repository
@@ -561,7 +579,8 @@ ${code}
 `;
     }
   } catch (error) {
-    // If this also fails, return an error message
+    // Log error for debugging
+    console.error(`Failed to fetch from Unity C# Reference repo (${unitySourceUrl}):`, error);
   }
   
   // If we couldn't fetch the code, provide helpful information
