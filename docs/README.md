@@ -2,20 +2,40 @@
 
 This directory contains pre-rendered Markdown documentation for Unity UIToolkit.
 
-The documentation is automatically updated weekly via GitHub Actions, which:
-1. Fetches the latest Unity UIToolkit HTML documentation
-2. Converts it to clean Markdown using [markitdown](https://github.com/microsoft/markitdown)
-3. Commits the updated documentation back to the repository
+## Manual Pages
 
-## Structure
+- [Binding](manual/Binding.md)
+- [Custom-Controls](manual/Custom-Controls.md)
+- [Editor-UI](manual/Editor-UI.md)
+- [Events](manual/Events.md)
+- [ListView](manual/ListView.md)
+- [Runtime-UI](manual/Runtime-UI.md)
+- [ScrollView](manual/ScrollView.md)
+- [Templates](manual/Templates.md)
+- [TreeView](manual/TreeView.md)
+- [UIElements](manual/UIElements.md)
+- [USS](manual/USS.md)
+- [USS-Properties](manual/USS-Properties.md)
+- [USS-Selectors](manual/USS-Selectors.md)
+- [UXML](manual/UXML.md)
 
-- `manual/` - Unity Manual pages related to UIToolkit
-- `script-api/` - Unity Script API reference for UIToolkit classes
+## Script API
 
-## Usage
-
-The MCP server reads these pre-rendered Markdown files to provide fast, LLM-friendly documentation to agents without needing to fetch and parse HTML at runtime.
-
-## Manual Updates
-
-To manually trigger a documentation update, go to the GitHub Actions tab and run the "Update Unity UIToolkit Documentation" workflow.
+- [UIElements.Box](script-api/UIElements_Box.md)
+- [UIElements.Button](script-api/UIElements_Button.md)
+- [UIElements.DropdownField](script-api/UIElements_DropdownField.md)
+- [UIElements.EnumField](script-api/UIElements_EnumField.md)
+- [UIElements.Foldout](script-api/UIElements_Foldout.md)
+- [UIElements.GroupBox](script-api/UIElements_GroupBox.md)
+- [UIElements.Label](script-api/UIElements_Label.md)
+- [UIElements.ListView](script-api/UIElements_ListView.md)
+- [UIElements.ProgressBar](script-api/UIElements_ProgressBar.md)
+- [UIElements.RadioButton](script-api/UIElements_RadioButton.md)
+- [UIElements.RadioButtonGroup](script-api/UIElements_RadioButtonGroup.md)
+- [UIElements.ScrollView](script-api/UIElements_ScrollView.md)
+- [UIElements.Slider](script-api/UIElements_Slider.md)
+- [UIElements.SliderInt](script-api/UIElements_SliderInt.md)
+- [UIElements.TextField](script-api/UIElements_TextField.md)
+- [UIElements.Toggle](script-api/UIElements_Toggle.md)
+- [UIElements.TreeView](script-api/UIElements_TreeView.md)
+- [UIElements.VisualElement](script-api/UIElements_VisualElement.md)
