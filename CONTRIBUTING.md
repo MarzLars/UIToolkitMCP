@@ -29,15 +29,63 @@ npm run build
 
 ```
 UIToolkitMCP/
+├── .github/
+│   └── workflows/
+│       └── update-unity-docs.yml  # GitHub Actions workflow for doc updates
 ├── src/
-│   └── index.ts          # Main MCP server implementation
-├── dist/                 # Build output (generated)
-├── examples/             # Usage examples
-├── test.sh              # Simple test script
-├── package.json         # Project configuration
-├── tsconfig.json        # TypeScript configuration
-└── README.md            # Main documentation
+│   └── index.ts                   # Main MCP server implementation
+├── docs/                          # Pre-rendered Markdown documentation
+│   ├── manual/                    # Unity Manual pages
+│   └── script-api/                # Unity Script API pages
+├── dist/                          # Build output (generated)
+├── examples/                      # Usage examples
+├── fetch_docs.py                  # Documentation fetching script
+├── test.sh                        # Simple test script
+├── package.json                   # Project configuration
+├── tsconfig.json                  # TypeScript configuration
+└── README.md                      # Main documentation
 ```
+
+## Documentation Pre-rendering
+
+### Automatic Updates
+
+The GitHub Actions workflow automatically updates documentation:
+- **Schedule**: Weekly on Mondays at 00:00 UTC
+- **Trigger**: Push to `.github/workflows/update-unity-docs.yml`
+- **Manual**: Via GitHub Actions UI
+
+### Manual Local Testing
+
+To test the documentation fetching locally:
+
+1. Install Python dependencies:
+```bash
+pip install markitdown beautifulsoup4 requests
+```
+
+2. Run the fetch script:
+```bash
+python fetch_docs.py
+```
+
+3. Check the `docs/` directory for generated Markdown files
+
+### What Gets Fetched
+
+The workflow fetches and converts:
+- 15 Unity Manual pages related to UIToolkit
+- 18 Unity Script API class references
+- Converts HTML to clean Markdown using [markitdown](https://github.com/microsoft/markitdown)
+
+### Adding Documentation Pages
+
+To add more documentation pages to be fetched:
+
+1. Edit `fetch_docs.py`
+2. Add entries to `UITOOLKIT_PAGES` (for Manual) or `SCRIPT_API_CLASSES` (for Script API)
+3. Test locally with `python fetch_docs.py`
+4. Commit and push - the workflow will pick up the changes
 
 ## Adding New Features
 
@@ -109,7 +157,21 @@ npm run build
 
 3. Test your new tools/features manually using JSON-RPC requests
 
-4. Ensure no TypeScript errors:
+4. If you added documentation pages, test the fetch script:
+```bash
+python fetch_docs.py
+```
+
+5. Test the new documentation tools:
+```bash
+# List available docs
+echo '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"list_prerendered_docs","arguments":{}}}' | node dist/index.js
+
+# Read a specific doc (after running fetch_docs.py)
+echo '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"read_prerendered_docs","arguments":{"doc_type":"manual","doc_name":"UXML"}}}' | node dist/index.js
+```
+
+6. Ensure no TypeScript errors:
 ```bash
 npm run build
 ```
