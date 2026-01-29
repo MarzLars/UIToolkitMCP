@@ -186,19 +186,6 @@ const UITOOLKIT_COMPONENTS = {
   ],
 };
 
-// Helper function to fetch web content
-async function fetchWebContent(url: string): Promise<string> {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return await response.text();
-  } catch (error) {
-    throw new Error(`Failed to fetch ${url}: ${error}`);
-  }
-}
-
 // Tool handlers
 async function handleGetUIToolkitDocumentation(topic: string): Promise<string> {
   const topicMap: Record<string, string> = {
@@ -594,20 +581,17 @@ ${classInfo}
 ## Namespace
 UnityEngine.UIElements
 
-## Inheritance
-Object → UIElements.${className}
-
 For complete API reference, please visit the Unity documentation.
 `;
 }
 
 function handleConvertHtmlToUxml(htmlSnippet: string): string {
-  let converted = htmlSnippet;
   let conversions: string[] = [];
 
-  // Convert common HTML tags to UXML equivalents
+  // Convert common HTML tags to UXML equivalents with more precise matching
   Object.entries(HTML_TO_UXML_CONVERSIONS).forEach(([htmlTag, uxmlInfo]) => {
-    const regex = new RegExp(`<${htmlTag}([^>]*)>`, "gi");
+    // Use a simple regex without global flag to check for tag presence
+    const regex = new RegExp(`<${htmlTag}(?:\\s|>|/)`, "i");
     if (regex.test(htmlSnippet)) {
       conversions.push(`  ${htmlTag} → ${uxmlInfo.element} (${uxmlInfo.note})`);
     }
@@ -675,9 +659,11 @@ ${Object.entries(HTML_TO_UXML_CONVERSIONS).map(([html, uxml]) =>
 function handleConvertCssToUss(cssSnippet: string): string {
   let conversions: string[] = [];
 
-  // Check for common CSS properties
+  // Check for common CSS properties with more precise matching
   Object.entries(CSS_TO_USS_PROPERTIES).forEach(([cssProperty, ussInfo]) => {
-    if (cssSnippet.includes(cssProperty)) {
+    // Match property name followed by colon or at word boundaries
+    const regex = new RegExp(`\\b${cssProperty.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*:`, "i");
+    if (regex.test(cssSnippet)) {
       conversions.push(`  ${cssProperty} → ${ussInfo.property} (${ussInfo.note})`);
     }
   });
@@ -787,6 +773,21 @@ function handleListUIToolkitComponents(category?: string): string {
   const categories = category 
     ? { [category]: (UITOOLKIT_COMPONENTS as any)[category] }
     : UITOOLKIT_COMPONENTS;
+
+  // Validate category if specified
+  if (category && !(UITOOLKIT_COMPONENTS as any)[category]) {
+    const validCategories = Object.keys(UITOOLKIT_COMPONENTS).join(", ");
+    return `# Unity UIToolkit Components
+
+## Error: Invalid Category
+
+The category "${category}" does not exist.
+
+Valid categories are: ${validCategories}
+
+To see all components, call this tool without specifying a category.
+`;
+  }
 
   let result = "# Unity UIToolkit Components\n\n";
 
