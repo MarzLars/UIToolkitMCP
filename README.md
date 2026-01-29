@@ -6,7 +6,13 @@ A Model Context Protocol (MCP) server that provides LLM agents with access to Un
 
 This MCP server provides the following tools for working with Unity UIToolkit:
 
-### Documentation Tools
+### Pre-rendered Documentation (Recommended)
+- **list_prerendered_docs**: Lists all available pre-rendered Markdown documentation
+- **read_prerendered_docs**: Reads clean, LLM-friendly Markdown documentation converted from Unity's HTML docs
+
+> **Note:** Pre-rendered documentation is automatically fetched and converted weekly via GitHub Actions using [markitdown](https://github.com/microsoft/markitdown). This provides faster access, better LLM digestibility, and eliminates runtime dependencies on external sites.
+
+### Legacy Documentation Tools
 - **get_uitoolkit_documentation**: Provides Unity UIToolkit documentation reference with links and examples for specific topics (UXML, USS, VisualElement, etc.)
 - **get_unity_script_reference**: Access Unity Script API reference documentation for UIToolkit classes and methods
 - **list_uitoolkit_components**: List available UIToolkit components and controls by category
@@ -17,6 +23,20 @@ This MCP server provides the following tools for working with Unity UIToolkit:
 ### Conversion Tools
 - **convert_html_to_uxml**: Convert HTML markup to UXML format with guidance and best practices
 - **convert_css_to_uss**: Convert CSS styles to USS (Unity Style Sheets) format with property mappings
+
+## Documentation Pre-rendering
+
+Unity UIToolkit documentation is automatically fetched and converted to Markdown:
+
+- **Schedule**: Weekly on Mondays at 00:00 UTC
+- **Trigger**: Can be manually triggered via GitHub Actions
+- **Process**: 
+  1. Fetches latest Unity UIToolkit HTML documentation
+  2. Filters to UIToolkit-related pages only
+  3. Converts to clean Markdown using [markitdown](https://github.com/microsoft/markitdown)
+  4. Commits to `docs/` directory
+
+See [.github/workflows/update-unity-docs.yml](.github/workflows/update-unity-docs.yml) for implementation details.
 
 ## Installation
 
@@ -59,7 +79,32 @@ Or use npx:
 
 ## Available Tools
 
-### 1. get_uitoolkit_documentation
+### 1. list_prerendered_docs
+Lists all available pre-rendered documentation files.
+
+**Parameters:** None
+
+**Example:**
+```typescript
+{}
+```
+
+### 2. read_prerendered_docs
+Reads pre-rendered Markdown documentation.
+
+**Parameters:**
+- `doc_type` (string): Either "manual" or "script-api"
+- `doc_name` (string): Name of the documentation file (e.g., "UXML", "UIElements_VisualElement")
+
+**Example:**
+```typescript
+{
+  "doc_type": "manual",
+  "doc_name": "UXML"
+}
+```
+
+### 3. get_uitoolkit_documentation
 Retrieves Unity UIToolkit documentation for specific topics.
 
 **Parameters:**
@@ -72,7 +117,7 @@ Retrieves Unity UIToolkit documentation for specific topics.
 }
 ```
 
-### 2. get_uitoolkit_code_example
+### 4. get_uitoolkit_code_example
 Provides common Unity UIToolkit code example patterns with links to Unity's official repository.
 
 **Parameters:**
@@ -85,7 +130,7 @@ Provides common Unity UIToolkit code example patterns with links to Unity's offi
 }
 ```
 
-### 3. get_unity_script_reference
+### 5. get_unity_script_reference
 Retrieves Unity Script API reference for UIToolkit classes.
 
 **Parameters:**
@@ -98,7 +143,7 @@ Retrieves Unity Script API reference for UIToolkit classes.
 }
 ```
 
-### 4. convert_html_to_uxml
+### 6. convert_html_to_uxml
 Provides guidance for converting HTML to UXML.
 
 **Parameters:**
@@ -111,7 +156,7 @@ Provides guidance for converting HTML to UXML.
 }
 ```
 
-### 5. convert_css_to_uss
+### 7. convert_css_to_uss
 Provides guidance for converting CSS to USS.
 
 **Parameters:**
@@ -124,7 +169,7 @@ Provides guidance for converting CSS to USS.
 }
 ```
 
-### 6. list_uitoolkit_components
+### 8. list_uitoolkit_components
 Lists available UIToolkit components.
 
 **Parameters:**

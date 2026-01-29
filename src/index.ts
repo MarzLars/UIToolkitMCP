@@ -7,6 +7,14 @@ import {
   ListToolsRequestSchema,
   Tool,
 } from "@modelcontextprotocol/sdk/types.js";
+import { readFileSync, existsSync, readdirSync } from "fs";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
+
+// Get directory paths
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const DOCS_DIR = join(__dirname, "..", "docs");
 
 // Unity UIToolkit documentation base URLs
 const UNITY_DOCS_BASE = "https://docs.unity3d.com/Manual";
@@ -97,6 +105,33 @@ const TOOLS: Tool[] = [
           description: "Optional category filter (e.g., 'containers', 'controls', 'data-bound')",
         },
       },
+    },
+  },
+  {
+    name: "read_prerendered_docs",
+    description: "Reads pre-rendered Markdown documentation for Unity UIToolkit. Returns clean, LLM-friendly Markdown content that was converted from Unity's HTML documentation.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        doc_type: {
+          type: "string",
+          description: "Type of documentation: 'manual' or 'script-api'",
+          enum: ["manual", "script-api"],
+        },
+        doc_name: {
+          type: "string",
+          description: "Name of the documentation file (e.g., 'UXML', 'UIElements', 'UIElements_VisualElement')",
+        },
+      },
+      required: ["doc_type", "doc_name"],
+    },
+  },
+  {
+    name: "list_prerendered_docs",
+    description: "Lists all available pre-rendered documentation files organized by type (manual and script-api).",
+    inputSchema: {
+      type: "object",
+      properties: {},
     },
   },
 ];
@@ -812,6 +847,117 @@ To see all components, call this tool without specifying a category.
   return result;
 }
 
+// Handler for reading pre-rendered documentation
+function handleReadPrerenderedDocs(docType: string, docName: string): string {
+  try {
+    // Construct the file path
+    const subDir = docType === "manual" ? "manual" : "script-api";
+    const filePath = join(DOCS_DIR, subDir, `${docName}.md`);
+    
+    // Check if file exists
+    if (!existsSync(filePath)) {
+      return `# Documentation Not Found
+
+The requested documentation file does not exist: ${docType}/${docName}.md
+
+Use the \`list_prerendered_docs\` tool to see available documentation files.
+
+**Note:** If the documentation hasn't been generated yet, you can:
+1. Trigger the GitHub Actions workflow to fetch and convert documentation
+2. Or use the legacy tools (get_uitoolkit_documentation, get_unity_script_reference) for reference information
+`;
+    }
+    
+    // Read and return the markdown content
+    const content = readFileSync(filePath, 'utf-8');
+    return content;
+    
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    return `# Error Reading Documentation
+
+Failed to read documentation file: ${errorMessage}
+
+Please ensure the documentation has been generated via the GitHub Actions workflow.
+`;
+  }
+}
+
+// Handler for listing pre-rendered documentation
+function handleListPrerenderedDocs(): string {
+  try {
+    let result = "# Available Pre-rendered Unity UIToolkit Documentation\n\n";
+    
+    const manualDir = join(DOCS_DIR, "manual");
+    const scriptApiDir = join(DOCS_DIR, "script-api");
+    
+    // Check if docs directory exists
+    if (!existsSync(DOCS_DIR)) {
+      return `# Documentation Not Available
+
+Pre-rendered documentation has not been generated yet.
+
+The documentation is automatically fetched and converted via GitHub Actions. To generate it:
+1. Wait for the scheduled weekly run, or
+2. Manually trigger the "Update Unity UIToolkit Documentation" workflow in GitHub Actions
+
+In the meantime, you can use these tools:
+- \`get_uitoolkit_documentation\` - For reference information with links
+- \`get_unity_script_reference\` - For Script API references
+- \`get_uitoolkit_code_example\` - For code examples
+`;
+    }
+    
+    // List manual pages
+    result += "## Manual Documentation\n\n";
+    if (existsSync(manualDir)) {
+      const manualFiles = readdirSync(manualDir).filter(f => f.endsWith('.md'));
+      if (manualFiles.length > 0) {
+        manualFiles.sort();
+        manualFiles.forEach(file => {
+          const name = file.replace('.md', '');
+          result += `- **${name}** - Use \`read_prerendered_docs\` with doc_type="manual" and doc_name="${name}"\n`;
+        });
+      } else {
+        result += "*No manual documentation available yet*\n";
+      }
+    } else {
+      result += "*Manual documentation directory not found*\n";
+    }
+    
+    result += "\n## Script API Documentation\n\n";
+    if (existsSync(scriptApiDir)) {
+      const scriptApiFiles = readdirSync(scriptApiDir).filter(f => f.endsWith('.md'));
+      if (scriptApiFiles.length > 0) {
+        scriptApiFiles.sort();
+        scriptApiFiles.forEach(file => {
+          const name = file.replace('.md', '');
+          const displayName = name.replace(/_/g, '.');
+          result += `- **${displayName}** - Use \`read_prerendered_docs\` with doc_type="script-api" and doc_name="${name}"\n`;
+        });
+      } else {
+        result += "*No script API documentation available yet*\n";
+      }
+    } else {
+      result += "*Script API documentation directory not found*\n";
+    }
+    
+    result += "\n## How to Use\n\n";
+    result += "To read a specific documentation file, use the `read_prerendered_docs` tool with:\n";
+    result += "- `doc_type`: Either \"manual\" or \"script-api\"\n";
+    result += "- `doc_name`: The name shown above (e.g., \"UXML\" or \"UIElements_VisualElement\")\n";
+    
+    return result;
+    
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    return `# Error Listing Documentation
+
+Failed to list documentation files: ${errorMessage}
+`;
+  }
+}
+
 // Create and run the server
 const server = new Server(
   {
@@ -893,6 +1039,24 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           throw new Error("Invalid 'category' argument: expected string or undefined");
         }
         result = handleListUIToolkitComponents(category as string | undefined);
+        break;
+      }
+
+      case "read_prerendered_docs": {
+        const docType = (args as Record<string, unknown>).doc_type;
+        const docName = (args as Record<string, unknown>).doc_name;
+        if (typeof docType !== "string") {
+          throw new Error("Invalid or missing 'doc_type' argument: expected string");
+        }
+        if (typeof docName !== "string") {
+          throw new Error("Invalid or missing 'doc_name' argument: expected string");
+        }
+        result = handleReadPrerenderedDocs(docType, docName);
+        break;
+      }
+
+      case "list_prerendered_docs": {
+        result = handleListPrerenderedDocs();
         break;
       }
 

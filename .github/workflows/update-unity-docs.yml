@@ -1,0 +1,211 @@
+name: Update Unity UIToolkit Documentation
+
+on:
+  schedule:
+    # Run weekly on Monday at 00:00 UTC
+    - cron: '0 0 * * 1'
+  workflow_dispatch: # Allow manual trigger
+  push:
+    paths:
+      - '.github/workflows/update-unity-docs.yml'
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install markitdown
+        run: |
+          pip install markitdown beautifulsoup4 requests
+          
+      - name: Create documentation fetch script
+        run: |
+          cat > fetch_docs.py << 'EOF'
+          #!/usr/bin/env python3
+          """
+          Fetch Unity UIToolkit documentation HTML pages and convert to Markdown
+          """
+          import os
+          import sys
+          import requests
+          from pathlib import Path
+          from markitdown import MarkItDown
+          from bs4 import BeautifulSoup
+          
+          # Unity documentation base URL
+          UNITY_DOCS_BASE = "https://docs.unity3d.com/Manual"
+          UNITY_SCRIPT_API_BASE = "https://docs.unity3d.com/ScriptReference"
+          
+          # UIToolkit-related documentation pages
+          UITOOLKIT_PAGES = {
+              "UIElements": "UIElements.html",
+              "UXML": "UIE-UXML.html",
+              "USS": "UIE-USS.html",
+              "USS-Selectors": "UIE-USS-Selectors.html",
+              "USS-Properties": "UIE-USS-Properties.html",
+              "VisualElement": "UIElements-VisualElement.html",
+              "Binding": "UIE-Binding.html",
+              "ListView": "UIE-ListView.html",
+              "TreeView": "UIE-TreeView.html",
+              "ScrollView": "UIE-ScrollView.html",
+              "Custom-Controls": "UIE-custom-controls.html",
+              "Events": "UIE-Events.html",
+              "Templates": "UIE-Templates.html",
+              "Runtime-UI": "UIE-runtime-panel-settings.html",
+              "Editor-UI": "UIE-uxml-element-VisualElement.html",
+          }
+          
+          # UIToolkit Script API classes
+          SCRIPT_API_CLASSES = [
+              "UIElements.VisualElement",
+              "UIElements.Label",
+              "UIElements.Button",
+              "UIElements.TextField",
+              "UIElements.Toggle",
+              "UIElements.Slider",
+              "UIElements.SliderInt",
+              "UIElements.ProgressBar",
+              "UIElements.DropdownField",
+              "UIElements.EnumField",
+              "UIElements.ListView",
+              "UIElements.TreeView",
+              "UIElements.ScrollView",
+              "UIElements.Foldout",
+              "UIElements.GroupBox",
+              "UIElements.Box",
+              "UIElements.RadioButton",
+              "UIElements.RadioButtonGroup",
+          ]
+          
+          def fetch_and_convert(url, output_path, title):
+              """Fetch HTML from URL and convert to Markdown"""
+              try:
+                  print(f"Fetching {title}...")
+                  response = requests.get(url, timeout=30)
+                  response.raise_for_status()
+                  
+                  # Save HTML temporarily
+                  temp_html = Path("temp.html")
+                  temp_html.write_text(response.text, encoding='utf-8')
+                  
+                  # Convert to Markdown using markitdown
+                  md = MarkItDown()
+                  result = md.convert(str(temp_html))
+                  
+                  # Clean up the markdown
+                  markdown_content = result.text_content
+                  
+                  # Add metadata header
+                  header = f"""# {title}
+
+**Source:** {url}  
+**Last Updated:** {response.headers.get('last-modified', 'Unknown')}
+
+---
+
+"""
+                  markdown_content = header + markdown_content
+                  
+                  # Write to output
+                  output_path.parent.mkdir(parents=True, exist_ok=True)
+                  output_path.write_text(markdown_content, encoding='utf-8')
+                  
+                  temp_html.unlink()
+                  print(f"✓ Converted {title} to {output_path}")
+                  return True
+                  
+              except Exception as e:
+                  print(f"✗ Error processing {title}: {e}", file=sys.stderr)
+                  return False
+          
+          def main():
+              docs_dir = Path("docs")
+              docs_dir.mkdir(exist_ok=True)
+              
+              manual_dir = docs_dir / "manual"
+              script_api_dir = docs_dir / "script-api"
+              
+              success_count = 0
+              total_count = 0
+              
+              # Fetch Manual pages
+              print("\n=== Fetching Unity Manual Pages ===")
+              for name, page in UITOOLKIT_PAGES.items():
+                  total_count += 1
+                  url = f"{UNITY_DOCS_BASE}/{page}"
+                  output_path = manual_dir / f"{name}.md"
+                  if fetch_and_convert(url, output_path, name):
+                      success_count += 1
+              
+              # Fetch Script API pages
+              print("\n=== Fetching Unity Script API Pages ===")
+              for class_name in SCRIPT_API_CLASSES:
+                  total_count += 1
+                  url = f"{UNITY_SCRIPT_API_BASE}/{class_name}.html"
+                  safe_name = class_name.replace(".", "_")
+                  output_path = script_api_dir / f"{safe_name}.md"
+                  if fetch_and_convert(url, output_path, class_name):
+                      success_count += 1
+              
+              # Create index file
+              print("\n=== Creating Index ===")
+              index_content = f"""# Unity UIToolkit Documentation
+
+This directory contains pre-rendered Markdown documentation for Unity UIToolkit.
+
+## Manual Pages
+
+"""
+              for name in sorted(UITOOLKIT_PAGES.keys()):
+                  index_content += f"- [{name}](manual/{name}.md)\n"
+              
+              index_content += "\n## Script API\n\n"
+              for class_name in sorted(SCRIPT_API_CLASSES):
+                  safe_name = class_name.replace(".", "_")
+                  index_content += f"- [{class_name}](script-api/{safe_name}.md)\n"
+              
+              (docs_dir / "README.md").write_text(index_content, encoding='utf-8')
+              
+              print(f"\n=== Summary ===")
+              print(f"Successfully converted: {success_count}/{total_count}")
+              
+              if success_count < total_count:
+                  sys.exit(1)
+          
+          if __name__ == "__main__":
+              main()
+          EOF
+          chmod +x fetch_docs.py
+          
+      - name: Fetch and convert Unity documentation
+        run: python fetch_docs.py
+        
+      - name: Check if documentation changed
+        id: check_changes
+        run: |
+          git add docs/
+          if git diff --cached --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No documentation changes detected"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Documentation changes detected"
+          fi
+          
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -m "Update Unity UIToolkit documentation [skip ci]"
+          git push
