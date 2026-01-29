@@ -7,7 +7,6 @@ Fetch Unity UIToolkit documentation from multiple sources:
 This script is used by the GitHub Actions workflow and can be run manually.
 """
 import sys
-import os
 import subprocess
 import shutil
 from pathlib import Path
@@ -125,14 +124,19 @@ def extract_class_info(file_path):
     try:
         content = file_path.read_text(encoding='utf-8')
         
-        # Extract class name
-        class_match = re.search(r'public\s+(?:partial\s+)?(?:class|struct|interface)\s+(\w+)', content)
+        # Remove XML doc comments to avoid matching example code
+        # Match /// comments and <example>...</example> blocks
+        content_no_comments = re.sub(r'///.*?$', '', content, flags=re.MULTILINE)
+        content_no_comments = re.sub(r'<example>.*?</example>', '', content_no_comments, flags=re.DOTALL)
+        
+        # Extract class name - anchored to line start to avoid matching examples
+        class_match = re.search(r'^\s*public\s+(?:partial\s+)?(?:class|struct|interface)\s+(\w+)', content_no_comments, re.MULTILINE)
         if not class_match:
             return None
         
         class_name = class_match.group(1)
         
-        # Extract XML documentation comments
+        # Extract XML documentation comments from original content
         doc_pattern = r'///\s*(.*?)(?:\n\s*///|\n\s*(?:public|internal|private|protected))'
         doc_matches = re.findall(doc_pattern, content, re.DOTALL)
         
@@ -221,6 +225,8 @@ def process_uitoolkit_files(repo_path, output_dir):
     success_count = 0
     total_count = 0
     processed_classes = []
+    # Track processed types to merge partial declarations
+    processed_types = {}
     
     print("\n=== Processing UIToolkit Source Files from GitHub ===")
     
@@ -240,9 +246,8 @@ def process_uitoolkit_files(repo_path, output_dir):
         for cs_file in cs_files:
             total_count += 1
             
-            # Skip test files, editor-only utilities, and internal files
-            file_name = cs_file.name
-            if any(skip in str(cs_file) for skip in ['Test', 'Tests', '.Deprecated', 'Internal']):
+            # Skip test files, PropertyBag files, and internal files
+            if any(skip in str(cs_file) for skip in ['Test', 'Tests', '.Deprecated', 'Internal', 'PropertyBag.cs']):
                 continue
             
             # Extract class information
@@ -250,18 +255,21 @@ def process_uitoolkit_files(repo_path, output_dir):
             if not class_info:
                 continue
             
+            # Create unique key for this type
+            type_key = f"{class_info['namespace']}.{class_info['name']}"
+            
+            # Skip if we've already processed this type (handles partial classes)
+            if type_key in processed_types:
+                continue
+            
+            processed_types[type_key] = True
+            
             # Generate markdown
             try:
                 markdown = generate_class_markdown(class_info, repo_path)
                 
-                # Save to file
+                # Save to file using just the class name
                 output_file = classes_dir / f"{class_info['name']}.md"
-                
-                # Handle duplicate class names by adding namespace prefix
-                if output_file.exists():
-                    safe_name = class_info['namespace'].replace('.', '_') + '_' + class_info['name']
-                    output_file = classes_dir / f"{safe_name}.md"
-                
                 output_file.write_text(markdown, encoding='utf-8')
                 
                 processed_classes.append({
