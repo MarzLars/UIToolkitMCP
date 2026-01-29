@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "uitoolkit": {
+      "command": "node",
+      "args": ["dist/index.js"],
+      "description": "Unity UIToolkit MCP Server - Documentation, examples, and HTML/CSS to UXML/USS conversion"
+    }
+  }
+}
