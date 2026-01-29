@@ -80,7 +80,7 @@ def fetch_and_convert(url, output_path, title):
             markdown_content = result.text_content
             
             # Add metadata header
-        header = f"""# {title}
+            header = f"""# {title}
 
 **Source:** {url}  
 **Last Updated:** {response.headers.get('last-modified', 'Unknown')}
