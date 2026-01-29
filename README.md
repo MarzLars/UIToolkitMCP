@@ -19,6 +19,7 @@ This MCP server provides the following tools for working with Unity UIToolkit:
 
 ### Code Examples
 - **get_uitoolkit_code_example**: Provides common Unity UIToolkit code example patterns with links to Unity's official examples repository
+- **fetch_unity_example_code**: Fetches actual source code from Unity's UI Toolkit examples repository. Use this to retrieve implementation samples referenced in documentation (e.g., from `<code source="..."/>` tags)
 
 ### Conversion Tools
 - **convert_html_to_uxml**: Convert HTML markup to UXML format with guidance and best practices
@@ -130,7 +131,24 @@ Provides common Unity UIToolkit code example patterns with links to Unity's offi
 }
 ```
 
-### 5. get_unity_script_reference
+### 5. fetch_unity_example_code
+Fetches actual source code from Unity's UI Toolkit examples repository. This is particularly useful when you encounter `<code source="..."/>` tags in the script-api documentation and want to see the actual implementation.
+
+**Parameters:**
+- `file_path` (string): Path to the code file (e.g., "Button_clicked.cs" or "Modules/UIElements/Tests/UIElementsExamples/Assets/Examples/Button_clicked.cs")
+
+**Example:**
+```typescript
+{
+  "file_path": "Button_clicked.cs"
+}
+```
+
+**Note:** The tool will automatically search multiple Unity repositories to find the code:
+- Unity's public UI Toolkit manual code examples repository
+- Unity's C# Reference repository (for internal test examples)
+
+### 6. get_unity_script_reference
 Retrieves Unity Script API reference for UIToolkit classes.
 
 **Parameters:**
@@ -143,7 +161,7 @@ Retrieves Unity Script API reference for UIToolkit classes.
 }
 ```
 
-### 6. convert_html_to_uxml
+### 7. convert_html_to_uxml
 Provides guidance for converting HTML to UXML.
 
 **Parameters:**
@@ -156,7 +174,7 @@ Provides guidance for converting HTML to UXML.
 }
 ```
 
-### 7. convert_css_to_uss
+### 8. convert_css_to_uss
 Provides guidance for converting CSS to USS.
 
 **Parameters:**
@@ -169,7 +187,7 @@ Provides guidance for converting CSS to USS.
 }
 ```
 
-### 8. list_uitoolkit_components
+### 9. list_uitoolkit_components
 Lists available UIToolkit components.
 
 **Parameters:**
