@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
-Fetch Unity UIToolkit source code from GitHub and generate documentation
+Fetch Unity UIToolkit documentation from multiple sources:
+1. Manual documentation from Unity's HTML docs (converted to Markdown)
+2. Script API from Unity's GitHub C# reference repository
+
 This script is used by the GitHub Actions workflow and can be run manually.
 """
 import sys
@@ -9,9 +12,36 @@ import subprocess
 import shutil
 from pathlib import Path
 import re
+import requests
+from tempfile import NamedTemporaryFile
+
+try:
+    from markitdown import MarkItDown
+except ImportError:
+    print("ERROR: markitdown not installed. Run: pip install markitdown")
+    sys.exit(1)
+
+# Unity documentation base URL
+UNITY_DOCS_BASE = "https://docs.unity3d.com/Manual"
 
 # Unity C# Reference Repository
 UNITY_CS_REFERENCE_REPO = "https://github.com/Unity-Technologies/UnityCsReference.git"
+
+# UIToolkit-related documentation pages (Manual)
+UITOOLKIT_PAGES = {
+    "UIElements": "UIElements.html",
+    "UXML": "UIE-UXML.html",
+    "USS": "UIE-USS.html",
+    "USS-Selectors": "UIE-USS-Selectors.html",
+    "USS-Properties": "UIE-USS-SupportedProperties.html",
+    "Binding": "UIE-Binding.html",
+    "ListView": "UIE-uxml-element-ListView.html",
+    "TreeView": "UIE-uxml-element-TreeView.html",
+    "ScrollView": "UIE-uxml-element-ScrollView.html",
+    "Custom-Controls": "UIE-custom-controls.html",
+    "Events": "UIE-Events.html",
+    "Editor-UI": "UIE-uxml-element-VisualElement.html",
+}
 
 # UIToolkit-related paths in the Unity repository
 UITOOLKIT_PATHS = [
@@ -20,6 +50,51 @@ UITOOLKIT_PATHS = [
     "Modules/UIElementsSamplesEditor",
     "Editor/Mono/UIElements",
 ]
+
+def fetch_and_convert(url, output_path, title):
+    """Fetch HTML from URL and convert to Markdown"""
+    try:
+        print(f"Fetching {title}...")
+        response = requests.get(url, timeout=30)
+        response.raise_for_status()
+        
+        # Save HTML to temporary file
+        with NamedTemporaryFile(mode='w', suffix='.html', delete=False, encoding='utf-8') as temp_html:
+            temp_html.write(response.text)
+            temp_path = temp_html.name
+        
+        try:
+            # Convert to Markdown using markitdown
+            md = MarkItDown()
+            result = md.convert(temp_path)
+            
+            # Clean up the markdown
+            markdown_content = result.text_content
+            
+            # Add metadata header
+            header = f"""# {title}
+
+**Source:** {url}  
+**Last Updated:** {response.headers.get('last-modified', 'Unknown')}
+
+---
+
+"""
+            markdown_content = header + markdown_content
+            
+            # Write to output
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.write_text(markdown_content, encoding='utf-8')
+            
+            print(f"✓ Converted {title} to {output_path}")
+            return True
+        finally:
+            # Clean up temporary file
+            Path(temp_path).unlink(missing_ok=True)
+        
+    except Exception as e:
+        print(f"✗ Error processing {title}: {e}", file=sys.stderr)
+        return False
 
 def clone_unity_repo(target_dir):
     """Clone Unity C# reference repository"""
@@ -140,19 +215,14 @@ def process_uitoolkit_files(repo_path, output_dir):
     repo_path = Path(repo_path)
     output_dir = Path(output_dir)
     
-    # Clean up existing docs
-    if output_dir.exists():
-        shutil.rmtree(output_dir)
-    output_dir.mkdir(parents=True, exist_ok=True)
-    
-    classes_dir = output_dir / "classes"
-    classes_dir.mkdir(exist_ok=True)
+    classes_dir = output_dir / "script-api"
+    classes_dir.mkdir(parents=True, exist_ok=True)
     
     success_count = 0
     total_count = 0
     processed_classes = []
     
-    print("\n=== Processing UIToolkit Source Files ===")
+    print("\n=== Processing UIToolkit Source Files from GitHub ===")
     
     # Process each UIToolkit path
     for toolkit_path in UITOOLKIT_PATHS:
@@ -200,75 +270,73 @@ def process_uitoolkit_files(repo_path, output_dir):
                     'file': output_file.name
                 })
                 success_count += 1
-                print(f"  ✓ {class_info['namespace']}.{class_info['name']}")
                 
             except Exception as e:
                 print(f"  ✗ Error generating docs for {cs_file.name}: {e}")
     
+    print(f"\n✓ Successfully processed: {success_count} classes from GitHub")
+    return processed_classes, success_count > 0
+
+def main():
+    """Main function to fetch and process Unity UIToolkit documentation"""
+    
+    docs_dir = Path("docs")
+    docs_dir.mkdir(exist_ok=True)
+    
+    manual_dir = docs_dir / "manual"
+    
+    success_count = 0
+    total_count = 0
+    
+    # Fetch Manual pages from HTML documentation
+    print("\n=== Fetching Unity Manual Pages (HTML) ===")
+    for name, page in UITOOLKIT_PAGES.items():
+        total_count += 1
+        url = f"{UNITY_DOCS_BASE}/{page}"
+        output_path = manual_dir / f"{name}.md"
+        if fetch_and_convert(url, output_path, name):
+            success_count += 1
+    
+    # Clone Unity repository for script API
+    temp_dir = Path("/tmp/UnityCsReference")
+    if not clone_unity_repo(temp_dir):
+        print("Error: Failed to clone Unity repository", file=sys.stderr)
+        sys.exit(1)
+    
+    # Process UIToolkit files from GitHub
+    processed_classes, github_success = process_uitoolkit_files(temp_dir, docs_dir)
+    
+    if github_success:
+        success_count += len(processed_classes)
+    
     # Create index file
     print("\n=== Creating Index ===")
-    create_index(output_dir, processed_classes)
-    
-    print(f"\n=== Summary ===")
-    print(f"Successfully processed: {success_count} classes")
-    print(f"Total files scanned: {total_count}")
-    
-    return success_count > 0
+    index_content = f"""# Unity UIToolkit Documentation
 
-def create_index(output_dir, processed_classes):
-    """Create index file with all processed classes"""
-    
-    # Sort by namespace and name
-    processed_classes.sort(key=lambda x: (x['namespace'], x['name']))
-    
-    index_content = """# Unity UIToolkit Source Code Documentation
+This directory contains documentation for Unity UIToolkit from multiple sources.
 
-This directory contains documentation generated from Unity's C# reference source code.
+## Manual Pages
 
-**Source Repository:** [Unity-Technologies/UnityCsReference](https://github.com/Unity-Technologies/UnityCsReference)
-
----
-
-## About
-
-This documentation is generated from the actual Unity UIToolkit source code on GitHub. It includes:
-- Class definitions and structure
-- Public properties and methods
-- XML documentation comments
-- Direct links to source code
-
-## UIToolkit Classes
+Documentation converted from Unity's HTML manual:
 
 """
+    for name in sorted(UITOOLKIT_PAGES.keys()):
+        index_content += f"- [{name}](manual/{name}.md)\n"
     
-    # Group by namespace
+    index_content += "\n## Script API (from C# Source)\n\n"
+    index_content += f"Documentation generated from Unity's C# reference source code on GitHub.\n"
+    index_content += f"**Source:** [Unity-Technologies/UnityCsReference](https://github.com/Unity-Technologies/UnityCsReference)\n\n"
+    
+    # Group classes by namespace
+    processed_classes.sort(key=lambda x: (x['namespace'], x['name']))
     current_namespace = None
     for cls in processed_classes:
         if cls['namespace'] != current_namespace:
             current_namespace = cls['namespace']
             index_content += f"\n### {current_namespace}\n\n"
-        
-        index_content += f"- [{cls['name']}](classes/{cls['file']})\n"
+        index_content += f"- [{cls['name']}](script-api/{cls['file']})\n"
     
-    # Write index
-    (output_dir / "README.md").write_text(index_content, encoding='utf-8')
-    print(f"✓ Created index with {len(processed_classes)} classes")
-
-def main():
-    """Main function to fetch and process Unity UIToolkit documentation"""
-    
-    # Use a temporary directory for cloning
-    temp_dir = Path("/tmp/UnityCsReference")
-    docs_dir = Path("docs")
-    
-    # Clone Unity repository
-    if not clone_unity_repo(temp_dir):
-        sys.exit(1)
-    
-    # Process UIToolkit files
-    if not process_uitoolkit_files(temp_dir, docs_dir):
-        print("Error: No UIToolkit classes were processed successfully", file=sys.stderr)
-        sys.exit(1)
+    (docs_dir / "README.md").write_text(index_content, encoding='utf-8')
     
     # Clean up temporary repository
     try:
@@ -277,6 +345,15 @@ def main():
         print("✓ Removed temporary repository")
     except Exception as e:
         print(f"Warning: Could not remove temporary directory: {e}")
+    
+    print(f"\n=== Summary ===")
+    print(f"Manual pages: {len(UITOOLKIT_PAGES)} fetched")
+    print(f"Script API classes: {len(processed_classes)} generated")
+    print(f"Total: {success_count} documents created")
+    
+    if success_count == 0:
+        print("Error: No documentation was generated successfully", file=sys.stderr)
+        sys.exit(1)
     
     print("\n✓ Documentation generation complete!")
 
