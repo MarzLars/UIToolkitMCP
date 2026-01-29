@@ -31,8 +31,6 @@ UITOOLKIT_PAGES = {
     "ScrollView": "UIE-uxml-element-ScrollView.html",
     "Custom-Controls": "UIE-custom-controls.html",
     "Events": "UIE-Events.html",
-    "Templates": "UIE-UXML-template.html",
-    "Runtime-UI": "UIE-PanelSettings.html",
     "Editor-UI": "UIE-uxml-element-VisualElement.html",
 }
 
