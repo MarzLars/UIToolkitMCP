@@ -40,16 +40,30 @@ const TOOLS: Tool[] = [
   },
   {
     name: "get_uitoolkit_code_example",
-    description: "Provides common Unity UIToolkit code example patterns with links to Unity's official examples repository. Returns reference code samples demonstrating UIToolkit usage.",
+    description: "Fetches actual code examples from Unity's official UI Toolkit manual code examples repository (https://github.com/Unity-Technologies/ui-toolkit-manual-code-examples). Use this to retrieve real implementation samples showing UIToolkit syntax and usage patterns.",
     inputSchema: {
       type: "object",
       properties: {
         example_name: {
           type: "string",
-          description: "Name or path of the example to retrieve (e.g., 'simple-list-view', 'custom-control', 'data-binding')",
+          description: "Name or path of the example to retrieve (e.g., 'simple-list-view', 'custom-control', 'data-binding', or a file path like 'ListView/SimpleListView.cs')",
         },
       },
       required: ["example_name"],
+    },
+  },
+  {
+    name: "fetch_unity_example_code",
+    description: "Fetches the actual source code content from a specific file in Unity's UI Toolkit examples repository. Use this when you have a code source reference (e.g., from <code source='path/to/file.cs'/> tags in documentation) and need to see the actual implementation.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        file_path: {
+          type: "string",
+          description: "Path to the code file in the Unity examples repository (e.g., 'Modules/UIElements/Tests/UIElementsExamples/Assets/Examples/Button_clicked.cs')",
+        },
+      },
+      required: ["file_path"],
     },
   },
   {
@@ -478,6 +492,124 @@ public partial class DataBindingExample : VisualElement
 \`\`\`
 
 For more examples, visit: ${UNITY_UITK_EXAMPLES_REPO}
+`;
+}
+
+async function handleFetchUnityExampleCode(filePath: string): Promise<string> {
+  // Clean up the file path
+  let cleanPath = filePath.trim();
+  
+  // Handle paths that start with ../.. or ../../.. (relative paths from Unity source)
+  // These typically refer to the UIElementsExamples folder in the Unity C# Reference repository
+  if (cleanPath.startsWith('../')) {
+    // Extract just the relevant part after multiple ../
+    // E.g., "../../../../Modules/UIElements/Tests/UIElementsExamples/Assets/Examples/Button_clicked.cs"
+    // becomes "Button_clicked.cs"
+    const parts = cleanPath.split('/').filter(p => p !== '..' && p !== '.');
+    const examplesIndex = parts.indexOf('Examples');
+    if (examplesIndex !== -1 && examplesIndex < parts.length - 1) {
+      cleanPath = parts.slice(examplesIndex + 1).join('/');
+    } else {
+      // If 'Examples' not found, extract from 'Modules/' onwards
+      const moduleIndex = parts.findIndex(p => p === 'Modules');
+      if (moduleIndex !== -1) {
+        cleanPath = parts.slice(moduleIndex).join('/');
+      } else {
+        // As a last resort, join all non-empty parts
+        cleanPath = parts.join('/');
+      }
+    }
+  } else if (cleanPath.startsWith('Modules/')) {
+    // Handle paths that start directly with 'Modules/' (without relative prefix)
+    // Extract just the filename from the Examples folder if present
+    const parts = cleanPath.split('/');
+    const examplesIndex = parts.indexOf('Examples');
+    if (examplesIndex !== -1 && examplesIndex < parts.length - 1) {
+      cleanPath = parts.slice(examplesIndex + 1).join('/');
+    }
+  }
+  
+  // Security: Final sanitization - ensure no '../' or '..' sequences remain to prevent path traversal attacks
+  cleanPath = cleanPath.split('/').filter(p => p !== '..' && p !== '.').join('/');
+  
+  // Try to fetch from ui-toolkit-manual-code-examples repo first
+  // This is the public examples repository
+  const exampleRepoUrl = `${UNITY_UITK_EXAMPLES_RAW}/${cleanPath}`;
+  
+  try {
+    const response = await fetch(exampleRepoUrl);
+    if (response.ok) {
+      const code = await response.text();
+      return `# Unity UIToolkit Code Example
+
+**File:** ${cleanPath}
+**Source:** ${UNITY_UITK_EXAMPLES_REPO}/blob/main/${cleanPath}
+
+## Code
+
+\`\`\`csharp
+${code}
+\`\`\`
+
+For more examples, visit: ${UNITY_UITK_EXAMPLES_REPO}
+`;
+    }
+  } catch (error) {
+    // Log error for debugging
+    console.error(`Failed to fetch from public examples repo (${exampleRepoUrl}):`, error);
+  }
+  
+  // If not found in the public examples repo, try the Unity C# Reference repository
+  // The UIElementsExamples are in the Unity source code repository
+  const unitySourceUrl = `https://raw.githubusercontent.com/Unity-Technologies/UnityCsReference/master/Modules/UIElements/Tests/UIElementsExamples/Assets/Examples/${cleanPath}`;
+  
+  try {
+    const response = await fetch(unitySourceUrl);
+    if (response.ok) {
+      const code = await response.text();
+      return `# Unity UIToolkit Code Example
+
+**File:** ${cleanPath}
+**Source:** https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Tests/UIElementsExamples/Assets/Examples/${cleanPath}
+
+## Code
+
+\`\`\`csharp
+${code}
+\`\`\`
+
+**Note:** This example is from Unity's internal UIElements test examples.
+`;
+    }
+  } catch (error) {
+    // Log error for debugging
+    console.error(`Failed to fetch from Unity C# Reference repo (${unitySourceUrl}):`, error);
+  }
+  
+  // If we couldn't fetch the code, provide helpful information
+  return `# Unity UIToolkit Code Example: ${filePath}
+
+**Status:** Unable to fetch code directly
+
+## Alternative Resources
+
+The requested example file could not be fetched automatically. You can find UIToolkit code examples at:
+
+1. **Public Examples Repository:**
+   ${UNITY_UITK_EXAMPLES_REPO}
+
+2. **Unity C# Reference Repository:**
+   https://github.com/Unity-Technologies/UnityCsReference/tree/master/Modules/UIElements/Tests/UIElementsExamples
+
+3. **Searched Paths:**
+   - ${exampleRepoUrl}
+   - ${unitySourceUrl}
+
+## Suggested Actions
+
+- Browse the examples repositories directly
+- Search for similar examples using different names
+- Check the Unity documentation for related code samples
 `;
 }
 
@@ -1137,6 +1269,15 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
       case "list_prerendered_docs": {
         result = handleListPrerenderedDocs();
+        break;
+      }
+
+      case "fetch_unity_example_code": {
+        const filePath = (args as Record<string, unknown>).file_path;
+        if (typeof filePath !== "string") {
+          throw new Error("Invalid or missing 'file_path' argument: expected string");
+        }
+        result = await handleFetchUnityExampleCode(filePath);
         break;
       }
 

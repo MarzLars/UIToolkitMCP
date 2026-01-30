@@ -124,10 +124,9 @@ def extract_class_info(file_path):
     try:
         content = file_path.read_text(encoding='utf-8')
         
-        # Remove XML doc comments to avoid matching example code
-        # Match /// comments and <example>...</example> blocks
+        # Remove XML doc comments to avoid matching example code in class detection
+        # Match /// comments but keep the full content for later processing
         content_no_comments = re.sub(r'///.*?$', '', content, flags=re.MULTILINE)
-        content_no_comments = re.sub(r'<example>.*?</example>', '', content_no_comments, flags=re.DOTALL)
         
         # Extract class name - anchored to line start to avoid matching examples
         class_match = re.search(r'^\s*public\s+(?:partial\s+)?(?:class|struct|interface)\s+(\w+)', content_no_comments, re.MULTILINE)
@@ -170,7 +169,7 @@ def generate_class_markdown(class_info, repo_path):
     if class_info['documentation']:
         markdown += "## Documentation\n\n"
         for doc in class_info['documentation']:
-            # Clean up XML doc comments
+            # Clean up XML doc comments but PRESERVE <example> and <code> tags
             cleaned = doc.strip()
             cleaned = re.sub(r'<summary>\s*', '', cleaned)
             cleaned = re.sub(r'\s*</summary>', '', cleaned)
@@ -179,6 +178,7 @@ def generate_class_markdown(class_info, repo_path):
             cleaned = re.sub(r'<see cref="([^"]+)"/>', r'`\1`', cleaned)
             cleaned = re.sub(r'<c>([^<]+)</c>', r'`\1`', cleaned)
             cleaned = re.sub(r'\[\[([^\]]+)\]\]', r'[\1]', cleaned)
+            # Keep <example> and <code> tags as they reference actual code examples
             if cleaned:
                 markdown += f"{cleaned}\n\n"
     
