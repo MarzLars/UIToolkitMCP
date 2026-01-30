@@ -1,6 +1,6 @@
 # Unity UIToolkit MCP Server
 
-A Model Context Protocol (MCP) server that provides LLM agents with access to Unity UIToolkit documentation, code examples, and conversion tools for migrating HTML/CSS to UXML/USS.
+A Vibe Coded Model Context Protocol (MCP) server that provides LLM agents with access to Unity UIToolkit documentation, code examples, and conversion tools for migrating HTML/CSS to UXML/USS.
 
 ## Features
 
