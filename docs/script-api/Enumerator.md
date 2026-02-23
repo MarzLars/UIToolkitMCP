@@ -2,38 +2,35 @@
 
 **Namespace:** `UnityEngine.UIElements`
 
-**Source:** [Modules/UIElements/ScriptBindings/VisualNodeChildrenData.bindings.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/ScriptBindings/VisualNodeChildrenData.bindings.cs)
+**Source:** [Modules/UIElements/Managed/VisualNodeClassList.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Managed/VisualNodeClassList.cs)
 
 ---
 
 ## Documentation
 
 
-[StructLayout(LayoutKind.Explicit, Size = 32)]
-readonly unsafe struct VisualNodeChildrenData : IEnumerable<VisualNodeHandle>
+readonly struct VisualNodeClassList : IList<string>
 {
 
-<returns>The child handle.</returns>
 
-<returns>The child handle.</returns>
+    readonly VisualManager m_Manager;
 
-<exception cref="IndexOutOfRangeException">The given index is out of range.</exception>
+The handle to the underlying data.
 
-<exception cref="IndexOutOfRangeException">The given index is out of range.</exception>
+<param name="handle">The handle to the node.</param>
 
 ## Source Code Reference
 
-For complete source code, see: [Enumerator.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/ScriptBindings/VisualNodeChildrenData.bindings.cs)
-
-### Public Properties
-
-- **Count**: `int`
+For complete source code, see: [Enumerator.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Managed/VisualNodeClassList.cs)
 
 ### Public Methods
 
 - **MoveNext()**: Returns `bool`
 - **Reset()**: Returns `void`
 - **Dispose()**: Returns `void`
-- **ElementAt()**: Returns `VisualNodeHandle`
+- **Add()**: Returns `void`
+- **Remove()**: Returns `bool`
+- **Contains()**: Returns `bool`
+- **Clear()**: Returns `void`
 - **GetEnumerator()**: Returns `Enumerator`
 
