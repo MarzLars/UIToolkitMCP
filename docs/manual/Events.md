@@ -1,7 +1,7 @@
 # Events
 
 **Source:** https://docs.unity3d.com/Manual/UIE-Events.html  
-**Last Updated:** Fri, 27 Feb 2026 22:16:22 GMT
+**Last Updated:** Fri, 06 Mar 2026 20:03:49 GMT
 
 ---
 
@@ -60,11 +60,15 @@ See in [Glossary](Glossary.html#EventSystem) shares the same terminology and eve
 | [Synthesize and send events](UIE-Events-Synthesizing.html) | Learn how to synthesize and send events from an example. |
 | [Event reference](UIE-Events-Reference.html) | Understand behavior and characteristics of each event. |
 
+## Additional resources
+
+* 📺 **Video**: [UI Toolkit Tutorial Series: UI Toolkit Events](https://www.youtube.com/watch?v=IBdj-OSEM3E)
+
 Introduction to UI Shader Graph
 
 Dispatch events
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 64104417. Built on: 2026-02-27.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 64462609. Built on: 2026-03-06.
 
 [Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 
