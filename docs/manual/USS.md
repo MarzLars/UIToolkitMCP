@@ -1,7 +1,7 @@
 # USS
 
 **Source:** https://docs.unity3d.com/Manual/UIE-USS.html  
-**Last Updated:** Sat, 14 Mar 2026 19:38:54 GMT
+**Last Updated:** Sun, 22 Mar 2026 12:38:51 GMT
 
 ---
 
@@ -69,7 +69,7 @@ Create a custom inventory property drawer
 
 Introduction to USS
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 64928310. Built on: 2026-03-14.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 65295426. Built on: 2026-03-22.
 
 [Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 
