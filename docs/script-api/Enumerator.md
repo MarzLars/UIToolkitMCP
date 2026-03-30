@@ -1,39 +1,47 @@
 # Enumerator
 
-**Namespace:** `UnityEngine.UIElements`
+**Namespace:** `UnityEngine.UIElements.Layout`
 
-**Source:** [Modules/UIElements/ScriptBindings/VisualNodeChildrenData.bindings.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/ScriptBindings/VisualNodeChildrenData.bindings.cs)
+**Source:** [Modules/UIElements/Core/Layout/LayoutNode+Hierarchy.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Layout/LayoutNode+Hierarchy.cs)
 
 ---
 
 ## Documentation
 
 
-[StructLayout(LayoutKind.Explicit, Size = 32)]
-readonly unsafe struct VisualNodeChildrenData : IEnumerable<VisualNodeHandle>
-{
+    LayoutList<LayoutHandle> Children => m_Access.GetNodeData(m_Handle).Children;
 
-<returns>The child handle.</returns>
+Return the child count for this node.
 
-<returns>The child handle.</returns>
+WARNING: This has no safety checks, use with caution.
 
-<exception cref="IndexOutOfRangeException">The given index is out of range.</exception>
+<param name="index"></param>
 
-<exception cref="IndexOutOfRangeException">The given index is out of range.</exception>
+<returns>The index of the specified child; -1 if it's not a child.</returns>
+
+<param name="child">The child node to insert.</param>
+
+This uses duck typing and does explicitly implement IEnumerable{YogaNode}.
 
 ## Source Code Reference
 
-For complete source code, see: [Enumerator.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/ScriptBindings/VisualNodeChildrenData.bindings.cs)
+For complete source code, see: [Enumerator.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Layout/LayoutNode+Hierarchy.cs)
 
 ### Public Properties
 
-- **Count**: `int`
+- **Parent**: `LayoutNode`
+- **NextChild**: `LayoutNode`
 
 ### Public Methods
 
-- **MoveNext()**: Returns `bool`
-- **Reset()**: Returns `void`
-- **Dispose()**: Returns `void`
-- **ElementAt()**: Returns `VisualNodeHandle`
+- **AddChild()**: Returns `void`
+- **RemoveChild()**: Returns `void`
+- **IndexOf()**: Returns `int`
+- **Insert()**: Returns `void`
+- **RemoveAt()**: Returns `void`
+- **Clear()**: Returns `void`
 - **GetEnumerator()**: Returns `Enumerator`
+- **Dispose()**: Returns `void`
+- **Reset()**: Returns `void`
+- **MoveNext()**: Returns `bool`
 
