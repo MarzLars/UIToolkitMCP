@@ -1,7 +1,7 @@
 # UXML
 
 **Source:** https://docs.unity3d.com/Manual/UIE-UXML.html  
-**Last Updated:** Sun, 29 Mar 2026 17:40:34 GMT
+**Last Updated:** Sat, 04 Apr 2026 17:34:10 GMT
 
 ---
 
@@ -10,7 +10,7 @@
 
 * [unity.com](https://unity.com/)
 
-Version: **Unity 6.3 LTS** (6000.3)
+Version: **Unity 6.4** (6000.4)
 
 * Supported
 * Legacy
@@ -25,7 +25,7 @@ Language
 
 ## Unity Manual
 
-Version: Unity 6.3 LTSSelect a different version
+Version: Unity 6.4Select a different version
 
 Language
 : English
@@ -62,7 +62,7 @@ Coordinate and position systems
 
 Introduction to UXML
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 65670558. Built on: 2026-03-29.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 66025270. Built on: 2026-04-04.
 
 [Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 
