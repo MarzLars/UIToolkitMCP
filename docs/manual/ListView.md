@@ -1,7 +1,7 @@
 # ListView
 
 **Source:** https://docs.unity3d.com/Manual/UIE-uxml-element-ListView.html  
-**Last Updated:** Sat, 04 Apr 2026 17:34:10 GMT
+**Last Updated:** Sat, 11 Apr 2026 03:40:08 GMT
 
 ---
 
@@ -152,10 +152,22 @@ The following UXML example creates a ListView:
 </UXML>
 ```
 
+The following USS example styles the ListView:
+
+```
+.the-uxml-listview {
+    height: 200px;
+}
+
+.unity-list-view__item-content > .unity-label {
+    flex-grow: 1;
+    margin-top: 2px;
+}
+```
+
 The following C# example illustrates some of the customizable functionalities of the ListView:
 
 ```
-/// <sample>
 // Create some list of data, here simply numbers in interval [1, 1000]
 const int itemCount = 1000;
 var items = new List<string>(itemCount);
@@ -192,7 +204,6 @@ listView.selectedIndicesChanged += (selectedIndices) =>
     // Note: selectedIndices can also be used to get the selected items from the itemsSource directly or
     // by using listView.viewController.GetItemForIndex(index).
 };
-/// </sample>
 ```
 
 To try this example live in Unity, go to **Window** > **UI Toolkit** > **Samples**.
@@ -306,7 +317,7 @@ LongField
 
 MaskField
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 66025270. Built on: 2026-04-04.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 66318745. Built on: 2026-04-10.
 
 [Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 

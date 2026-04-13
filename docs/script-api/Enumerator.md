@@ -1,47 +1,25 @@
 # Enumerator
 
-**Namespace:** `UnityEngine.UIElements.Layout`
+**Namespace:** `UnityEngine.UIElements.UIR`
 
-**Source:** [Modules/UIElements/Core/Layout/LayoutNode+Hierarchy.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Layout/LayoutNode+Hierarchy.cs)
+**Source:** [Modules/UIElements/Core/Renderer/UIRNativePagedList.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Renderer/UIRNativePagedList.cs)
 
 ---
 
-## Documentation
-
-
-    LayoutList<LayoutHandle> Children => m_Access.GetNodeData(m_Handle).Children;
-
-Return the child count for this node.
-
-WARNING: This has no safety checks, use with caution.
-
-<param name="index"></param>
-
-<returns>The index of the specified child; -1 if it's not a child.</returns>
-
-<param name="child">The child node to insert.</param>
-
-This uses duck typing and does explicitly implement IEnumerable{YogaNode}.
-
 ## Source Code Reference
 
-For complete source code, see: [Enumerator.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Layout/LayoutNode+Hierarchy.cs)
+For complete source code, see: [Enumerator.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Renderer/UIRNativePagedList.cs)
 
 ### Public Properties
 
-- **Parent**: `LayoutNode`
-- **NextChild**: `LayoutNode`
+- **Enumerator**: `struct`
 
 ### Public Methods
 
-- **AddChild()**: Returns `void`
-- **RemoveChild()**: Returns `void`
-- **IndexOf()**: Returns `int`
-- **Insert()**: Returns `void`
-- **RemoveAt()**: Returns `void`
-- **Clear()**: Returns `void`
-- **GetEnumerator()**: Returns `Enumerator`
-- **Dispose()**: Returns `void`
+- **Add()**: Returns `void`
+- **GetCount()**: Returns `int`
 - **Reset()**: Returns `void`
-- **MoveNext()**: Returns `bool`
+- **Dispose()**: Returns `void`
+- **HasNext()**: Returns `bool`
+- **GetNext()**: Returns `T`
 
