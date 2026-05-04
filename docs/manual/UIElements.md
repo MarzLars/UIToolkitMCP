@@ -1,7 +1,7 @@
 # UIElements
 
 **Source:** https://docs.unity3d.com/Manual/UIElements.html  
-**Last Updated:** Sun, 26 Apr 2026 19:15:00 GMT
+**Last Updated:** Fri, 01 May 2026 06:43:04 GMT
 
 ---
 
@@ -71,12 +71,13 @@ UI Toolkit is a collection of features, resources, and tools for developing user
 * ⚙️ **Sample project**: [Dragon Crashers - UI Toolkit Sample project](https://assetstore.unity.com/packages/essentials/tutorial-projects/dragon-crashers-ui-toolkit-sample-project-231178)
 * ⚙️ **Sample project**: [QuizU - A UI toolkit sample](https://assetstore.unity.com/packages/essentials/tutorial-projects/quizu-a-ui-toolkit-sample-268492)
 * 📖 **E-Book**: [UI Toolkit for advanced Unity developers](best-practice-guides/ui-toolkit-for-advanced-unity-developers/bpg-uiad-index.html)
+* 📚 **Documentation**: [Accessibility](accessibility/_index.html)
 
 Comparison of UI systems in Unity
 
 Introduction to UI Toolkit
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 67166240. Built on: 2026-04-26.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 67440322. Built on: 2026-05-01.
 
 [Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 
