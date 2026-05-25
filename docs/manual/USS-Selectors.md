@@ -1,7 +1,7 @@
 # USS-Selectors
 
 **Source:** https://docs.unity3d.com/Manual/UIE-USS-Selectors.html  
-**Last Updated:** Thu, 14 May 2026 22:59:29 GMT
+**Last Updated:** Fri, 22 May 2026 09:40:35 GMT
 
 ---
 
@@ -64,6 +64,7 @@ You can combine simple selectors into complex selectors, or append [pseudo-class
 | [Selectors list](UIE-USS-Selectors-list.html) | Create a comma-separated list of selectors that share the same style rule. |
 | [Pseudo-classes](UIE-USS-Selectors-Pseudo-Classes.html) | Use pseudo-classes with selectors to target elements that are in a specific state. |
 | [Selector precedence](UIE-uss-selector-precedence.html) | Understand USS precedence when multiple USS rules target the same elements. |
+| [Check pseudo-state of a control](ui-systems/check-pseudo-state.html) | Check the pseudo-state of a control to ensure styles apply correctly. |
 
 ## Additional resources
 
@@ -73,7 +74,7 @@ Introduction to USS
 
 Type selectors
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 68172537. Built on: 2026-05-14.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 68635692. Built on: 2026-05-22.
 
 [Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 

@@ -1,7 +1,7 @@
 # USS
 
 **Source:** https://docs.unity3d.com/Manual/UIE-USS.html  
-**Last Updated:** Thu, 14 May 2026 22:59:29 GMT
+**Last Updated:** Fri, 22 May 2026 09:40:34 GMT
 
 ---
 
@@ -57,6 +57,7 @@ You can style your UI with a Unity Style Sheet (USS). USS files are text files i
 | [Best practices for USS](UIE-USS-WritingStyleSheets.html) | Understand what you need to know when you write USS. |
 | [Theme Style Sheet (TSS)](UIE-tss.html) | Learn how to use TSS files for management purposes. |
 | [Apply masking effects in UI Toolkit](UIE-masking.html) | Learn how to use USS to apply masking effects. |
+| [Apply post-processing effects with USS filter](ui-systems/uss-filter.html) | Apply **post-processing**A process that improves product visuals by applying filters and effects before the image appears on screen. You can use post-processing effects to simulate physical camera and film properties, for example Bloom and Depth of Field. [More info](PostProcessingOverview.html) post processing, postprocessing, postprocess See in [Glossary](Glossary.html#post-processing) effects to a visual element, such as blur, color correction, or other custom effects. |
 | [UI Shader Graph](ui-systems/ui-shader-graph.html) | Use **Shader**A program that runs on the GPU. [More info](Shaders.html) See in [Glossary](Glossary.html#shader) Graph to create unique visual styles and effects for your UI elements, such as gradients, animations, or color blending. |
 
 ## Additional resources
@@ -69,7 +70,7 @@ Create a custom inventory property drawer
 
 Introduction to USS
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 68172537. Built on: 2026-05-14.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 68635692. Built on: 2026-05-22.
 
 [Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 
