@@ -1,25 +1,29 @@
 # Enumerator
 
-**Namespace:** `UnityEngine.UIElements.UIR`
+**Namespace:** `UnityEngine.UIElements`
 
-**Source:** [Modules/UIElements/Core/Renderer/UIRNativePagedList.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Renderer/UIRNativePagedList.cs)
+**Source:** [Modules/UIElements/ScriptBindings/VisualNodeClassData.bindings.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/ScriptBindings/VisualNodeClassData.bindings.cs)
 
 ---
 
+## Documentation
+
+<exception cref="IndexOutOfRangeException">The given index is out of range.</exception>
+
+<exception cref="IndexOutOfRangeException">The given index is out of range.</exception>
+
 ## Source Code Reference
 
-For complete source code, see: [Enumerator.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Renderer/UIRNativePagedList.cs)
+For complete source code, see: [Enumerator.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/ScriptBindings/VisualNodeClassData.bindings.cs)
 
 ### Public Properties
 
-- **Enumerator**: `struct`
+- **Count**: `int`
 
 ### Public Methods
 
-- **Add()**: Returns `void`
-- **GetCount()**: Returns `int`
+- **MoveNext()**: Returns `bool`
 - **Reset()**: Returns `void`
 - **Dispose()**: Returns `void`
-- **HasNext()**: Returns `bool`
-- **GetNext()**: Returns `T`
+- **GetEnumerator()**: Returns `Enumerator`
 
