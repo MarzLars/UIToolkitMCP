@@ -8,26 +8,26 @@
 
 ## Documentation
 
-This class is added to every `VisualElement` created from UXML.
 
-This class defines the MultiColumnListView element properties that you can use in a UI document asset (UXML file).
-
-<param name="bag">The attribute bag.</param>
+    [UxmlElement(libraryPath = "Containers")]
+    [Icon("UIToolkit/Icons/MultiColumnListView.png")]
 
 For a default implementation, set `sortingMode` to `ColumnSortingMode.Default`.
-
-
-        [CreateProperty]
-
-
-        [CreateProperty]
-
-
-        [Obsolete("sortingEnabled has been deprecated. Use sortingMode instead.", false)]
 
 The `Default` mode uses the sorting algorithm provided by `MultiColumnController`, acting on indices. You can also implement your
 
 __Note__: If there is at least one sorted column, reordering is temporarily disabled.
+
+
+        [UxmlObjectReference]
+        [CreateProperty]
+
+
+        [UxmlObjectReference]
+        [CreateProperty]
+
+
+        [Obsolete("sortingEnabled has been deprecated. Use sortingMode instead.", false)]
 
 
 **Remarks:**
@@ -39,15 +39,12 @@ For complete source code, see: [MultiColumnListView.cs](https://github.com/Unity
 
 ### Public Properties
 
+- **sortingMode**: `ColumnSortingMode`
 - **columns**: `Columns`
 - **sortColumnDescriptions**: `SortColumnDescriptions`
 - **sortingEnabled**: `bool`
-- **sortingMode**: `ColumnSortingMode`
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **SetViewController()**: Returns `void`
 

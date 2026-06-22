@@ -9,17 +9,22 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement]
+    [Icon("UIToolkit/Icons/ObjectField.png")]
 
 
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">The attribute bag.</param>
+        [UxmlAttribute]
+        [CreateProperty]
 
 
         [CreateProperty]
 
 
+        [UxmlAttribute]
+        [CreateProperty]
+
+
+        [UxmlAttribute("type"), UxmlTypeReference(typeof(Object))]
         [CreateProperty]
 
 ## Source Code Reference
@@ -28,15 +33,14 @@ For complete source code, see: [ObjectField.cs](https://github.com/Unity-Technol
 
 ### Public Properties
 
-- **objectType**: `Type`
 - **allowSceneObjects**: `bool`
+- **allowBuiltinResources**: `bool`
+- **objectType**: `Type`
 - **isObjectMissing**: `bool`
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **SetValueWithoutNotify()**: Returns `void`
 - **Update()**: Returns `void`
+- **RegisterDefaultDragAndDrop()**: Returns `void`
 

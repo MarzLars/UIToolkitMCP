@@ -12,17 +12,18 @@ A Foldout consists of a `Toggle` sub-element and an empty `VisualElement`. The e
 
 an arrow sprite instead of the `Toggle` control's usual checkbox. The arrow points right when the toggle is
 
-This class is added to every `VisualElement` created from UXML.
 
-This class defines the Foldout element properties that you can use in a UXML asset.
+    [UxmlElement(libraryPath = "Controls")]
+    [Icon("UIToolkit/Icons/Foldout.png")]
 
-<param name="bag">The attribute bag.</param>
+
+        [MultilineTextField]
+        [CreateProperty]
+        [UxmlAttribute]
 
 
         [CreateProperty]
-
-
-        [CreateProperty]
+        [UxmlAttribute]
 
 visible, and false if the Foldout is closed, and its contents are hidden.
 
@@ -57,14 +58,11 @@ For complete source code, see: [Foldout.cs](https://github.com/Unity-Technologie
 ### Public Properties
 
 - **focusable**: `bool`
-- **toggleOnLabelClick**: `bool`
 - **text**: `string`
+- **toggleOnLabelClick**: `bool`
 - **value**: `bool`
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **SetValueWithoutNotify()**: Returns `void`
 

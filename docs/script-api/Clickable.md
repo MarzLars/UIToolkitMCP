@@ -16,22 +16,6 @@ The callback methods registered to this event should have an `EventBase` paramet
 
 <example>
 
-<![CDATA[
-
-{
-
-button.clickedWithEventInfo += (EventBase evt) =>
-
-int clickCount = ((IPointerEvent)evt).clickCount;
-
-Debug.Log("Button was single-clicked.");
-
-Debug.Log("Button was double-clicked.");
-
-return button;
-
-]]>
-
 </example>
 
 The @@clicked@@ and @@clickedWithEventInfo@@ events are invoked when any of the following conditions occur:
@@ -58,18 +42,6 @@ This manipulator makes use of pointer capture.
 
 <example>
 
-<![CDATA[
-
-{
-
-button.clicked += () =>
-
-Debug.Log("Button was pressed!");
-
-return button;
-
-]]>
-
 </example>
 
 When you use this constructor, a click event is invoked repeatedly at regular intervals
@@ -77,6 +49,8 @@ When you use this constructor, a click event is invoked repeatedly at regular in
 <param name="handler">The method to call when the clickable is clicked.</param>
 
 <param name="interval">Determines the time delta between event repetition. Value is defined in milliseconds. Applies if interval is greater than @@0@@.</param>
+
+<code source="../../../Modules/UIElements/Tests/UIElementsExamples/Assets/ui-toolkit-manual-code-examples/doc-examples/ClickableEditorWindow.cs" />
 
 When you use this constructor, the event (usually a `PointerUpEvent` or a `NavigationSubmitEvent`)
 
@@ -91,8 +65,4 @@ For complete source code, see: [Clickable.cs](https://github.com/Unity-Technolog
 ### Public Properties
 
 - **lastMousePosition**: `Vector2`
-
-### Public Methods
-
-- **CreateButton()**: Returns `VisualElement`
 

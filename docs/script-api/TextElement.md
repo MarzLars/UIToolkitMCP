@@ -10,23 +10,33 @@
 
 Use this as the super class if you are declaring a custom VisualElement that displays text. For example, `Button` or `Label` use this as their base class. For more information, refer to [wiki:UIE-uxml-element-TextElement|UXML element TextElement].
 
+`TextElement` and before the geometry is sent to the renderer.
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">Bag of attributes where to get the value from.</param>
+implement custom per‑glyph effects.
 
 Changing this value will implicitly invoke the `INotifyValueChanged{T}.value` setter, which will raise a `ChangeEvent{T}` of type string.
 
+Unlike assigning to `text`, this method writes directly into an internal
+
+A `ChangeEvent{T}` of type `string` is raised only when listeners
+
+present, the method is fully allocation-free.
+
+<param name="text">The character span to set as the element's text content.</param>
+
+<param name="start">The starting index in the array.</param>
+
+<param name="format">An optional standard or custom numeric format string.</param>
+
 
         [CreateProperty]
+        [UxmlAttribute]
 
 If this setting is enabled, the global Emoji Fallback list will be searched first for characters defined as
 
 
         [CreateProperty]
+        [UxmlAttribute]
 
 When set to `true`, escape sequences (such as `\n`, `\t`)
 
@@ -50,13 +60,21 @@ The text Element hides elided text, and displays an ellipsis ('...') to indicate
 
 <returns>The horizontal and vertical size needed to display the text string.</returns>
 
+<param name="width">Suggested width. Can be zero.</param>
+
+<param name="height">Suggested height.</param>
+
+<param name="fontsize">Optional parameter that override the fontSize that would be applied on the visualElement.</param>
+
+Call this method if you modify assets that influence text generation at runtime,
+
 ## Source Code Reference
 
 For complete source code, see: [TextElement.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/TextElement.cs)
 
 ### Public Properties
 
-- **uxmlChildElementsDescription**: `IEnumerable<UxmlChildElementDescription>`
+- **PostProcessTextVertices**: `Action<GlyphsEnumerable>`
 - **text**: `string`
 - **enableRichText**: `bool`
 - **emojiFallbackSupport**: `bool`
@@ -66,8 +84,7 @@ For complete source code, see: [TextElement.cs](https://github.com/Unity-Technol
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
+- **SetText()**: Returns `void`
 - **MeasureTextSize()**: Returns `Vector2`
+- **MarkDirtyText()**: Returns `void`
 

@@ -8,6 +8,9 @@
 
 ## Documentation
 
+
+    [Serializable, StructLayout(LayoutKind.Sequential, Size = 24)]
+
 <undoc/>
 
 <undoc/>

@@ -8,16 +8,7 @@
 
 ## Documentation
 
-
-    LayoutList<LayoutHandle> Children => m_Access.GetNodeData(m_Handle).Children;
-
-Return the child count for this node.
-
-WARNING: This has no safety checks, use with caution.
-
-<param name="index"></param>
-
-<returns>The index of the specified child; -1 if it's not a child.</returns>
+<returns>True if @@child@@ is a child of this node</returns>
 
 <param name="child">The child node to insert.</param>
 
@@ -30,15 +21,16 @@ For complete source code, see: [Enumerator.cs](https://github.com/Unity-Technolo
 ### Public Properties
 
 - **Parent**: `LayoutNode`
-- **NextChild**: `LayoutNode`
+- **FirstChild**: `LayoutNode`
+- **NextSibling**: `LayoutNode`
+- **PrevSiblingRing**: `LayoutNode`
 
 ### Public Methods
 
+- **Contains()**: Returns `bool`
 - **AddChild()**: Returns `void`
+- **InsertBefore()**: Returns `void`
 - **RemoveChild()**: Returns `void`
-- **IndexOf()**: Returns `int`
-- **Insert()**: Returns `void`
-- **RemoveAt()**: Returns `void`
 - **Clear()**: Returns `void`
 - **GetEnumerator()**: Returns `Enumerator`
 - **Dispose()**: Returns `void`

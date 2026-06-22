@@ -10,12 +10,8 @@
 
 
     [MovedFrom(true, UpgradeConstants.EditorNamespace, UpgradeConstants.EditorAssembly)]
-
-
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement(libraryPath = "Numeric Fields")]
+    [Icon("UIToolkit/Icons/DoubleField.png")]
 
 <returns>The double as string.</returns>
 
@@ -29,6 +25,5 @@ For complete source code, see: [DoubleField.cs](https://github.com/Unity-Technol
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
 - **ApplyInputDeviceDelta()**: Returns `void`
 

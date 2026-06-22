@@ -45,16 +45,3 @@ For complete source code, see: [ConverterGroup.cs](https://github.com/Unity-Tech
 - **displayName**: `string`
 - **description**: `string`
 
-### Public Methods
-
-- **Equals()**: Returns `bool`
-- **GetHashCode()**: Returns `int`
-- **Create()**: Returns `TypeConverterRegistry`
-- **Register()**: Returns `void`
-- **Unregister()**: Returns `void`
-- **GetConverter()**: Returns `Delegate`
-- **TryGetConverter()**: Returns `bool`
-- **GetAllTypesConvertingToType()**: Returns `void`
-- **GetAllTypesConvertingFromType()**: Returns `void`
-- **GetAllConversions()**: Returns `void`
-

@@ -8,17 +8,20 @@
 
 ## Documentation
 
-<undoc/>
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+
+    [UxmlElement]
 
 
         [CreateProperty]
+        [UxmlAttribute]
 
 
         [CreateProperty]
+        [UxmlAttribute]
 
 
         [CreateProperty]
+        [UxmlAttribute]
 
 <undoc/>
 
@@ -79,9 +82,8 @@ progressBar.value += 2f;
 
 </example>
     [MovedFrom(true, UpgradeConstants.EditorNamespace, UpgradeConstants.EditorAssembly)]
-
-<undoc/>
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement(libraryPath = "Controls")]
+    [Icon("UIToolkit/Icons/ProgressBar.png")]
 
 ## Source Code Reference
 
@@ -89,16 +91,13 @@ For complete source code, see: [ProgressBar.cs](https://github.com/Unity-Technol
 
 ### Public Properties
 
-- **title**: `string`
 - **lowValue**: `float`
 - **highValue**: `float`
+- **title**: `string`
 - **value**: `float`
 
 ### Public Methods
 
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **SetValueWithoutNotify()**: Returns `void`
 - **CreateProgressBar()**: Returns `ProgressBar`
-- **CreateInstance()**: Returns `object`
 

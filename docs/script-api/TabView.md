@@ -18,11 +18,6 @@ view-data-key, which is the default value, the state of the tabs will not persis
 
 For more information, refer to [wiki:UIE-uxml-element-TabView|UXML element TabView].
 
-
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-This class defines the properties of a TabView element that you can use in a UXML asset.
-
 This callback receives two tabs, the first being the previously selected tab and the second
 
 The first argument is source index, second is destination index.
@@ -39,6 +34,7 @@ The default value is `false`.
 
 
         [CreateProperty]
+        [UxmlAttribute]
 
 If the TabView contains a view-data-key, reorder the tab only after the view data is applied. Otherwise, the view data will override the order.
 
@@ -57,9 +53,6 @@ For complete source code, see: [TabView.cs](https://github.com/Unity-Technologie
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **OnBeforeSerialize()**: Returns `void`
 - **OnAfterDeserialize()**: Returns `void`
 - **ReorderTab()**: Returns `void`

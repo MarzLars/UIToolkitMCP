@@ -8,6 +8,9 @@
 
 ## Documentation
 
+
+    [Serializable]
+
 This value is only valid if the `keyword` is `StyleKeyword.Undefined`.
 
 <undoc/>

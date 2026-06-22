@@ -13,10 +13,10 @@ For complete source code, see: [CameraRayEnumerator.cs](https://github.com/Unity
 ### Public Methods
 
 - **Update()**: Returns `void`
-- **MakeRay()**: Returns `IEnumerable<(Ray, Camera)>`
+- **MakeRay()**: Returns `IEnumerable<(Ray, Camera, bool)>`
 - **MoveNext()**: Returns `bool`
 - **Reset()**: Returns `void`
-- **GetEnumerator()**: Returns `IEnumerator<(Ray, Camera)>`
+- **GetEnumerator()**: Returns `IEnumerator<(Ray, Camera, bool)>`
 - **GetPooled()**: Returns `CameraRayEnumerator`
 - **Dispose()**: Returns `void`
 

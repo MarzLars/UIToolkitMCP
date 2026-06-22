@@ -8,6 +8,9 @@
 
 ## Documentation
 
+
+    [Serializable]
+
 <returns>A new FontDefinition object.</returns>
 
 <returns>A new FontDefinition object.</returns>

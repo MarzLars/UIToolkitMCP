@@ -13,6 +13,16 @@
 
 <param name="indices">The triangle list indices. Must be a multiple of 3. All indices must be initialized.</param>
 
+<param name="indices">The triangle list indices. Must be a multiple of 3. All indices must be initialized.</param>
+
+<param name="textureOptions">Flags that apply to the provided texture for this draw call.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+Records a draw command with a `UIMesh` bundle.
+
+Records a draw command with a `UIMesh` bundle.
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
 ## Source Code Reference
 
 For complete source code, see: [MeshGenerationNode.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Renderer/UIRMeshGenerationNode.cs)

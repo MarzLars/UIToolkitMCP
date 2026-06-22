@@ -12,12 +12,13 @@ The ToggleButtonGroup has a label and a group of interactable `Button` elements.
 
 To create buttons, add `Button` elements directly to the ToggleButtonGroup. This will automatically
 
-This class is added to every `VisualElement` that is created from UXML.
 
-This class defines the properties of a ToggleButtonGroup element that you can use in a UXML asset.
+    [UxmlElement(null, typeof(Button), libraryPath = "Controls")]
+    [Icon("UIToolkit/Icons/ToggleButtonGroup.png")]
 
 
         [CreateProperty]
+        [UxmlAttribute]
 
 When the property value is false, the control will automatically set the first available button to checked.
 
@@ -34,8 +35,6 @@ For complete source code, see: [ToggleButtonGroup.cs](https://github.com/Unity-T
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **SetValueWithoutNotify()**: Returns `void`
+- **GetButton()**: Returns `Button`
 

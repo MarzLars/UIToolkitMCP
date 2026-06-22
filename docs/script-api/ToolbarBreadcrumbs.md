@@ -39,9 +39,8 @@ while (breadcrumbs.childCount > 1)
 ]]>
 
 </example>
-
-
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement]
+    [Icon("UIToolkit/Icons/ToolbarBreadcrumbs.png")]
 
 <param name="clickedEvent">The action to perform when the a users clicks the item in the toolbar.</param>
 
@@ -52,7 +51,6 @@ For complete source code, see: [ToolbarBreadcrumbs.cs](https://github.com/Unity-
 ### Public Methods
 
 - **CreateBreadcrumbs()**: Returns `void`
-- **CreateInstance()**: Returns `object`
 - **PushItem()**: Returns `void`
 - **PopItem()**: Returns `void`
 

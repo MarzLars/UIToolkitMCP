@@ -75,9 +75,31 @@ and hasn't been invoked yet, this method has no effect.
 
 <param name="useTrickleDown">By default, this callback is called during the BubbleUp phase. Pass TrickleDown.TrickleDown to call this callback during the TrickleDown phase.</param>
 
+If the event handler is already registered for the same phase (either TrickleDown or BubbleUp), this method has no effect.
+
+Refer to the [wiki:UIE-Events-Handling|Handle event callbacks and value changes] manual page for more information and examples.
+
+<seealso cref="PropagationPhase"/>
+
+<param name="callbackOptions">Extra properties to set for the callback.</param>
+
+If the event handler is already registered for the same phase (either TrickleDown or BubbleUp), this method has no effect.
+
+Refer to the [wiki:UIE-Events-Handling|Handle event callbacks and value changes] manual page for more information and examples.
+
+<seealso cref="PropagationPhase"/>
+
+<param name="userArgs">Data to pass to the callback. Use this argument to avoid closing on local variables.</param>
+
 <param name="callback">The callback to remove. If this callback was never registered, nothing happens.</param>
 
 <param name="callback">The callback to remove. If this callback was never registered, nothing happens.</param>
+
+<param name="callback">The callback to remove. If this callback was never registered, nothing happens.</param>
+
+<param name="callback">The callback to remove. If this callback was never registered, nothing happens.</param>
+
+This method throws an `InvalidOperationException` if called while an event callback is in the
 
 UI Toolkit sends events to visual elements through the panel. The event is sent to the event handler's registered callbacks.
 
@@ -175,6 +197,7 @@ For complete source code, see: [IEventHandler.cs](https://github.com/Unity-Techn
 
 ### Public Methods
 
+- **UnregisterAllRemovableCallbacks()**: Returns `void`
 - **HasTrickleDownHandlers()**: Returns `bool`
 - **HasBubbleUpHandlers()**: Returns `bool`
 

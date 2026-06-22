@@ -30,10 +30,6 @@ The TreeView creates VisualElements for the visible items, and supports binding 
 
 For the difference between IDs and indices, refer to `BaseVerticalCollectionView`.
 
-This class is added to every `VisualElement` created from UXML.
-
-This class defines the TreeView element properties that you can use in a UI document asset (UXML file).
-
 This callback needs to call a function that constructs a blank `VisualElement` that is
 
 /// The collection view automatically creates enough elements to fill the visible area, and adds more if the area
@@ -90,10 +86,4 @@ For complete source code, see: [TreeView.cs](https://github.com/Unity-Technologi
 ### Public Properties
 
 - **itemTemplate**: `VisualTreeAsset`
-
-### Public Methods
-
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 

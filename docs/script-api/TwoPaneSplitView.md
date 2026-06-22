@@ -9,19 +9,20 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [CreateProperty]
+    [Icon("UIToolkit/Icons/TwoPaneSplitView.png")]
+    [UxmlElement]
 
 
         [CreateProperty]
+        [UxmlAttribute]
 
 
         [CreateProperty]
+        [UxmlAttribute]
+
+
+        [CreateProperty]
+        [UxmlAttribute]
 
 <param name="fixedPaneStartDimension">Set an inital width or height for the fixed pane.</param>
 
@@ -36,7 +37,6 @@ For complete source code, see: [TwoPaneSplitView.cs](https://github.com/Unity-Te
 
 ### Public Properties
 
-- **uxmlChildElementsDescription**: `IEnumerable<UxmlChildElementDescription>`
 - **fixedPaneIndex**: `int`
 - **fixedPaneInitialDimension**: `float`
 - **orientation**: `TwoPaneSplitViewOrientation`
@@ -45,9 +45,6 @@ For complete source code, see: [TwoPaneSplitView.cs](https://github.com/Unity-Te
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **CollapseChild()**: Returns `void`
 - **UnCollapse()**: Returns `void`
 

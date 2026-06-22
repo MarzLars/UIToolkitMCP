@@ -77,7 +77,7 @@ The value of this property changes during the propagation process for each eleme
 
 Gets the difference between the pointer's position during the previous pointer event and its position during the
 
-This value is based on `IPointerEvent.position` and is expressed in panel world coordinates.
+This value is based on `IPointerEvent.position` and is expressed in panel coordinates.
 
 
         float deltaTime { get; }

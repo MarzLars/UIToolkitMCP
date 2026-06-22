@@ -9,12 +9,14 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [Icon("UIToolkit/Icons/PropertyField.png")]
+    [UxmlElement]
 
 
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+        [UxmlAttribute]
 
 
+        [UxmlAttribute]
         [CreateProperty]
 
 You will still have to call Bind() on the PropertyField afterwards.
@@ -39,8 +41,5 @@ For complete source code, see: [PropertyField.cs](https://github.com/Unity-Techn
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **RegisterValueChangeCallback()**: Returns `void`
 

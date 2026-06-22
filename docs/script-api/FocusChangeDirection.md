@@ -10,7 +10,7 @@
 
 The focus is used to designate an element that will receive keyboard and navigation events.
 
-A Panel's current focused element can be retrieved using its FocusController's focusedElement property.
+You can retrieve a panel's current focused element using its FocusController's `FocusController.focusedElement` property.
 
 <example>
 
@@ -18,44 +18,43 @@ A Panel's current focused element can be retrieved using its FocusController's f
 
 <seealso cref="UIElements.NavigationEventBase{T}"/>
 
-The element can only be focused if its canGrabFocus property is true.
-
-<seealso cref="Focusable.Focus"/>
+If false, the element can't receive focus.
 
 Setting the `tabIndex` value to less than `0` (for example, `−1`) removes the element from the focus ring and tab navigation.
 
-If the element delegates its focus, when it would become focused, one of its child or recursive child
+If the element delegates its focus, when it becomes focused, one of its child or recursive child
 
-The element that receives the focus cannot be chosen manually.
+///\\
 
-/// The chosen element will be the first child or recursive child that
+Instead, it's determined automatically using a set of rules.
 
-- can be focused (see `Focusable.canGrabFocus`,
+The chosen element will be the first child or recursive child that
+
+- can be <see cref="Focusable.canGrabFocus">focused</see>,
 
 - is not the child or recursive child of a content container or of another element that delegates focus, and
+
+/// For more information, refer to [wiki:UIE-focus-order|Focus system in UI Toolkit].
 
 <seealso cref="VisualElement.contentContainer"/>
 
 This property is used to prevent certain elements from receiving the focus in this case (e.g Foldout)
 
-An element can be focused if it fulfills all the following conditions:
+Returns true if the element meets all the following conditions:
 
-- It's focusable. See `Focusable.focusable`.
+- It's <see cref="Focusable.focusable">focusable</see>.
 
-- It's visible. See `VisualElement.visible`.
+- It's <see cref="VisualElement.visible">visible</see>.
 
-- If it has a parent that delegates focus (see `Focusable.delegatesFocus`),
+- It has a parent that <see cref="Focusable.delegatesFocus">delegates focus</see>, and the parent must also meet these conditions.
 
-<seealso cref="VisualElement.enabledInHierarchy"/>
+For more information, refer to [wiki:UIE-focus-order|Focus system in UI Toolkit].
 
 <seealso cref="IStyle.display"/>
 
-<seealso cref="Focusable.Focus"/>
-        [CreateProperty(ReadOnly = true)]
+The element might not become focused if:
 
-The element may not become focused if:
-
-- The element cannot be focused. See `Focusable.canGrabFocus`.
+- The element cannot be <see cref="Focusable.canGrabFocus">focused</see>.
 
 /// A Panel's current focused element can be retrieved using its FocusController's focusedElement property.
 
@@ -64,8 +63,6 @@ As long as an element is focused, it receives all keyboard and navigation events
 If a focus change is requested during another event's propagation, the change is only applied
 
 <code source="../Tests/UIElementsExamples/Assets/Examples/FocusExample.cs"/>
-
-<seealso cref="Focusable.canGrabFocus"/>
 
 <seealso cref="IFocusRing"/>
 

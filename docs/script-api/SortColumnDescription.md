@@ -17,22 +17,16 @@ The descending order.
     [Serializable, UxmlObject]
 
 
-        [Obsolete("UxmlObjectFactory<T> is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlObjectFactory<T> is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlObjectTraits<T> is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+        [CreateProperty]
+        [UxmlAttribute]
 
 
         [CreateProperty]
+        [UxmlAttribute]
 
 
         [CreateProperty]
-
-
-        [CreateProperty]
+        [UxmlAttribute]
 
 <param name="direction">The sort description.</param>
 
@@ -49,10 +43,4 @@ For complete source code, see: [SortColumnDescription.cs](https://github.com/Uni
 - **columnIndex**: `int`
 - **column**: `Column`
 - **direction**: `SortDirection`
-
-### Public Methods
-
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 

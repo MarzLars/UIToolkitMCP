@@ -17,6 +17,9 @@
 
     [EventCategory(EventCategory.EnterLeave)]
 
+
+    [EventCategory(EventCategory.PointerDown)]
+
 ## Source Code Reference
 
 For complete source code, see: [PointerOverLinkTagEvent.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Events/LinkTagEvent.cs)

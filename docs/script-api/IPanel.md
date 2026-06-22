@@ -70,6 +70,11 @@ The data source of the element was changed
 
 
         Picking = 1 << 20,
+
+Some property changed that potentially changes animation playback state results
+
+
+        Name = 1 << 22,
     }
 
 Offers a set of options that describe the intended usage patterns of a `VisualElement`.
@@ -160,35 +165,12 @@ Optimizes rendering of a `VisualElement` for frequent color changes, such as a b
 
 
         DynamicColor = 1 << 3,
-    }
 
-    //keep in sync with RenderHints in C++ (Modules/UIElements/RenderHints.h)
-    [Flags]
-    enum RenderHints
-    {
-        None = 0,
+Optimizes rendering of a `VisualElement` that is subject to have post-processing effects (filters) applied to it.
 
-        GroupTransform = 1 << 0, // Use uniform matrix to transform children
-        BoneTransform = 1 << 1, // Use GPU buffer to store transform matrices
-        ClipWithScissors = 1 << 2, // If clipping is requested on this element, prefer scissoring
-        MaskContainer = 1 << 3, // Use to prevent the next nested masks from modifying the stencil ref
-        DynamicColor = 1 << 4, // Use to store the color in shaderInfo storage
-        DynamicPostProcessing = 1 << 5, // Use to force the creation of a nested render tree
+The renderer will break the batch and render this element using a specialized shader.
 
-        // Whenever we change a render hint, we also set a dirty flag to indicate that it has changed
-        // This way, we don't need an additional field to store pending changes
-        DirtyOffset = 6,
-        DirtyGroupTransform = GroupTransform << DirtyOffset,
-        DirtyBoneTransform = BoneTransform << DirtyOffset,
-        DirtyClipWithScissors = ClipWithScissors << DirtyOffset,
-        DirtyMaskContainer = MaskContainer << DirtyOffset,
-        DirtyDynamicColor = DynamicColor << DirtyOffset,
-        DirtyDynamicPostProcessing = DynamicPostProcessing << DirtyOffset,
-        DirtyAll = DirtyGroupTransform | DirtyBoneTransform | DirtyClipWithScissors | DirtyMaskContainer | DirtyDynamicColor | DirtyDynamicPostProcessing,
-    }
-
-    struct PanelClearSettings
-    {
+VisualElements that have a significant impact on GPU performance.
 
 
         VisualElement visualTree { get; }
@@ -201,6 +183,10 @@ The context type of a Panel affects how it resolves certain styles and receives 
         ContextType contextType { get; }
 
 Return the focus controller for this panel.
+
+Modifying this property rebuilds the rendering commands and meshes so that the new GPU vertex
+
+unless a custom shader requires the additional channels.
 
 It doesn't return the following:
 
@@ -254,12 +240,19 @@ The screen scaling factor could be overriden in the editor settings by the user 
 
         float scaledPixelsPerPoint { get; }
 
-
     }
 
-Implement this to receive callbacks for visual element changes.
+Provides extension methods for Panel utilities.
 
-Related To `PanelSettings.SetPanelChangeReceiver`
+If the <paramref name="panel"/> is an `EditorPanel`, creates a `GenericOSMenu`.
+
+<returns>An instance of `AbstractGenericMenu`.</returns>
+
+This interface is exclusively available in development builds and the Editor, as it serves as a debug feature that complements the profiling of an application.
+
+
+**Remarks:**
+
 
 This method is exclusively available in development builds and the Editor, as it serves as a debug feature that complements the profiling of an application.
 
@@ -270,8 +263,6 @@ This method is exclusively available in development builds and the Editor, as it
 Related to `PanelSettings.SetPanelChangeReceiver`
 
 <param name="element"> The element that changed.</param>
-
-//
 
 This method is exclusively available in development builds and the Editor, as it serves as a debug feature that complements the profiling of an application.
 
@@ -290,42 +281,44 @@ For complete source code, see: [IPanel.cs](https://github.com/Unity-Technologies
 - **ContextType**: `enum`
 - **VersionChangeType**: `enum`
 - **UsageHints**: `enum`
-- **currentOffset**: `Matrix4x4`
-- **mousePosition**: `Vector2`
-- **currentWorldClip**: `Rect`
-- **repaintEvent**: `Event`
+- **PanelExtensions**: `class`
 - **IDebugPanelChangeReceiver**: `interface`
 - **enableAssetReload**: `bool`
 - **scaledPixelsPerPoint**: `float`
 - **referenceSpritePixelsPerUnit**: `float`
+- **extraVertexChannels**: `ExtraVertexChannels`
+- **duringLayoutPhase**: `bool`
 - **isDirty**: `bool`
 - **contextualMenuManager**: `ContextualMenuManager`
 - **isFlat**: `bool`
 - **panelDebug**: `IPanelDebug`
 - **liveReloadSystem**: `ILiveReloadSystem`
-- **timerEventScheduler**: `TimerEventScheduler`
 - **ownerObject**: `ScriptableObject`
 - **contextType**: `ContextType`
 - **saveViewData**: `SavePersistentViewData`
+- **getViewDataDictionary**: `GetViewDataDictionary`
+- **IMGUIEventInterests**: `EventInterests`
 
 ### Public Methods
 
+- **CreateMenu()**: Returns `AbstractGenericMenu`
 - **OnVisualElementChange()**: Returns `void`
 - **Dispose()**: Returns `void`
+- **TimeSinceStartupMs()**: Returns `long`
+- **TimeSinceStartupSeconds()**: Returns `double`
 - **Pick()**: Returns `VisualElement`
+- **RegisterChangeProcessor()**: Returns `void`
+- **UnregisterChangeProcessor()**: Returns `void`
 - **Render()**: Returns `void`
 - **ResetRendering()**: Returns `void`
 - **ValidateFocus()**: Returns `void`
-- **TimeSinceStartupMs()**: Returns `long`
 - **PickAll()**: Returns `VisualElement`
 - **ValidateLayout()**: Returns `void`
 - **UpdateAnimations()**: Returns `void`
 - **UpdateBindings()**: Returns `void`
 - **UpdateDataBinding()**: Returns `void`
 - **TickSchedulingUpdaters()**: Returns `void`
+- **UpdateAuthoring()**: Returns `void`
 - **ApplyStyles()**: Returns `void`
 - **UpdateAssetTrackers()**: Returns `void`
-- **UpdateForRepaint()**: Returns `void`
-- **DirtyStyleSheets()**: Returns `void`
-- **Repaint()**: Returns `void`
 

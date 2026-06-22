@@ -23,7 +23,11 @@ This is used by the code generator when a control is using `UxmlElementAttribute
 
 <param name="attributeNames">The pre-processed UXML attribute information.</param>
 
-This is used by the code generator when a control is using `UxmlElementAttribute` and
+
+**Remarks:**
+
+
+`UxmlAttributeAttribute`.
 
 ## Source Code Reference
 

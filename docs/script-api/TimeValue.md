@@ -13,6 +13,9 @@
 
 Interprets the time value as milliseconds.
 
+
+    [Serializable, StructLayout(LayoutKind.Sequential)]
+
 `TimeUnit.Second` is the default unit.
 
 `TimeUnit.Second` is the default unit.

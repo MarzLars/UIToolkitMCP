@@ -8,6 +8,13 @@
 
 ## Documentation
 
+Unity hides elements with namespaces that start with "Unity", "UnityEngine", and "UnityEditor".
+
+
+        Visible,
+
+The element is not visible in the UI Builder Library.
+
 To create a custom control, you must add the UxmlElement attribute to the custom control class definition.
 
 or one of its derived classes.
@@ -18,9 +25,9 @@ class is generated in the partial class.
 
 Inspector window in  the UI Builder.
 
-To hide it from the Library tab, provide the `HideInInspector` attribute.
+By default, the custom control appears in the Library tab in UI Builder.
 
-For an example of migrating a custom control from `UxmlFactory` and `UxmlTraits` to the `UxmlElement` and `UxmlAttributes` system,
+/// For an example of migrating a custom control from `UxmlFactory` and `UxmlTraits` to the `UxmlElement` and `UxmlAttributes` system,
 
 The following example creates a custom control with multiple attributes:
 
@@ -43,6 +50,37 @@ __Note__: You are still required to reference the classes' namespace in UXML.
 <example>
 
 <code source="../../../../Modules/UIElements/Tests/UIElementsExamples/Assets/Examples/UxmlElement_CustomButtonElement.uxml"/>
+
+<example>
+
+As a result, the elements within these namespaces are hidden from the UI Builder library by default.
+
+<code source="../../../../Modules/UIElements/Tests/UIElementsExamples/Assets/Examples/UxmlElement_LibraryVisibility.cs"/>
+
+Sub-paths can be created by using a forward slash (/).
+
+<param name="supportedTypes">An array of supported child element types. This can be passed as individual `Type` arguments.</param>
+
+
+    [AttributeUsage(AttributeTargets.Class)]
+
+Use this to provide custom instance creation logic, such as object pooling or dependency injection.
+
+///- Be a static method defined on the element type.
+
+- Accept no parameters.
+
+- Return an instance of the element type (or null to fall back to the default constructor).
+
+If this attribute is not found on the element, the source generator uses the default constructor (`new T()`).
+
+The following example uses a custom creation method for object pooling:
+
+</example>
+    [AttributeUsage(AttributeTargets.Method)]
+
+
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
 
 Convenience overload, shorthand for `Query&lt;T&gt;.Build().First().`
 
@@ -154,10 +192,13 @@ The following example creates a custom control and restricts the attribute type 
 
     [AttributeUsage(AttributeTargets.Field, Inherited = false)]
 
-A UXML object is a class that can be instantiated from UXML and contain UXML attributes.
+The UxmlSerializedData includes a generated `UxmlSerializedData.CreateInstance` method that uses the default constructor. You can use the `UxmlCreateInstanceMethodAttribute` to replace the default behaviour and provide your own creation method.
 
 
-    [AttributeUsage(AttributeTargets.Class, Inherited = false)]
+**Remarks:**
+
+
+By utilizing the `UxmlObjectReferenceAttribute` attribute, you can use a UXML object to associate complex data with a field, surpassing the capabilities of a single `UxmlAttributeAttribute`.
 
 You can utilize the UxmlObjectReferenceAttribute to indicate that a property or field is
 
@@ -215,5 +256,6 @@ For complete source code, see: [UxmlElementAttribute.cs](https://github.com/Unit
 
 ### Public Properties
 
+- **LibraryVisibility**: `enum`
 - **path**: `string`
 

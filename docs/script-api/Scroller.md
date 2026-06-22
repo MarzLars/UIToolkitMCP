@@ -17,24 +17,20 @@ A Scroller contains a `Slider` and two `RepeatButton`s for scrolling.
 <code source="../../../../Modules/UIElements/Tests/UIElementsExamples/Assets/Examples/Scroller_Example.cs"/>
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">The attribute bag.</param>
+        [CreateProperty]
+        [UxmlAttribute]
 
 
         [CreateProperty]
+        [UxmlAttribute]
 
 
         [CreateProperty]
+        [UxmlAttribute]
 
 
         [CreateProperty]
-
-
-        [CreateProperty]
+        [UxmlAttribute]
 
 ## Source Code Reference
 
@@ -42,20 +38,16 @@ For complete source code, see: [Scroller.cs](https://github.com/Unity-Technologi
 
 ### Public Properties
 
-- **uxmlChildElementsDescription**: `IEnumerable<UxmlChildElementDescription>`
 - **slider**: `Slider`
 - **lowButton**: `RepeatButton`
 - **highButton**: `RepeatButton`
-- **value**: `float`
 - **lowValue**: `float`
 - **highValue**: `float`
 - **direction**: `SliderDirection`
+- **value**: `float`
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **Adjust()**: Returns `void`
 - **ScrollPageUp()**: Returns `void`
 - **ScrollPageDown()**: Returns `void`

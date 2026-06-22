@@ -1,25 +1,20 @@
 # MaskField
 
-**Namespace:** `UnityEditor.UIElements`
+**Namespace:** `UnityEngine.UIElements`
 
-**Source:** [Editor/Mono/UIElements/Controls/MaskField.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Editor/Mono/UIElements/Controls/MaskField.cs)
+**Source:** [Modules/UIElements/Core/Controls/MaskField.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Controls/MaskField.cs)
 
 ---
 
 ## Documentation
 
 
+    [MovedFrom(true, UpgradeConstants.EditorNamespace, UpgradeConstants.EditorAssembly)]
+
+
         [CreateProperty]
 
 For more information, refer to [wiki:UIE-uxml-element-MaskField|UXML element MaskField].
-
-
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">The bag from where the attributes are taken.</param>
 
 <param name="defaultValue">The initial mask value for this field.</param>
 
@@ -31,7 +26,7 @@ For more information, refer to [wiki:UIE-uxml-element-MaskField|UXML element Mas
 
 ## Source Code Reference
 
-For complete source code, see: [MaskField.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Editor/Mono/UIElements/Controls/MaskField.cs)
+For complete source code, see: [MaskField.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Controls/MaskField.cs)
 
 ### Public Properties
 
@@ -44,7 +39,4 @@ For complete source code, see: [MaskField.cs](https://github.com/Unity-Technolog
 ### Public Methods
 
 - **SetValueWithoutNotify()**: Returns `void`
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 

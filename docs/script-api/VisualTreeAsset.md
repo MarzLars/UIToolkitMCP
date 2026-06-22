@@ -10,12 +10,32 @@
 
 /// **Note**: You can't generate a `VisualTreeAsset` from raw UXML at runtime.
 
+<example>
+
+<code source="../../Tests/UIElementsExamples/Assets/ui-toolkit-manual-code-examples/doc-examples/VisualTreeAssetExample.cs" />
+
+<undoc/>
+
 
         [VisibleToOtherModules("UnityEditor.UIBuilderModule")]
 
 <returns>The root of the tree of VisualElements that was just cloned.</returns>
 
 <returns>The root of the tree of VisualElements that was just cloned.</returns>
+
+<returns>The root of the tree of VisualElements that was just cloned.</returns>
+
+<param name="referenceTable">A table to use to resolve references.</param>
+
+This example shows how to use the `VisualElementAssetReferenceTable` to resolve references to VisualElements after calling CloneTree.
+
+</example>
+
+through an export => import operation.
+
+<param name="vta">The `VisualTreeAsset`.</param>
+
+This will add an authoring id to the root node if it is not already present.
 
 <undoc/>
         // TODO why is this public? It's not used internally and could be obtained by default(CreationContext)
@@ -50,8 +70,6 @@ For complete source code, see: [VisualTreeAsset.cs](https://github.com/Unity-Tec
 ### Public Methods
 
 - **Compare()**: Returns `int`
-- **GetField()**: Returns `UxmlObjectAsset`
-- **ToString()**: Returns `string`
 - **Instantiate()**: Returns `TemplateContainer`
 - **CloneTree()**: Returns `TemplateContainer`
 - **Equals()**: Returns `bool`

@@ -16,12 +16,6 @@ Upon Bind(), the InspectorElement will generate PropertyFields inside according 
 IMGUI should be used to generate property fields for default inspectors. These will be placed inside of a `IMGUIContainer`.
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
 **Remarks:**
 
 
@@ -34,6 +28,10 @@ The currently bound serialized object.
         Type m_BoundObjectType;
 
 The root element of this inspector. This can either be a full visual hierarchy or an IMGUIContainer.
+
+Placed either inline (non-sticky) or in the PropertyEditor header container (sticky).
+
+Populated once on attach; avoids repeated ancestor walks on subsequent rebuilds while attached.
 
 
         DefaultInspectorFramework m_DefaultInspectorFramework;
@@ -97,11 +95,27 @@ Initialized a new instance of `InspectorElement`.
             return m_Editor;
         }
 
-Adds default inspector property fields under a container VisualElement
+Adds default inspector property fields under a container VisualElement.
 
 <param name="container">The parent VisualElement</param>
 
 <param name="editor">The editor currently used</param>
+
+The following example shows how to fill a container with default inspector fields.
+
+<code source="../../../../Modules/UIElements/Tests/UIElementsExamples/Assets/Examples/InspectorElement_Example.cs"/>
+
+<param name="serializedObject">The SerializedObject to inspect.</param>
+
+<param name="propertiesToExclude">Properties to exclude when populating the Inspector. Properties with name matching `SerializedProperty.name` are skipped.</param>
+
+The following example shows how to fill a container with default Inspector fields.
+
+<code source="../../../../Modules/UIElements/Tests/UIElementsExamples/Assets/Examples/InspectorElement_Example.cs"/>
+
+<example>
+
+<code source="../../../../Modules/UIElements/Tests/UIElementsExamples/Assets/Examples/InspectorElement_ExampleExclude.cs"/>
 
 ## Source Code Reference
 
@@ -109,6 +123,5 @@ For complete source code, see: [InspectorElement.cs](https://github.com/Unity-Te
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
 - **FillDefaultInspector()**: Returns `void`
 

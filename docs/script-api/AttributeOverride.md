@@ -22,4 +22,7 @@ For complete source code, see: [AttributeOverride.cs](https://github.com/Unity-T
 
 - **NamesPathMatchesElementNamesPath()**: Returns `bool`
 - **AddSlotUsage()**: Returns `void`
+- **SetAttributeOverride()**: Returns `void`
+- **RemoveAttributeOverride()**: Returns `void`
+- **ResolveTemplate()**: Returns `VisualTreeAsset`
 

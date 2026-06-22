@@ -9,12 +9,8 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">Bag of attributes where the data comes from.</param>
+    [Icon("UIToolkit/Icons/LayerField.png")]
+    [UxmlElement]
 
 <param name="defaultValue">The initial layer value this field should use.</param>
 
@@ -30,8 +26,5 @@ For complete source code, see: [LayerField.cs](https://github.com/Unity-Technolo
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **SetValueWithoutNotify()**: Returns `void`
 

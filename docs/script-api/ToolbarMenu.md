@@ -9,10 +9,8 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement]
+    [Icon("UIToolkit/Icons/ToolbarMenu.png")]
 
 
             Default,
@@ -35,8 +33,4 @@ For complete source code, see: [ToolbarMenu.cs](https://github.com/Unity-Technol
 - **menu**: `DropdownMenu`
 - **text**: `string`
 - **variant**: `Variant`
-
-### Public Methods
-
-- **CreateInstance()**: Returns `object`
 

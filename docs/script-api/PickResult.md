@@ -12,7 +12,7 @@
 
 Results are appended in drawing order.
 
-<param name="document">The UI Document to pick from.</param>
+<param name="panelComponent">The panel component to pick from.</param>
 
 <param name="outResults">All elements that intersect the ray, in draw order from closest to farthest.</param>
 
@@ -23,6 +23,10 @@ Results are appended in drawing order.
 <param name="worldRay">A ray specified in absolute coordinates.</param>
 
 <returns>True if a pickable element intersects the ray, false otherwise.</returns>
+
+<param name="panelRay">A ray specified in panel world coordinates.</param>
+
+<param name="localRay">A ray specified in rootVisualElement coordinates.</param>
 
 <param name="element">The element to intersect with.</param>
 

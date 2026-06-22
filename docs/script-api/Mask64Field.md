@@ -1,15 +1,22 @@
 # Mask64Field
 
-**Namespace:** `UnityEditor.UIElements`
+**Namespace:** `UnityEngine.UIElements`
 
-**Source:** [Editor/Mono/UIElements/Controls/Mask64Field.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Editor/Mono/UIElements/Controls/Mask64Field.cs)
+**Source:** [Modules/UIElements/Core/Controls/Mask64Field.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Controls/Mask64Field.cs)
 
 ---
 
 ## Documentation
 
+The difference between Mask64Field and [UIElements.MarkField] is that Mask64Field supports a 64-bit bitmask while [UIElements.MarkField] supports a 32-bit bitmask. For more information, refer to [wiki:UIE-uxml-element-Mask64Field|UXML element Mask64Field].
+
 
         [CreateProperty]
+
+
+    [UxmlElement(libraryPath = "Controls")]
+    [Icon("UIToolkit/Icons/Mask64Field.png")]
+    [MovedFrom(true, UpgradeConstants.EditorNamespace, UpgradeConstants.EditorAssembly)]
 
 <param name="defaultValue">The initial mask value for this field.</param>
 
@@ -21,7 +28,7 @@
 
 ## Source Code Reference
 
-For complete source code, see: [Mask64Field.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Editor/Mono/UIElements/Controls/Mask64Field.cs)
+For complete source code, see: [Mask64Field.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Controls/Mask64Field.cs)
 
 ### Public Properties
 
@@ -34,6 +41,4 @@ For complete source code, see: [Mask64Field.cs](https://github.com/Unity-Technol
 ### Public Methods
 
 - **SetValueWithoutNotify()**: Returns `void`
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
 

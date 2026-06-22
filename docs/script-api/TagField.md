@@ -9,10 +9,8 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [Icon("UIToolkit/Icons/TagField.png")]
+    [UxmlElement]
 
 <param name="defaultValue">The initial tag value this field uses.</param>
 
@@ -28,8 +26,5 @@ For complete source code, see: [TagField.cs](https://github.com/Unity-Technologi
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **SetValueWithoutNotify()**: Returns `void`
 

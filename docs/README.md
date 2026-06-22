@@ -25,23 +25,19 @@ Documentation generated from Unity's C# reference source code on GitHub.
 **Source:** [Unity-Technologies/UnityCsReference](https://github.com/Unity-Technologies/UnityCsReference)
 
 
-### UnityEditor.Audio.Analytics
-
-- [UIAssetCounters](script-api/UIAssetCounters.md)
-
 ### UnityEditor.UIElements
 
-- [AttributeRecord](script-api/AttributeRecord.md)
+- [Category](script-api/Category.md)
 - [ColorField](script-api/ColorField.md)
 - [CurveField](script-api/CurveField.md)
 - [EnumFlagsField](script-api/EnumFlagsField.md)
+- [ExportContext](script-api/ExportContext.md)
 - [GradientField](script-api/GradientField.md)
 - [IToolbarMenuElement](script-api/IToolbarMenuElement.md)
+- [IUxmlUpgrader](script-api/IUxmlUpgrader.md)
 - [InspectorElement](script-api/InspectorElement.md)
 - [LayerField](script-api/LayerField.md)
 - [LayerMaskField](script-api/LayerMaskField.md)
-- [Mask64Field](script-api/Mask64Field.md)
-- [MaskField](script-api/MaskField.md)
 - [ObjectField](script-api/ObjectField.md)
 - [PropertyField](script-api/PropertyField.md)
 - [TagField](script-api/TagField.md)
@@ -53,6 +49,12 @@ Documentation generated from Unity's C# reference source code on GitHub.
 - [ToolbarSearchField](script-api/ToolbarSearchField.md)
 - [ToolbarSpacer](script-api/ToolbarSpacer.md)
 - [ToolbarToggle](script-api/ToolbarToggle.md)
+- [UxmlUpgradeService](script-api/UxmlUpgradeService.md)
+- [WillDisplayContentEvent](script-api/WillDisplayContentEvent.md)
+
+### UnityEditor.UIElements.Analytics
+
+- [UIAssetCounters](script-api/UIAssetCounters.md)
 
 ### UnityEditor.UIElements.Experimental.UILayoutDebugger
 
@@ -66,11 +68,11 @@ Documentation generated from Unity's C# reference source code on GitHub.
 
 - [Angle](script-api/Angle.md)
 - [AttributeOverride](script-api/AttributeOverride.md)
+- [AuthoringIdPath](script-api/AuthoringIdPath.md)
 - [Background](script-api/Background.md)
 - [BackgroundPosition](script-api/BackgroundPosition.md)
 - [BackgroundRepeat](script-api/BackgroundRepeat.md)
 - [BackgroundSize](script-api/BackgroundSize.md)
-- [BaseFieldTraits](script-api/BaseFieldTraits.md)
 - [BindableElement](script-api/BindableElement.md)
 - [BoundsField](script-api/BoundsField.md)
 - [BoundsIntField](script-api/BoundsIntField.md)
@@ -94,21 +96,26 @@ Documentation generated from Unity's C# reference source code on GitHub.
 - [DropdownMenuEventInfo](script-api/DropdownMenuEventInfo.md)
 - [DynamicAtlasSettings](script-api/DynamicAtlasSettings.md)
 - [EasingFunction](script-api/EasingFunction.md)
+- [ElementNode](script-api/ElementNode.md)
 - [EnumField](script-api/EnumField.md)
 - [Enumerator](script-api/Enumerator.md)
 - [EventDispatcherGate](script-api/EventDispatcherGate.md)
 - [EventInterestAttribute](script-api/EventInterestAttribute.md)
 - [FieldMouseDragger](script-api/FieldMouseDragger.md)
+- [FillGradient](script-api/FillGradient.md)
+- [FilterParameter](script-api/FilterParameter.md)
+- [FilterParameterDeclaration](script-api/FilterParameterDeclaration.md)
 - [FloatField](script-api/FloatField.md)
 - [FocusChangeDirection](script-api/FocusChangeDirection.md)
 - [Foldout](script-api/Foldout.md)
 - [FontDefinition](script-api/FontDefinition.md)
+- [GUIDField](script-api/GUIDField.md)
 - [GenericDropdownMenu](script-api/GenericDropdownMenu.md)
 - [GeometryChangedEvent](script-api/GeometryChangedEvent.md)
+- [Group](script-api/Group.md)
 - [GroupBox](script-api/GroupBox.md)
 - [Hash128Field](script-api/Hash128Field.md)
 - [HelpBox](script-api/HelpBox.md)
-- [IBaseUxmlFactory](script-api/IBaseUxmlFactory.md)
 - [IBindable](script-api/IBindable.md)
 - [IChangeEvent](script-api/IChangeEvent.md)
 - [ICommandEvent](script-api/ICommandEvent.md)
@@ -129,6 +136,7 @@ Documentation generated from Unity's C# reference source code on GitHub.
 - [INotifyValueChanged](script-api/INotifyValueChanged.md)
 - [IPanel](script-api/IPanel.md)
 - [IPanelChangedEvent](script-api/IPanelChangedEvent.md)
+- [IPanelComponent](script-api/IPanelComponent.md)
 - [IPointerCaptureEvent](script-api/IPointerCaptureEvent.md)
 - [IPointerEvent](script-api/IPointerEvent.md)
 - [IResolvedStyle](script-api/IResolvedStyle.md)
@@ -140,12 +148,11 @@ Documentation generated from Unity's C# reference source code on GitHub.
 - [ITextSelection](script-api/ITextSelection.md)
 - [ITransform](script-api/ITransform.md)
 - [ITransitionEvent](script-api/ITransitionEvent.md)
-- [IUxmlAttributes](script-api/IUxmlAttributes.md)
 - [IValueField](script-api/IValueField.md)
 - [IVisualElementScheduledItem](script-api/IVisualElementScheduledItem.md)
+- [IgnoreUIChangesScope](script-api/IgnoreUIChangesScope.md)
 - [Image](script-api/Image.md)
 - [InputEvent](script-api/InputEvent.md)
-- [InputWrapper](script-api/InputWrapper.md)
 - [IntegerField](script-api/IntegerField.md)
 - [KeyboardNavigationManipulator](script-api/KeyboardNavigationManipulator.md)
 - [Label](script-api/Label.md)
@@ -154,13 +161,16 @@ Documentation generated from Unity's C# reference source code on GitHub.
 - [ListViewController](script-api/ListViewController.md)
 - [LongField](script-api/LongField.md)
 - [ManipulatorActivationFilter](script-api/ManipulatorActivationFilter.md)
+- [Mask64Field](script-api/Mask64Field.md)
+- [MaskField](script-api/MaskField.md)
+- [MaterialDefinition](script-api/MaterialDefinition.md)
 - [MeshGenerationNode](script-api/MeshGenerationNode.md)
 - [MinMaxSlider](script-api/MinMaxSlider.md)
 - [MultiColumnController](script-api/MultiColumnController.md)
 - [MultiColumnListView](script-api/MultiColumnListView.md)
 - [MultiColumnListViewController](script-api/MultiColumnListViewController.md)
 - [MultiColumnTreeView](script-api/MultiColumnTreeView.md)
-- [NativeColorPage](script-api/NativeColorPage.md)
+- [NativeColorId](script-api/NativeColorId.md)
 - [Painter2D](script-api/Painter2D.md)
 - [PanelSettings](script-api/PanelSettings.md)
 - [PanelTextSettings](script-api/PanelTextSettings.md)
@@ -174,6 +184,7 @@ Documentation generated from Unity's C# reference source code on GitHub.
 - [RegisterUxmlCacheAttribute](script-api/RegisterUxmlCacheAttribute.md)
 - [RepeatButton](script-api/RepeatButton.md)
 - [Rotate](script-api/Rotate.md)
+- [RuntimePointerState](script-api/RuntimePointerState.md)
 - [Scale](script-api/Scale.md)
 - [ScrollView](script-api/ScrollView.md)
 - [Scroller](script-api/Scroller.md)
@@ -196,7 +207,9 @@ Documentation generated from Unity's C# reference source code on GitHub.
 - [StyleInt](script-api/StyleInt.md)
 - [StyleLength](script-api/StyleLength.md)
 - [StyleList](script-api/StyleList.md)
+- [StyleMaterialDefinition](script-api/StyleMaterialDefinition.md)
 - [StylePropertyName](script-api/StylePropertyName.md)
+- [StyleRatio](script-api/StyleRatio.md)
 - [StyleRotate](script-api/StyleRotate.md)
 - [StyleScale](script-api/StyleScale.md)
 - [StyleSheet](script-api/StyleSheet.md)
@@ -204,6 +217,7 @@ Documentation generated from Unity's C# reference source code on GitHub.
 - [StyleTextShadow](script-api/StyleTextShadow.md)
 - [StyleTransformOrigin](script-api/StyleTransformOrigin.md)
 - [StyleTranslate](script-api/StyleTranslate.md)
+- [StyleUIAnimationClip](script-api/StyleUIAnimationClip.md)
 - [Tab](script-api/Tab.md)
 - [TabView](script-api/TabView.md)
 - [TempMeshAllocator](script-api/TempMeshAllocator.md)
@@ -220,7 +234,6 @@ Documentation generated from Unity's C# reference source code on GitHub.
 - [ToggleButtonGroup](script-api/ToggleButtonGroup.md)
 - [ToggleButtonGroupState](script-api/ToggleButtonGroupState.md)
 - [TooltipEvent](script-api/TooltipEvent.md)
-- [TrackedPointerState](script-api/TrackedPointerState.md)
 - [TransformOrigin](script-api/TransformOrigin.md)
 - [Translate](script-api/Translate.md)
 - [TreeView](script-api/TreeView.md)
@@ -229,16 +242,13 @@ Documentation generated from Unity's C# reference source code on GitHub.
 - [UQueryState](script-api/UQueryState.md)
 - [UnsignedIntegerField](script-api/UnsignedIntegerField.md)
 - [UnsignedLongField](script-api/UnsignedLongField.md)
-- [UxmlAssetAttributeDescription](script-api/UxmlAssetAttributeDescription.md)
 - [UxmlChildElementDescription](script-api/UxmlChildElementDescription.md)
 - [UxmlElementAttribute](script-api/UxmlElementAttribute.md)
-- [UxmlRootElementFactory](script-api/UxmlRootElementFactory.md)
-- [UxmlStringAttributeDescription](script-api/UxmlStringAttributeDescription.md)
-- [UxmlTraits](script-api/UxmlTraits.md)
 - [UxmlValueMatches](script-api/UxmlValueMatches.md)
 - [Vertex](script-api/Vertex.md)
 - [VisualElement](script-api/VisualElement.md)
 - [VisualElementFocusChangeDirection](script-api/VisualElementFocusChangeDirection.md)
+- [VisualElementReference](script-api/VisualElementReference.md)
 - [VisualElementStyleSheetSet](script-api/VisualElementStyleSheetSet.md)
 - [VisualTreeAsset](script-api/VisualTreeAsset.md)
 
@@ -247,10 +257,6 @@ Documentation generated from Unity's C# reference source code on GitHub.
 - [IValueAnimation](script-api/IValueAnimation.md)
 - [PointerOverLinkTagEvent](script-api/PointerOverLinkTagEvent.md)
 - [StyleValues](script-api/StyleValues.md)
-
-### UnityEngine.UIElements.InputSystem
-
-- [InputSystemEventSystem](script-api/InputSystemEventSystem.md)
 
 ### UnityEngine.UIElements.Layout
 
@@ -264,8 +270,13 @@ Documentation generated from Unity's C# reference source code on GitHub.
 
 - [AllocSize](script-api/AllocSize.md)
 - [Area](script-api/Area.md)
+- [AtlasBlock](script-api/AtlasBlock.md)
 - [BackgroundRepeatInstance](script-api/BackgroundRepeatInstance.md)
-- [DataSet](script-api/DataSet.md)
 - [Enumerator](script-api/Enumerator.md)
 - [PageStatistics](script-api/PageStatistics.md)
+- [Range](script-api/Range.md)
 - [Statistics](script-api/Statistics.md)
+
+### UnityEngine.UIElements.Unmanaged
+
+- [Enumerator](script-api/Enumerator.md)

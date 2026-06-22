@@ -11,15 +11,6 @@
 
     [UxmlObject]
 
-
-        [Obsolete("UxmlObjectFactory<T> is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlObjectFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlObjectTraits<T> is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
 <returns>Whether the item is in the collection or not.</returns>
 
 <param name="arrayIndex">The starting index.</param>
@@ -38,9 +29,6 @@ For complete source code, see: [SortColumnDescriptions.cs](https://github.com/Un
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **GetEnumerator()**: Returns `IEnumerator<SortColumnDescription>`
 - **Add()**: Returns `void`
 - **Clear()**: Returns `void`

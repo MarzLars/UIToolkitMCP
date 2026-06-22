@@ -9,7 +9,8 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement]
+    [Icon("UIToolkit/Icons/ToolbarSpacer.png")]
 
 
         [Obsolete("The `fixedSpacerVariantUssClassName` style has been deprecated as is it now the default style.")]
@@ -24,8 +25,4 @@ For complete source code, see: [ToolbarSpacer.cs](https://github.com/Unity-Techn
 ### Public Properties
 
 - **flex**: `bool`
-
-### Public Methods
-
-- **CreateInstance()**: Returns `object`
 

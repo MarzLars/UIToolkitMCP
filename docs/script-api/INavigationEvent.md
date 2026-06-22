@@ -17,6 +17,9 @@ Describes the type of device this event was created from.
 **Remarks:**
 
 
+
+        [VisibleToOtherModules("UnityEditor.GraphToolkitModule")]
+
 False means it isn't.
 
 False means it isn't.
@@ -72,23 +75,46 @@ Use this function instead of creating new events.
 
 <param name="deviceType">The type of device this event was created from.</param>
 
+UGUI uses this enum and it can't use the copy in NavigationMoveEvent because it would break code stripping
 
-            None,
+
+        None,
 
 Left.
 
 
-            Up,
+        Up,
 
 Right.
 
 
-            Down,
+        Down,
 
 Forwards, toward next element.
 
 
-            Previous,
+        Previous,
+    }
+
+Event typically sent when the user presses the D-pad, moves a joystick or presses the arrow keys.
+
+
+            None = NavigationMoveDirection.None,
+
+Left.
+
+
+            Up = NavigationMoveDirection.Up,
+
+Right.
+
+
+            Down = NavigationMoveDirection.Down,
+
+Forwards, toward next element.
+
+
+            Previous = NavigationMoveDirection.Previous,
         }
 
 This information is not guaranteed to be available through all input sources that can generate

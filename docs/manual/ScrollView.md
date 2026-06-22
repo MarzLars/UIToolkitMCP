@@ -1,7 +1,7 @@
 # ScrollView
 
 **Source:** https://docs.unity3d.com/Manual/UIE-uxml-element-ScrollView.html  
-**Last Updated:** Sat, 13 Jun 2026 17:17:31 GMT
+**Last Updated:** Thu, 18 Jun 2026 16:35:42 GMT
 
 ---
 
@@ -10,7 +10,7 @@
 
 * [unity.com](https://unity.com/)
 
-Version: **Unity 6.4** (6000.4)
+Version: **Unity 6.5** (6000.5)
 
 * Supported
 * Legacy
@@ -25,7 +25,7 @@ Language
 
 ## Unity Manual
 
-Version: Unity 6.4Select a different version
+Version: Unity 6.5Select a different version
 
 Language
 : English
@@ -188,11 +188,11 @@ This element has the following member attributes:
 | `horizontal-scroller-visibility` | [`UIElements.ScrollerVisibility`](../ScriptReference/UIElements.ScrollerVisibility.html) | Specifies whether the horizontal scroll bar is visible. |
 | `mode` | [`UIElements.ScrollViewMode`](../ScriptReference/UIElements.ScrollViewMode.html) | Controls how the ScrollView allows the user to scroll the contents. `ScrollViewMode`  The default is `ScrollViewMode.Vertical`. Writing to this property modifies the class list of the ScrollView according to the specified value of `ScrollViewMode`. When the value changes, the class list matching the old value is removed and the class list matching the new value is added. |
 | `mouse-wheel-scroll-size` | `float` | This property controls the scrolling speed only when using a mouse scroll wheel, based on the size of the page.  This property takes precedence over the `--unity-metrics-single_line-height` USS variable. If both the property and the variable are set, the property value is used.   The following example demonstrates how to use the `mouseWheelScrollSize` property to control the “speed” of a scroll when using the mouse wheel. Notice the difference in feel when selecting different values: |
-| `nested-interaction-kind` | [`UIElements.ScrollView.NestedInteractionKind`](../ScriptReference/UIElements.ScrollView.NestedInteractionKind.html) | The behavior to use when scrolling reaches limits of a nested `ScrollView`. |
+| `nested-interaction-kind` | [`UIElements.ScrollView+NestedInteractionKind`](../ScriptReference/UIElements.ScrollView%2BNestedInteractionKind.html) | The behavior to use when scrolling reaches limits of a nested `ScrollView`. |
 | `scroll-deceleration-rate` | `float` | Controls the rate at which the scrolling movement slows after a user scrolls using a touch interaction.  The deceleration rate is the speed reduction per second. A value of 0.5 halves the speed each second. A value of 0 stops the scrolling immediately. |
 | `show-horizontal-scroller` | `boolean` | Obsolete. Use `ScrollView.horizontalScrollerVisibility` instead. |
 | `show-vertical-scroller` | `boolean` | Obsolete. Use `ScrollView.verticalScrollerVisibility` instead. |
-| `touch-scroll-type` | [`UIElements.ScrollView.TouchScrollBehavior`](../ScriptReference/UIElements.ScrollView.TouchScrollBehavior.html) | The behavior to use when a user tries to scroll past the boundaries of the ScrollView content using a touch interaction. |
+| `touch-scroll-type` | [`UIElements.ScrollView+TouchScrollBehavior`](../ScriptReference/UIElements.ScrollView%2BTouchScrollBehavior.html) | The behavior to use when a user tries to scroll past the boundaries of the ScrollView content using a touch interaction. |
 | `vertical-page-size` | `float` | This property controls the speed of the vertical scrolling when using a keyboard or the on-screen scrollbar buttons (arrows and handle), based on the size of the page.  The speed is calculated by multiplying the page size by the specified value. For example, a value of `2` means that each scroll movement covers a distance equal to twice the width of the page.\ |
 | `vertical-scroller-visibility` | [`UIElements.ScrollerVisibility`](../ScriptReference/UIElements.ScrollerVisibility.html) | Specifies whether the vertical scroll bar is visible. |
 
@@ -202,19 +202,19 @@ This element inherits the following attributes from its base class:
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| `focusable` | `boolean` | If false, this prevents the element from being focused.  The element can only be focused if its canGrabFocus property is true. |
+| `focusable` | `boolean` | Whether an element can potentially receive focus.  If false, the element can’t receive focus. If true, the element receives focus only when its `Focusable.canGrabFocus` property is also true. |
 | `tabindex` | `int` | An integer used to sort focusable elements in the focus ring. Must be greater than or equal to zero.  Setting the `tabIndex` value to less than `0` (for example, `−1`) removes the element from the focus ring and tab navigation. |
 
 This element also inherits the following attributes from [`VisualElement`](UIE-uxml-element-VisualElement.html):
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| `content-container` | `string` | Logical container where child elements are added. If a child is added to this element, the child is added to this element’s content container instead.  When iterating over the `VisualElement.Children` of an element, the element’s content container hierarchy is used instead of the element itself. This can lead to unexpected results, such as elements being ignored by the navigation events if they are not directly in the content container’s hierarchy. Refer to `IFocusRing` for more information.    If the content container is the same as the element itself, child elements are added directly to the element. This is true for most elements but can be overridden by more complex types.   The `ScrollView`, for example, has a content container that is different from itself. In that case, child elements added to the scroll view are added to its content container element instead. While the physical parent (`VisualElement.Hierarchy.parent`) of the child elements is the scroll view’s content container element, their logical parent (`VisualElement.parent`) still refers to the scroll view itself. Since some of the scroll view’s focusable children are not part of its logical hierarchy, like its `Scroller` elements, these focusable children are not considered by default when using sequential navigation. Refer to [How can I change what element is focused next](UIE-faq-event-and-input-system.html) for an example of a workaround solution if the default navigation rules don’t correspond to your needs. |
+| `content-container` | `string` | Logical container where child elements are added. If a child is added to this element, the child is added to this element’s content container instead.  When iterating over the `VisualElement.Children` of an element, the element’s content container hierarchy is used instead of the element itself. This can lead to unexpected results, such as elements being ignored by the navigation events if they are not directly in the content container’s hierarchy. Refer to `IFocusRing` for more information.   If the content container is the same as the element itself, child elements are added directly to the element. This is true for most elements but can be overridden by more complex types.   The `ScrollView`, for example, has a content container that is different from itself. In that case, child elements added to the scroll view are added to its content container element instead. While the physical parent (`VisualElement.Hierarchy.parent`) of the child elements is the scroll view’s content container element, their logical parent (`VisualElement.parent`) still refers to the scroll view itself. Since some of the scroll view’s focusable children are not part of its logical hierarchy, like its `Scroller` elements, these focusable children are not considered by default when using sequential navigation. Refer to [How can I change what element is focused next](UIE-faq-event-and-input-system.html) for an example of a workaround solution if the default navigation rules don’t correspond to your needs. |
 | `data-source` | `Object` | Assigns a data source to this VisualElement which overrides any inherited data source. This data source is inherited by all children. |
 | `data-source-path` | `string` | Path from the data source to the value. |
 | `data-source-type` | `System.Type` | The possible type of data source assignable to this VisualElement.    This information is only used by the UI Builder as a hint to provide some completion to the data source path field when the effective data source cannot be specified at design time. |
 | `enabled` | `boolean` | Returns true if the `VisualElement` is enabled locally.  This flag isn’t changed if the VisualElement is disabled implicitly by one of its parents. To verify this, use `enabledInHierarchy`. |
-| `language-direction` | [`UIElements.LanguageDirection`](../ScriptReference/UIElements.LanguageDirection.html) | Indicates the directionality of the element’s text. The value will propagate to the element’s children.  Setting `languageDirection` to `RTL` can only get the basic RTL support like text reversal. To get more comprehensive RTL support, such as line breaking, word wrapping, or text shaping, you must enable [Advance Text Generator](UIE-advanced-text-generator.html). |
+| `language-direction` | [`UIElements.LanguageDirection`](../ScriptReference/UIElements.LanguageDirection.html) | Indicates the directionality of the element’s text. The value will propagate to the element’s children. |
 | `name` | `string` | The name of this VisualElement.  Use this property to write USS selectors that target a specific element. The standard practice is to give an element a unique name. |
 | `picking-mode` | [`UIElements.PickingMode`](../ScriptReference/UIElements.PickingMode.html) | Determines if this element can be the target of pointer events or picked by `IPanel.Pick` queries.  Elements can not be picked if:  - They are invisible- Their `style.display` is set to `DisplayStyle.None`   Elements with a picking mode of `PickingMode.Ignore` never receive the hover pseudo-state. |
 | `style` | `string` | Sets the style values on a `VisualElement`.  The returned style data, computed from USS files or inline styles written to this object in C#, doesn’t represent the fully resolved styles, such as the final height and width of a VisualElement. To access these fully resolved styles, use `resolvedStyle`.      For information about how to use this property and all the supported USS properties, refer to the [Apply styles in C# scripts](UIE-apply-styles-with-csharp.html) and [USS properties reference](UIE-USS-Properties-Reference.html) manual pages. |
@@ -257,7 +257,7 @@ RenderingLayerMaskField
 
 Scroller
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 69951212. Built on: 2026-06-13.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 70272010. Built on: 2026-06-18.
 
 [Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 

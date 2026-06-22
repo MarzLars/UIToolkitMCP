@@ -1,7 +1,7 @@
 # ListView
 
 **Source:** https://docs.unity3d.com/Manual/UIE-uxml-element-ListView.html  
-**Last Updated:** Sat, 13 Jun 2026 17:17:31 GMT
+**Last Updated:** Thu, 18 Jun 2026 16:35:42 GMT
 
 ---
 
@@ -10,7 +10,7 @@
 
 * [unity.com](https://unity.com/)
 
-Version: **Unity 6.4** (6000.4)
+Version: **Unity 6.5** (6000.5)
 
 * Supported
 * Legacy
@@ -25,7 +25,7 @@ Language
 
 ## Unity Manual
 
-Version: Unity 6.4Select a different version
+Version: Unity 6.5Select a different version
 
 Language
 : English
@@ -121,7 +121,7 @@ To enable controller and keyboard navigation with a ListView, do the following:
 * Enable selection mode: Set the **Selection Type** to **Single** or **Multiple** in the ****Inspector**A Unity window that displays information about the currently selected GameObject, asset or project settings, allowing you to inspect and edit the values. [More info](UsingTheInspector.html)
   See in [Glossary](Glossary.html#Inspector)** (or `selectionType` in C#). Keyboard and controller navigation events are tied to the selected state. If you disable selection, the list ignores these inputs.
 * Set initial focus: UI Toolkit doesn’t always give the ListView focus on startup, so the list might not receive keys until something is focused. To receive keyboard or controller events without first clicking with a mouse, call `listView.Focus()` via script (for example, in an [`AttachToPanelEvent`](../ScriptReference/UIElements.AttachToPanelEvent.html) callback).
-* Configure input for runtime UI: For runtime, refer to [Runtime UI event system and input handling](UIE-Runtime-Event-System.html) to connect the input system to UI Toolkit, and follow [Set up input handling with the Input System package](UIE-Runtime-Event-System.html#set-up-input-handling-with-the-input-system-package) to configure project **UI** actions (D-pad, arrows, and other navigation). The Input System package [UI support](https://docs.unity3d.com/Packages/com.unity.inputsystem%401.19/manual/UISupport.html) topic describes each **UI** action. For **Panel Settings**, refer to [Configure runtime UI](UIE-render-runtime-ui.html). In Editor panels, arrow keys are automatically converted to navigation events without additional configuration.
+* Configure input for runtime UI: For runtime, refer to [Runtime UI event system and input handling](UIE-Runtime-Event-System.html) to connect the input system to UI Toolkit, and follow [Set up input handling with the Input System package](UIE-Runtime-Event-System.html#set-up-input-handling-with-the-input-system-package) to configure project **UI** actions (D-pad, arrows, and other navigation). The Input System package [UI support](https://docs.unity3d.com/Packages/com.unity.inputsystem%401.19/manual/UISupport.html) topic describes each **UI** action. For **Panel Settings** and the **Panel Renderer** workflow, refer to [Configure runtime UI](UIE-render-runtime-ui.html). In Editor panels, arrow keys are automatically converted to navigation events without additional configuration.
 
 ## ListView FAQs
 
@@ -249,7 +249,7 @@ This element inherits the following attributes from its base class:
 | `binding-path` | `string` | Path of the target property to be bound. |
 | `binding-source-selection-mode` | [`UIElements.BindingSourceSelectionMode`](../ScriptReference/UIElements.BindingSourceSelectionMode.html) | This property controls whether every element in the list will get its data source setup automatically to the correct item in the collection’s source.  When set to `AutoAssign`, the bind callbacks don’t need to be specified, since bindings can be used to fill the elements. |
 | `fixed-item-height` | `float` | The height of a single item in the list, in pixels.  This property must be set when using the `virtualizationMethod` is set to `FixedHeight`, for the collection view to function. If set when `virtualizationMethod` is `DynamicHeight`, it serves as the default height to help calculate the number of items necessary and the scrollable area, before items are laid out. It should be set to the minimum expected height of an item. |
-| `focusable` | `boolean` | If false, this prevents the element from being focused.  The element can only be focused if its canGrabFocus property is true. |
+| `focusable` | `boolean` | Whether an element can potentially receive focus.  If false, the element can’t receive focus. If true, the element receives focus only when its `Focusable.canGrabFocus` property is also true. |
 | `header-title` | `string` | This property controls the text of the foldout header when using `showFoldoutHeader`.  If the `makeHeader` callback is set, this property gets overridden and the title is not shown. |
 | `horizontal-scrolling` | `boolean` | This property controls whether the collection view shows a horizontal scroll bar when its content does not fit in the visible area. |
 | `reorder-mode` | [`UIElements.ListViewReorderMode`](../ScriptReference/UIElements.ListViewReorderMode.html) | This property controls the drag and drop mode for the list view.  The default value is `Simple`. When this property is set to `Animated`, Unity adds drag handles in front of every item and the drag and drop manipulation pushes items with an animation when the reordering happens. Multiple item reordering is only supported with the `Simple` drag mode. |
@@ -267,12 +267,12 @@ This element also inherits the following attributes from [`VisualElement`](UIE-u
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| `content-container` | `string` | Logical container where child elements are added. If a child is added to this element, the child is added to this element’s content container instead.  When iterating over the `VisualElement.Children` of an element, the element’s content container hierarchy is used instead of the element itself. This can lead to unexpected results, such as elements being ignored by the navigation events if they are not directly in the content container’s hierarchy. Refer to `IFocusRing` for more information.    If the content container is the same as the element itself, child elements are added directly to the element. This is true for most elements but can be overridden by more complex types.   The `ScrollView`, for example, has a content container that is different from itself. In that case, child elements added to the scroll view are added to its content container element instead. While the physical parent (`VisualElement.Hierarchy.parent`) of the child elements is the scroll view’s content container element, their logical parent (`VisualElement.parent`) still refers to the scroll view itself. Since some of the scroll view’s focusable children are not part of its logical hierarchy, like its `Scroller` elements, these focusable children are not considered by default when using sequential navigation. Refer to [How can I change what element is focused next](UIE-faq-event-and-input-system.html) for an example of a workaround solution if the default navigation rules don’t correspond to your needs. |
+| `content-container` | `string` | Logical container where child elements are added. If a child is added to this element, the child is added to this element’s content container instead.  When iterating over the `VisualElement.Children` of an element, the element’s content container hierarchy is used instead of the element itself. This can lead to unexpected results, such as elements being ignored by the navigation events if they are not directly in the content container’s hierarchy. Refer to `IFocusRing` for more information.   If the content container is the same as the element itself, child elements are added directly to the element. This is true for most elements but can be overridden by more complex types.   The `ScrollView`, for example, has a content container that is different from itself. In that case, child elements added to the scroll view are added to its content container element instead. While the physical parent (`VisualElement.Hierarchy.parent`) of the child elements is the scroll view’s content container element, their logical parent (`VisualElement.parent`) still refers to the scroll view itself. Since some of the scroll view’s focusable children are not part of its logical hierarchy, like its `Scroller` elements, these focusable children are not considered by default when using sequential navigation. Refer to [How can I change what element is focused next](UIE-faq-event-and-input-system.html) for an example of a workaround solution if the default navigation rules don’t correspond to your needs. |
 | `data-source` | `Object` | Assigns a data source to this VisualElement which overrides any inherited data source. This data source is inherited by all children. |
 | `data-source-path` | `string` | Path from the data source to the value. |
 | `data-source-type` | `System.Type` | The possible type of data source assignable to this VisualElement.    This information is only used by the UI Builder as a hint to provide some completion to the data source path field when the effective data source cannot be specified at design time. |
 | `enabled` | `boolean` | Returns true if the `VisualElement` is enabled locally.  This flag isn’t changed if the VisualElement is disabled implicitly by one of its parents. To verify this, use `enabledInHierarchy`. |
-| `language-direction` | [`UIElements.LanguageDirection`](../ScriptReference/UIElements.LanguageDirection.html) | Indicates the directionality of the element’s text. The value will propagate to the element’s children.  Setting `languageDirection` to `RTL` can only get the basic RTL support like text reversal. To get more comprehensive RTL support, such as line breaking, word wrapping, or text shaping, you must enable [Advance Text Generator](UIE-advanced-text-generator.html). |
+| `language-direction` | [`UIElements.LanguageDirection`](../ScriptReference/UIElements.LanguageDirection.html) | Indicates the directionality of the element’s text. The value will propagate to the element’s children. |
 | `name` | `string` | The name of this VisualElement.  Use this property to write USS selectors that target a specific element. The standard practice is to give an element a unique name. |
 | `picking-mode` | [`UIElements.PickingMode`](../ScriptReference/UIElements.PickingMode.html) | Determines if this element can be the target of pointer events or picked by `IPanel.Pick` queries.  Elements can not be picked if:  - They are invisible- Their `style.display` is set to `DisplayStyle.None`   Elements with a picking mode of `PickingMode.Ignore` never receive the hover pseudo-state. |
 | `style` | `string` | Sets the style values on a `VisualElement`.  The returned style data, computed from USS files or inline styles written to this object in C#, doesn’t represent the fully resolved styles, such as the final height and width of a VisualElement. To access these fully resolved styles, use `resolvedStyle`.      For information about how to use this property and all the supported USS properties, refer to the [Apply styles in C# scripts](UIE-apply-styles-with-csharp.html) and [USS properties reference](UIE-USS-Properties-Reference.html) manual pages. |
@@ -326,7 +326,7 @@ LongField
 
 MaskField
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 69951212. Built on: 2026-06-13.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 70272010. Built on: 2026-06-18.
 
 [Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 

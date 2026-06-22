@@ -16,13 +16,23 @@ This interface is not meant to be implemented explicitly
 
         [Obsolete("selectionColor is deprecated. Please use the corresponding USS property (--unity-selection-color) instead.")]
 
-// 
+The position is on the bottom-left corner of the character at the specified logical index. Index `0` corresponds to the position just before the first character, and for a string of length `n`, index `n` is just after the last character.
 
-//
+The cursor moves according to the logical text indices, which might differ from their visual order on screen, especially with right-to-left text.
 
-// 
+The cursor moves according to the logical text indices, which might differ from their visual order on screen, especially with right-to-left text.
 
-//
+This method looks for a line-breaking character and ignores word wrapping when determining the end of the paragraph.
+
+This method looks for a line-breaking character and ignores word wrapping when determining the end of the paragraph.
+
+This API uses the visualElement's style to compute the result, so calling it before the styles are computed might return an incorrect value.
+
+The cursor moves according to the logical text indices, which might differ from their visual order on screen, especially with right-to-left text.
+
+The cursor moves according to the logical text indices, which might differ from their visual order on screen, especially with right-to-left text.
+
+The cursor moves according to the logical text indices, which might differ from their visual order on screen, especially with right-to-left text.
 
 
         [CreateProperty(ReadOnly = true)]
@@ -38,8 +48,22 @@ This interface is not meant to be implemented explicitly
 
                 focusable = value;
                 m_IsSelectable = value;
-                EnableInClassList(selectableUssClassName, value);
+                EnableInClassList(selectableUssClassNameUnique, value);
                 NotifyPropertyChanged(isSelectableProperty);
+            }
+        }
+
+        int ITextSelection.cursorIndex
+        {
+            get => selection.isSelectable ? selectingManipulator.cursorIndex : -1;
+            set
+            {
+                var current = selection.cursorIndex;
+                if (selection.isSelectable)
+                    selectingManipulator.cursorIndex = value;
+
+                if (current != selection.cursorIndex)
+                    NotifyPropertyChanged(cursorIndexProperty);
             }
         }
 
@@ -99,4 +123,13 @@ For complete source code, see: [ITextSelection.cs](https://github.com/Unity-Tech
 - **SelectAll()**: Returns `void`
 - **SelectNone()**: Returns `void`
 - **SelectRange()**: Returns `void`
+- **GetCursorPositionFromStringIndex()**: Returns `Vector2`
+- **MoveForward()**: Returns `void`
+- **MoveBackward()**: Returns `void`
+- **MoveToParagraphEnd()**: Returns `void`
+- **MoveToParagraphStart()**: Returns `void`
+- **MoveToEndOfPreviousWord()**: Returns `void`
+- **MoveToStartOfNextWord()**: Returns `void`
+- **MoveWordBackward()**: Returns `void`
+- **MoveWordForward()**: Returns `void`
 

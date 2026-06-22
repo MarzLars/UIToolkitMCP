@@ -51,9 +51,31 @@ It enables you to search for elements and execute the query on any VisualElement
 
 To select elements by their C# type, use `OfType{T2}(string,string[])`.
 
+
+**Remarks:**
+
+
+To select elements by their C# type, use `OfType{T2}(string,string[])`.
+
 <code>
 
 // Get all children, recursively, of root that are buttons and have classes "health-button" or "unity-button".
+
+]]>
+
+</example>
+
+<code>
+
+// Get all children, recursively, of root that are buttons and have class "health-button".
+
+]]>
+
+</example>
+
+<code>
+
+// Get all children, recursively, of root that are buttons and have class "health-button".
 
 ]]>
 
@@ -77,6 +99,30 @@ To select elements by their C# type, use `OfType{T2}(string,string[])`.
 
 <code>
 
+// Get all direct children of root that are buttons and have classes "health-button" or "unity-button".
+
+]]>
+
+</example>
+
+<code>
+
+// Get all children, recursively, of root that are buttons and have class "health-button".
+
+]]>
+
+</example>
+
+<code>
+
+// Get all children, recursively, of root that are buttons and have class "health-button".
+
+]]>
+
+</example>
+
+<code>
+
 // Get all children, recursively, of root that are buttons and have class "health-button".
 
 ]]>
@@ -84,6 +130,12 @@ To select elements by their C# type, use `OfType{T2}(string,string[])`.
 </example>
 
 <param name="classes">If provided, it selects elements with all the specified classes (case sensitive, to be distinguished from Type).</param>
+
+<param name="classes">If provided, it selects elements with all the specified classes (case sensitive, to be distinguished from Type).</param>
+
+<param name="className">If specified, will select elements with the given class (not to be confused with Type).</param>
+
+<param name="className">If specified, will select elements with the given class (not to be confused with Type).</param>
 
 <param name="className">If specified, will select elements with the given class (not to be confused with Type).</param>
 

@@ -10,14 +10,8 @@
 
 
     [MovedFrom(true, UpgradeConstants.EditorNamespace, UpgradeConstants.EditorAssembly)]
-
-
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">The attribute bag.</param>
+    [UxmlElement(libraryPath = "Controls")]
+    [Icon("UIToolkit/Icons/EnumField.png")]
 
 
         [CreateProperty(ReadOnly = true)]
@@ -34,8 +28,6 @@ For complete source code, see: [EnumField.cs](https://github.com/Unity-Technolog
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
 - **Init()**: Returns `void`
 - **SetValueWithoutNotify()**: Returns `void`
 

@@ -1,6 +1,6 @@
 # UIAssetCounters
 
-**Namespace:** `UnityEditor.Audio.Analytics`
+**Namespace:** `UnityEditor.UIElements.Analytics`
 
 **Source:** [Editor/Mono/UIElements/UIBuildAnalyticsEvent.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Editor/Mono/UIElements/UIBuildAnalyticsEvent.cs)
 

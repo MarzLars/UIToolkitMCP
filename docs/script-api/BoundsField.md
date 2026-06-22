@@ -10,14 +10,8 @@
 
 
     [MovedFrom(true, UpgradeConstants.EditorNamespace, UpgradeConstants.EditorAssembly)]
-
-
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">The attribute bag.</param>
+    [UxmlElement(libraryPath = "Numeric Fields"), UxmlPartialSerializedData]
+    [Icon("UIToolkit/Icons/BoundsField.png")]
 
 ## Source Code Reference
 
@@ -25,7 +19,5 @@ For complete source code, see: [BoundsField.cs](https://github.com/Unity-Technol
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Init()**: Returns `void`
 - **SetValueWithoutNotify()**: Returns `void`
 

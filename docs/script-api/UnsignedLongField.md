@@ -9,10 +9,8 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement(libraryPath = "Numeric Fields")]
+    [Icon("UIToolkit/Icons/UnsignedLongField.png")]
 
 <returns>The ulong integer as string.</returns>
 
@@ -26,6 +24,5 @@ For complete source code, see: [UnsignedLongField.cs](https://github.com/Unity-T
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
 - **ApplyInputDeviceDelta()**: Returns `void`
 

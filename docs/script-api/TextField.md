@@ -9,15 +9,13 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement(libraryPath = "Controls")]
+    [Icon("UIToolkit/Icons/TextField.png")]
 
 
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">The attribute bag.</param>
-
-
+        [MultilineDecorator]
         [CreateProperty]
+        [UxmlAttribute]
 
 <param name="multiline">Set this to true to allow multiple lines in the textfield and false if otherwise.</param>
 
@@ -40,8 +38,5 @@ For complete source code, see: [TextField.cs](https://github.com/Unity-Technolog
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **SetValueWithoutNotify()**: Returns `void`
 

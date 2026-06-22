@@ -25,8 +25,6 @@ Unity adds this USS class to every indent element of the TreeView. Any styling a
 
 Unity adds this USS class to every item container element of the TreeView. Any styling applied to
 
-This class defines the TreeView element properties that you can use in a UI document asset (UXML file).
-
 To set the items source, use `SetRootItems{T}` instead, which allows fully typed items.
 
 The `TreeViewExpansionChangedArgs` will contain the expanded state of the item being modified.
@@ -39,6 +37,7 @@ The controller should implement `BaseTreeViewController`.
 
 
         [CreateProperty]
+        [UxmlAttribute]
 
 Use `SetRootItems{T}` to add content.
 
@@ -100,13 +99,10 @@ For complete source code, see: [TreeViewExpansionChangedArgs.cs](https://github.
 - **id**: `int`
 - **isExpanded**: `bool`
 - **isAppliedToAllChildren**: `bool`
-- **uxmlChildElementsDescription**: `IEnumerable<UxmlChildElementDescription>`
 - **autoExpand**: `bool`
 
 ### Public Methods
 
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **GetRootIds()**: Returns `IEnumerable<int>`
 - **GetTreeCount()**: Returns `int`
 - **SetViewController()**: Returns `void`

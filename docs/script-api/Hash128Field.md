@@ -10,12 +10,8 @@
 
 
     [MovedFrom(true, UpgradeConstants.EditorNamespace, UpgradeConstants.EditorAssembly)]
-
-
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement(libraryPath = "Numeric Fields")]
+    [Icon("UIToolkit/Icons/Hash128Field.png")]
 
 <param name="maxLength">Maximum number of characters for the field.</param>
 
@@ -29,6 +25,5 @@ For complete source code, see: [Hash128Field.cs](https://github.com/Unity-Techno
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
 - **SetValueWithoutNotify()**: Returns `void`
 

@@ -55,27 +55,46 @@ Maximum number of characters for that element
 
         void EditionHandleEvent(EventBase evt)
         {
-            if (selection.isSelectable)
+            var useTouchScreenKeyboard = editingManipulator?.editingUtilities.TouchScreenKeyboardCanBeUsed() ?? false;
+
+            if (!useTouchScreenKeyboard || edition.hideMobileInput || edition.hideSoftKeyboard)
+                selectingManipulator?.HandleEventBubbleUp(evt);
+            if (!edition.isReadOnly)
+                editingManipulator?.HandleEventBubbleUp(evt);
+
+            if (elementPanel?.contextualMenuManager?.CheckIfEventMatches(evt) == true)
             {
-                var useTouchScreenKeyboard = editingManipulator?.editingUtilities.TouchScreenKeyboardShouldBeUsed() ?? false;
-
-                if (!useTouchScreenKeyboard || edition.hideMobileInput)
-                    selectingManipulator?.HandleEventBubbleUp(evt);
-                if (!edition.isReadOnly)
-                    editingManipulator?.HandleEventBubbleUp(evt);
-
-                elementPanel?.contextualMenuManager?.DisplayMenuIfEventMatches(evt, this);
-
-                if (evt?.eventTypeId == ContextualMenuPopulateEvent.TypeId())
+                // UUM-102230: On PointerDown, Display menu after the target has been focused
+                if (evt.eventTypeId == PointerDownEvent.TypeId() && !focusController.IsFocused(this))
                 {
-                    ContextualMenuPopulateEvent e = evt as ContextualMenuPopulateEvent;
-                    int count = e.menu.MenuItems().Count;
-                    BuildContextualMenu(e);
-
-                    if (count > 0 && e.menu.MenuItems().Count > count)
+                    var evtTimestamp = evt.timestamp;
+                    RegisterCallbackOnce<FocusEvent>(_ =>
                     {
-                        e.menu.InsertSeparator(null, count);
-                    }
+                        // Don't react after event was disposed and we didn't get focus for any reason.
+                        if (evt.timestamp != evtTimestamp)
+                            return;
+
+                        // Repaint the panel now because they won't get another chance when the menu is up
+                        var menu = new DropdownMenu { repaintPanelBeforeDisplay = true };
+                        elementPanel?.contextualMenuManager?.DisplayMenu(evt, this, menu);
+                    });
+                }
+                else
+                {
+                    elementPanel.contextualMenuManager.DisplayMenu(evt, this);
+                }
+                evt.StopPropagation();
+            }
+
+            if (evt.eventTypeId == ContextualMenuPopulateEvent.TypeId())
+            {
+                ContextualMenuPopulateEvent e = evt as ContextualMenuPopulateEvent;
+                int count = e.menu.MenuItems().Count;
+                BuildContextualMenu(e);
+
+                if (count > 0 && e.menu.MenuItems().Count > count)
+                {
+                    e.menu.InsertSeparator(null, count);
                 }
             }
         }
@@ -134,6 +153,7 @@ For complete source code, see: [ITextEdition.cs](https://github.com/Unity-Techno
 - **isPassword**: `bool`
 - **hidePlaceholderOnFocus**: `bool`
 - **autoCorrection**: `bool`
+- **hideSoftKeyboard**: `bool`
 - **hideMobileInput**: `bool`
 - **touchScreenKeyboard**: `TouchScreenKeyboard`
 - **keyboardType**: `TouchScreenKeyboardType`

@@ -12,16 +12,21 @@ For complete source code, see: [PageStatistics.cs](https://github.com/Unity-Tech
 
 ### Public Properties
 
+- **Testing**: `class`
+- **breakBatches**: `bool`
+- **isFlat**: `bool`
+- **forceGammaRendering**: `bool`
 - **PageStatistics**: `struct`
 
 ### Public Methods
 
+- **GetCommandListManager()**: Returns `CommandListManager`
+- **GetMeshManager()**: Returns `MeshManager`
 - **Dispose()**: Returns `void`
 - **Allocate()**: Returns `MeshHandle`
 - **Update()**: Returns `void`
 - **Free()**: Returns `void`
 - **OnFrameRenderingBegin()**: Returns `void`
 - **AdvanceFrame()**: Returns `void`
-- **SynchronizeMaterials()**: Returns `void`
 - **ProcessDeviceFreeQueue()**: Returns `void`
 

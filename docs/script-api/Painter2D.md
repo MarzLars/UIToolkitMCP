@@ -52,7 +52,26 @@ Setting a stroke color will override the currently set `strokeGradient`.
 
 Setting a stroke gradient will override the currently set `strokeColor`.
 
+Setting a fill gradient will override the currently set `fillColor`.
+
+Setting a stroke fill gradient will override the currently set `strokeColor`.
+
 stroke width before converting the miter to a bevel.
+
+
+        [Obsolete("Use SetDashPattern(ReadOnlySpan<float>) and GetDashPattern(Span<float>) instead.", false)]
+
+Use `GetDashPattern` to retrieve the current pattern.
+
+<param name="pattern">The dash pattern values to set.</param>
+
+The destination span. Must have a length greater than or equal to the current dash pattern length.
+
+</param>
+
+The number of elements in the dash pattern. If <paramref name="values"/> is too short to hold the
+
+</returns>
 
 <param name="p2">The final point of the arc.</param>
 
@@ -63,6 +82,16 @@ stroke width before converting the miter to a bevel.
 <param name="p2">The second control point of the cubic bezier.</param>
 
 <param name="p2">The final position of the quadratic bezier.</param>
+
+<para>
+
+the complexity of both the clipping path and the clipped content. Also avoid nested clipping regions when possible,
+
+</para>
+
+Note that the clipped shapes will not have antialiased edges since the clipping path is applied by doing a per-triangle
+
+</para>
 
 The size and content of the vector image will be determined from the bounding-box of the visible content of the painter object.
 
@@ -77,16 +106,23 @@ For complete source code, see: [Painter2D.cs](https://github.com/Unity-Technolog
 - **lineWidth**: `float`
 - **strokeColor**: `Color`
 - **strokeGradient**: `Gradient`
+- **fillGradient**: `FillGradient`
+- **strokeFillGradient**: `FillGradient`
+- **fillTexture**: `Texture2D`
 - **fillColor**: `Color`
 - **lineJoin**: `LineJoin`
 - **lineCap**: `LineCap`
 - **miterLimit**: `float`
+- **dashPattern**: `ReadOnlySpan<float>`
+- **dashOffset**: `float`
 
 ### Public Methods
 
 - **OnEnable()**: Returns `void`
 - **Clear()**: Returns `void`
 - **Dispose()**: Returns `void`
+- **SetDashPattern()**: Returns `void`
+- **GetDashPattern()**: Returns `int`
 - **BeginPath()**: Returns `void`
 - **ClosePath()**: Returns `void`
 - **MoveTo()**: Returns `void`
@@ -97,5 +133,8 @@ For complete source code, see: [Painter2D.cs](https://github.com/Unity-Technolog
 - **QuadraticCurveTo()**: Returns `void`
 - **Stroke()**: Returns `void`
 - **Fill()**: Returns `void`
+- **PushClip()**: Returns `void`
+- **PopClip()**: Returns `void`
 - **Execute()**: Returns `void`
+- **SaveToVectorImage()**: Returns `bool`
 

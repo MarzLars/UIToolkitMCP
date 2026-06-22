@@ -21,6 +21,7 @@ For complete source code, see: [ComplexSelectorScope.cs](https://github.com/Unit
 - **AddImport()**: Returns `void`
 - **AddValue()**: Returns `void`
 - **AddCommaSeparator()**: Returns `void`
+- **AddResourcePath()**: Returns `void`
 - **EndProperty()**: Returns `void`
 - **EndRule()**: Returns `int`
 - **BuildTo()**: Returns `void`

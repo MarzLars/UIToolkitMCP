@@ -30,6 +30,8 @@ Will always be -1 for drag-and-drop operations in list views.
 
 <param name="visualMode">The visual mode the drag starts with.</param>
 
+<param name="visualMode">The visual mode the drag starts with.</param>
+
 Should be set during the `BaseVerticalCollectionView.setupDragAndDrop` callback.
 
 <param name="data">The data to store.</param>
@@ -50,5 +52,6 @@ For complete source code, see: [StartDragArgs.cs](https://github.com/Unity-Techn
 
 - **SetGenericData()**: Returns `void`
 - **SetUnityObjectReferences()**: Returns `void`
+- **SetEntityIds()**: Returns `void`
 - **SetPaths()**: Returns `void`
 

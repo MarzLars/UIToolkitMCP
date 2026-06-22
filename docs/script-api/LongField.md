@@ -10,12 +10,8 @@
 
 
     [MovedFrom(true, UpgradeConstants.EditorNamespace, UpgradeConstants.EditorAssembly)]
-
-
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement(libraryPath = "Numeric Fields")]
+    [Icon("UIToolkit/Icons/LongField.png")]
 
 <returns>The long integer as string.</returns>
 
@@ -29,6 +25,5 @@ For complete source code, see: [LongField.cs](https://github.com/Unity-Technolog
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
 - **ApplyInputDeviceDelta()**: Returns `void`
 

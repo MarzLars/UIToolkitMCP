@@ -9,10 +9,8 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement(libraryPath = "Numeric Fields")]
+    [Icon("UIToolkit/Icons/UnsignedIntegerField.png")]
 
 <returns>The unsigned integer as string.</returns>
 
@@ -26,6 +24,5 @@ For complete source code, see: [UnsignedIntegerField.cs](https://github.com/Unit
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
 - **ApplyInputDeviceDelta()**: Returns `void`
 

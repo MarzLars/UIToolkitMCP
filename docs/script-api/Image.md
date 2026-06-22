@@ -13,10 +13,8 @@ SA: [wiki:UIE-uxml-element-Image|UXML element Image].\\
 **Note**: This is the Image control for the UI Toolkit framework. This is not related to the
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement(libraryPath = "Controls")]
+    [Icon("UIToolkit/Icons/Image.png")]
 
 The following example creates an `Image` element and assigns a texture to it.
 
@@ -34,12 +32,16 @@ The following example creates an `Image` element and assigns a texture to it.
 
 
         [CreateProperty]
+        [UxmlAttribute]
 
 
         [CreateProperty]
+        [UxmlAttribute]
 
 
+        [Tooltip("The base texture coordinates of the Image relative to the bottom left corner.")]
         [CreateProperty]
+        [UxmlAttribute]
 
 ## Source Code Reference
 
@@ -47,16 +49,11 @@ For complete source code, see: [Image.cs](https://github.com/Unity-Technologies/
 
 ### Public Properties
 
-- **uxmlChildElementsDescription**: `IEnumerable<UxmlChildElementDescription>`
 - **image**: `Texture`
 - **sprite**: `Sprite`
 - **vectorImage**: `VectorImage`
 - **sourceRect**: `Rect`
-- **uv**: `Rect`
-- **scaleMode**: `ScaleMode`
 - **tintColor**: `Color`
-
-### Public Methods
-
-- **CreateInstance()**: Returns `object`
+- **scaleMode**: `ScaleMode`
+- **uv**: `Rect`
 

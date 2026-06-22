@@ -9,10 +9,8 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement]
+    [Icon("UIToolkit/Icons/CurveField.png")]
 
 
         [Obsolete("borderUssClass is not used anymore", false)]
@@ -44,7 +42,6 @@ For complete source code, see: [CurveField.cs](https://github.com/Unity-Technolo
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
 - **SetValueWithoutNotify()**: Returns `void`
 - **SetMesh()**: Returns `void`
 

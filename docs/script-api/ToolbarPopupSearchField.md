@@ -9,12 +9,8 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-This class defines the properties of a ToolbarPopupSearchField element that you can
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement]
+    [Icon("UIToolkit/Icons/ToolbarPopupSearchField.png")]
 
 
         [CreateProperty(ReadOnly = true)]
@@ -26,8 +22,4 @@ For complete source code, see: [ToolbarPopupSearchField.cs](https://github.com/U
 ### Public Properties
 
 - **menu**: `DropdownMenu`
-
-### Public Methods
-
-- **CreateInstance()**: Returns `object`
 

@@ -9,10 +9,8 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement(libraryPath = "Controls")]
+    [Icon("UIToolkit/Icons/DropdownField.png")]
 
 <param name="defaultValue">The default value selected from the dropdown.</param>
 
@@ -33,10 +31,4 @@
 ## Source Code Reference
 
 For complete source code, see: [DropdownField.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Controls/DropdownField.cs)
-
-### Public Methods
-
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 

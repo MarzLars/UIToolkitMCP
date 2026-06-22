@@ -9,12 +9,8 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">The attribute bag.</param>
+    [UxmlElement(libraryPath = "Controls")]
+    [Icon("UIToolkit/Icons/RadioButtonGroup.png")]
 
 Unity adds this USS class to every instance of the RadioButtonGroup element. Any styling applied to
 
@@ -43,7 +39,6 @@ to the hierarchy).
             using var _ = ListPool<RadioButton>.Get(out var radioButtons);
             GetAllRadioButtons(radioButtons);
 
-            m_SelectedRadioButton = null;
             if (value >= 0 && value < radioButtons.Count)
             {
                 m_SelectedRadioButton = radioButtons[value];
@@ -64,7 +59,8 @@ to the hierarchy).
             }
             else
             {
-                foreach (var radioButton in radioButtons)
+                // We don't want to set the value of a radio button that was removed the hierarchy
+                foreach (var radioButton in m_RegisteredRadioButtons)
                 {
                     if (notify)
                         radioButton.value = false;
@@ -98,8 +94,5 @@ For complete source code, see: [RadioButtonGroup.cs](https://github.com/Unity-Te
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **SetValueWithoutNotify()**: Returns `void`
 

@@ -9,10 +9,11 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement]
 
 
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+        [Tooltip(k_BindingPathTooltip)]
+        [UxmlAttribute("binding-path")]
 
 ## Source Code Reference
 
@@ -22,10 +23,4 @@ For complete source code, see: [BindableElement.cs](https://github.com/Unity-Tec
 
 - **binding**: `IBinding`
 - **bindingPath**: `string`
-
-### Public Methods
-
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 

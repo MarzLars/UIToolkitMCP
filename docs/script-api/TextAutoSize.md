@@ -14,6 +14,7 @@ Use the explicit `font-size`.
         None,
 
 Setting controls automatic font‑size adjustment.
+    [StructLayout(LayoutKind.Sequential)]
 
 BestFit – ignore `font-size` and scale text between `minSize` and `maxSize`.
 

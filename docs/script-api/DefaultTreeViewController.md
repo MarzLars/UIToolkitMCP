@@ -16,7 +16,7 @@ Root items can include their children directly.
 
 <param name="parentId">The parent id for the item.</param>
 
-<param name="rebuildTree">Whether the tree data should be rebuilt right away. Call `TreeViewController.RebuildTree()` when `false`.</param>
+<param name="rebuildTree">Whether to refresh the tree data immediately. If `false`, call `BaseVerticalCollectionView.RefreshItems()`.</param>
 
 <typeparam name="T">Type of the data inside TreeViewItemData.</typeparam>
 

@@ -28,12 +28,9 @@ To bind a Button's text value to the contents of a variable, set the `binding-pa
 **Remarks:**
 
 
-This class is added to every `VisualElement` that is created from UXML.
 
-This class defines the properties of a Button element that you can
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement(libraryPath = "Controls")]
+    [Icon("UIToolkit/Icons/Button.png")]
 
 Unity adds this USS class to every instance of the Button element. Any styling applied to
 
@@ -100,10 +97,4 @@ For complete source code, see: [Button.cs](https://github.com/Unity-Technologies
 - **clickable**: `Clickable`
 - **iconImage**: `Background`
 - **text**: `string`
-
-### Public Methods
-
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 

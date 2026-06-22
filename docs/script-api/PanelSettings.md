@@ -33,6 +33,29 @@ Expand the panel area horizontally or vertically so the panel size is never
         Expand
     }
 
+Determines how a panel is rendered.
+
+The panel is drawn last in the rendering order and always appears on top of the scene.
+
+
+        ScreenSpaceOverlay,
+
+Renders the panel as an object within the 3D world.
+
+
+**Remarks:**
+
+
+occluded by other objects in the scene. This mode is suitable for in-world UI such as
+
+also be used as an overlay if, for example, you only want to add the ability to have a 3D
+
+
+        WorldSpace
+    }
+
+Options that specify how to update colliders for UI Documents in world space.
+
 If the bounding box of the document changes, the collider will be automatically udpated
 
 
@@ -85,6 +108,8 @@ This can be used to display UI on a 3D geometry in the Scene, to perform manual 
 
 /// When the project color space is gamma, you should use a Render Texture whose format is
 
+Defaults to `PanelRenderMode.ScreenSpaceOverlay`.
+
 For sprites that have the same Pixels Per Unit value as the Reference Pixels Per Unit value in the
 
 the panel transform.
@@ -96,6 +121,8 @@ the panel transform.
 When `PanelSettings.scaleMode` is set to `ConstantPhysicalSize`, Unity compares
 
 /// If Unity cannot determine the screen DPI, it uses the `PanelSettings.fallbackDpi` instead.
+
+In the editor, UI Builder and the Inspector use their own window scaling (IMGUI / editor pixels-per-point);
 
 If the screen resolution is larger than the reference resolution, Unity scales
 
@@ -138,6 +165,16 @@ The color is specified as a "straight" color but will internally be converted to
 A value of 0 means that the UI renderer will use its own default.
 
 If set too low, more vertex buffers may be required, which may increase the number of draw calls and hinder performance.
+
+Adds GPU memory per vertex for the enabled channels. Leave at `ExtraVertexChannels.None`
+
+panel's render chain.
+
+<seealso cref="UIMesh"/>
+
+If the shader uses more than one texture slot, it applies dynamic branching to select the texture
+
+performance. However, the extra branching operations can reduce GPU performance.
 
 This is only applicable when the project is in linear color space and when the panel is being rendered into
 
@@ -210,8 +247,10 @@ For complete source code, see: [PanelSettings.cs](https://github.com/Unity-Techn
 
 - **PanelScaleMode**: `enum`
 - **PanelScreenMatchMode**: `enum`
+- **PanelRenderMode**: `enum`
 - **themeStyleSheet**: `ThemeStyleSheet`
 - **targetTexture**: `RenderTexture`
+- **renderMode**: `PanelRenderMode`
 - **scaleMode**: `PanelScaleMode`
 - **referenceSpritePixelsPerUnit**: `float`
 - **scale**: `float`
@@ -226,8 +265,6 @@ For complete source code, see: [PanelSettings.cs](https://github.com/Unity-Techn
 - **clearDepthStencil**: `bool`
 - **depthClearValue**: `float`
 - **clearColor**: `bool`
-- **colorClearValue**: `Color`
-- **vertexBudget**: `UInt32`
 
 ### Public Methods
 

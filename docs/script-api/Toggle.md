@@ -18,14 +18,6 @@ normal, hovered, checked, and unchecked. You can style a Toggle control to chang
 
 /// For more information, refer to [wiki:UIE-uxml-element-Toggle|UXML element Toggle].
 
-
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">The attribute bag.</param>
-
 Unity adds this USS class to every instance of the Toggle element. Any styling applied to
 
 Unity adds this USS class to the `Label` sub-element of the `Toggle` if the Toggle has a Label.
@@ -47,10 +39,4 @@ The default manipulator makes it possible to activate the Toggle with a left mou
 ## Source Code Reference
 
 For complete source code, see: [Toggle.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Controls/Toggle.cs)
-
-### Public Methods
-
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 

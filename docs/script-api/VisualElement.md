@@ -15,4 +15,10 @@ For complete source code, see: [VisualElement.cs](https://github.com/Unity-Techn
 - **type**: `Type`
 - **fullTypeName**: `string`
 - **typeName**: `string`
+- **typeNameId**: `int`
+
+### Public Methods
+
+- **Equals()**: Returns `bool`
+- **GetHashCode()**: Returns `int`
 

@@ -10,87 +10,40 @@
 
 
     [MovedFrom(true, UpgradeConstants.EditorNamespace, UpgradeConstants.EditorAssembly)]
-
-
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">The attribute bag.</param>
+    [UxmlElement(libraryPath = "Numeric Fields"), UxmlPartialSerializedData]
+    [Icon("UIToolkit/Icons/RectField.png")]
 
 
     [MovedFrom(true, UpgradeConstants.EditorNamespace, UpgradeConstants.EditorAssembly)]
-
-
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">Bags of attributes where the values come from.</param>
+    [UxmlElement(libraryPath = "Numeric Fields"), UxmlPartialSerializedData]
+    [Icon("UIToolkit/Icons/RectIntField.png")]
 
 
     [MovedFrom(true, UpgradeConstants.EditorNamespace, UpgradeConstants.EditorAssembly)]
-
-
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">The attribute bag.</param>
+    [UxmlElement(libraryPath = "Numeric Fields"), UxmlPartialSerializedData]
+    [Icon("UIToolkit/Icons/Vector2Field.png")]
 
 
     [MovedFrom(true, UpgradeConstants.EditorNamespace, UpgradeConstants.EditorAssembly)]
-
-
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">The attribute bag.</param>
+    [UxmlElement(libraryPath = "Numeric Fields"), UxmlPartialSerializedData]
+    [Icon("UIToolkit/Icons/Vector3Field.png")]
 
 
     [MovedFrom(true, UpgradeConstants.EditorNamespace, UpgradeConstants.EditorAssembly)]
-
-
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">The attribute bag.</param>
+    [UxmlElement(libraryPath = "Numeric Fields"), UxmlPartialSerializedData]
+    [Icon("UIToolkit/Icons/Vector4Field.png")]
 
 
     [MovedFrom(true, UpgradeConstants.EditorNamespace, UpgradeConstants.EditorAssembly)]
-
-
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">Bag of attributes where to get them.</param>
+    [UxmlElement(libraryPath = "Numeric Fields"), UxmlPartialSerializedData]
+    [Icon("UIToolkit/Icons/Vector2IntField.png")]
 
 
     [MovedFrom(true, UpgradeConstants.EditorNamespace, UpgradeConstants.EditorAssembly)]
-
-
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">Bag of attributes where to get them.</param>
+    [UxmlElement(libraryPath = "Numeric Fields"), UxmlPartialSerializedData]
+    [Icon("UIToolkit/Icons/Vector3IntField.png")]
 
 ## Source Code Reference
 
 For complete source code, see: [RectField.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Controls/CompoundFields.cs)
-
-### Public Methods
-
-- **CreateInstance()**: Returns `object`
-- **Init()**: Returns `void`
 

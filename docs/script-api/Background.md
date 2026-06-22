@@ -9,6 +9,9 @@
 ## Documentation
 
 
+    [Serializable]
+
+
         [Obsolete("Use Background.FromTexture2D instead")]
 
 <returns>A new background object.</returns>

@@ -9,10 +9,8 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement]
+    [Icon("UIToolkit/Icons/IMGUIContainer.png")]
 
 This is assigned to onGUIHandler and is similar to `MonoBehaviour.OnGUI`.
 
@@ -28,14 +26,12 @@ For complete source code, see: [IMGUIContainer.cs](https://github.com/Unity-Tech
 
 ### Public Properties
 
-- **uxmlChildElementsDescription**: `IEnumerable<UxmlChildElementDescription>`
 - **onGUIHandler**: `Action`
 - **cullingEnabled**: `bool`
 - **contextType**: `ContextType`
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
 - **Dispose()**: Returns `void`
 - **MarkDirtyLayout()**: Returns `void`
 

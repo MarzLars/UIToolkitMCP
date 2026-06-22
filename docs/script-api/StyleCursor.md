@@ -8,6 +8,9 @@
 
 ## Documentation
 
+
+    [Serializable]
+
 SA: [IStyle.cursor]
 
 <undoc/>

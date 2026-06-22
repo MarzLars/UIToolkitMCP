@@ -32,32 +32,38 @@ Unlike `StretchMode.GrowAndFill`, the size is not adjusted to fill any available
             GrowAndFill
         }
 
-        [ExcludeFromDocs, Serializable]
+        IList<Column> m_Columns = new List<Column>();
+        List<Column> m_DisplayColumns;
+        List<Column> m_VisibleColumns;
+        bool m_VisibleColumnsDirty = true;
 
+        StretchMode m_StretchMode = StretchMode.GrowAndFill;
+        bool m_Reorderable = true;
+        bool m_Resizable = true;
+        bool m_ResizePreview;
+        string m_PrimaryColumnName;
 
-        [Obsolete("UxmlObjectFactory<T> is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlObjectFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlObjectTraits<T> is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+Called when a property has changed.
 
 Needs to match a `Column`'s id, otherwise will be ignored.
 
 
+        [UxmlAttribute]
         [CreateProperty]
+
+The default value is `StretchMode.GrowAndFill`
 
 Reordering columns can be cancelled by pressing ESC key.
 
 The resize behaviour of a specific column in the column collection can be specified by setting `Column.resizable`.
 
 
+        [UxmlAttribute]
         [CreateProperty]
 
 When enabled, resizing can be cancelled by pressing ESC key.
 
-The default value is `StretchMode.GrowAndFill`
+CreatePropertyAttribute is used to be able to bind to properties of the columns in the collection.
 
 <returns>Whether or not the specified column is the primary one.</returns>
 
@@ -91,16 +97,13 @@ For complete source code, see: [Columns.cs](https://github.com/Unity-Technologie
 
 - **StretchMode**: `enum`
 - **primaryColumnName**: `string`
+- **stretchMode**: `StretchMode`
 - **reorderable**: `bool`
 - **resizable**: `bool`
 - **resizePreview**: `bool`
-- **stretchMode**: `StretchMode`
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **IsPrimary()**: Returns `bool`
 - **GetEnumerator()**: Returns `IEnumerator<Column>`
 - **Add()**: Returns `void`

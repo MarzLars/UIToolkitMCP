@@ -62,9 +62,9 @@ to reorder them, set the `reorderable` property in UXML or the `ListView.reorder
 **Remarks:**
 
 
-This class is added to every `VisualElement` created from UXML.
 
-This class defines the ListView element properties that you can use in a UI document asset (UXML file).
+    [UxmlElement(libraryPath = "Containers")]
+    [Icon("UIToolkit/Icons/ListView.png")]
 
 This callback needs to call a function that constructs a blank `VisualElement` that is
 
@@ -82,6 +82,7 @@ This template is designed to replace the `makeItem` definition.
 
 
 
+        [UxmlAttribute]
         [CreateProperty]
 
 The method called by this callback receives the VisualElement to bind, and the index of the
@@ -117,10 +118,4 @@ For complete source code, see: [ListView.cs](https://github.com/Unity-Technologi
 ### Public Properties
 
 - **itemTemplate**: `VisualTreeAsset`
-
-### Public Methods
-
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 

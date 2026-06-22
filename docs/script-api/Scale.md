@@ -8,6 +8,9 @@
 
 ## Documentation
 
+
+    [Serializable, StructLayout(LayoutKind.Sequential)]
+
 Scaling in the Z axis is currently unsupported. Consequently, if a Z value different
 
 <undoc/>

@@ -28,22 +28,74 @@ Qualifies a callback that performs significant work on the main thread, but even
         Work,
     }
 
-An enum used to describe the texture used in a `MeshGenerationContext` allocation.
+Flags describing how a texture must be used in the context of a draw command.
+
+<seealso cref="MeshGenerationContext.DrawMesh"/>
 
 
         None = 0,
 
-The texture should not be included in the dynamic atlas.
+The texture must not be included in the dynamic atlas.
+
+In premultiplied alpha, the RGB channels have been multiplied by the alpha channel. A typical source is a
+
+(e.g. Blend SrcAlpha OneMinusSrcAlpha), which stores premultiplied results. Some operations may require
 
 
         PremultipliedAlpha = 1 << 1,
     }
 
-Represents the vertex and index data allocated for drawing the content of a `VisualElement`.
+Optional per-vertex channels that a UI Toolkit panel can opt into for use by custom shaders.
 
 
 **Remarks:**
 
+
+
+    [Flags]
+
+No optional channels.
+        None      = 0,
+
+TEXCOORD2 (float4).
+        TexCoord2 = 1 << 6,
+
+NORMAL (float3 in the public API; padded to float4 on the GPU).
+        Normal    = 1 << 1,
+
+`MeshGenerationContext.DrawMesh(ref UIMesh, Texture)`.
+
+
+**Remarks:**
+
+
+(`uv1`, `uv2`, `uv3`, `normal`, `tangent`)
+
+`IPanel.extraVertexChannels`. Providing a slice for a channel the panel did not enable
+
+<para>Each non-empty extras slice must have `Length == vertices.Length`; mismatches are logged
+
+<para>Channels enabled on the panel but left empty in the draw are zero-filled.</para>
+
+flush time, not at the call site. Slices returned by
+
+guaranteed valid through the flush; user-supplied slices must remain valid until the same flush point.</para>
+
+Vertex positions, colors, and UVs.
+
+Triangle list indices.
+
+UV1 coordinates (TEXCOORD1 in the shader).
+
+UV2 coordinates (TEXCOORD2 in the shader).
+
+UV3 coordinates (TEXCOORD3 in the shader).
+
+Vertex normals. Padded to `Vector4` on the GPU (`.w` zero-filled).
+
+Vertex tangents (`.w` = handedness).
+
+You can use this object to fill the values for the vertices and indices only during a callback to the `VisualElement.generateVisualContent` delegate. Do not store the passed `MeshWriteData` outside the scope of `VisualElement.generateVisualContent` as Unity could recycle it for other callbacks.
 
 <undoc/>
         [Obsolete("Texture coordinates are now automatically remapped by the renderer. You are no longer required to remap the UV coordinates in the provided rectangle.")]
@@ -113,6 +165,18 @@ You can only call this method during the mesh generation phase of the panel and 
 
 <param name="vertices">The returned vertices.</param>
 
+channel set in <paramref name="extraChannels"/>.
+
+
+**Remarks:**
+
+
+<paramref name="indexCount"/> = 0 to skip the index allocation, so callers can mix-and-match
+
+`UIMesh` values).</para>
+
+"channel not provided" and zero-fills them at draw time. Use only during the mesh generation phase.</para>
+
 <param name="indexCount">The number of triangle list indices to allocate. Each 3 indices represent one triangle, so this value should be multiples of 3.</param>
 
 <returns>An object that gives access to the newely allocated data. If the returned vertex count is 0, the allocation failed (the system ran out of memory).</returns>
@@ -139,9 +203,29 @@ You can generate the mesh content later because the renderer doesn't immediately
 
 <param name="indices">The triangle list indices. Must be a multiple of 3. All indices must be initialized.</param>
 
+You can generate the mesh content later because the renderer doesn't immediately process the mesh. The mesh
+
+/// The renderer will process the mesh when the following conditions are met:
+
+- All registered generation dependencies have completed
+
+<param name="indices">The triangle list indices. Must be a multiple of 3. All indices must be initialized.</param>
+
+<param name="textureOptions">Flags that apply to the provided texture for this draw call.</param>
+
+<para>The slices inside <paramref name="mesh"/> are read at flush time (end of the current repaint
+
+<para>`UIMesh.vertices` and `UIMesh.indices` are mandatory. Each non-empty
+
+draw is dropped.</para>
+
 <param name="offset">The position offset where to draw the vector image.</param>
 
 <param name="scale">The scale of the vector image</param>
+
+<param name="pos">The start position where the text will be displayed.</param>
+
+<param name="color">The text color.</param>
 
 <param name="pos">The start position where the text will be displayed.</param>
 
@@ -170,6 +254,16 @@ For complete source code, see: [Vertex.cs](https://github.com/Unity-Technologies
 ### Public Properties
 
 - **Vertex**: `struct`
+- **TextureOptions**: `enum`
+- **ExtraVertexChannels**: `enum`
+- **UIMesh**: `struct`
+- **vertices**: `NativeSlice<Vertex>`
+- **indices**: `NativeSlice<ushort>`
+- **uv1**: `NativeSlice<Vector4>`
+- **uv2**: `NativeSlice<Vector4>`
+- **uv3**: `NativeSlice<Vector4>`
+- **normal**: `NativeSlice<Vector3>`
+- **tangent**: `NativeSlice<Vector4>`
 - **MeshWriteData**: `class`
 - **vertexCount**: `int`
 - **indexCount**: `int`
@@ -183,12 +277,13 @@ For complete source code, see: [Vertex.cs](https://github.com/Unity-Technologies
 - **SetNextIndex()**: Returns `void`
 - **SetAllVertices()**: Returns `void`
 - **SetAllIndices()**: Returns `void`
-- **Init()**: Returns `ColorPage`
+- **Init()**: Returns `ColorId`
 - **AllocateTempMesh()**: Returns `void`
 - **Allocate()**: Returns `MeshWriteData`
 - **DrawMesh()**: Returns `void`
 - **DrawVectorImage()**: Returns `void`
 - **DrawText()**: Returns `void`
+- **DrawTextStandard()**: Returns `void`
 - **GetTempMeshAllocator()**: Returns `void`
 - **InsertMeshGenerationNode()**: Returns `void`
 - **AddMeshGenerationJob()**: Returns `void`

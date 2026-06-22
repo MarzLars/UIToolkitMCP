@@ -36,6 +36,7 @@ For complete source code, see: [TimerState.cs](https://github.com/Unity-Technolo
 - **Equals()**: Returns `bool`
 - **GetHashCode()**: Returns `int`
 - **SetDuration()**: Returns `void`
+- **OffsetBy()**: Returns `void`
 - **ShouldUnschedule()**: Returns `bool`
 - **PerformTimerUpdate()**: Returns `void`
 - **ToString()**: Returns `string`
@@ -44,5 +45,6 @@ For complete source code, see: [TimerState.cs](https://github.com/Unity-Technolo
 - **ScheduleUntil()**: Returns `ScheduledItem`
 - **ScheduleForDuration()**: Returns `ScheduledItem`
 - **Unschedule()**: Returns `void`
+- **AdjustCurrentTime()**: Returns `void`
 - **UpdateScheduledEvents()**: Returns `void`
 

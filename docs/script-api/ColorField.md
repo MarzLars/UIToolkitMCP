@@ -9,20 +9,19 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement]
+    [Icon("UIToolkit/Icons/ColorField.png")]
 
 
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">The attribute bag.</param>
-
-
+        [UxmlAttribute]
         [CreateProperty]
 
 
+        [UxmlAttribute]
         [CreateProperty]
 
 
+        [UxmlAttribute]
         [CreateProperty]
 
 ## Source Code Reference
@@ -37,8 +36,5 @@ For complete source code, see: [ColorField.cs](https://github.com/Unity-Technolo
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **SetValueWithoutNotify()**: Returns `void`
 

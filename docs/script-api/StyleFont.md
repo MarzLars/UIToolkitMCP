@@ -8,6 +8,9 @@
 
 ## Documentation
 
+
+    [Serializable]
+
 <undoc/>
 
 <undoc/>

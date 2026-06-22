@@ -8,6 +8,23 @@
 
 ## Documentation
 
+This is the only supported mode for OS menus.
+
+
+        Fixed,
+
+The width of the dropdown menu matches the width of the content.
+
+<param name="isChecked">Indicates whether a checkmark next to the item is displayed.</param>
+
+<param name="isChecked">Indicates whether a checkmark next to the item is displayed.</param>
+
+<param name="data">The object to pass to the callback as a parameter.</param>
+
+<param name="isChecked">Indicates whether a checkmark next to the item is displayed.</param>
+
+<param name="targetElement">The element determines which root to use as the menu's parent.</param>
+
 The GenericDropdownMenu is a generic implementation of a dropdown menu that you can use in both Editor UI and runtime UI.
 
 <example>
@@ -16,7 +33,7 @@ the width of the dropdown menu with the @@DropDown@@ method.
 
 </example>
 
-dropdown menu if they don't want to use the default implementation.
+dropdown menu if they don't want to use the default implementation. It contains a reference to the menu in its `VisualElement.userData`.
 
 <param name="isChecked">Indicates whether a checkmark next to the item is displayed.</param>
 
@@ -34,27 +51,19 @@ The parent element that displays the menu:
 
 - For Editor UI, the parent element is `EditorWindow.rootVisualElement`.
 
-/// The @@anchored@@ parameter determines the width of the menu. Refer to `GenericDropdownMenu` for example usages.
+/// The @@dropdownMenuSizeMode@@ parameter determines the width of the menu.
 
 <param name="position">The position in the coordinate space of the panel.</param>
 
-<param name="anchored">If true, the menu's width matches the width of the @@position@@; otherwise, the menu expands to the container's full width.</param>
-
-The parent element that displays the menu:
-
-- For Editor UI, the parent element is `EditorWindow.rootVisualElement`.
-
-/// The @@anchored@@ and @@fitContentWidthIfAnchored@@ parameters determine the width of the menu. Refer to `GenericDropdownMenu` for example usages.
-
-<param name="targetElement">The element determines which root to use as the menu's parent.</param>
-
-to the container's full width.</param>
-
-otherwise, the menu's width matches the width of the @@position@@. If the menu is unanchored, this parameter is ignored.</param>
+<param name="dropdownMenuSizeMode">Indicates how to format the menu. Refer to `DropdownMenuSizeMode` for more information. Defaults to Auto.</param>
 
 ## Source Code Reference
 
 For complete source code, see: [GenericDropdownMenu.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Controls/GenericDropdownMenu.cs)
+
+### Public Properties
+
+- **DropdownMenuSizeMode**: `enum`
 
 ### Public Methods
 

@@ -40,6 +40,15 @@ Indicate when the mouse dragging is starting.
 
 Base class for text fields.
 
+Expressions are mathematical or logical constructs, such as "1+1" or "5*2", which can be processed
+
+required for expressions (e.g., '+', '-', '*', '/', etc.), expanding its functionality beyond the typical restrictions
+
+
+        [Tooltip("Indicates whether the field supports expressions that can be evaluated into a value.")]
+        [CreateProperty]
+        [UxmlAttribute]
+
 The string follows standard .NET formatting conventions.
 
 
@@ -66,12 +75,6 @@ necessary. For example, `3.5` becomes `4` and `3.0` becomes `3`.
 
 <returns>The value parsed from the string.</returns>
 
-
-    [MovedFrom(true, UpgradeConstants.EditorNamespace, UpgradeConstants.EditorAssembly)]
-    [Obsolete("TextValueFieldTraits<TValueType, TValueUxmlAttributeType> is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">A bag of UXML attribute name-value pairs used to initialize VisualElement members.</param>
-
 ## Source Code Reference
 
 For complete source code, see: [IValueField.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Controls/TextValueField.cs)
@@ -79,6 +82,7 @@ For complete source code, see: [IValueField.cs](https://github.com/Unity-Technol
 ### Public Properties
 
 - **DeltaSpeed**: `enum`
+- **supportExpressions**: `bool`
 - **formatString**: `string`
 - **formatString**: `string`
 
@@ -87,5 +91,5 @@ For complete source code, see: [IValueField.cs](https://github.com/Unity-Technol
 - **StartDragging()**: Returns `void`
 - **StopDragging()**: Returns `void`
 - **SetValueWithoutNotify()**: Returns `void`
-- **Init()**: Returns `void`
+- **ClearValue()**: Returns `void`
 

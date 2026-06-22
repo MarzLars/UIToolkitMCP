@@ -27,12 +27,8 @@ For more information and code examples, refer to the [wiki:UIE-uxml-element-Slid
 
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">The attribute bag.</param>
+    [UxmlElement(libraryPath = "Controls")]
+    [Icon("UIToolkit/Icons/Slider.png")]
 
 <param name="end">The maximum value that the slider encodes.</param>
 
@@ -50,8 +46,5 @@ For complete source code, see: [Slider.cs](https://github.com/Unity-Technologies
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **ApplyInputDeviceDelta()**: Returns `void`
 

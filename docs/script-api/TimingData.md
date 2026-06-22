@@ -23,9 +23,11 @@ For complete source code, see: [TimingData.cs](https://github.com/Unity-Technolo
 - **SameFunc**: `Func<TextShadow, TextShadow, bool>`
 - **SameFunc**: `Func<Scale, Scale, bool>`
 - **SameFunc**: `Func<Rotate, Rotate, bool>`
+- **SameFunc**: `Func<Ratio, Ratio, bool>`
 - **SameFunc**: `Func<Translate, Translate, bool>`
 - **SameFunc**: `Func<TransformOrigin, TransformOrigin, bool>`
 - **SameFunc**: `Func<BackgroundSize, BackgroundSize, bool>`
+- **SameFunc**: `Func<MaterialDefinition, MaterialDefinition, bool>`
 
 ### Public Methods
 
@@ -44,9 +46,9 @@ For complete source code, see: [TimingData.cs](https://github.com/Unity-Technolo
 - **StateChanged()**: Returns `bool`
 - **Clear()**: Returns `void`
 - **StartTransition()**: Returns `bool`
+- **Sample()**: Returns `void`
 - **StartTransitionEnum()**: Returns `bool`
 - **CancelAllAnimations()**: Returns `void`
 - **CancelAnimation()**: Returns `void`
 - **HasRunningAnimation()**: Returns `bool`
-- **UpdateAnimation()**: Returns `void`
 

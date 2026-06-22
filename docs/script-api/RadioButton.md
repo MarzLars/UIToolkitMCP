@@ -9,12 +9,8 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">The attribute bag.</param>
+    [UxmlElement(libraryPath = "Controls")]
+    [Icon("UIToolkit/Icons/RadioButton.png")]
 
 Unity adds this USS class to every instance of the RadioButton element. Any styling applied to
 
@@ -45,9 +41,6 @@ For complete source code, see: [RadioButton.cs](https://github.com/Unity-Technol
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **SetSelected()**: Returns `void`
 - **SetValueWithoutNotify()**: Returns `void`
 

@@ -47,32 +47,12 @@ Represents a column in multi-column views such as multi-column list view or mult
 cell in this column are represented.
 
 
-        [Obsolete("UxmlObjectFactory<T> is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlObjectFactory<T> is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlObjectTraits<T> is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">A bag of name-value pairs, one for each attribute of the UXML element.</param>
-
-
-**Remarks:**
-
+        [CreateProperty]
+        [UxmlAttribute]
 
 
         [CreateProperty]
-
-
-        [CreateProperty]
-
-
-        [CreateProperty]
-
-The following example creates a [MultiColumnListView] that can be sorted with the default algorithm:
-
-</example>
+        [UxmlAttribute]
 
 The default value is true.
 
@@ -82,20 +62,35 @@ The default value is 35px.
 
 
         [CreateProperty]
+        [UxmlAttribute]
 
 
         [CreateProperty]
+        [UxmlAttribute]
 
 
         [CreateProperty]
+        [UxmlAttribute]
 
 
         [CreateProperty]
+        [UxmlAttribute]
 
 The resize behaviour of all columns in a column collection can be specified by setting `Columns.resizable`.
 
 
         [CreateProperty]
+        [UxmlAttribute]
+
+
+        [UxmlAttribute]
+
+
+        [CreateProperty]
+
+The following example creates a [MultiColumnListView] that can be sorted with the default algorithm:
+
+</example>
 
 
         [CreateProperty]
@@ -111,17 +106,17 @@ For complete source code, see: [Column.cs](https://github.com/Unity-Technologies
 
 - **name**: `string`
 - **title**: `string`
-- **icon**: `Background`
-- **comparison**: `Comparison<int>`
 - **visible**: `bool`
 - **width**: `Length`
 - **minWidth**: `Length`
 - **maxWidth**: `Length`
-- **sortable**: `bool`
 - **stretchable**: `bool`
+- **sortable**: `bool`
 - **optional**: `bool`
 - **resizable**: `bool`
 - **bindingPath**: `string`
+- **icon**: `Background`
+- **comparison**: `Comparison<int>`
 - **headerTemplate**: `VisualTreeAsset`
 - **cellTemplate**: `VisualTreeAsset`
 - **makeHeader**: `Func<VisualElement>`
@@ -129,10 +124,4 @@ For complete source code, see: [Column.cs](https://github.com/Unity-Technologies
 - **unbindHeader**: `Action<VisualElement>`
 - **destroyHeader**: `Action<VisualElement>`
 - **makeCell**: `Func<VisualElement>`
-
-### Public Methods
-
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 

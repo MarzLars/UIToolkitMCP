@@ -21,12 +21,8 @@ The MinMaxSlider manages navigation events in a customized manner.
 
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">The bag of attributes.</param>
+    [UxmlElement(libraryPath = "Controls"), UxmlPartialSerializedData]
+    [Icon("UIToolkit/Icons/MinMaxSlider.png")]
 
 
         [CreateProperty]
@@ -38,10 +34,14 @@ The MinMaxSlider manages navigation events in a customized manner.
         [CreateProperty(ReadOnly = true)]
 
 
+        [Delayed]
         [CreateProperty]
+        [UxmlAttribute]
 
 
+        [Delayed]
         [CreateProperty]
+        [UxmlAttribute]
 
 When a `NavigationSubmitEvent` is received the slider cycles through the elements in the following order:
 
@@ -72,8 +72,5 @@ For complete source code, see: [MinMaxSlider.cs](https://github.com/Unity-Techno
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **SetValueWithoutNotify()**: Returns `void`
 

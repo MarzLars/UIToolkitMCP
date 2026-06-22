@@ -18,6 +18,9 @@ Interprets the measurement of an angle in gradians. One full circle is 400 gradi
 
 Interprets the measurement of an angle, expressed as a number of turns. One full circle is one turn.
 
+
+    [Serializable, StructLayout(LayoutKind.Sequential)]
+
 Positive values represent a clockwise rotation. Negative values represent counterclockwise rotation.
 
 `AngleUnit.Degree` is the default unit.

@@ -21,5 +21,22 @@ For complete source code, see: [IRuntimePanel.cs](https://github.com/Unity-Techn
 
 ### Public Methods
 
+- **AddOnCreatePanelAction()**: Returns `void`
+- **RemoveOnCreatePanelAction()**: Returns `void`
+- **AddOnWillDestroyPanelAction()**: Returns `void`
+- **RemoveOnWillDestroyPanelAction()**: Returns `void`
+- **RegisterEventSystem()**: Returns `void`
+- **UnregisterEventSystem()**: Returns `void`
+- **GetCapturingElement()**: Returns `IEventHandler`
+- **GetSortedPlayerPanelsInternal()**: Returns `List<IRuntimePanel>`
+- **SetElementWithSoftPointerCapture()**: Returns `void`
+- **GetPlayerPanelWithSoftPointerCapture()**: Returns `IRuntimePanel`
+- **PressButton()**: Returns `void`
+- **ReleaseButton()**: Returns `void`
+- **GetPressedButtons()**: Returns `int`
+- **GetPointerDeltaPosition()**: Returns `Vector3`
+- **GetCameraWithSoftPointerCapture()**: Returns `Camera`
+- **GetWorldSpacePanelComponentWithSoftPointerCapture()**: Returns `IPanelComponent`
+- **HasActiveDocuments()**: Returns `bool`
 - **Create()**: Returns `RuntimePanel`
 

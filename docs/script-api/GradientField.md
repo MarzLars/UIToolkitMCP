@@ -9,10 +9,8 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
+    [UxmlElement]
+    [Icon("UIToolkit/Icons/GradientField.png")]
 
 __Note__: Changing this doesn't trigger sending a change event.
 
@@ -37,6 +35,5 @@ For complete source code, see: [GradientField.cs](https://github.com/Unity-Techn
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
 - **SetValueWithoutNotify()**: Returns `void`
 

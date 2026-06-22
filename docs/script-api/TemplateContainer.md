@@ -14,14 +14,7 @@ When using `VisualTreeAsset.Instantiate()`, a TemplateContainer instance is retu
 
 
     [UxmlElement("Instance"), HideInInspector]
-
-
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">The attribute bag.</param>
+    [Icon("UIToolkit/Icons/TemplateContainer.png")]
 
 Template declaration inside another VisualTreeAsset.
 
@@ -35,14 +28,7 @@ For complete source code, see: [TemplateContainer.cs](https://github.com/Unity-T
 
 ### Public Properties
 
-- **uxmlChildElementsDescription**: `IEnumerable<UxmlChildElementDescription>`
 - **templateId**: `string`
 - **templateSource**: `VisualTreeAsset`
 - **contentContainer**: `VisualElement`
-
-### Public Methods
-
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 

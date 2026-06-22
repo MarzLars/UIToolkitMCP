@@ -1,7 +1,7 @@
 # USS
 
 **Source:** https://docs.unity3d.com/Manual/UIE-USS.html  
-**Last Updated:** Sat, 13 Jun 2026 17:17:31 GMT
+**Last Updated:** Thu, 18 Jun 2026 16:35:42 GMT
 
 ---
 
@@ -10,7 +10,7 @@
 
 * [unity.com](https://unity.com/)
 
-Version: **Unity 6.4** (6000.4)
+Version: **Unity 6.5** (6000.5)
 
 * Supported
 * Legacy
@@ -25,7 +25,7 @@ Language
 
 ## Unity Manual
 
-Version: Unity 6.4Select a different version
+Version: Unity 6.5Select a different version
 
 Language
 : English
@@ -39,7 +39,7 @@ Language
 * [UI Toolkit](UIElements.html)
 * Style UI
 
-Create a custom inventory property drawer
+Load UI assets with Addressables
 
 Introduction to USS
 
@@ -66,11 +66,11 @@ You can style your UI with a Unity Style Sheet (USS). USS files are text files i
 * [Style UI with UI Builder](UIB-styling-ui-using-uss-selectors.html)
 * 📖 **E-Book**: [UI Toolkit for advanced Unity developers - Styling](best-practice-guides/ui-toolkit-for-advanced-unity-developers/styling.html)
 
-Create a custom inventory property drawer
+Load UI assets with Addressables
 
 Introduction to USS
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 69951212. Built on: 2026-06-13.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 70272010. Built on: 2026-06-18.
 
 [Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 

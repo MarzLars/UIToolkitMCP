@@ -9,12 +9,7 @@
 ## Documentation
 
 
-        [Obsolete("UxmlFactory is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-
-        [Obsolete("UxmlTraits is deprecated and will be removed. Use UxmlElementAttribute instead.", false)]
-
-<param name="bag">The attribute bag.</param>
+    [UxmlElement]
 
 <param name="delay">The initial delay before the action is executed for the first time. Value is defined in milliseconds.</param>
 
@@ -26,8 +21,5 @@ For complete source code, see: [RepeatButton.cs](https://github.com/Unity-Techno
 
 ### Public Methods
 
-- **CreateInstance()**: Returns `object`
-- **Deserialize()**: Returns `void`
-- **Init()**: Returns `void`
 - **SetAction()**: Returns `void`
 
