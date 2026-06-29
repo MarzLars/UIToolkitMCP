@@ -83,6 +83,14 @@ The number of elements in the dash pattern. If <paramref name="values"/> is too 
 
 <param name="p2">The final position of the quadratic bezier.</param>
 
+user identifier, surfaced on `DrawData.userData` in mesh modifiers.
+
+<param name="userData">User-defined identifier propagated to every `DrawData` produced by this stroke.</param>
+
+user identifier, surfaced on `DrawData.userData` in mesh modifiers.
+
+<param name="fillRule">The fill rule (non-zero or odd-even) to use.</param>
+
 <para>
 
 the complexity of both the clipping path and the clipped content. Also avoid nested clipping regions when possible,

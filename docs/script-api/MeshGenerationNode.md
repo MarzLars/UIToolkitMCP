@@ -23,6 +23,14 @@ Records a draw command with a `UIMesh` bundle.
 Records a draw command with a `UIMesh` bundle.
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 
+`DrawData.userData` in mesh modifiers.
+
+`DrawData.userData` in mesh modifiers.
+
+surfaced on `DrawData.userData` in mesh modifiers.
+
+surfaced on `DrawData.userData` in mesh modifiers.
+
 ## Source Code Reference
 
 For complete source code, see: [MeshGenerationNode.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Renderer/UIRMeshGenerationNode.cs)

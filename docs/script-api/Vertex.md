@@ -63,6 +63,16 @@ TEXCOORD2 (float4).
 NORMAL (float3 in the public API; padded to float4 on the GPU).
         Normal    = 1 << 1,
 
+Mirrors CSS's per-element paint phases (Background → Border → Content) with Mask as the stencil bracket.
+
+doesn't distort stencil geometry.
+
+Element's background fill (color or background image).
+        Background,
+
+Element's content — text, image, custom geometry from `generateVisualContent`, or `Painter2D` output.
+        Content,
+
 `MeshGenerationContext.DrawMesh(ref UIMesh, Texture)`.
 
 
@@ -219,9 +229,43 @@ You can generate the mesh content later because the renderer doesn't immediately
 
 draw is dropped.</para>
 
+`DrawData.userData` in mesh modifiers.
+
+<param name="vertices">The vertices to be drawn. All referenced vertices must be initialized.</param>
+
+<param name="texture">An optional texture to be applied. Pass null to rely on vertex colors only.</param>
+
+`DrawData.userData` in mesh modifiers.
+
+<param name="vertices">The vertices to be drawn. All referenced vertices must be initialized.</param>
+
+<param name="texture">An optional texture to be applied. Pass null to rely on vertex colors only.</param>
+
+<param name="userData">User-defined identifier surfaced on `DrawData.userData`.</param>
+
+surfaced on `DrawData.userData` in mesh modifiers.
+
+
+**Remarks:**
+See `DrawMesh(ref UIMesh, Texture)` for the lifetime contract and validation rules.
+
+surfaced on `DrawData.userData` in mesh modifiers.
+
+
+**Remarks:**
+See `DrawMesh(ref UIMesh, Texture)` for the lifetime contract and validation rules.
+
 <param name="offset">The position offset where to draw the vector image.</param>
 
 <param name="scale">The scale of the vector image</param>
+
+surfaced on `DrawData.userData` in mesh modifiers.
+
+<param name="vectorImage">The vector image to draw.</param>
+
+<param name="rotationAngle">The rotation of the vector image.</param>
+
+<param name="userData">User-defined identifier surfaced on `DrawData.userData`.</param>
 
 <param name="pos">The start position where the text will be displayed.</param>
 
