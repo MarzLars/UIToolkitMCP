@@ -1,7 +1,7 @@
 # ScrollView
 
 **Source:** https://docs.unity3d.com/Manual/UIE-uxml-element-ScrollView.html  
-**Last Updated:** Sun, 05 Jul 2026 20:04:38 GMT
+**Last Updated:** Sat, 11 Jul 2026 18:40:03 GMT
 
 ---
 
@@ -188,11 +188,11 @@ This element has the following member attributes:
 | `horizontal-scroller-visibility` | [`UIElements.ScrollerVisibility`](../ScriptReference/UIElements.ScrollerVisibility.html) | Specifies whether the horizontal scroll bar is visible. |
 | `mode` | [`UIElements.ScrollViewMode`](../ScriptReference/UIElements.ScrollViewMode.html) | Controls how the ScrollView allows the user to scroll the contents. `ScrollViewMode`  The default is `ScrollViewMode.Vertical`. Writing to this property modifies the class list of the ScrollView according to the specified value of `ScrollViewMode`. When the value changes, the class list matching the old value is removed and the class list matching the new value is added. |
 | `mouse-wheel-scroll-size` | `float` | This property controls the scrolling speed only when using a mouse scroll wheel, based on the size of the page.  This property takes precedence over the `--unity-metrics-single_line-height` USS variable. If both the property and the variable are set, the property value is used.   The following example demonstrates how to use the `mouseWheelScrollSize` property to control the “speed” of a scroll when using the mouse wheel. Notice the difference in feel when selecting different values: |
-| `nested-interaction-kind` | [`UIElements.ScrollView+NestedInteractionKind`](../ScriptReference/UIElements.ScrollView%2BNestedInteractionKind.html) | The behavior to use when scrolling reaches limits of a nested `ScrollView`. |
+| `nested-interaction-kind` | [`UIElements.ScrollView.NestedInteractionKind`](../ScriptReference/UIElements.ScrollView.NestedInteractionKind.html) | The behavior to use when scrolling reaches limits of a nested `ScrollView`. |
 | `scroll-deceleration-rate` | `float` | Controls the rate at which the scrolling movement slows after a user scrolls using a touch interaction.  The deceleration rate is the speed reduction per second. A value of 0.5 halves the speed each second. A value of 0 stops the scrolling immediately. |
 | `show-horizontal-scroller` | `boolean` | Obsolete. Use `ScrollView.horizontalScrollerVisibility` instead. |
 | `show-vertical-scroller` | `boolean` | Obsolete. Use `ScrollView.verticalScrollerVisibility` instead. |
-| `touch-scroll-type` | [`UIElements.ScrollView+TouchScrollBehavior`](../ScriptReference/UIElements.ScrollView%2BTouchScrollBehavior.html) | The behavior to use when a user tries to scroll past the boundaries of the ScrollView content using a touch interaction. |
+| `touch-scroll-type` | [`UIElements.ScrollView.TouchScrollBehavior`](../ScriptReference/UIElements.ScrollView.TouchScrollBehavior.html) | The behavior to use when a user tries to scroll past the boundaries of the ScrollView content using a touch interaction. |
 | `vertical-page-size` | `float` | This property controls the speed of the vertical scrolling when using a keyboard or the on-screen scrollbar buttons (arrows and handle), based on the size of the page.  The speed is calculated by multiplying the page size by the specified value. For example, a value of `2` means that each scroll movement covers a distance equal to twice the width of the page.\ |
 | `vertical-scroller-visibility` | [`UIElements.ScrollerVisibility`](../ScriptReference/UIElements.ScrollerVisibility.html) | Specifies whether the vertical scroll bar is visible. |
 
@@ -257,7 +257,7 @@ RenderingLayerMaskField
 
 Scroller
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 71110164. Built on: 2026-07-05.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 71475807. Built on: 2026-07-11.
 
 [Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 
