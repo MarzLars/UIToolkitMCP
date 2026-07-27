@@ -10,7 +10,7 @@
 
 
     [Icon("UIToolkit/Icons/PropertyField.png")]
-    [UxmlElement]
+    [UxmlElement(visibility = LibraryVisibility.Visible)]
 
 
         [UxmlAttribute]

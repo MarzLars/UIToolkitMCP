@@ -18,7 +18,11 @@ The drag-and-drop handlers want to copy data.
 
 The drag-and-drop operation is being rejected by the handlers.
 
-See `BaseVerticalCollectionView.canStartDrag`.
+
+        Link
+    }
+
+Information about a drag-and-drop operation that is about to start.
 
 You can use it to store generic data for the rest of the drag.
 

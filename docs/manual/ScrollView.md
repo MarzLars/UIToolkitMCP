@@ -1,7 +1,7 @@
 # ScrollView
 
 **Source:** https://docs.unity3d.com/Manual/UIE-uxml-element-ScrollView.html  
-**Last Updated:** Sat, 18 Jul 2026 17:25:53 GMT
+**Last Updated:** Mon, 27 Jul 2026 02:31:35 GMT
 
 ---
 
@@ -47,7 +47,7 @@ Scroller
 
 # ScrollView
 
-ScrollView displays its content inside a scrollable area. When you add content to a **ScrollView**, the content is added to the content container (`#unity-content-container`) of the ScrollView.
+ScrollView displays its content inside a scrollable area. When you add content to a ScrollView, the content is added to the content container (`#unity-content-container`) of the ScrollView.
 
 ## Create a ScrollView
 
@@ -90,8 +90,7 @@ You can specify the scroll mode of the scroll bar movement, whether the horizont
 
 ### Scroll bar mode and visibility
 
-To set the scroll mode of the scroll bar movement in UI Builder, in the **Inspector**A Unity window that displays information about the currently selected GameObject, asset or project settings, allowing you to inspect and edit the values. [More info](UsingTheInspector.html)
-See in [Glossary](Glossary.html#Inspector) window of the ScrollView, select one of the following options for **Mode**:
+To set the scroll mode of the scroll bar movement in UI Builder, in the Inspector window of the ScrollView, select one of the following options for **Mode**:
 
 * Vertical (default)
 * Horizontal
@@ -125,8 +124,7 @@ scrollView.scrollOffset = new Vector2(0, scrollView.verticalScroller.highValue);
 
 ## Wrap elements inside ScrollView
 
-You can wrap **visual elements**A node of a visual tree that instantiates or derives from the C# [`VisualElement`](../ScriptReference/UIElements.VisualElement.html) class. You can style the look, define the behaviour, and display it on screen as part of the UI. [More info](UIE-VisualTree.html)
-See in [Glossary](Glossary.html#visualelement) inside a ScrollView so that the elements display in a row. If the row is full, the elements continue to display on the next line.
+You can wrap visual elements inside a ScrollView so that the elements display in a row. If the row is full, the elements continue to display on the next line.
 
 To wrap visual elements inside a ScrollView, set the ScrollView’s content container `flex-direction` to `row` and `flex-wrap` to `wrap`.
 
@@ -229,7 +227,7 @@ The following table lists all the C# public property names and their related USS
 | **C# property** | **USS selector** | **Description** |
 | --- | --- | --- |
 | `ussClassName` | `.unity-scroll-view` | USS class name of elements of this type. |
-| `viewportUssClassName` | `.unity-scroll-view__content-viewport` | USS class name of **viewport** elements in elements of this type. |
+| `viewportUssClassName` | `.unity-scroll-view__content-viewport` | USS class name of viewport elements in elements of this type. |
 | `horizontalVariantViewportUssClassName` | `.unity-scroll-view__content-viewport--horizontal` | USS class name that’s added when the Viewport is in horizontal mode. `ScrollViewMode.Horizontal` |
 | `verticalVariantViewportUssClassName` | `.unity-scroll-view__content-viewport--vertical` | USS class name that’s added when the Viewport is in vertical mode. `ScrollViewMode.Vertical` |
 | `verticalHorizontalVariantViewportUssClassName` | `.unity-scroll-view__content-viewport--vertical-horizontal` | USS class name that’s added when the Viewport is in both horizontal and vertical mode. `ScrollViewMode.VerticalAndHorizontal` |
@@ -257,7 +255,7 @@ RenderingLayerMaskField
 
 Scroller
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 71897099. Built on: 2026-07-18.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 72318805. Built on: 2026-07-26.
 
 [Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 

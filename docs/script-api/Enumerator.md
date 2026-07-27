@@ -1,26 +1,26 @@
 # Enumerator
 
-**Namespace:** `UnityEngine.UIElements.UIR`
+**Namespace:** `UnityEngine.UIElements`
 
-**Source:** [Modules/UIElements/Core/Renderer/UIRNativePagedList.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Renderer/UIRNativePagedList.cs)
+**Source:** [Modules/UIElements/Core/Style/CustomPropertyList.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Style/CustomPropertyList.cs)
 
 ---
 
 ## Source Code Reference
 
-For complete source code, see: [Enumerator.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Renderer/UIRNativePagedList.cs)
-
-### Public Properties
-
-- **Enumerator**: `struct`
+For complete source code, see: [Enumerator.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Style/CustomPropertyList.cs)
 
 ### Public Methods
 
-- **Add()**: Returns `void`
-- **GetCount()**: Returns `int`
+- **None()**: Returns `CustomPropertyList`
+- **Create()**: Returns `CustomPropertyList`
+- **SafeRelease()**: Returns `void`
+- **CopyFrom()**: Returns `void`
+- **MoveNext()**: Returns `bool`
 - **Reset()**: Returns `void`
-- **CreateArray()**: Returns `NativeArray<T>`
 - **Dispose()**: Returns `void`
-- **HasNext()**: Returns `bool`
-- **GetNext()**: Returns `T`
+- **TryGetValue()**: Returns `bool`
+- **ContainsKey()**: Returns `bool`
+- **Remove()**: Returns `void`
+- **ReferenceEquals()**: Returns `bool`
 

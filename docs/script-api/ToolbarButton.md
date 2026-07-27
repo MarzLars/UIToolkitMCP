@@ -19,7 +19,7 @@ For more information, refer to [wiki:UIE-uxml-element-ToolbarButton|UXML element
 
 
 
-    [UxmlElement]
+    [UxmlElement(visibility = LibraryVisibility.Visible)]
     [Icon("UIToolkit/Icons/ToolbarButton.png")]
 
 ## Source Code Reference

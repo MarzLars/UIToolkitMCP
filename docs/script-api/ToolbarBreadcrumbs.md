@@ -39,7 +39,7 @@ while (breadcrumbs.childCount > 1)
 ]]>
 
 </example>
-    [UxmlElement]
+    [UxmlElement(visibility = LibraryVisibility.Visible)]
     [Icon("UIToolkit/Icons/ToolbarBreadcrumbs.png")]
 
 <param name="clickedEvent">The action to perform when the a users clicks the item in the toolbar.</param>

@@ -1,7 +1,7 @@
 # Events
 
 **Source:** https://docs.unity3d.com/Manual/UIE-Events.html  
-**Last Updated:** Sat, 18 Jul 2026 17:25:52 GMT
+**Last Updated:** Fri, 24 Jul 2026 22:03:50 GMT
 
 ---
 
@@ -45,9 +45,7 @@ Dispatch events
 
 # Control behavior with events
 
-UI Toolkit provides events that communicate user actions or notifications to **visual elements**A node of a visual tree that instantiates or derives from the C# [`VisualElement`](../ScriptReference/UIElements.VisualElement.html) class. You can style the look, define the behaviour, and display it on screen as part of the UI. [More info](UIE-VisualTree.html)
-See in [Glossary](Glossary.html#visualelement). The UI Toolkit **event system**A way of sending events to objects in the application based on input, be it keyboard, mouse, touch, or custom input. The Event System consists of a few components that work together to send events. [More info](UIE-Runtime-Event-System.html)
-See in [Glossary](Glossary.html#EventSystem) shares the same terminology and event naming as [HTML events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events).
+UI Toolkit provides events that communicate user actions or notifications to visual elements. The UI Toolkit event system shares the same terminology and event naming as [HTML events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events).
 
 | **Topic** | **Description** |
 | --- | --- |
@@ -69,7 +67,7 @@ Introduction to UI Shader Graph
 
 Dispatch events
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 71897099. Built on: 2026-07-18.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 72243704. Built on: 2026-07-24.
 
 [Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 

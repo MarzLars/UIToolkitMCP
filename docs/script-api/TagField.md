@@ -10,7 +10,7 @@
 
 
     [Icon("UIToolkit/Icons/TagField.png")]
-    [UxmlElement]
+    [UxmlElement(visibility = LibraryVisibility.Visible)]
 
 <param name="defaultValue">The initial tag value this field uses.</param>
 

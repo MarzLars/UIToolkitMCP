@@ -1,7 +1,7 @@
 # ListView
 
 **Source:** https://docs.unity3d.com/Manual/UIE-uxml-element-ListView.html  
-**Last Updated:** Sat, 18 Jul 2026 17:25:53 GMT
+**Last Updated:** Mon, 27 Jul 2026 02:31:35 GMT
 
 ---
 
@@ -67,8 +67,7 @@ See in [Glossary](Glossary.html#ScrollView) control to create the same functiona
 * Populate list items
 * Manage item height
 * Bind and unbind to objects
-* Instantiate the number of **visual elements**A node of a visual tree that instantiates or derives from the C# [`VisualElement`](../ScriptReference/UIElements.VisualElement.html) class. You can style the look, define the behaviour, and display it on screen as part of the UI. [More info](UIE-VisualTree.html)
-  See in [Glossary](Glossary.html#visualelement) required to fill a page
+* Instantiate the number of visual elements required to fill a page
 * Recycle visual elements to optimize memory handling
 
 ## Refresh the collection view
@@ -118,8 +117,7 @@ Refer to [Create a drag-and-drop list and tree views between windows](UIE-create
 
 To enable controller and keyboard navigation with a ListView, do the following:
 
-* Enable selection mode: Set the **Selection Type** to **Single** or **Multiple** in the ****Inspector**A Unity window that displays information about the currently selected GameObject, asset or project settings, allowing you to inspect and edit the values. [More info](UsingTheInspector.html)
-  See in [Glossary](Glossary.html#Inspector)** (or `selectionType` in C#). Keyboard and controller navigation events are tied to the selected state. If you disable selection, the list ignores these inputs.
+* Enable selection mode: Set the **Selection Type** to **Single** or **Multiple** in the **Inspector** (or `selectionType` in C#). Keyboard and controller navigation events are tied to the selected state. If you disable selection, the list ignores these inputs.
 * Set initial focus: UI Toolkit doesn’t always give the ListView focus on startup, so the list might not receive keys until something is focused. To receive keyboard or controller events without first clicking with a mouse, call `listView.Focus()` via script (for example, in an [`AttachToPanelEvent`](../ScriptReference/UIElements.AttachToPanelEvent.html) callback).
 * Configure input for runtime UI: For runtime, refer to [Runtime UI event system and input handling](UIE-Runtime-Event-System.html) to connect the input system to UI Toolkit, and follow [Set up input handling with the Input System package](UIE-Runtime-Event-System.html#set-up-input-handling-with-the-input-system-package) to configure project **UI** actions (D-pad, arrows, and other navigation). The Input System package [UI support](https://docs.unity3d.com/Packages/com.unity.inputsystem%401.19/manual/UISupport.html) topic describes each **UI** action. For **Panel Settings** and the **Panel Renderer** workflow, refer to [Configure runtime UI](UIE-render-runtime-ui.html). In Editor panels, arrow keys are automatically converted to navigation events without additional configuration.
 
@@ -326,7 +324,7 @@ LongField
 
 MaskField
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 71897099. Built on: 2026-07-18.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 72318805. Built on: 2026-07-26.
 
 [Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 

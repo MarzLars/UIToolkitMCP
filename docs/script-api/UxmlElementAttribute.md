@@ -15,6 +15,22 @@ Unity hides elements with namespaces that start with "Unity", "UnityEngine", and
 
 The element is not visible in the UI Builder Library.
 
+types in an assembly whose own visibility is `LibraryVisibility.Default`.
+
+<example>
+
+// In AssemblyInfo.cs:
+
+/// // Opt a specific control back in:
+
+public partial class MyControl : VisualElement { }
+
+</example>
+    [AttributeUsage(AttributeTargets.Assembly)]
+    [VisibleToOtherModules]
+
+<param name="visibility">The default visibility to apply to controls in this assembly.</param>
+
 To create a custom control, you must add the UxmlElement attribute to the custom control class definition.
 
 or one of its derived classes.
@@ -257,5 +273,6 @@ For complete source code, see: [UxmlElementAttribute.cs](https://github.com/Unit
 ### Public Properties
 
 - **LibraryVisibility**: `enum`
+- **Visibility**: `LibraryVisibility`
 - **path**: `string`
 

@@ -1,7 +1,7 @@
 # USS
 
 **Source:** https://docs.unity3d.com/Manual/UIE-USS.html  
-**Last Updated:** Sat, 18 Jul 2026 17:25:53 GMT
+**Last Updated:** Mon, 27 Jul 2026 02:31:35 GMT
 
 ---
 
@@ -53,12 +53,12 @@ You can style your UI with a Unity Style Sheet (USS). USS files are text files i
 | [USS selectors](UIE-USS-Selectors.html) | Learn how to use USS selectors by examples. |
 | [USS properties](UIE-uss-properties.html) | Learn everything about USS properties. |
 | [USS custom properties (variables)](UIE-USS-variables.html) | Learn everything about USS custom properties. |
-| [Apply styles with C#](UIE-apply-styles-with-csharp.html) | Learn how to apply style sheet to **visual elements**A node of a visual tree that instantiates or derives from the C# [`VisualElement`](../ScriptReference/UIElements.VisualElement.html) class. You can style the look, define the behaviour, and display it on screen as part of the UI. [More info](UIE-VisualTree.html) See in [Glossary](Glossary.html#visualelement) in a C# script. |
+| [Apply styles with C#](UIE-apply-styles-with-csharp.html) | Learn how to apply style sheet to visual elements in a C# script. |
 | [Best practices for USS](UIE-USS-WritingStyleSheets.html) | Understand what you need to know when you write USS. |
 | [Theme Style Sheet (TSS)](UIE-tss.html) | Learn how to use TSS files for management purposes. |
 | [Apply masking effects in UI Toolkit](UIE-masking.html) | Learn how to use USS to apply masking effects. |
-| [Apply post-processing effects with USS filter](ui-systems/uss-filter.html) | Apply **post-processing**A process that improves product visuals by applying filters and effects before the image appears on screen. You can use post-processing effects to simulate physical camera and film properties, for example Bloom and Depth of Field. [More info](PostProcessingOverview.html) post processing, postprocessing, postprocess See in [Glossary](Glossary.html#post-processing) effects to a visual element, such as blur, color correction, or other custom effects. |
-| [UI Shader Graph](ui-systems/ui-shader-graph.html) | Use **Shader**A program that runs on the GPU. [More info](Shaders.html) See in [Glossary](Glossary.html#shader) Graph to create unique visual styles and effects for your UI elements, such as gradients, animations, or color blending. |
+| [Apply post-processing effects with USS filter](ui-systems/uss-filter.html) | Apply post-processing effects to a visual element, such as blur, color correction, or other custom effects. |
+| [UI Shader Graph](ui-systems/ui-shader-graph.html) | Use Shader Graph to create unique visual styles and effects for your UI elements, such as gradients, animations, or color blending. |
 
 ## Additional resources
 
@@ -70,7 +70,7 @@ Load UI assets with Addressables
 
 Introduction to USS
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 71897099. Built on: 2026-07-18.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 72318805. Built on: 2026-07-26.
 
 [Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 

@@ -9,7 +9,7 @@
 ## Documentation
 
 
-    [UxmlElement]
+    [UxmlElement(visibility = LibraryVisibility.Visible)]
     [Icon("UIToolkit/Icons/ObjectField.png")]
 
 

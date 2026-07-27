@@ -1,7 +1,7 @@
 # USS-Properties
 
 **Source:** https://docs.unity3d.com/Manual/UIE-USS-SupportedProperties.html  
-**Last Updated:** Sat, 18 Jul 2026 17:25:54 GMT
+**Last Updated:** Mon, 27 Jul 2026 02:31:35 GMT
 
 ---
 
@@ -77,8 +77,7 @@ aspect-ratio: <ratio> | auto
 
 The `width` and `height` specify the size of the element. If `width` isn’t specified, the width is based on the width of the element’s contents. If `height` isn’t specified, the height is based on the height of the element’s contents.
 
-Aspect ratio is the ratio of the element’s width to its height. You can specify the **aspect ratio**The relationship of an image’s proportional dimensions, such as its width and height.
-See in [Glossary](Glossary.html#aspectratio) as a floating-point number (for example, `1.777778` for `16/9`) or set it to `auto` to maintain the original aspect ratio.
+Aspect ratio is the ratio of the element’s width to its height. You can specify the aspect ratio as a floating-point number (for example, `1.777778` for `16/9`) or set it to `auto` to maintain the original aspect ratio.
 
 When you set other sizing properties on an element, such as `width`, `height`, `min-width`, or `max-height`, the `aspect-ratio` property works together with these properties. For example, if you set `height: 200px` on an image and apply an aspect ratio of `3/4`, the image’s width becomes `150px` to maintain the ratio. If you explicitly set both `width` and `height`, those values override the aspect ratio.
 
@@ -129,8 +128,7 @@ Unity’s model is equivalent to setting the CSS `box-sizing` property to `borde
 
 ## Flex layout
 
-UI Toolkit includes a [layout engine](UIE-LayoutEngine.html) that positions **visual elements**A node of a visual tree that instantiates or derives from the C# [`VisualElement`](../ScriptReference/UIElements.VisualElement.html) class. You can style the look, define the behaviour, and display it on screen as part of the UI. [More info](UIE-VisualTree.html)
-See in [Glossary](Glossary.html#visualelement) based on layout and styling properties. The layout engine implements a subset of Flexbox, an HTML/CSS layout system.
+UI Toolkit includes a [layout engine](UIE-LayoutEngine.html) that positions visual elements based on layout and styling properties. The layout engine implements a subset of Flexbox, an HTML/CSS layout system.
 
 By default, all items are vertically placed in their container.
 
@@ -192,8 +190,7 @@ When assigning a background image, you draw it with respect to a simplified 9-sl
 -unity-slice-type: sliced | tiled
 ```
 
-**Note**: For **sprites**A 2D graphic objects. If you are used to working in 3D, Sprites are essentially just standard textures but there are special techniques for combining and managing sprite textures for efficiency and convenience during development. [More info](sprite/sprite-landing.html)
-See in [Glossary](Glossary.html#Sprite), Unity adjusts the `-unity-slice-scale` by the sprite’s `pixels-per-unit` value in relation to the panel’s `reference sprite pixels per unit value`, which is by default `100`. For example, if the sprite’s `pixels-per-unit` is `16`, the scale is adjusted by `16/100 = 0.16`. Therefore, if you set the scale to `2px`, the final scale is `2px * 0.16px = 0.32px`. For texture and vector images, Unity doesn’t make additional adjustments to the slice scale value you set.
+**Note**: For sprites, Unity adjusts the `-unity-slice-scale` by the sprite’s `pixels-per-unit` value in relation to the panel’s `reference sprite pixels per unit value`, which is by default `100`. For example, if the sprite’s `pixels-per-unit` is `16`, the scale is adjusted by `16/100 = 0.16`. Therefore, if you set the scale to `2px`, the final scale is `2px * 0.16px = 0.32px`. For texture and vector images, Unity doesn’t make additional adjustments to the slice scale value you set.
 
 For more information about 9-slice, refer to [9-Slice images with UI Toolkit](UIB-styling-ui-backgrounds.html#9-slice-images-with-ui-toolkit).
 
@@ -226,8 +223,7 @@ Border radius properties work almost the same in USS and CSS. For detailed infor
 However, the following are the main differences:
 
 * Unity doesn’t support the second-radius shorthand (`border-radius: (first radius values) / (second radius values);`) used to create elliptical corners.
-* Unity reduces border radius values to half of the element’s size in **pixels**The smallest unit in a computer image. Pixel size depends on your screen resolution. Pixel lighting is calculated at every screen pixel. [More info](ShadowPerformance.html)
-  See in [Glossary](Glossary.html#pixel). For example, for a 100px x 100px element, any `border-radius` value greater than 50px is reduced to 50px. If you use percentage (`%`) values for border-radius properties, Unity first resolves the percentage to pixels and then reduces the `border-radius` value to half of the resolved pixel value. If you have different radius values for two or more corners, Unity reduces any values greater than half of the element’s size to half of the element’s size.
+* Unity reduces border radius values to half of the element’s size in pixels. For example, for a 100px x 100px element, any `border-radius` value greater than 50px is reduced to 50px. If you use percentage (`%`) values for border-radius properties, Unity first resolves the percentage to pixels and then reduces the `border-radius` value to half of the resolved pixel value. If you have different radius values for two or more corners, Unity reduces any values greater than half of the element’s size to half of the element’s size.
 * If the element’s width and height aren’t equal, or if clamping occurs on one axis, the border radius might be uneven, resulting in elliptical corner rounding.
 
 ## Appearance
@@ -287,8 +283,7 @@ word-spacing: <length>
 -unity-paragraph-spacing: <length>
 ```
 
-**Note**: When you set up the font in UI Builder, the **Font** control in the ****Inspector**A Unity window that displays information about the currently selected GameObject, asset or project settings, allowing you to inspect and edit the values. [More info](UsingTheInspector.html)
-See in [Glossary](Glossary.html#Inspector)** sets `-unity-font`, and the **Font Asset** control sets `-unity-font-definition`. Because `-unity-font-definition` takes precedence over `-unity-font`, to use a font from the **Font** list, select **None** from **Font Asset**. Otherwise, the font you selected doesn’t take effect.
+**Note**: When you set up the font in UI Builder, the **Font** control in the **Inspector** sets `-unity-font`, and the **Font Asset** control sets `-unity-font-definition`. Because `-unity-font-definition` takes precedence over `-unity-font`, to use a font from the **Font** list, select **None** from **Font Asset**. Otherwise, the font you selected doesn’t take effect.
 
 For more information about text shadow and text outline, refer to [Text effects](UIE-text-effects.html).
 
@@ -370,7 +365,7 @@ USS data types
 
 Position element with the layout engine
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 71897099. Built on: 2026-07-18.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 72318805. Built on: 2026-07-26.
 
 [Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 

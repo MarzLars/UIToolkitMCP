@@ -1,7 +1,7 @@
 # Binding
 
 **Source:** https://docs.unity3d.com/Manual/UIE-Binding.html  
-**Last Updated:** Sat, 18 Jul 2026 17:25:53 GMT
+**Last Updated:** Mon, 27 Jul 2026 02:31:35 GMT
 
 ---
 
@@ -47,8 +47,7 @@ Bindable elements reference
 
 # Introduction to SerializedObject data binding
 
-You can use the SerializedObject data binding system to bind to [serialized properties](../ScriptReference/SerializedProperty.html). This means you can bind **visual elements**A node of a visual tree that instantiates or derives from the C# [`VisualElement`](../ScriptReference/UIElements.VisualElement.html) class. You can style the look, define the behaviour, and display it on screen as part of the UI. [More info](UIE-VisualTree.html)
-See in [Glossary](Glossary.html#visualelement) to the following objects that are compatible with the [Serialization system](script-serialization.html):
+You can use the SerializedObject data binding system to bind to [serialized properties](../ScriptReference/SerializedProperty.html). This means you can bind visual elements to the following objects that are compatible with the [Serialization system](script-serialization.html):
 
 * User-defined [`ScriptableObject`](../ScriptReference/ScriptableObject.html) classes
 * User-defined [`MonoBehaviour`](../ScriptReference/MonoBehaviour.html) classes
@@ -102,8 +101,7 @@ For example:
   ```
 
   To bind your visual element to `m_Count`, set the binding path to `m_Count`.
-* If you want to bind a visual element to a **GameObject**The fundamental object in Unity scenes, which can represent characters, props, scenery, cameras, waypoints, and more. A GameObject’s functionality is defined by the Components attached to it. [More info](class-GameObject.html)
-  See in [Glossary](Glossary.html#GameObject)’s name property, which is `m_Name`, set the binding path to `m_Name`.
+* If you want to bind a visual element to a GameObject’s name property, which is `m_Name`, set the binding path to `m_Name`.
 
 You can set the binding path in UI Builder, UXML, or with a C# script:
 
@@ -230,7 +228,7 @@ SerializedObject data binding
 
 Bindable elements reference
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 71897099. Built on: 2026-07-18.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 72318805. Built on: 2026-07-26.
 
 [Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 
