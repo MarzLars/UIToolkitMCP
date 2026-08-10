@@ -1,7 +1,7 @@
 # USS
 
 **Source:** https://docs.unity3d.com/Manual/UIE-USS.html  
-**Last Updated:** Sat, 01 Aug 2026 17:14:49 GMT
+**Last Updated:** Unknown
 
 ---
 
@@ -39,7 +39,7 @@ Language
 * [UI Toolkit](UIElements.html)
 * Style UI
 
-Load UI assets with Addressables
+Vector4Field
 
 Introduction to USS
 
@@ -66,12 +66,12 @@ You can style your UI with a Unity Style Sheet (USS). USS files are text files i
 * [Style UI with UI Builder](UIB-styling-ui-using-uss-selectors.html)
 * 📖 **E-Book**: [UI Toolkit for advanced Unity developers - Styling](best-practice-guides/ui-toolkit-for-advanced-unity-developers/styling.html)
 
-Load UI assets with Addressables
+Vector4Field
 
 Introduction to USS
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 72674933. Built on: 2026-08-01.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 73121950. Built on: 2026-08-09.
 
-[Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
+[Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Documentation Terms of Use](https://unity.com/legal/docs-terms)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 
 Your Privacy Choices (Cookie Settings)
