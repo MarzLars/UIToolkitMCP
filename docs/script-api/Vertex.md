@@ -17,7 +17,7 @@ This value is multiplied by any other color information of the `VisualElement` (
 
 This is used to sample the required region of the associated texture if any. Values outside the range 0..1 are currently not supported and could lead to undefined results.
 
-See `MeshGenerationContext.DeferMeshGeneration`.
+See `MeshGenerationContext.AddMeshGenerationCallback`.
 
 
         Fork,

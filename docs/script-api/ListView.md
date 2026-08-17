@@ -28,7 +28,7 @@ It's also recommended to supply the following properties for more complex items:
 
 \\
 
-`ListView.showBorder` property in C# to `true`.\\
+`BaseVerticalCollectionView.showBorder` property in C# to `true`.\\
 
 By default, the user can select one element in the list at a time. To change the default selection
 
@@ -42,15 +42,15 @@ alternate, set the `show-alternating-row-backgrounds` property in UXML or the
 
 \\
 
-to reorder them, set the `reorderable` property in UXML or the `ListView.reorderable`
+to reorder them, set the `reorderable` property in UXML or the `BaseVerticalCollectionView.reorderable`
 
 \\
 
-`show-bound-collection-size` property in UXML or the `ListView.showBoundCollectionSize`
+`show-bound-collection-size` property in UXML or the `BaseListView.showBoundCollectionSize`
 
 \\
 
-`horizontal-scrolling-enabled` property in UXML or the `ListView.horizontalScrollingEnabled`
+`horizontal-scrolling-enabled` property in UXML or the `BaseVerticalCollectionView.horizontalScrollingEnabled`
 
 /// For more information, refer to [wiki:UIE-uxml-element-ListView|ListView].
 

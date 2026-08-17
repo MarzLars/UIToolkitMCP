@@ -11,8 +11,12 @@
 
     [Serializable]
 
+Setting an empty gradient (see `BackgroundGradient.IsEmpty`) clears the slot
+
 
         [Obsolete("Use Background.FromTexture2D instead")]
+
+<returns>A new background object.</returns>
 
 <returns>A new background object.</returns>
 
@@ -42,6 +46,7 @@ For complete source code, see: [Background.cs](https://github.com/Unity-Technolo
 - **sprite**: `Sprite`
 - **renderTexture**: `RenderTexture`
 - **vectorImage**: `VectorImage`
+- **gradient**: `BackgroundGradient`
 
 ### Public Methods
 
@@ -49,6 +54,7 @@ For complete source code, see: [Background.cs](https://github.com/Unity-Technolo
 - **FromRenderTexture()**: Returns `Background`
 - **FromSprite()**: Returns `Background`
 - **FromVectorImage()**: Returns `Background`
+- **FromGradient()**: Returns `Background`
 - **GetSelectedImage()**: Returns `Object`
 - **IsEmpty()**: Returns `bool`
 - **Equals()**: Returns `bool`

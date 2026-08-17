@@ -18,7 +18,7 @@ The difference between Mask64Field and [UIElements.MarkField] is that Mask64Fiel
     [Icon("UIToolkit/Icons/Mask64Field.png")]
     [MovedFrom(true, UpgradeConstants.EditorNamespace, UpgradeConstants.EditorAssembly)]
 
-<param name="defaultValue">The initial mask value for this field.</param>
+<param name="defaultMask">The initial mask value for this field.</param>
 
 <param name="formatListItemCallback">The initial mask value this field should use. Unity calls this method automatically when displaying choices for the field.</param>
 

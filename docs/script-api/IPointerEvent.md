@@ -225,8 +225,6 @@ The current target is the element in the propagation path for which event handle
 
 <returns>Azimuth angle as determined by tilt along x and y axese.</returns>
 
-<returns>Azimuth angle as determined by tilt along x and y axese.</returns>
-
 <returns>Altitude angle as determined by tilt along x and y axese.</returns>
 
 Events obtained using this method need to be released back to the pool. You can use `Dispose()` to release them.

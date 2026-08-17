@@ -73,7 +73,7 @@ The device type indicates whether there should be an KeyDownEvent observable bef
 
 Use this function instead of creating new events.
 
-<param name="deviceType">The type of device this event was created from.</param>
+<returns>An initialized navigation event.</returns>
 
 UGUI uses this enum and it can't use the copy in NavigationMoveEvent because it would break code stripping
 

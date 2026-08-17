@@ -86,7 +86,7 @@ Automatically adds a BoxCollider that matches the world bound rectangle of the d
 
 If the document contains elements that overflow outside of its (0, 0, width, height) rect,
 
-This option is better for performance than `AddAutoUpdatedBoudingBoxCollider`.
+This option is better for performance than `ColliderUpdateMode.MatchBoundingBox`.
 
 UXML-file based UI in the Game view.
 

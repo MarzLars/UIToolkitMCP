@@ -24,9 +24,23 @@ present, the method is fully allocation-free.
 
 <param name="text">The character span to set as the element's text content.</param>
 
+This method is slower than its UTF-16 counterparts since transcoding is unavoidable. Prefer using `SetText(ReadOnlySpan{char})` when possible.
+
+<param name="utf8">The UTF-8 encoded bytes to set as the element's text content.</param>
+
 <param name="start">The starting index in the array.</param>
 
 <param name="format">An optional standard or custom numeric format string.</param>
+
+(and related) calls of up to <paramref name="capacity"/> UTF-16 code units do not allocate.
+
+
+**Remarks:**
+
+
+required for correctness. Use it only to pay the allocation cost up front.
+
+<param name="capacity">The minimum buffer capacity, in UTF-16 code units.</param>
 
 
         [CreateProperty]
@@ -85,6 +99,8 @@ For complete source code, see: [TextElement.cs](https://github.com/Unity-Technol
 ### Public Methods
 
 - **SetText()**: Returns `void`
+- **SetTextUtf8()**: Returns `void`
+- **EnsureTextCapacity()**: Returns `void`
 - **MeasureTextSize()**: Returns `Vector2`
 - **MarkDirtyText()**: Returns `void`
 

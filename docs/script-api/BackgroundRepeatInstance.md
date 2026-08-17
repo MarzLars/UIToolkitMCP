@@ -22,6 +22,7 @@ For complete source code, see: [BackgroundRepeatInstance.cs](https://github.com/
 
 - **DrawText()**: Returns `void`
 - **DrawRectangle()**: Returns `void`
+- **DrawGradientRectangle()**: Returns `void`
 - **DrawBorder()**: Returns `void`
 - **DrawVectorImage()**: Returns `void`
 - **DrawRectangleRepeat()**: Returns `void`

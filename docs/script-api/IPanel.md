@@ -179,18 +179,27 @@ This Panel EventDispatcher.
 
 The context type of a Panel affects how it resolves certain styles and receives specific events.
 
-<seealso cref="UIElements.CommandEventBase{T}"/>
-        ContextType contextType { get; }
 
-Return the focus controller for this panel.
+        FocusController focusController { get; }
 
-Modifying this property rebuilds the rendering commands and meshes so that the new GPU vertex
+Optional per-vertex channels that custom ShaderGraph shaders can read from this panel.
 
-unless a custom shader requires the additional channels.
 
-It doesn't return the following:
+**Remarks:**
 
-- Invisible elements
+
+layout takes effect. Defaults to `ExtraVertexChannels.None`; leave it at the default
+
+
+        ExtraVertexChannels extraVertexChannels { get; set; }
+
+Finds the top-most VisualElement overlapping the provided point.
+
+
+**Remarks:**
+
+
+///- Invisible elements
 
 - Elements with [VisualElement.pickingMode|pickingMode] set to [PickingMode.Ignore]
 

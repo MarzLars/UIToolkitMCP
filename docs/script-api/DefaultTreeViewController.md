@@ -18,15 +18,15 @@ Root items can include their children directly.
 
 <param name="rebuildTree">Whether to refresh the tree data immediately. If `false`, call `BaseVerticalCollectionView.RefreshItems()`.</param>
 
-<typeparam name="T">Type of the data inside TreeViewItemData.</typeparam>
+<returns>The tree item data.</returns>
 
-<typeparam name="T">Type of the data inside TreeViewItemData.</typeparam>
+<returns>The tree item data.</returns>
 
 <inheritdoc />
 
-<typeparam name="T">Type of the data inside TreeViewItemData.</typeparam>
+<returns>The data.</returns>
 
-<typeparam name="T">Type of the data inside TreeViewItemData.</typeparam>
+<returns>The data.</returns>
 
 <inheritdoc />
 

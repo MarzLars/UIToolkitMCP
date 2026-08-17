@@ -70,6 +70,7 @@ Documentation generated from Unity's C# reference source code on GitHub.
 - [AttributeOverride](script-api/AttributeOverride.md)
 - [AuthoringIdPath](script-api/AuthoringIdPath.md)
 - [Background](script-api/Background.md)
+- [BackgroundGradientStop](script-api/BackgroundGradientStop.md)
 - [BackgroundPosition](script-api/BackgroundPosition.md)
 - [BackgroundRepeat](script-api/BackgroundRepeat.md)
 - [BackgroundSize](script-api/BackgroundSize.md)

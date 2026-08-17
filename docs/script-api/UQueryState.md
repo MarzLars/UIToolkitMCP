@@ -135,7 +135,7 @@ To select elements by their C# type, use `OfType{T2}(string,string[])`.
 
 <param name="className">If specified, will select elements with the given class (not to be confused with Type).</param>
 
-<param name="className">If specified, will select elements with the given class (not to be confused with Type).</param>
+<returns>QueryBuilder configured with the associated selection rules.</returns>
 
 <param name="className">If specified, will select elements with the given class (not to be confused with Type).</param>
 

@@ -17,6 +17,7 @@ For complete source code, see: [URIValidationResponse.cs](https://github.com/Uni
 ### Public Methods
 
 - **MakeAssetUri()**: Returns `string`
+- **MakeThemeImportUri()**: Returns `string`
 - **EncodeUri()**: Returns `string`
 - **ValidAssetURL()**: Returns `URIValidationResult`
 - **ValidateAssetURL()**: Returns `URIValidationResponse`
