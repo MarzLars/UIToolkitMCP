@@ -14,7 +14,6 @@ For complete source code, see: [TimingData.cs](https://github.com/Unity-Technolo
 
 - **TimingData**: `struct`
 - **StyleData**: `struct`
-- **EmptyData**: `struct`
 - **SameFunc**: `Func<float, float, bool>`
 - **SameFunc**: `Func<int, int, bool>`
 - **SameFunc**: `Func<Length, Length, bool>`
@@ -29,6 +28,7 @@ For complete source code, see: [TimingData.cs](https://github.com/Unity-Technolo
 - **SameFunc**: `Func<TransformOrigin, TransformOrigin, bool>`
 - **SameFunc**: `Func<BackgroundSize, BackgroundSize, bool>`
 - **SameFunc**: `Func<MaterialDefinition, MaterialDefinition, bool>`
+- **SameFunc**: `Func<Background, Background, bool>`
 
 ### Public Methods
 

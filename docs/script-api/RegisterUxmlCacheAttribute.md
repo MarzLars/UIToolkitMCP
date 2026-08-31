@@ -33,10 +33,6 @@ This is used by the code generator when a control is using `UxmlElementAttribute
 
 For complete source code, see: [RegisterUxmlCacheAttribute.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/UXML/UxmlDescriptionRegistry.cs)
 
-### Public Properties
-
-- **UxmlDescriptionCache**: `class`
-
 ### Public Methods
 
 - **RegisterType()**: Returns `void`

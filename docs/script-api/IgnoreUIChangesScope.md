@@ -22,7 +22,7 @@ Log warnings only once when the result of the binding changes.
     }
 
     [VisibleToOtherModules("UnityEditor.UIToolkitAuthoringModule")]
-    sealed class DataBindingManager : IDisposable
+    sealed partial class DataBindingManager : IDisposable
     {
 
 ## Source Code Reference

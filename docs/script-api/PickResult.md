@@ -34,6 +34,9 @@ Results are appended in drawing order.
 
 <returns>True if the ray intersects the element.</returns>
 
+
+        [NoAutoStaticsCleanup]
+
 Doesn't always have a UIDocument component associated with it.
 
 If @@document@@ is null, then @@pickedElement@@ is also null.

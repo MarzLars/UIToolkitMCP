@@ -203,13 +203,11 @@ For complete source code, see: [UQueryState.cs](https://github.com/Unity-Technol
 
 ### Public Properties
 
-- **UQuery**: `class`
 - **match**: `VisualElement`
 - **matchIndex**: `int`
 - **matches**: `List<TElement>`
 - **callBack**: `Func<T, TReturnType>`
 - **result**: `List<TReturnType>`
-- **UQueryExtensions**: `class`
 
 ### Public Methods
 

@@ -44,7 +44,7 @@ rootVisualElement.Add(new HelpBox("This is a help box", HelpBoxMessageType.Info)
         [Obsolete("Renamed to match the other style class names. Please use iconWarningUssClassName instead (UnityUpgradable) -> iconwarningUssClassName", false)]
 
 
-        [MultilineTextField]
+        [MultilineTextField(lines = 3)]
         [CreateProperty]
         [UxmlAttribute]
 

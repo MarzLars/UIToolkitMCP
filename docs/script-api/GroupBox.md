@@ -17,7 +17,7 @@ Unity adds this USS class to every instance of the GroupBox element. Any styling
 Unity adds this USS class to the `Label` sub-element of the `GroupBox` if the GroupBox has a Label.
 
 
-        [MultilineTextField]
+        [MultilineTextField(lines = 3)]
         [CreateProperty]
         [UxmlAttribute]
 

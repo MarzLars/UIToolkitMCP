@@ -72,6 +72,15 @@ If the element is not currently focused, calling this method has no effect.
 
 Focus ring implementations can move the focus in various direction; they can derive from this class to formalize the various ways the focus can change from one element to the other.
 
+
+        [NoAutoStaticsCleanup]
+
+
+        [NoAutoStaticsCleanup]
+
+
+        [NoAutoStaticsCleanup]
+
 <undoc/>
 
 When the `EventDispatcher` processes navigation and pointer events, it

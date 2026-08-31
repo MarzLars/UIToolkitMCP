@@ -9,7 +9,7 @@
 ## Documentation
 
 
-    [UxmlElement]
+    [UxmlElement(visibility = LibraryVisibility.Hidden)]
     [Icon("UIToolkit/Icons/IMGUIContainer.png")]
 
 This is assigned to onGUIHandler and is similar to `MonoBehaviour.OnGUI`.

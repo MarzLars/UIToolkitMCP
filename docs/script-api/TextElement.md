@@ -14,6 +14,16 @@ Use this as the super class if you are declaring a custom VisualElement that dis
 
 implement custom per‑glyph effects.
 
+transforms are applied. `Glyph.textRange` indexes into this string.
+
+
+**Remarks:**
+
+
+is attached to a panel and its styles have been resolved (after the first panel
+
+Style changes are reflected on the next panel update, while text changes are reflected immediately.
+
 Changing this value will implicitly invoke the `INotifyValueChanged{T}.value` setter, which will raise a `ChangeEvent{T}` of type string.
 
 Unlike assigning to `text`, this method writes directly into an internal
@@ -89,6 +99,7 @@ For complete source code, see: [TextElement.cs](https://github.com/Unity-Technol
 ### Public Properties
 
 - **PostProcessTextVertices**: `Action<GlyphsEnumerable>`
+- **parsedText**: `string`
 - **text**: `string`
 - **enableRichText**: `bool`
 - **emojiFallbackSupport**: `bool`

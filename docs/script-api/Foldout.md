@@ -17,7 +17,7 @@ an arrow sprite instead of the `Toggle` control's usual checkbox. The arrow poin
     [Icon("UIToolkit/Icons/Foldout.png")]
 
 
-        [MultilineTextField]
+        [MultilineTextField(lines = 3)]
         [CreateProperty]
         [UxmlAttribute]
 

@@ -13,7 +13,7 @@ A TemplateContainer instance is created by Unity to represent the root of the UX
 When using `VisualTreeAsset.Instantiate()`, a TemplateContainer instance is returned to you to represent the root of the hierarchy.
 
 
-    [UxmlElement("Instance"), HideInInspector]
+    [UxmlElement("Instance", visibility = LibraryVisibility.Hidden), HideInInspector]
     [Icon("UIToolkit/Icons/TemplateContainer.png")]
 
 Template declaration inside another VisualTreeAsset.

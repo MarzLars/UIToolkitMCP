@@ -39,6 +39,7 @@ This will add an authoring id to the root node if it is not already present.
 
 <undoc/>
         // TODO why is this public? It's not used internally and could be obtained by default(CreationContext)
+        [NoAutoStaticsCleanup]
 
 `VisualTreeAsset.CloneTree()`
 
