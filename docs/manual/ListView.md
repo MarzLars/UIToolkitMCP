@@ -10,7 +10,7 @@
 
 * [unity.com](https://unity.com/)
 
-Version: **Unity 6.5** (6000.5)
+Version: **Unity 6.6** (6000.6)
 
 * Supported
 * Legacy
@@ -25,7 +25,7 @@ Language
 
 ## Unity Manual
 
-Version: Unity 6.5Select a different version
+Version: Unity 6.6Select a different version
 
 Language
 : English
@@ -323,7 +323,7 @@ LongField
 
 MaskField
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 74209269. Built on: 2026-08-26.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 74823875. Built on: 2026-09-04.
 
 [Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Documentation Terms of Use](https://unity.com/legal/docs-terms)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 
