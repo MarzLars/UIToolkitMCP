@@ -55,7 +55,7 @@ Maximum number of characters for that element
 
         void EditionHandleEvent(EventBase evt)
         {
-            var useTouchScreenKeyboard = editingManipulator?.editingUtilities.TouchScreenKeyboardCanBeUsed() ?? false;
+            var useTouchScreenKeyboard = editingManipulator != null && TextEditingUtilities.TouchScreenKeyboardCanBeUsed();
 
             if (!useTouchScreenKeyboard || edition.hideMobileInput || edition.hideSoftKeyboard)
                 selectingManipulator?.HandleEventBubbleUp(evt);

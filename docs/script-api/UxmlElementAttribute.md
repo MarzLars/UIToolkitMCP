@@ -80,9 +80,13 @@ Sub-paths can be created by using a forward slash (/).
 
     [AttributeUsage(AttributeTargets.Class)]
 
-Use this to provide custom instance creation logic, such as object pooling or dependency injection.
+Use this to provide custom instance creation logic, such as object pooling, dependency
 
-///- Be a static method defined on the element type.
+instantiation (element and component defaults), `GetOrAddComponent` when it creates a
+
+The method must meet the following requirements:
+
+- Be a static method defined on the element type.
 
 - Accept no parameters.
 
@@ -266,6 +270,159 @@ to specify a list of accepted types to be displayed, rather than showing all ava
 
 this list comprises all types that inherit from the UXML object type. You can use a parameter
 
+can attach to any `VisualElement`.
+
+
+**Remarks:**
+
+
+custom element subclass, declare a `partial struct` with this attribute and attach an
+
+type works on any element, whatever its type.
+
+This attribute targets structs. The struct must be declared `partial`: Unity's source
+
+the registration code for you.
+
+An element holds at most one component of each type. Read or modify an attached component
+
+`VisualElement.RemoveComponent{T}`.
+
+<example nocheck="true">
+
+<code lang="cs"><![CDATA[
+
+using UnityEngine.UIElements;
+
+[VisualElementComponent]
+
+{
+
+}
+
+public static class ClickCounterExample
+
+public static void Attach(Button button)
+
+// Attach the component with its starting value.
+
+///         button.RegisterCallback<ClickEvent>(evt =>
+
+// GetComponent returns a reference: the increment is stored on the element.
+
+counter.count++;
+
+});
+
+}
+
+</example>
+    [AttributeUsage(AttributeTargets.Struct, Inherited = false)]
+
+roughly how many elements you expect to carry this component at the same time.
+
+
+**Remarks:**
+
+
+Reserving a larger capacity avoids resizes when you know a component is used by many
+
+if the estimate is too high. This setting only applies to components whose fields are all
+
+references, are stored individually and ignore it.
+
+`UxmlAttributeAttribute` define the component's authorable surface either way;
+
+that is attached from code only.
+
+component is attached to.
+
+
+**Remarks:**
+
+
+`VisualElementComponentAttribute`. When the component is added to an element, the method
+
+is removed, the callback is unregistered.
+
+Apply the attribute several times to handle several event types with the same method.
+
+
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = true, Inherited = false)]
+
+`CallbackOptions.TrickleDown`.
+
+<param name="callbackOptions">Options that control how the callback is registered.</param>
+
+contributes to the owner element's `VisualElement.generateVisualContent`.
+
+
+**Remarks:**
+
+
+source generator hooks it into the owner's `generateVisualContent` when the component is added
+
+re-run the painter through the engine, and <see cref="StylePropertyAttribute">[StyleProperty]</see>
+
+
+    [AttributeUsage(AttributeTargets.Method, Inherited = false)]
+
+runs when one of the component's fields changes on an element.
+
+
+**Remarks:**
+
+
+component may declare at most one. The source
+
+fields; each one flags the owner so this handler runs once in the next update, no matter how many
+
+layout request, or recomputing a cached value. The handler never runs from inside the setter, so a
+
+
+    [AttributeUsage(AttributeTargets.Method, Inherited = false)]
+
+right after the component is added to an element.
+
+
+**Remarks:**
+
+
+component may declare at most one. It runs on every add path: `AddComponent`,
+
+<see cref="RequiresComponentOfTypeAttribute">[RequiresComponentOfType]</see> auto-add. It runs
+
+method sees a fully wired component and may configure the owner element (for example set
+
+authored attribute values are applied, so authored values always win over values this method
+
+
+    [AttributeUsage(AttributeTargets.Method, Inherited = false)]
+
+`VisualElement.RemoveComponent{T}` removes the component from an element.
+
+
+**Remarks:**
+
+
+component may declare at most one. It runs before the component storage is freed and before
+
+live data and clean up any owner state the component configured. It runs only on an explicit
+
+the element itself is torn down.
+
+Apply this attribute to a field or property of a struct that has the
+
+property resolved on the element the component is attached to, so a style sheet can drive
+
+
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = false)]
+
+mirrored into a generated C++ header so native subsystems can read the component data.
+
+
+    [AttributeUsage(AttributeTargets.Struct, Inherited = false)]
+
 ## Source Code Reference
 
 For complete source code, see: [UxmlElementAttribute.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/UXML/UxmlAttributes.cs)
@@ -275,4 +432,11 @@ For complete source code, see: [UxmlElementAttribute.cs](https://github.com/Unit
 - **LibraryVisibility**: `enum`
 - **Visibility**: `LibraryVisibility`
 - **path**: `string`
+- **exposeToUxml**: `bool`
+- **eventType**: `Type`
+- **callbackOptions**: `CallbackOptions`
+
+### Public Methods
+
+- **Attach()**: Returns `void`
 

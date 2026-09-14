@@ -17,10 +17,12 @@ For complete source code, see: [AttributeOverride.cs](https://github.com/Unity-T
 - **attributeOverrides**: `List<AttributeOverride>`
 - **UxmlSerializedDataOverride**: `struct`
 - **serializedDataOverrides**: `List<UxmlSerializedDataOverride>`
+- **ComponentAttributeOverride**: `struct`
 
 ### Public Methods
 
 - **NamesPathMatchesElementNamesPath()**: Returns `bool`
+- **AddComponentAttributeOverride()**: Returns `void`
 - **AddSlotUsage()**: Returns `void`
 - **SetAttributeOverride()**: Returns `void`
 - **RemoveAttributeOverride()**: Returns `void`

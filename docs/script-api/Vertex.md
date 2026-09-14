@@ -17,6 +17,56 @@ This value is multiplied by any other color information of the `VisualElement` (
 
 This is used to sample the required region of the associated texture if any. Values outside the range 0..1 are currently not supported and could lead to undefined results.
 
+<paramref name="t"/> of the way from <paramref name="a"/> to <paramref name="b"/>.
+
+
+**Remarks:**
+
+
+tessellating, or clipping geometry. The continuous vertex data (position, tint, texture coordinate, and
+
+(clipping, element, texture, and gradient identifiers, and flags) is taken from <paramref name="a"/>.
+
+Because that discrete data is copied rather than blended, <paramref name="a"/> and <paramref name="b"/>
+
+the case when resampling the triangles of a single mesh. <paramref name="t"/> is not clamped: values
+
+<param name="b">The vertex written to <paramref name="result"/> when <paramref name="t"/> is 1.</param>
+
+<param name="result">Receives the interpolated vertex.</param>
+
+from <paramref name="a"/> to <paramref name="b"/>. Convenience overload that returns the result instead
+
+<param name="b">The vertex returned when <paramref name="t"/> is 1.</param>
+
+<returns>The interpolated vertex.</returns>
+
+a vertex at an arbitrary point inside (or outside) the triangle they form.
+
+
+**Remarks:**
+
+
+As with `Lerp(in Vertex, in Vertex, float, out Vertex)`, the continuous vertex data is
+
+belong to the same fill. The weights are expected to sum to 1 for a point inside the triangle, but are
+
+<param name="b">The second triangle vertex, weighted by <paramref name="v"/>.</param>
+
+<param name="u">The barycentric weight of <paramref name="a"/>.</param>
+
+<param name="w">The barycentric weight of <paramref name="c"/>.</param>
+
+Convenience overload that returns the result instead of writing to an out parameter.
+
+<param name="a">The first triangle vertex, weighted by <paramref name="u"/>.</param>
+
+<param name="c">The third triangle vertex, weighted by <paramref name="w"/>.</param>
+
+<param name="v">The barycentric weight of <paramref name="b"/>.</param>
+
+<returns>The interpolated vertex.</returns>
+
 See `MeshGenerationContext.AddMeshGenerationCallback`.
 
 
@@ -317,6 +367,8 @@ For complete source code, see: [Vertex.cs](https://github.com/Unity-Technologies
 
 ### Public Methods
 
+- **Lerp()**: Returns `void`
+- **BarycentricInterpolate()**: Returns `void`
 - **SetNextVertex()**: Returns `void`
 - **SetNextIndex()**: Returns `void`
 - **SetAllVertices()**: Returns `void`

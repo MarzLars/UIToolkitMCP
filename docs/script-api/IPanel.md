@@ -75,6 +75,11 @@ Some property changed that potentially changes animation playback state results
 
 
         Name = 1 << 22,
+
+A field of an attached component changed; the component-change updater flushes its
+
+
+        Component = 1 << 23,
     }
 
 Offers a set of options that describe the intended usage patterns of a `VisualElement`.

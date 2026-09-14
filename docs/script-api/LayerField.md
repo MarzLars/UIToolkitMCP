@@ -10,7 +10,7 @@
 
 
     [Icon("UIToolkit/Icons/LayerField.png")]
-    [UxmlElement(visibility = LibraryVisibility.Visible)]
+    [UxmlElement]
 
 <param name="defaultValue">The initial layer value this field should use.</param>
 

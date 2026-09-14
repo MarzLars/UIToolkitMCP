@@ -9,7 +9,7 @@
 ## Documentation
 
 
-    [UxmlElement(visibility = LibraryVisibility.Visible)]
+    [UxmlElement]
     [Icon("UIToolkit/Icons/ToolbarSearchField.png")]
 
 ## Source Code Reference

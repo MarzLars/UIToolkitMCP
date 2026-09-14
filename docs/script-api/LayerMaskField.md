@@ -10,7 +10,7 @@
 
 
     [Icon("UIToolkit/Icons/LayerMaskField.png")]
-    [UxmlElement(visibility = LibraryVisibility.Visible)]
+    [UxmlElement]
 
 <param name="defaultMask">The mask to use for a first selection.</param>
 

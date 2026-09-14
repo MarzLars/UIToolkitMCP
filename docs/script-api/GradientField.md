@@ -9,7 +9,7 @@
 ## Documentation
 
 
-    [UxmlElement(visibility = LibraryVisibility.Visible)]
+    [UxmlElement]
     [Icon("UIToolkit/Icons/GradientField.png")]
 
 __Note__: Changing this doesn't trigger sending a change event.
