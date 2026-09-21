@@ -81,7 +81,7 @@ Indicates if sampling the source texture yields a color in the gamma color space
 
 Indicates if the shader must return a color in the gamma color space.
 
-The DPI scaling factor of the render tree.
+The number of pixels per point in the texture being filtered. Multiply point-based parameter values by this factor to convert them to pixels.
 
 
     [Serializable]

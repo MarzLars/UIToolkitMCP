@@ -117,6 +117,40 @@ The following example shows how to fill a container with default Inspector field
 
 <code source="../../../../Modules/UIElements/Tests/UIElementsExamples/Assets/Examples/InspectorElement_ExampleExclude.cs"/>
 
+<returns>The built inspector, or a help box saying why it was refused.</returns>
+        VisualElement CreateCustomInspectorElement(Editor targetEditor)
+        {
+            var editorType = targetEditor.GetType();
+            var targets = targetEditor.targets;
+
+            // A repeated frame does not prove the nesting never ends, so only the depth bound refuses a build.
+            if (s_InspectorBuildStack.Count >= k_MaxInspectorBuildDepth)
+            {
+                var error = IsBuildingInspector(editorType, targets)
+                    ? $"{editorType.Name}.CreateInspectorGUI kept creating an InspectorElement for the object it is already inspecting, so it was stopped after {k_MaxInspectorBuildDepth} levels. Use InspectorElement.FillDefaultInspector to add the default fields instead."
+                    : $"Inspectors are nested more than {k_MaxInspectorBuildDepth} deep at {editorType.Name}, so this one was not built. Check whether CreateInspectorGUI keeps creating an InspectorElement for a new object.";
+
+                Debug.LogError(error, targetEditor.target);
+                return new HelpBox(error, HelpBoxMessageType.Error);
+            }
+
+            s_InspectorBuildStack.Push((editorType, targets));
+
+            try
+            {
+                // Try to use UI toolkit first with an IMGUI fallback.
+                return CreateInspectorElementUsingUIToolkit(targetEditor) ?? CreateInspectorElementUsingIMGUI(targetEditor);
+            }
+            finally
+            {
+                s_InspectorBuildStack.Pop();
+            }
+        }
+
+Returns true when the same editor type is already building an inspector for the same objects further
+
+<param name="targets">The objects that editor inspects.</param>
+
 ## Source Code Reference
 
 For complete source code, see: [InspectorElement.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Editor/Mono/UIElements/Inspector/InspectorElement.cs)

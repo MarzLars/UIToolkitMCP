@@ -288,6 +288,10 @@ An element holds at most one component of each type. Read or modify an attached 
 
 `VisualElement.RemoveComponent{T}`.
 
+Add `HideInInspector` to the struct to keep the component out of every editor
+
+This is independent of `exposeToUxml`, which decides only UXML authoring.
+
 <example nocheck="true">
 
 <code lang="cs"><![CDATA[
@@ -405,11 +409,80 @@ authored attribute values are applied, so authored values always win over values
 **Remarks:**
 
 
-component may declare at most one. It runs before the component storage is freed and before
+The method must be `static void M(ref T self, `VisualElement` owner)`, and a
 
-live data and clean up any owner state the component configured. It runs only on an explicit
+its `[RegisterCallback]` handlers are unregistered, so the method can still read its own
 
-the element itself is torn down.
+</para>
+
+It runs only on an explicit `VisualElement.RemoveComponent{T}` or
+
+is still alive. Does not run when the element is released, when its panel is torn down, or when it
+
+</para>
+
+Because the method receives the owning element, it may read its own state, touch that element, and
+
+</para>
+
+To free something the component allocated, use
+
+is guaranteed to run exactly once per component instance, on every release path: explicit removal,
+
+`VisualElementClearOptions.RecursiveReleaseResources`, and garbage collection. Its call
+
+collected, so it receives only its own data and no element, and may do nothing beyond freeing what
+
+</para>
+
+Rule of thumb: if you allocated it, free it in
+
+react to a user removing your component, use `[OnComponentRemoved]`. Never rely on
+
+</para>
+
+resources the component allocated. It runs exactly once per component instance, on every path
+
+<para>
+
+Free what this component allocated, and nothing else.
+
+<para>
+
+`VisualElement.RemoveComponent{T}` or `VisualElement.TryRemoveComponent{T}`,
+
+`VisualElementClearOptions.RecursiveReleaseResources`, and garbage collection. Whichever
+
+The call is deferred to the next `Collect()` and always happens on the main thread.
+
+<para>
+
+omission: the call is deferred to a main-thread drain that can run after the owning element has
+
+so no element can be resolved at that point.
+
+<para>
+
+through a nested struct, must declare this method: releasing the component clears its storage
+
+diagnostic reports the omission as an error.
+
+<para>
+
+only on an explicit `VisualElement.RemoveComponent{T}` or
+
+still alive, and it receives that element, so it may read its own state, touch the element, and add
+
+guaranteed to run.
+
+<para>
+
+react to a user removing your component, use
+
+`[OnComponentRemoved]` to release anything.
+
+
+    [AttributeUsage(AttributeTargets.Method, Inherited = false)]
 
 Apply this attribute to a field or property of a struct that has the
 

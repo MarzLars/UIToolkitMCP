@@ -40,6 +40,9 @@ The chosen element will be the first child or recursive child that
 
 This property is used to prevent certain elements from receiving the focus in this case (e.g Foldout)
 
+
+        // Defaults to true: its bit is part of VisualElementFlags.Init.
+
 Returns true if the element meets all the following conditions:
 
 - It's <see cref="Focusable.focusable">focusable</see>.

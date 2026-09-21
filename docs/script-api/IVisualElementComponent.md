@@ -60,6 +60,23 @@ reflection and no boxing of the component struct. A component that declares no c
         // Generator-emitted; do not call directly. Mirror of __InvokeComponentAdded for the
         // [OnComponentRemoved] method; RemoveComponent calls it first, before anything is torn down.
 
+<undoc/>
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        System.Delegate __GetComponentResourceReleaseHandler();
+    }
+
+The signature of a <see cref="ReleaseComponentResourcesAttribute">[ReleaseComponentResources]</see>
+
+allocated.
+
+
+**Remarks:**
+
+
+`[ReleaseComponentResources]` method in one and hands it to the runtime, which invokes it on
+
+<typeparam name="T">A component struct declared with `VisualElementComponentAttribute`.</typeparam>
+
 ## Source Code Reference
 
 For complete source code, see: [IVisualElementComponent.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/Components/IVisualElementComponent.cs)
