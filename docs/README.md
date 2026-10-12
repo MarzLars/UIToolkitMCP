@@ -282,6 +282,7 @@ Documentation generated from Unity's C# reference source code on GitHub.
 - [InputBindingIds](script-api/InputBindingIds.md)
 - [PageStatistics](script-api/PageStatistics.md)
 - [Range](script-api/Range.md)
+- [SiblingWalk](script-api/SiblingWalk.md)
 - [Statistics](script-api/Statistics.md)
 
 ### UnityEngine.UIElements.Unmanaged

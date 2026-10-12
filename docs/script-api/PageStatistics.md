@@ -22,6 +22,7 @@ For complete source code, see: [PageStatistics.cs](https://github.com/Unity-Tech
 
 - **GetCommandListManager()**: Returns `CommandListManager`
 - **GetMeshManager()**: Returns `MeshManager`
+- **GetDefaultMaterialStackDepth()**: Returns `int`
 - **Dispose()**: Returns `void`
 - **Allocate()**: Returns `MeshHandle`
 - **Update()**: Returns `void`

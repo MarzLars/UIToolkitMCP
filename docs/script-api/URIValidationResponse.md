@@ -19,6 +19,7 @@ For complete source code, see: [URIValidationResponse.cs](https://github.com/Uni
 - **MakeAssetUri()**: Returns `string`
 - **MakeThemeImportUri()**: Returns `string`
 - **EncodeUri()**: Returns `string`
+- **IsBuiltinResourcePath()**: Returns `bool`
 - **ValidAssetURL()**: Returns `URIValidationResult`
 - **ValidateAssetURL()**: Returns `URIValidationResponse`
 - **InjectFileNameSuffix()**: Returns `string`

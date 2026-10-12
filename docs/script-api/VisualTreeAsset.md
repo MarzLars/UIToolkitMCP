@@ -70,9 +70,9 @@ For complete source code, see: [VisualTreeAsset.cs](https://github.com/Unity-Tec
 
 ### Public Methods
 
+- **Equals()**: Returns `bool`
 - **Compare()**: Returns `int`
 - **Instantiate()**: Returns `TemplateContainer`
 - **CloneTree()**: Returns `TemplateContainer`
-- **Equals()**: Returns `bool`
 - **GetHashCode()**: Returns `int`
 

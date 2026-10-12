@@ -278,6 +278,8 @@ Related to `PanelSettings.SetPanelChangeReceiver`
 
 <param name="element"> The element that changed.</param>
 
+can place IME candidate windows and the character palette before any composition starts.
+
 This method is exclusively available in development builds and the Editor, as it serves as a debug feature that complements the profiling of an application.
 
 

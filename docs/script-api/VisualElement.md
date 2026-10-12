@@ -48,6 +48,10 @@ component is created with the type's `UxmlCreateInstanceMethodAttribute` method
 
 valid until a component is added to or removed from this element.
 
+<exception cref="InvalidOperationException">
+
+<see cref="ReleaseComponentResourcesAttribute">[ReleaseComponentResources]</see> method.
+
 The reference points at the component's live storage: assigning to its fields updates the
 
 the component is removed.
@@ -70,7 +74,7 @@ writing through a null reference throws `NullReferenceException`.
 
 A reference to the live component data, or a null reference when the component is not
 
-this element.
+until a component is added to or removed from this element.
 
 <returns><see langword="true"/> if the component is attached; otherwise <see langword="false"/>.</returns>
 

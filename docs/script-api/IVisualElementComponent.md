@@ -35,7 +35,7 @@ reflection and no boxing of the component struct. A component that declares no c
 
         // Generator-emitted; do not call directly. Returns the component's shared [OnComponentChanged]
         // dispatcher (a per-type static delegate, so no per-instance allocation), or null when the
-        // component declares no handler. AddComponent stores the result in the component's slot.
+        // component declares no handler. Held once per component type, not per component instance.
 
 <undoc/>
         [EditorBrowsable(EditorBrowsableState.Never)]
