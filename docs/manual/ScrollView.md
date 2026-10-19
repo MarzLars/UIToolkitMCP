@@ -189,6 +189,7 @@ This element has the following member attributes:
 | `scroll-deceleration-rate` | `float` | Controls the rate at which the scrolling movement slows after a user scrolls using a touch interaction.  The deceleration rate is the speed reduction per second. A value of 0.5 halves the speed each second. A value of 0 stops the scrolling immediately. |
 | `show-horizontal-scroller` | `boolean` | Obsolete. Use `ScrollView.horizontalScrollerVisibility` instead. |
 | `show-vertical-scroller` | `boolean` | Obsolete. Use `ScrollView.verticalScrollerVisibility` instead. |
+| `touch-scroll-direction` | [`UIElements.ScrollView.TouchScrollDirection`](../ScriptReference/UIElements.ScrollView.TouchScrollDirection.html) | The direction in which the content moves when a user drags it using touch, a pen, or a tracked device.  This applies to touch, pen, and tracked device input, such as XR controllers, on both screen-space and world-space panels. It doesn’t affect dragging with a mouse, dragging the scrollers, or scrolling with a mouse wheel. The default is `TouchScrollDirection.Natural`. |
 | `touch-scroll-type` | [`UIElements.ScrollView.TouchScrollBehavior`](../ScriptReference/UIElements.ScrollView.TouchScrollBehavior.html) | The behavior to use when a user tries to scroll past the boundaries of the ScrollView content using a touch interaction. |
 | `vertical-page-size` | `float` | This property controls the speed of the vertical scrolling when using a keyboard or the on-screen scrollbar buttons (arrows and handle), based on the size of the page.  The speed is calculated by multiplying the page size by the specified value. For example, a value of `2` means that each scroll movement covers a distance equal to twice the width of the page.\ |
 | `vertical-scroller-visibility` | [`UIElements.ScrollerVisibility`](../ScriptReference/UIElements.ScrollerVisibility.html) | Specifies whether the vertical scroll bar is visible. |
@@ -254,7 +255,7 @@ RenderingLayerMaskField
 
 Scroller
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 77242683. Built on: 2026-10-10.
+Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 77730618. Built on: 2026-10-17.
 
 [Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Documentation Terms of Use](https://unity.com/legal/docs-terms)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
 

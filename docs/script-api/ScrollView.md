@@ -106,6 +106,14 @@ The following example demonstrates how to use the @@mouseWheelScrollSize@@ prope
         [UxmlAttribute("touch-scroll-type")]
         [CreateProperty]
 
+This applies to touch, pen, and tracked device input, such as XR controllers, on both screen-space and
+
+mouse wheel.
+
+
+        [UxmlAttribute]
+        [CreateProperty]
+
 The deceleration rate is the speed reduction per second. A value of 0.5 halves the speed each second. A value of 0 stops the scrolling immediately.
 
 Elasticity is only used when `touchScrollBehavior` is set to Elastic.
@@ -123,13 +131,22 @@ The content position can overshoot the ScrollView boundaries, but then "snaps" b
             Clamped,
         }
 
-Options for controlling how nested `ScrollView` handles scrolling when reaching
+The direction in which the content of a `ScrollView` moves when a user drags it using touch, a pen, or a tracked device.
 
-This Enum is only relevant when used for a ScrollView that is nested inside another ScrollView.
 
-<example>
+            Natural,
 
-<code source="../../../../Modules/UIElements/Tests/UIElementsExamples/Assets/Examples/ScrollView_NestedInteraction_Example.cs"/>
+The content moves opposite to the pointer, like when dragging a scroller.
+
+the limits of the scrollable area.
+
+
+**Remarks:**
+
+
+The following example demonstrates how to use the NestedInteractionKind enum to control the behavior of a nested ScrollView.
+
+</example>
 
 NestedInteractionKind.StopScrolling is used. For scroll wheel input, NestedInteractionKind.ForwardScrolling is used.
 
@@ -190,13 +207,13 @@ For complete source code, see: [ScrollView.cs](https://github.com/Unity-Technolo
 - **verticalPageSize**: `float`
 - **mouseWheelScrollSize**: `float`
 - **touchScrollBehavior**: `TouchScrollBehavior`
+- **touchScrollDirection**: `TouchScrollDirection`
 - **scrollDecelerationRate**: `float`
 - **elasticity**: `float`
 - **elasticAnimationIntervalMs**: `long`
 - **TouchScrollBehavior**: `enum`
+- **TouchScrollDirection**: `enum`
 - **NestedInteractionKind**: `enum`
-- **contentViewport**: `VisualElement`
-- **horizontalScroller**: `Scroller`
 
 ### Public Methods
 

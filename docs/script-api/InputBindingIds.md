@@ -26,6 +26,7 @@ For complete source code, see: [InputBindingIds.cs](https://github.com/Unity-Tec
 - **CountFilterChainPasses()**: Returns `int`
 - **ApplyDefaultParameterBindings()**: Returns `void`
 - **InvokeFilterCallbacksForElement()**: Returns `void`
+- **GetRenderTreePixelsPerPoint()**: Returns `Vector2`
 - **ReleaseFilterCallbackResources()**: Returns `void`
 - **ComputeLastRenderedSlot()**: Returns `int`
 - **InvokeFilterCallbacks()**: Returns `void`
