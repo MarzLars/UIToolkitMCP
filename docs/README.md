@@ -78,6 +78,7 @@ Documentation generated from Unity's C# reference source code on GitHub.
 - [BoundsField](script-api/BoundsField.md)
 - [BoundsIntField](script-api/BoundsIntField.md)
 - [Box](script-api/Box.md)
+- [BoxShadow](script-api/BoxShadow.md)
 - [Button](script-api/Button.md)
 - [CameraRayEnumerator](script-api/CameraRayEnumerator.md)
 - [ChangeDirection](script-api/ChangeDirection.md)
@@ -202,6 +203,7 @@ Documentation generated from Unity's C# reference source code on GitHub.
 - [StyleBackgroundPosition](script-api/StyleBackgroundPosition.md)
 - [StyleBackgroundRepeat](script-api/StyleBackgroundRepeat.md)
 - [StyleBackgroundSize](script-api/StyleBackgroundSize.md)
+- [StyleBoxShadow](script-api/StyleBoxShadow.md)
 - [StyleColor](script-api/StyleColor.md)
 - [StyleCursor](script-api/StyleCursor.md)
 - [StyleCurvature](script-api/StyleCurvature.md)
@@ -282,7 +284,6 @@ Documentation generated from Unity's C# reference source code on GitHub.
 - [InputBindingIds](script-api/InputBindingIds.md)
 - [PageStatistics](script-api/PageStatistics.md)
 - [Range](script-api/Range.md)
-- [SiblingWalk](script-api/SiblingWalk.md)
 - [Statistics](script-api/Statistics.md)
 
 ### UnityEngine.UIElements.Unmanaged

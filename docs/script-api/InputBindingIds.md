@@ -17,6 +17,7 @@ For complete source code, see: [InputBindingIds.cs](https://github.com/Unity-Tec
 ### Public Methods
 
 - **GetInputBindingIds()**: Returns `InputBindingIds`
+- **WarnIfFilterParametersClamped()**: Returns `void`
 - **GetReadMargins()**: Returns `PostProcessingMargins`
 - **GetWriteMargins()**: Returns `PostProcessingMargins`
 - **ComputeChainReadMargins()**: Returns `PostProcessingMargins`

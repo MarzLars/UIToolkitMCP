@@ -80,17 +80,19 @@ A field of an attached component changed; the component-change updater flushes i
 
 
         Component = 1 << 23,
-    }
 
-Offers a set of options that describe the intended usage patterns of a `VisualElement`.
+The element's USS class list changed. Comes with `StyleSheet` only when a loaded style sheet uses one of the changed classes.
 
-usage hints on an element. For example, if both position and color change, you can set both
+These options serve as guidance for optimizations. You can set multiple
 
-\\
+`DynamicTransform` and `DynamicColor`.\\
 
-In the case of transition, when it starts, the system might automatically add missing relevant
+__Note__: Set the usage hints at edit time or before you add the `VisualElement` to a panel.
 
-because the rendering data for the VisualElement and its descendants is regenerated.
+usage hints to avoid regenerating geometry in every frame. However, this causes a one-frame performance penalty
+
+
+    [Flags]
 
 
         None = 0,

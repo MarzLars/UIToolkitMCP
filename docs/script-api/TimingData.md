@@ -21,6 +21,7 @@ For complete source code, see: [TimingData.cs](https://github.com/Unity-Technolo
 - **SameFunc**: `Func<T, T, bool>`
 - **SameFunc**: `Func<UnityEngine.UIElements.Cursor, UnityEngine.UIElements.Cursor, bool>`
 - **SameFunc**: `Func<TextShadow, TextShadow, bool>`
+- **SameFunc**: `Func<BoxShadow, BoxShadow, bool>`
 - **SameFunc**: `Func<Scale, Scale, bool>`
 - **SameFunc**: `Func<Rotate, Rotate, bool>`
 - **SameFunc**: `Func<Ratio, Ratio, bool>`

@@ -504,6 +504,7 @@ For complete source code, see: [UxmlElementAttribute.cs](https://github.com/Unit
 
 - **LibraryVisibility**: `enum`
 - **Visibility**: `LibraryVisibility`
+- **maxChildCount**: `int`
 - **path**: `string`
 - **exposeToUxml**: `bool`
 - **eventType**: `Type`

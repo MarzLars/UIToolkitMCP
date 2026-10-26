@@ -11,6 +11,7 @@
 
     [Icon("UIToolkit/Icons/TwoPaneSplitView.png")]
     [UxmlElement]
+    [UxmlMaxChildCount(2)]
 
 
         [CreateProperty]

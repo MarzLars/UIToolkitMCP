@@ -33,6 +33,10 @@ For complete source code, see: [IgnoreUIChangesScope.cs](https://github.com/Unit
 
 - **BindingLogLevel**: `enum`
 - **localDataSource**: `object`
+- **localDataSourcePath**: `PropertyPath`
+- **hasHierarchicalContext**: `bool`
+- **isContextResolved**: `bool`
+- **hierarchicalContext**: `DataSourceContext`
 - **context**: `DataSourceContext`
 - **boundElements**: `HashSet<VisualElement>`
 - **results**: `List<VisualElement>`
@@ -50,15 +54,15 @@ For complete source code, see: [IgnoreUIChangesScope.cs](https://github.com/Unit
 - **GetBindingCount()**: Returns `int`
 - **Dispose()**: Returns `void`
 - **Reset()**: Returns `void`
+- **SetHierarchicalContext()**: Returns `void`
+- **InvalidateHierarchicalContext()**: Returns `void`
 - **TraverseRecursive()**: Returns `void`
 - **GetTrackedElementsCount()**: Returns `int`
 - **GetBoundElements()**: Returns `List<VisualElement>`
-- **GetUnorderedBoundElements()**: Returns `IEnumerable<VisualElement>`
+- **GetUnorderedBoundElements()**: Returns `HashSet<VisualElement>`
 - **SetDirty()**: Returns `void`
 - **TryGetBindingCollection()**: Returns `bool`
 - **IsTrackingElement()**: Returns `bool`
 - **StartTrackingBinding()**: Returns `void`
 - **StopTrackingBinding()**: Returns `void`
-- **StopTrackingElement()**: Returns `void`
-- **Invalidate()**: Returns `void`
 

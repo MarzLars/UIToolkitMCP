@@ -14,5 +14,6 @@ For complete source code, see: [NativeColorId.cs](https://github.com/Unity-Techn
 
 - **NativeColorId**: `struct`
 - **NativeBorderParams**: `struct`
+- **NativeBoxShadowParams**: `struct`
 - **NativeRectParams**: `struct`
 

@@ -24,6 +24,7 @@ For complete source code, see: [BackgroundRepeatInstance.cs](https://github.com/
 - **DrawRectangle()**: Returns `void`
 - **DrawGradientRectangle()**: Returns `void`
 - **DrawBorder()**: Returns `void`
+- **DrawBoxShadow()**: Returns `void`
 - **DrawVectorImage()**: Returns `void`
 - **DrawRectangleRepeat()**: Returns `void`
 - **ScheduleJobs()**: Returns `void`
