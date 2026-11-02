@@ -2,98 +2,93 @@
 
 **Namespace:** `UnityEngine.UIElements`
 
-**Source:** [Modules/UIElements/Core/VisualElement.Components.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/VisualElement.Components.cs)
+**Source:** [Modules/UIElements/Core/VisualElementStyleAccess.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/VisualElementStyleAccess.cs)
 
 ---
 
 ## Documentation
 
-USS custom property values. The style counterpart of `MarkDirtyRepaint`.
+The returned style data, computed from USS files or inline styles written to this object
 
-targeting that field (for example `${component:Tooltip}.text`) can publish the new value.
+a VisualElement.
 
+For information about how to use this property and all the supported USS properties, refer to the
 
-**Remarks:**
+[wiki:UIE-USS-Properties-Reference|USS properties reference] manual pages.
 
+<example>
 
-its own; call this afterwards to drive bindings. The `UITKSG029` analyzer flags misses.
+<![CDATA[
 
-`[OnComponentChanged]` handler runs once during the next update.
+element.style.backgroundColor = Color.red;
 
-
-**Remarks:**
-
-
-`ref GetComponent&lt;T&gt;()`. Unity doesn't detect direct writes, so without this call
-
-`SetXxx` setters or a data binding; both call it for you. If no component of type
-
-<typeparam name="T">A component struct declared with `VisualElementComponentAttribute`.</typeparam>
-
-Thrown if a component of the same type is already attached (an element holds at most one
-
-<see cref="ReleaseComponentResourcesAttribute">[ReleaseComponentResources]</see> method.
-
-element. If the component is not attached yet, it is added first.
+</code>
 
 
 **Remarks:**
 
 
-`GetComponent{T}` and the component data is not changed. When it is not attached,
 
-component is created with the type's `UxmlCreateInstanceMethodAttribute` method
+        [CreateProperty]
 
-<returns>
+Use @@resolvedStyle@@ to find the actual rendered styling of a [VisualElement] in the
 
-valid until a component is added to or removed from this element.
+the resolved style value of an element to make layout decisions, troubleshoot styling issues,
 
-<exception cref="InvalidOperationException">
+The final rendered style is computed from applied classes, inherited styles from ancestors, and
 
-<see cref="ReleaseComponentResourcesAttribute">[ReleaseComponentResources]</see> method.
+you set through the [VisualElement.style] property, depending on the other styles applied to the element.
 
-The reference points at the component's live storage: assigning to its fields updates the
 
-the component is removed.
+**Remarks:**
 
-<typeparam name="T">A component struct declared with `VisualElementComponentAttribute`.</typeparam>
 
-<exception cref="InvalidOperationException">
+If the element's geometry remains unchanged, consider adding a [IVisualElementScheduler|scheduler] to periodically check the element's
 
-</exception>
+For a list of all the style properties supported by UI Toolkit, refer to [wiki:UIE-USS-Properties-Reference|USS properties reference].
 
-element, or a null reference when the component is not attached. This method never adds
 
-Always check the returned reference with
+**Remarks:**
 
-writing through a null reference throws `NullReferenceException`.
 
-`GetComponent{T}`.
+refer to [wiki:UIE-apply-styles-with-csharp|Apply styles in C# scripts].
 
-<typeparam name="T">A struct decorated with `VisualElementComponentAttribute`.</typeparam>
+<example>
 
-A reference to the live component data, or a null reference when the component is not
+<![CDATA[
 
-until a component is added to or removed from this element.
+float width = element.resolvedStyle.width;
 
-<returns><see langword="true"/> if the component is attached; otherwise <see langword="false"/>.</returns>
+</code>
 
-<exception cref="InvalidOperationException">
 
-</exception>
+**Remarks:**
 
-<returns><see langword="true"/> if a component was removed; <see langword="false"/> if none was attached.</returns>
 
-Thrown if this element's resources have been released, or if called from a
 
-</exception>
+        [CreateProperty]
+
+To get the custom styles properties of an element, call the `ICustomStyle.TryGetValue`
+
+For more information about how to use this property, refer to the
+
+For a list of all the supported style properties, refer
+
+SA: [VisualElement.style], [VisualElement.resolvedStyle]
+
+
+        [CreateProperty(ReadOnly = true)]
 
 ## Source Code Reference
 
-For complete source code, see: [VisualElement.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/VisualElement.Components.cs)
+For complete source code, see: [VisualElement.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/VisualElementStyleAccess.cs)
+
+### Public Properties
+
+- **style**: `IStyle`
+- **resolvedStyle**: `IResolvedStyle`
 
 ### Public Methods
 
-- **MarkDirtyStyles()**: Returns `void`
-- **NotifyComponentChanged()**: Returns `void`
+- **TryGetValue()**: Returns `bool`
 

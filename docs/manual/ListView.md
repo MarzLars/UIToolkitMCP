@@ -5,50 +5,256 @@
 
 ---
 
-* [Manual](index.html)
-* [Scripting API](../ScriptReference/index.html)
+[Documentation](/en-us)
 
-* [unity.com](https://unity.com/)
+DevelopmentUser AcquisitionMonetizationIndustry
 
-Version: **Unity 6.6** (6000.6)
+Development
 
-* Supported
-* Legacy
+User Acquisition
 
-Language
-: English
+Monetization
 
-* [English](/Manual/UIE-uxml-element-ListView.html)
-* [中文](/cn/current/Manual/UIE-uxml-element-ListView.html)
-* [日本語](/ja/current/Manual/UIE-uxml-element-ListView.html)
-* [한국어](/kr/current/Manual/UIE-uxml-element-ListView.html)
+Industry
 
-## Unity Manual
+### Unity Engine
 
-Version: Unity 6.6Select a different version
+Version: 7000.0
 
-Language
-: English
+Alpha
 
-* [English](/Manual/UIE-uxml-element-ListView.html)
-* [中文](/cn/current/Manual/UIE-uxml-element-ListView.html)
-* [日本語](/ja/current/Manual/UIE-uxml-element-ListView.html)
-* [한국어](/kr/current/Manual/UIE-uxml-element-ListView.html)
+Version: 6000.7
 
-* [UI systems](UIToolkits.html)
-* [UI Toolkit](UIElements.html)
-* [Visual elements reference](UIE-ElementRef.html)
-* ListView
+Beta
 
-LongField
+Version: 6000.6
 
-MaskField
+Current
+
+Version: 6000.3
+
+LTS
+
+Version: 6000.0
+
+LTS
+
+Version: 6000.5
+
+Legacy
+
+Version: 6000.4
+
+Legacy
+
+Version: 6000.2
+
+Legacy
+
+Version: 6000.1
+
+Legacy
+
+[### User Manual](/en-us/engine/6000.6/manual)[### Script Reference](/en-us/engine/6000.6/script-reference)
+
+### Unity Engine
+
+Version: 7000.0
+
+Alpha
+
+Version: 6000.7
+
+Beta
+
+Version: 6000.6
+
+Current
+
+Version: 6000.3
+
+LTS
+
+Version: 6000.0
+
+LTS
+
+Version: 6000.5
+
+Legacy
+
+Version: 6000.4
+
+Legacy
+
+Version: 6000.2
+
+Legacy
+
+Version: 6000.1
+
+Legacy
+
+[Unity Engine Documentation](/en-us/engine/6000.6)
+
+​
+
+​
+
+Unity User Manual
+
+* [Unity 6.6 User Manual](/en-us/engine/6000.6/manual)
+* [What's new in Unity](/en-us/engine/6000.6/manual/whats-new)
+* [Get started](/en-us/engine/6000.6/manual/get-started)
+* [Upgrade Unity](/en-us/engine/6000.6/manual/upgrade-guides)
+* [Unity Building Blocks](/en-us/engine/6000.6/manual/building-blocks)
+* [Unity Editor interface](/en-us/engine/6000.6/manual/unity-editor)
+* [Packages and package management](/en-us/engine/6000.6/manual/packages-list)
+* [Assets and media](/en-us/engine/6000.6/manual/assets-and-media)
+* [2D game development](/en-us/engine/6000.6/manual/unity2d)
+* [Unity's AI](/en-us/engine/6000.6/manual/unity-ai)
+* [XR](/en-us/engine/6000.6/manual/xr)
+* [Multiplayer](/en-us/engine/6000.6/manual/multiplayer)
+* [Platform development](/en-us/engine/6000.6/manual/platform-specific)
+* [GameObjects](/en-us/engine/6000.6/manual/working-with-gameobjects)
+* [Scenes](/en-us/engine/6000.6/manual/working-with-scenes)
+* [Cameras](/en-us/engine/6000.6/manual/cameras)
+* [World building](/en-us/engine/6000.6/manual/creating-environments)
+* [Physics](/en-us/engine/6000.6/manual/physics-section)
+* [Input](/en-us/engine/6000.6/manual/input)
+* [UI systems](/en-us/engine/6000.6/manual/uitoolkits)
+
+  + [Comparison of UI systems in Unity](/en-us/engine/6000.6/manual/uitoolkits/ui-system-compare)
+  + [UI Toolkit](/en-us/engine/6000.6/manual/uitoolkits/uielements)
+
+    - [Introduction to UI Toolkit](/en-us/engine/6000.6/manual/uitoolkits/uielements/introduction-ui-toolkit)
+    - [Get started with UI Toolkit](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-simple-ui-toolkit-workflow)
+    - [UI Builder](/en-us/engine/6000.6/manual/uitoolkits/uielements/uibuilder)
+    - [Structure UI](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-structure-ui)
+    - [Visual elements reference](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref)
+
+      * [BindableElement](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-bindable-element)
+      * [VisualElement](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-visual-element)
+      * [BoundsField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-bounds-field)
+      * [BoundsIntField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-bounds-int-field)
+      * [Box](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-box)
+      * [Button](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-button)
+      * [ColorField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-color-field)
+      * [CurveField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-curve-field)
+      * [DoubleField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-double-field)
+      * [DropdownField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-dropdown-field)
+      * [EnumField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-enum-field)
+      * [EnumFlagsField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-enum-flags-field)
+      * [FloatField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-float-field)
+      * [Foldout](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-foldout)
+      * [GradientField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-gradient-field)
+      * [GroupBox](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-group-box)
+      * [GUIDField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-guidfield)
+      * [Hash128Field](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-hash128field)
+      * [HelpBox](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-help-box)
+      * [IMGUIContainer](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-imguicontainer)
+      * [Image](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-image)
+      * [InspectorElement](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-inspector-element)
+      * [IntegerField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-integer-field)
+      * [Label](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-label)
+      * [LayerField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-layer-field)
+      * [LayerMaskField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-layer-mask-field)
+      * [LongField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-long-field)
+      * [ListView](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-list-view)
+      * [MaskField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-mask-field)
+      * [Mask64Field](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-mask64field)
+      * [MinMaxSlider](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-min-max-slider)
+      * [MultiColumnListView](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-multi-column-list-view)
+      * [MultiColumnTreeView](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-multi-column-tree-view)
+      * [ObjectField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-object-field)
+      * [PopupWindow](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-popup-window)
+      * [ProgressBar](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-progress-bar)
+      * [PropertyField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-property-field)
+      * [RadioButton](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-radio-button)
+      * [RadioButtonGroup](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-radio-button-group)
+      * [RectField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-rect-field)
+      * [RectIntField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-rect-int-field)
+      * [RepeatButton](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-repeat-button)
+      * [RenderingLayerMaskField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-rendering-layer-mask-field)
+      * [ScrollView](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-scroll-view)
+      * [Scroller](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-scroller)
+      * [Slider](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-slider)
+      * [SliderInt](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-slider-int)
+      * [Tab](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-tab)
+      * [TabView](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-tab-view)
+      * [TagField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-tag-field)
+      * [TextElement](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-text-element)
+      * [TextField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-text-field)
+      * [TemplateContainer](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-template-container)
+      * [Toggle](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-toggle)
+      * [ToggleButtonGroup](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-toggle-button-group)
+      * [UI Toolkit Toolbar element reference](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-toolbar)
+      * [ToolbarBreadcrumbs](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-toolbar-breadcrumbs)
+      * [ToolbarButton](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-toolbar-button)
+      * [ToolbarMenu](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-toolbar-menu)
+      * [ToolbarPopupSearchField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-toolbar-popup-search-field)
+      * [ToolbarSearchField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-toolbar-search-field)
+      * [ToolbarSpacer](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-toolbar-spacer)
+      * [ToolbarToggle](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-toolbar-toggle)
+      * [TreeView](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-tree-view)
+      * [TwoPaneSplitView](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-two-pane-split-view)
+      * [UnsignedLongField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-unsigned-long-field)
+      * [UnsignedIntegerField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-unsigned-integer-field)
+      * [Vector2Field](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-vector2field)
+      * [Vector2IntField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-vector2int-field)
+      * [Vector3Field](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-vector3field)
+      * [Vector3IntField](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-vector3int-field)
+      * [Vector4Field](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-vector4field)
+    - [Style UI](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-uss)
+    - [Control behavior with events](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-events)
+    - [UI Renderer](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-ui-renderer)
+    - [Data binding](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-data-binding)
+    - [Support for Editor UI](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-support-for-editor-ui)
+    - [Support for runtime UI](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-support-for-runtime-ui)
+    - [Work with text](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-work-with-text)
+    - [Test UI](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-test-ui)
+    - [Examples](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-examples)
+    - [Migration guides](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-migration-guides)
+  + [uGUI](/en-us/engine/6000.6/manual/packages-list/packages-all/pack-core/com-unity-ugui)
+  + [IMGUI (Immediate Mode GUI)](/en-us/engine/6000.6/manual/uitoolkits/ui-imgui)
+* [Accessibility](/en-us/engine/6000.6/manual/accessibility)
+* [Animation](/en-us/engine/6000.6/manual/animation-section)
+* [Audio](/en-us/engine/6000.6/manual/audio)
+* [Video and cutscenes](/en-us/engine/6000.6/manual/video)
+* [Lighting](/en-us/engine/6000.6/manual/lighting-overview)
+* [Materials and shaders](/en-us/engine/6000.6/manual/materials-and-shaders)
+* [Visual effects](/en-us/engine/6000.6/manual/visual-effects)
+* [Render pipelines](/en-us/engine/6000.6/manual/render-pipelines)
+* [Post-processing](/en-us/engine/6000.6/manual/post-processing-and-full-screen-effects)
+* [Gameplay programming](/en-us/engine/6000.6/manual/scripting)
+* [Unity programming environment](/en-us/engine/6000.6/manual/programming-environment)
+* [Extending the Unity Editor](/en-us/engine/6000.6/manual/extending-the-editor)
+* [Optimization](/en-us/engine/6000.6/manual/analysis)
+* [Building and publishing](/en-us/engine/6000.6/manual/building-and-publishing)
+* [Unity Services](/en-us/engine/6000.6/manual/unity-services)
+* [Best practice guides](/en-us/engine/6000.6/manual/best-practice-guides)
+* [Troubleshooting](/en-us/engine/6000.6/manual/trouble-shooting)
+* [Glossary](/en-us/engine/6000.6/manual/glossary)
+
+1. [Unity Engine documentation](/en-us/engine/6000.6)
+3. [Unity 6.6 User Manual](/en-us/engine/6000.6/manual)
+5. [UI systems](/en-us/engine/6000.6/manual/uitoolkits)
+7. [UI Toolkit](/en-us/engine/6000.6/manual/uitoolkits/uielements)
+9. [Visual elements reference](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref)
 
 # ListView
 
+UnityEngine.UIElements.ListView
+
+Read time 4 minutesLast updated 3 days ago
+
+---
+
 A ListView is a vertically scrollable area that links to and displays a list of items.
 
-**Note**: The horizontal and vertical Scroller elements are standard UI Toolkit Scrollers.
+Note
+
+The horizontal and vertical Scroller elements are standard UI Toolkit Scrollers.
 
 ## Create a ListView
 
@@ -60,8 +266,7 @@ var listView = new ListView();
 
 ## ListView versus ScrollView
 
-You can use a [ScrollView](UIE-uxml-element-ScrollView.html)A UI Control which displays a large set of Controls in a viewable area that you can see by using a scrollbar. [More info](UIE-uxml-element-ScrollView.html)
-See in [Glossary](Glossary.html#ScrollView) control to create the same functionalities as using a ListView. However, a ListView is more efficient than a ScrollView when you do the following:
+You can use a [ScrollView](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-scroll-view) control to create the same functionalities as using a ListView. However, a ListView is more efficient than a ScrollView when you do the following:
 
 * Populate list items
 * Manage item height
@@ -71,29 +276,122 @@ See in [Glossary](Glossary.html#ScrollView) control to create the same functiona
 
 ## Refresh the collection view
 
-To refresh the collection view, you can call either [`RefreshItems`](../ScriptReference/UIElements.BaseVerticalCollectionView.RefreshItems.html)/[`RefreshItem`](../ScriptReference/UIElements.BaseVerticalCollectionView.RefreshItem.html) or [`Rebuild`](../ScriptReference/UIElements.BaseVerticalCollectionView.Rebuild.html).
+To refresh the collection view, you can call either [```
+RefreshItems
+```](/en-us/engine/6000.6/script-reference/unityengine/uielements/baseverticalcollectionview/refreshitems)/[```
+RefreshItem
+```](/en-us/engine/6000.6/script-reference/unityengine/uielements/baseverticalcollectionview/refreshitem) or [```
+Rebuild
+```](/en-us/engine/6000.6/script-reference/unityengine/uielements/baseverticalcollectionview/rebuild).
 
-In general, call the `RefreshItems` or `RefreshItem` method—these methods only refresh the collection view and are less expensive. If you call `Rebuild`, the collection view is completely rebuilt, which can be expensive.
+In general, call the
 
-However, you must call `Rebuild` in the following cases:
+```
+RefreshItems
+```
 
-* You change the type of the [data source](../ScriptReference/UIElements.BaseVerticalCollectionView-itemsSource.html), such as changing from a `List<float>` to a `List<Vector3>`.
-* You make changes to `makeItem` or `destroyItem`.
+or
+
+```
+RefreshItem
+```
+
+method—these methods only refresh the collection view and are less expensive. If you call
+
+```
+Rebuild
+```
+
+, the collection view is completely rebuilt, which can be expensive.
+
+However, you must call
+
+```
+Rebuild
+```
+
+in the following cases:
+
+* You change the type of the [data source](/en-us/engine/6000.6/script-reference/unityengine/uielements/baseverticalcollectionview/itemssource), such as changing from a
+
+  ```
+  List<float>
+  ```
+
+  to a
+
+  ```
+  List<Vector3>
+  ```
+
+  .
+
+* You make changes to
+
+  ```
+  makeItem
+  ```
+
+  or
+
+  ```
+  destroyItem
+  ```
+
+  .
 
 ## Set item height
 
-To change how item height is used to drive content, use the [VirtualizationMethod](../ScriptReference/UIElements.BaseVerticalCollectionView-virtualizationMethod.html):
+To change how item height is used to drive content, use the [VirtualizationMethod](/en-us/engine/6000.6/script-reference/unityengine/uielements/baseverticalcollectionview/virtualizationmethod):
 
-* `VirtualizationMethod.FixedHeight` sets all items to the same height.
-* `VirtualizationMethod.DynamicHeight` allows items to have varying heights.
+* ```
+  VirtualizationMethod.FixedHeight
+  ```
+
+  sets all items to the same height.
+* ```
+  VirtualizationMethod.DynamicHeight
+  ```
+
+  allows items to have varying heights.
 
 ## Control the scroll speed
 
-The ListView has a built-in child ScrollView element that lets users scroll through the list. You can [control the speed of the scroll](UIE-uxml-element-ScrollView.html#control-the-scroll-speed) by [overriding the `mouseWheelScrollSize`, `horizontalPageSize`, and `verticalPageSize` properties of the ScrollView with C#](UIE-Controls.html#access-properties-of-a-controls-read-only-children).
+The ListView has a built-in child ScrollView element that lets users scroll through the list. You can [control the speed of the scroll](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-scroll-view#control-the-scroll-speed) by [overriding the
+
+```
+mouseWheelScrollSize
+```
+
+,
+
+```
+horizontalPageSize
+```
+
+, and
+
+```
+verticalPageSize
+```
+
+properties of the ScrollView with C#](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-structure-ui/uie-controls#access-properties-of-a-controls-read-only-children).
 
 ## Make a list reorderable
 
-By default, the ListView control is not reorderable. To make it reorderable, set the `reorderable` property to `true` in UI Builder, UXML, or C#.
+By default, the ListView control is not reorderable. To make it reorderable, set the
+
+```
+reorderable
+```
+
+property to
+
+```
+true
+```
+
+in UI Builder, UXML, or C#.
 
 ```
 listView.reorderable = true;
@@ -103,22 +401,62 @@ listView.reorderable = true;
 
 Drag-and-drop is a common feature in UI design. To implement the drag-and-drop operations, override the following methods:
 
-* To enable dragging items, override [`canStartDrag`](../ScriptReference/UIElements.BaseVerticalCollectionView-canStartDrag.html).
-* To set which items are dragged, override [`setupDragAndDrop`](../ScriptReference/UIElements.BaseVerticalCollectionView-setupDragAndDrop.html).
-* To get item status changes, override [`dragAndDropUpdate`](../ScriptReference/UIElements.BaseVerticalCollectionView-dragAndDropUpdate.html). You can perform certain actions based on the drag position or other conditions.
-* To control the drag-and-drop behavior, override [`handleDrop`](../ScriptReference/UIElements.BaseVerticalCollectionView-handleDrop.html).
+* To enable dragging items, override [```
+  canStartDrag
+  ```](/en-us/engine/6000.6/script-reference/unityengine/uielements/baseverticalcollectionview/canstartdrag).
+* To set which items are dragged, override [```
+  setupDragAndDrop
+  ```](/en-us/engine/6000.6/script-reference/unityengine/uielements/baseverticalcollectionview/setupdraganddrop).
+* To get item status changes, override [```
+  dragAndDropUpdate
+  ```](/en-us/engine/6000.6/script-reference/unityengine/uielements/baseverticalcollectionview/draganddropupdate). You can perform certain actions based on the drag position or other conditions.
+* To control the drag-and-drop behavior, override [```
+  handleDrop
+  ```](/en-us/engine/6000.6/script-reference/unityengine/uielements/baseverticalcollectionview/handledrop).
 
-During the drag-and-drop operation, you can enable the reordering of items by dragging. To enable, set the `reorderable` attribute to `true` in UI Builder, UXML, and C#.
+During the drag-and-drop operation, you can enable the reordering of items by dragging. To enable, set the
 
-Refer to [Create a drag-and-drop list and tree views between windows](UIE-create-drag-and-drop-list-treeview-between-windows.html) for an example.
+```
+reorderable
+```
+
+attribute to
+
+```
+true
+```
+
+in UI Builder, UXML, and C#.
+
+Refer to [Create a drag-and-drop list and tree views between windows](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-structure-ui/uie-uxml-examples/uie-create-drag-and-drop-list-treeview-between-windows) for an example.
 
 ## Use controller and keyboard navigation with ListView
 
 To enable controller and keyboard navigation with a ListView, do the following:
 
-* Enable selection mode: Set the **Selection Type** to **Single** or **Multiple** in the **Inspector** (or `selectionType` in C#). Keyboard and controller navigation events are tied to the selected state. If you disable selection, the list ignores these inputs.
-* Set initial focus: UI Toolkit doesn’t always give the ListView focus on startup, so the list might not receive keys until something is focused. To receive keyboard or controller events without first clicking with a mouse, call `listView.Focus()` via script (for example, in an [`AttachToPanelEvent`](../ScriptReference/UIElements.AttachToPanelEvent.html) callback).
-* Configure input for runtime UI: For runtime, refer to [Runtime UI event system and input handling](UIE-Runtime-Event-System.html) to connect the input system to UI Toolkit, and follow [Set up input handling with the Input System package](UIE-Runtime-Event-System.html#set-up-input-handling-with-the-input-system-package) to configure project **UI** actions (D-pad, arrows, and other navigation). The Input System package [UI support](https://docs.unity3d.com/Packages/com.unity.inputsystem%401.19/manual/UISupport.html) topic describes each **UI** action. For **Panel Settings** and the **Panel Renderer** workflow, refer to [Configure runtime UI](UIE-render-runtime-ui.html). In Editor panels, arrow keys are automatically converted to navigation events without additional configuration.
+* Enable selection mode: Set the **Selection Type** to **Single** or **Multiple** in the
+
+  Inspector
+
+  ?
+
+  (or
+
+  ```
+  selectionType
+  ```
+
+  in C#). Keyboard and controller navigation events are tied to the selected state. If you disable selection, the list ignores these inputs.
+* Set initial focus: UI Toolkit doesn't always give the ListView focus on startup, so the list might not receive keys until something is focused. To receive keyboard or controller events without first clicking with a mouse, call
+
+  ```
+  listView.Focus()
+  ```
+
+  via script (for example, in an [```
+  AttachToPanelEvent
+  ```](/en-us/engine/6000.6/script-reference/unityengine/uielements/attachtopanelevent) callback).
+* Configure input for runtime UI: For runtime, refer to [Runtime UI event system and input handling](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-support-for-runtime-ui/uie-render-runtime-ui/uie-runtime-event-system) to connect the input system to UI Toolkit, and follow [Set up input handling with the Input System package](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-support-for-runtime-ui/uie-render-runtime-ui/uie-runtime-event-system#set-up-input-handling-with-the-input-system-package) to configure project **UI** actions (D-pad, arrows, and other navigation). The Input System package [UI support](https://docs.unity3d.com/Packages/com.unity.inputsystem%401.19/manual/UISupport.html) topic describes each **UI** action. For **Panel Settings** and the **Panel Renderer** workflow, refer to [Configure runtime UI](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-support-for-runtime-ui/uie-render-runtime-ui). In Editor panels, arrow keys are automatically converted to navigation events without additional configuration.
 
 ## ListView FAQs
 
@@ -126,106 +464,118 @@ The following are some frequently asked questions about the ListView control.
 
 **Can I get the list of rows that are visible in the view?**
 
-There are no dedicated APIs for this. You can use [UQuery](UIE-UQuery.html) to retrieve the elements of interest.
+There are no dedicated APIs for this. You can use [UQuery](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-structure-ui/uie-uxml/uie-uquery) to retrieve the elements of interest.
 
-**Is it mandatory for any of the overridden functions of a view controller to call `base.Method`?**
+**Is it mandatory for any of the overridden functions of a view controller to call
+
+```
+base.Method
+```
+
+?**
 
 Call this method only if you want to extend its default behavior.
 
 **I’ve added a Toggle to my row. Why doesn’t the selection jump to that row when the user selects it?**
 
-By default, the row is selected only if the mouse down event is not consumed by the row’s contents. In this case, your Toggle stops the event propagation. To fix this, register a [`PointerDownEvent`](../ScriptReference/UIElements.PointerDownEvent.html) callback with [`TrickleDown`](../ScriptReference/UIElements.TrickleDown.html) on the Toggle to call [`SetSelection`](../ScriptReference/UIElements.BaseVerticalCollectionView.SetSelection.html).
+By default, the row is selected only if the mouse down event is not consumed by the row's contents. In this case, your Toggle stops the event propagation. To fix this, register a [```
+PointerDownEvent
+```](/en-us/engine/6000.6/script-reference/unityengine/uielements/pointerdownevent) callback with [```
+TrickleDown
+```](/en-us/engine/6000.6/script-reference/unityengine/uielements/trickledown) on the Toggle to call [```
+SetSelection
+```](/en-us/engine/6000.6/script-reference/unityengine/uielements/baseverticalcollectionview/setselection).
 
 **How do I receive a callback when a user changes their selection in the view?**
 
-It is recommended to use the [`selectedIndicesChanged`](../ScriptReference/UIElements.BaseVerticalCollectionView-selectedIndicesChanged.html) callback to retrieve data by index when needed. While you can also use [`selectionChanged`](../ScriptReference/UIElements.BaseVerticalCollectionView-selectionChanged.html), be aware that it returns a list of objects, which can cause boxing allocations when used with value types.
+It is recommended to use the [```
+selectedIndicesChanged
+```](/en-us/engine/6000.6/script-reference/unityengine/uielements/baseverticalcollectionview/selectedindiceschanged) callback to retrieve data by index when needed. While you can also use [```
+selectionChanged
+```](/en-us/engine/6000.6/script-reference/unityengine/uielements/baseverticalcollectionview/selectionchanged), be aware that it returns a list of objects, which can cause boxing allocations when used with value types.
 
 **Can I get the indices of the rows that are visible on the screen?**
 
-There are no dedicated APIs for this. You can use the `bindItem` and `unbindItem` callbacks to track these indices in `userData`.
+There are no dedicated APIs for this. You can use the
+
+```
+bindItem
+```
+
+and
+
+```
+unbindItem
+```
+
+callbacks to track these indices in
+
+```
+userData
+```
+
+.
 
 **Can I have a horizontal ListView?**
 
-The ListView control doesn’t support horizontal layout and virtualization. It’s recommended to use a ScrollView with `flex-direction: row` to layout elements horizontally. However, applying this to a ListView breaks virtualization.
+The ListView control doesn't support horizontal layout and virtualization. It's recommended to use a ScrollView with
+
+```
+flex-direction: row
+```
+
+to layout elements horizontally. However, applying this to a ListView breaks virtualization.
 
 ## Examples
 
 The following UXML example creates a ListView:
 
 ```
-<UXML xmlns="UnityEngine.UIElements">
-    <ListView class="the-uxml-listview" fixed-item-height="20" />
-</UXML>
+<UXML xmlns="UnityEngine.UIElements">    <ListView class="the-uxml-listview" fixed-item-height="20" /></UXML>
 ```
 
 The following USS example styles the ListView:
 
 ```
-.the-uxml-listview {
-    height: 200px;
-}
-
-.unity-list-view__item-content > .unity-label {
-    flex-grow: 1;
-    margin-top: 2px;
-}
+.the-uxml-listview {    height: 200px;}.unity-list-view__item-content > .unity-label {    flex-grow: 1;    margin-top: 2px;}
 ```
 
 The following C# example illustrates some of the customizable functionalities of the ListView:
 
 ```
-// Create some list of data, here simply numbers in interval [1, 1000]
-const int itemCount = 1000;
-var items = new List<string>(itemCount);
-for (var i = 0; i < itemCount; i++)
-    items.Add(i.ToString());
-
-// The "makeItem" function will be called as needed
-// when the ListView needs more items to render
-Func<VisualElement> makeItem = () => new Label();
-
-// As the user scrolls through the list, the ListView object
-// will recycle elements created by the "makeItem"
-// and invoke the "bindItem" callback to associate
-// the element with the matching data item (specified as an index in the list)
-Action<VisualElement, int> bindItem = (e, i) => ((Label)e).text = items[i];
-
-var listView = container.Q<ListView>();
-listView.makeItem = makeItem;
-listView.bindItem = bindItem;
-listView.itemsSource = items;
-listView.selectionType = SelectionType.Multiple;
-
-// Callback invoked when the user double clicks an item
-listView.itemsChosen += (selectedItems) =>
-{
-    Debug.Log("Items chosen: " + string.Join(", ", selectedItems));
-};
-
-// Callback invoked when the user changes the selection inside the ListView
-listView.selectedIndicesChanged += (selectedIndices) =>
-{
-    Debug.Log("Index selected: " + string.Join(", ", selectedIndices));
-
-    // Note: selectedIndices can also be used to get the selected items from the itemsSource directly or
-    // by using listView.viewController.GetItemForIndex(index).
-};
+// Create some list of data, here simply numbers in interval [1, 1000]            const int itemCount = 1000;            var items = new List<string>(itemCount);            for (var i = 0; i < itemCount; i++)                items.Add(i.ToString());            // The "makeItem" function will be called as needed            // when the ListView needs more items to render            Func<VisualElement> makeItem = () => new Label();            // As the user scrolls through the list, the ListView object            // will recycle elements created by the "makeItem"            // and invoke the "bindItem" callback to associate            // the element with the matching data item (specified as an index in the list)            Action<VisualElement, int> bindItem = (e, i) => ((Label)e).text = items[i];            var listView = container.Q<ListView>();            listView.makeItem = makeItem;            listView.bindItem = bindItem;            listView.itemsSource = items;            listView.selectionType = SelectionType.Multiple;            // Callback invoked when the user double clicks an item            listView.itemsChosen += (selectedItems) =>            {                Debug.Log("Items chosen: " + string.Join(", ", selectedItems));            };            // Callback invoked when the user changes the selection inside the ListView            listView.selectedIndicesChanged += (selectedIndices) =>            {                Debug.Log("Index selected: " + string.Join(", ", selectedIndices));                // Note: selectedIndices can also be used to get the selected items from the itemsSource directly or                // by using listView.viewController.GetItemForIndex(index).            };
 ```
 
 To try this example live in Unity, go to **Window** > **UI Toolkit** > **Samples**.
-​
-For more examples, refer to the following:
 
-* [Create list and tree views](UIE-ListView-TreeView.html): Use ListView, TreeView, MultiColumnListView, and MultiColumnTreeView to create list and tree views.
-* [Create a complex list view](UIE-create-list-view-complex.html): Use ListView to create a custom Editor window with a list of characters.
-* [Bind to a list with ListView](UIE-bind-to-list.html): Create a list of toggles and bind the list to an underlying list of `GameSwitch` objects.
-* [Create a drag-and-drop list and tree views between windows](UIE-create-drag-and-drop-list-treeview-between-windows.html): Use ListView, TreeView, and MultiColumnListView to create a drag-and-drop UI between windows.
+​ For more examples, refer to the following:
+
+* [Create list and tree views](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-structure-ui/uie-uxml-examples/uie-list-view-tree-view): Use ListView, TreeView, MultiColumnListView, and MultiColumnTreeView to create list and tree views.
+* [Create a complex list view](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-structure-ui/uie-uxml-examples/uie-create-list-view-complex): Use ListView to create a custom Editor window with a list of characters.
+* [Bind to a list with ListView](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-data-binding/uie-editor-binding/uie-binding-examples/uie-bind-to-list): Create a list of toggles and bind the list to an underlying list of
+
+  ```
+  GameSwitch
+  ```
+
+  objects.
+* [Create a drag-and-drop list and tree views between windows](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-structure-ui/uie-uxml-examples/uie-create-drag-and-drop-list-treeview-between-windows): Use ListView, TreeView, and MultiColumnListView to create a drag-and-drop UI between windows.
 
 ## C# base class and namespace
 
-**C# class**: [`ListView`](../ScriptReference/UIElements.ListView.html)
-**Namespace**: `UnityEngine.UIElements`
-**Base class**: [`BaseListView`](../ScriptReference/UIElements.BaseListView.html)
+**C# class**: [```
+ListView
+```](/en-us/engine/6000.6/script-reference/unityengine/uielements/listview)
+
+**Namespace**:
+
+```
+UnityEngine.UIElements
+```
+
+**Base class**: [```
+BaseListView
+```](/en-us/engine/6000.6/script-reference/unityengine/uielements/baselistview)
 
 ## Member UXML attributes
 
@@ -233,7 +583,7 @@ This element has the following member attributes:
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| `item-template` | [`UIElements.VisualTreeAsset`](../ScriptReference/UIElements.VisualTreeAsset.html) | A UXML template that constructs each recycled and rebound element within the list. This template is designed to replace the `makeItem` definition.  You can use it along with `BaseListView.bindingSourceSelectionMode` and bindings to have a completely codeless workflow. |
+| ``` item-template ``` | [``` UIElements.VisualTreeAsset ```](/en-us/engine/6000.6/script-reference/unityengine/uielements/visualtreeasset) | A UXML template that constructs each recycled and rebound element within the list. This template is designed to replace the ``` makeItem ``` definition.  You can use it along with ``` BaseListView.bindingSourceSelectionMode ``` and bindings to have a completely codeless workflow. |
 
 ## Inherited UXML attributes
 
@@ -241,41 +591,43 @@ This element inherits the following attributes from its base class:
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| `allow-add` | `boolean` | This property allows the user to allow or block the addition of an item when clicking on the Add Button. It must return `true` or `false`.  If the callback is not set to `false`, any Add operation will be allowed. |
-| `allow-remove` | `boolean` | This property allows the user to allow or block the removal of an item when clicking on the Remove Button. It must return `true` or `false`.  If the property is not set to `false`, any Remove operation will be allowed. |
-| `binding-path` | `string` | Path of the target property to be bound. |
-| `binding-source-selection-mode` | [`UIElements.BindingSourceSelectionMode`](../ScriptReference/UIElements.BindingSourceSelectionMode.html) | This property controls whether every element in the list will get its data source setup automatically to the correct item in the collection’s source.  When set to `AutoAssign`, the bind callbacks don’t need to be specified, since bindings can be used to fill the elements. |
-| `fixed-item-height` | `float` | The height of a single item in the list, in pixels.  This property must be set when using the `virtualizationMethod` is set to `FixedHeight`, for the collection view to function. If set when `virtualizationMethod` is `DynamicHeight`, it serves as the default height to help calculate the number of items necessary and the scrollable area, before items are laid out. It should be set to the minimum expected height of an item. |
-| `focusable` | `boolean` | Whether an element can potentially receive focus.  If false, the element can’t receive focus. If true, the element receives focus only when its `Focusable.canGrabFocus` property is also true. |
-| `header-title` | `string` | This property controls the text of the foldout header when using `showFoldoutHeader`.  If the `makeHeader` callback is set, this property gets overridden and the title is not shown. |
-| `horizontal-scrolling` | `boolean` | This property controls whether the collection view shows a horizontal scroll bar when its content does not fit in the visible area. |
-| `reorder-mode` | [`UIElements.ListViewReorderMode`](../ScriptReference/UIElements.ListViewReorderMode.html) | This property controls the drag and drop mode for the list view.  The default value is `Simple`. When this property is set to `Animated`, Unity adds drag handles in front of every item and the drag and drop manipulation pushes items with an animation when the reordering happens. Multiple item reordering is only supported with the `Simple` drag mode. |
-| `reorderable` | `boolean` | Gets or sets a value that indicates whether the user can drag list items to reorder them.  The default value is `false` which allows the user to drag items to and from other views when you implement `canStartDrag`, `setupDragAndDrop`, `dragAndDropUpdate`, and `handleDrop`. Set this value to `true` to allow the user to reorder items in the list. |
-| `selection-type` | [`UIElements.SelectionType`](../ScriptReference/UIElements.SelectionType.html) | Controls the selection type.  The default value is `SelectionType.Single`. When you set the collection view to disable selections, any current selection is cleared. |
-| `show-add-remove-footer` | `boolean` | This property controls whether a footer will be added to the list view.  The default value is `false`. When this property is set to `true`, Unity adds a footer under the scroll view. This footer contains two buttons: A “+” button. When clicked, it adds a single item at the end of the list view. A “-” button. When clicked, it removes all selected items, or the last item if none are selected. If the `makeFooter` callback is set, it will override this property. |
-| `show-alternating-row-backgrounds` | [`UIElements.AlternatingRowBackground`](../ScriptReference/UIElements.AlternatingRowBackground.html) | This property controls whether the background colors of collection view rows alternate. Takes a value from the `AlternatingRowBackground` enum. |
-| `show-border` | `boolean` | Enable this property to display a border around the collection view.  If set to true, a border appears around the ScrollView that the collection view uses internally. |
-| `show-bound-collection-size` | `boolean` | This property controls whether the list view displays the collection size (number of items).  The default value is `true`. When this property is set to to `true`, the ListView includes a TextField to control the array size. |
-| `show-foldout-header` | `boolean` | This property controls whether the list view displays a header, in the form of a foldout that can be expanded or collapsed.  The default value is `false`. When this property is set to `true`, Unity adds a foldout in the hierarchy of the list view and moves the scroll view inside that newly created foldout. You can change the text of this foldout with `headerTitle` property on the ListView. If `showBoundCollectionSize` is set to `true`, the ListView includes a TextField to control the array size. If the `makeHeader` callback is set, no Foldout is shown. |
-| `tabindex` | `int` | An integer used to sort focusable elements in the focus ring. Must be greater than or equal to zero.  Setting the `tabIndex` value to less than `0` (for example, `−1`) removes the element from the focus ring and tab navigation. |
-| `virtualization-method` | [`UIElements.CollectionVirtualizationMethod`](../ScriptReference/UIElements.CollectionVirtualizationMethod.html) | The virtualization method to use for this collection when a scroll bar is visible. Takes a value from the `CollectionVirtualizationMethod` enum.  The default value is `FixedHeight`. When using fixed height, specify the `fixedItemHeight` property. Fixed height is more performant but offers less flexibility on content. When using `DynamicHeight`, the collection will wait for the actual height to be computed. Dynamic height is more flexible but less performant. |
+| ``` allow-add ``` | ``` boolean ``` | This property allows the user to allow or block the addition of an item when clicking on the Add Button. It must return ``` true ``` or ``` false ``` .  If the callback is not set to ``` false ``` , any Add operation will be allowed. |
+| ``` allow-remove ``` | ``` boolean ``` | This property allows the user to allow or block the removal of an item when clicking on the Remove Button. It must return ``` true ``` or ``` false ``` .  If the property is not set to ``` false ``` , any Remove operation will be allowed. |
+| ``` binding-path ``` | ``` string ``` | Path of the target property to be bound. |
+| ``` binding-source-selection-mode ``` | [``` UIElements.BindingSourceSelectionMode ```](/en-us/engine/6000.6/script-reference/unityengine/uielements/bindingsourceselectionmode) | This property controls whether every element in the list will get its data source setup automatically to the correct item in the collection's source.  When set to ``` AutoAssign ``` , the bind callbacks don't need to be specified, since bindings can be used to fill the elements. |
+| ``` fixed-item-height ``` | ``` float ``` | The height of a single item in the list, in pixels.  This property must be set when using the ``` virtualizationMethod ``` is set to ``` FixedHeight ``` , for the collection view to function. If set when ``` virtualizationMethod ``` is ``` DynamicHeight ``` , it serves as the default height to help calculate the number of items necessary and the scrollable area, before items are laid out. It should be set to the minimum expected height of an item. |
+| ``` focusable ``` | ``` boolean ``` | Whether an element can potentially receive focus.  If false, the element can't receive focus. If true, the element receives focus only when its ``` Focusable.canGrabFocus ``` property is also true. |
+| ``` header-title ``` | ``` string ``` | This property controls the text of the foldout header when using ``` showFoldoutHeader ``` .  If the ``` makeHeader ``` callback is set, this property gets overridden and the title is not shown. |
+| ``` horizontal-scrolling ``` | ``` boolean ``` | This property controls whether the collection view shows a horizontal scroll bar when its content does not fit in the visible area. |
+| ``` reorder-mode ``` | [``` UIElements.ListViewReorderMode ```](/en-us/engine/6000.6/script-reference/unityengine/uielements/listviewreordermode) | This property controls the drag and drop mode for the list view.  The default value is ``` Simple ``` . When this property is set to ``` Animated ``` , Unity adds drag handles in front of every item and the drag and drop manipulation pushes items with an animation when the reordering happens. Multiple item reordering is only supported with the ``` Simple ``` drag mode. |
+| ``` reorderable ``` | ``` boolean ``` | Gets or sets a value that indicates whether the user can drag list items to reorder them.  The default value is ``` false ``` which allows the user to drag items to and from other views when you implement ``` canStartDrag ``` , ``` setupDragAndDrop ``` , ``` dragAndDropUpdate ``` , and ``` handleDrop ``` . Set this value to ``` true ``` to allow the user to reorder items in the list. |
+| ``` selection-type ``` | [``` UIElements.SelectionType ```](/en-us/engine/6000.6/script-reference/unityengine/uielements/selectiontype) | Controls the selection type.  The default value is ``` SelectionType.Single ``` . When you set the collection view to disable selections, any current selection is cleared. |
+| ``` show-add-remove-footer ``` | ``` boolean ``` | This property controls whether a footer will be added to the list view.  The default value is ``` false ``` . When this property is set to ``` true ``` , Unity adds a footer under the scroll view. This footer contains two buttons: A "+" button. When clicked, it adds a single item at the end of the list view. A "-" button. When clicked, it removes all selected items, or the last item if none are selected. If the ``` makeFooter ``` callback is set, it will override this property. |
+| ``` show-alternating-row-backgrounds ``` | [``` UIElements.AlternatingRowBackground ```](/en-us/engine/6000.6/script-reference/unityengine/uielements/alternatingrowbackground) | This property controls whether the background colors of collection view rows alternate. Takes a value from the ``` AlternatingRowBackground ``` enum. |
+| ``` show-border ``` | ``` boolean ``` | Enable this property to display a border around the collection view.  If set to true, a border appears around the ScrollView that the collection view uses internally. |
+| ``` show-bound-collection-size ``` | ``` boolean ``` | This property controls whether the list view displays the collection size (number of items).  The default value is ``` true ``` . When this property is set to to ``` true ``` , the ListView includes a TextField to control the array size. |
+| ``` show-foldout-header ``` | ``` boolean ``` | This property controls whether the list view displays a header, in the form of a foldout that can be expanded or collapsed.  The default value is ``` false ``` . When this property is set to ``` true ``` , Unity adds a foldout in the hierarchy of the list view and moves the scroll view inside that newly created foldout. You can change the text of this foldout with ``` headerTitle ``` property on the ListView. If ``` showBoundCollectionSize ``` is set to ``` true ``` , the ListView includes a TextField to control the array size. If the ``` makeHeader ``` callback is set, no Foldout is shown. |
+| ``` tabindex ``` | ``` int ``` | An integer used to sort focusable elements in the focus ring. Must be greater than or equal to zero.  Setting the ``` tabIndex ``` value to less than ``` 0 ``` (for example, ``` −1 ``` ) removes the element from the focus ring and tab navigation. |
+| ``` virtualization-method ``` | [``` UIElements.CollectionVirtualizationMethod ```](/en-us/engine/6000.6/script-reference/unityengine/uielements/collectionvirtualizationmethod) | The virtualization method to use for this collection when a scroll bar is visible. Takes a value from the ``` CollectionVirtualizationMethod ``` enum.  The default value is ``` FixedHeight ``` . When using fixed height, specify the ``` fixedItemHeight ``` property. Fixed height is more performant but offers less flexibility on content. When using ``` DynamicHeight ``` , the collection will wait for the actual height to be computed. Dynamic height is more flexible but less performant. |
 
-This element also inherits the following attributes from [`VisualElement`](UIE-uxml-element-VisualElement.html):
+This element also inherits the following attributes from [```
+VisualElement
+```](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-visual-element):
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| `content-container` | `string` | Logical container where child elements are added. If a child is added to this element, the child is added to this element’s content container instead.  When iterating over the `VisualElement.Children` of an element, the element’s content container hierarchy is used instead of the element itself. This can lead to unexpected results, such as elements being ignored by the navigation events if they are not directly in the content container’s hierarchy. Refer to `IFocusRing` for more information.   If the content container is the same as the element itself, child elements are added directly to the element. This is true for most elements but can be overridden by more complex types.   The `ScrollView`, for example, has a content container that is different from itself. In that case, child elements added to the scroll view are added to its content container element instead. While the physical parent (`VisualElement.Hierarchy.parent`) of the child elements is the scroll view’s content container element, their logical parent (`VisualElement.parent`) still refers to the scroll view itself. Since some of the scroll view’s focusable children are not part of its logical hierarchy, like its `Scroller` elements, these focusable children are not considered by default when using sequential navigation. Refer to [How can I change what element is focused next](UIE-faq-event-and-input-system.html) for an example of a workaround solution if the default navigation rules don’t correspond to your needs. |
-| `data-source` | `Object` | Assigns a data source to this VisualElement which overrides any inherited data source. This data source is inherited by all children. |
-| `data-source-path` | `string` | Path from the data source to the value. |
-| `data-source-type` | `System.Type` | The possible type of data source assignable to this VisualElement.    This information is only used by the UI Builder as a hint to provide some completion to the data source path field when the effective data source cannot be specified at design time. |
-| `enabled` | `boolean` | Returns true if the `VisualElement` is enabled locally.  This flag isn’t changed if the VisualElement is disabled implicitly by one of its parents. To verify this, use `enabledInHierarchy`. |
-| `language-direction` | [`UIElements.LanguageDirection`](../ScriptReference/UIElements.LanguageDirection.html) | Indicates the directionality of the element’s text. The value will propagate to the element’s children. |
-| `name` | `string` | The name of this VisualElement.  Use this property to write USS selectors that target a specific element. The standard practice is to give an element a unique name. |
-| `picking-mode` | [`UIElements.PickingMode`](../ScriptReference/UIElements.PickingMode.html) | Determines if this element can be the target of pointer events or picked by `IPanel.Pick` queries.  Elements can not be picked if:  - They are invisible- Their `style.display` is set to `DisplayStyle.None`   Elements with a picking mode of `PickingMode.Ignore` never receive the hover pseudo-state. |
-| `style` | `string` | Sets the style values on a `VisualElement`.  The returned style data, computed from USS files or inline styles written to this object in C#, doesn’t represent the fully resolved styles, such as the final height and width of a VisualElement. To access these fully resolved styles, use `resolvedStyle`.      For information about how to use this property and all the supported USS properties, refer to the [Apply styles in C# scripts](UIE-apply-styles-with-csharp.html) and [USS properties reference](UIE-USS-Properties-Reference.html) manual pages. |
-| `tooltip` | `string` | Text to display inside an information box after the user hovers the element for a small amount of time. This is only supported in the Editor UI. |
-| `usage-hints` | [`UIElements.UsageHints`](../ScriptReference/UIElements.UsageHints.html) | A combination of hint values that specify high-level intended usage patterns for the `VisualElement`. This property can only be set when the `VisualElement` is not yet part of a `Panel`. Once part of a `Panel`, this property becomes effectively read-only, and attempts to change it will throw an exception. The specification of proper `UsageHints` drives the system to make better decisions on how to process or accelerate certain operations based on the anticipated usage pattern. Note that those hints do not affect behavioral or visual results, but only affect the overall performance of the panel and the elements within. It’s advised to always consider specifying the proper `UsageHints`, but keep in mind that some `UsageHints` might be internally ignored under certain conditions (e.g. due to hardware limitations on the target platform). |
-| `view-data-key` | `string` | Used for view data persistence, such as tree expanded states, scroll position, or zoom level.  This key is used to save and load the view data from the view data store. If you don’t set this key, the persistence is disabled for the associated `VisualElement`. For more information, refer to [View data persistence in the Unity Manual](UIE-ViewData.html). |
+| ``` content-container ``` | ``` string ``` | Logical container where child elements are added. If a child is added to this element, the child is added to this element's content container instead.  When iterating over the ``` VisualElement.Children ``` of an element, the element's content container hierarchy is used instead of the element itself. This can lead to unexpected results, such as elements being ignored by the navigation events if they are not directly in the content container's hierarchy. Refer to ``` IFocusRing ``` for more information.  If the content container is the same as the element itself, child elements are added directly to the element. This is true for most elements but can be overridden by more complex types.  The ``` ScrollView ``` , for example, has a content container that is different from itself. In that case, child elements added to the scroll view are added to its content container element instead. While the physical parent ( ``` VisualElement.Hierarchy.parent ``` ) of the child elements is the scroll view's content container element, their logical parent ( ``` VisualElement.parent ``` ) still refers to the scroll view itself. Since some of the scroll view's focusable children are not part of its logical hierarchy, like its ``` Scroller ``` elements, these focusable children are not considered by default when using sequential navigation. Refer to [How can I change what element is focused next](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-support-for-runtime-ui/uie-render-runtime-ui/uie-faq-event-and-input-system) for an example of a workaround solution if the default navigation rules don't correspond to your needs. |
+| ``` data-source ``` | ``` Object ``` | Assigns a data source to this VisualElement which overrides any inherited data source. This data source is inherited by all children. |
+| ``` data-source-path ``` | ``` string ``` | Path from the data source to the value. |
+| ``` data-source-type ``` | ``` System.Type ``` | The possible type of data source assignable to this VisualElement.  This information is only used by the UI Builder as a hint to provide some completion to the data source path field when the effective data source cannot be specified at design time. |
+| ``` enabled ``` | ``` boolean ``` | Returns true if the ``` VisualElement ``` is enabled locally.  This flag isn't changed if the VisualElement is disabled implicitly by one of its parents. To verify this, use ``` enabledInHierarchy ``` . |
+| ``` language-direction ``` | [``` UIElements.LanguageDirection ```](/en-us/engine/6000.6/script-reference/unityengine/uielements/languagedirection) | Indicates the directionality of the element's text. The value will propagate to the element's children. |
+| ``` name ``` | ``` string ``` | The name of this VisualElement.  Use this property to write USS selectors that target a specific element. The standard practice is to give an element a unique name. |
+| ``` picking-mode ``` | [``` UIElements.PickingMode ```](/en-us/engine/6000.6/script-reference/unityengine/uielements/pickingmode) | Determines if this element can be the target of pointer events or picked by ``` IPanel.Pick ``` queries.  Elements can not be picked if:  - They are invisible- Their ``` style.display ``` is set to ``` DisplayStyle.None ```   Elements with a picking mode of ``` PickingMode.Ignore ``` never receive the hover pseudo-state. |
+| ``` style ``` | ``` string ``` | Sets the style values on a ``` VisualElement ``` .  The returned style data, computed from USS files or inline styles written to this object in C#, doesn't represent the fully resolved styles, such as the final height and width of a VisualElement. To access these fully resolved styles, use ``` resolvedStyle ``` .    For information about how to use this property and all the supported USS properties, refer to the [Apply styles in C# scripts](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-uss/uie-apply-styles-with-csharp) and [USS properties reference](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-uss/properties/reference) manual pages. |
+| ``` tooltip ``` | ``` string ``` | Text to display inside an information box after the user hovers the element for a small amount of time. This is only supported in the Editor UI. |
+| ``` usage-hints ``` | [``` UIElements.UsageHints ```](/en-us/engine/6000.6/script-reference/unityengine/uielements/usagehints) | A combination of hint values that specify high-level intended usage patterns for the ``` VisualElement ``` . This property can only be set when the ``` VisualElement ``` is not yet part of a ``` Panel ``` . Once part of a ``` Panel ``` , this property becomes effectively read-only, and attempts to change it will throw an exception. The specification of proper ``` UsageHints ``` drives the system to make better decisions on how to process or accelerate certain operations based on the anticipated usage pattern. Note that those hints do not affect behavioral or visual results, but only affect the overall performance of the panel and the elements within. It's advised to always consider specifying the proper ``` UsageHints ``` , but keep in mind that some ``` UsageHints ``` might be internally ignored under certain conditions (e.g. due to hardware limitations on the target platform). |
+| ``` view-data-key ``` | ``` string ``` | Used for view data persistence, such as tree expanded states, scroll position, or zoom level.  This key is used to save and load the view data from the view data store. If you don't set this key, the persistence is disabled for the associated ``` VisualElement ``` . For more information, refer to [View data persistence in the Unity Manual](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-support-for-editor-ui/uie-view-data). |
 
 ## USS classes
 
@@ -283,48 +635,83 @@ The following table lists all the C# public property names and their related USS
 
 | **C# property** | **USS selector** | **Description** |
 | --- | --- | --- |
-| `ussClassName` | `.unity-list-view` | The USS class name for ListView elements.  Unity adds this USS class to every instance of the ListView element. Any styling applied to this class affects every ListView located beside, or below the stylesheet in the visual tree. |
-| `itemUssClassName` | `.unity-list-view__item` | The USS class name of item elements in ListView elements.  Unity adds this USS class to every item element the ListView contains. Any styling applied to this class affects every item element located beside, or below the stylesheet in the visual tree. |
-| `emptyLabelUssClassName` | `.unity-list-view__empty-label` | The USS class name for label displayed when ListView is empty.  Unity adds this USS class to the label displayed if the ListView is empty. Any styling applied to this class affects every empty label located beside, or below the stylesheet in the visual tree. |
-| `reorderableUssClassName` | `.unity-list-view__reorderable` | The USS class name for reorderable animated ListView elements.  Unity adds this USS class to every instance of the ListView element when `reorderMode` is set to `Animated`. Any styling applied to this class affects every ListView located beside, or below the stylesheet in the visual tree. |
-| `reorderableItemUssClassName` | `.unity-list-view__reorderable-item` | The USS class name for item elements in reorderable animated ListView.  Unity adds this USS class to every element in the ListView when `reorderMode` is set to `Animated`. Any styling applied to this class affects every element located beside, or below the stylesheet in the visual tree. |
-| `reorderableItemContainerUssClassName` | `.unity-list-view__reorderable-item__container` | The USS class name for item container in reorderable animated ListView.  Unity adds this USS class to every item container in the ListView when `reorderMode` is set to `Animated`. Any styling applied to this class affects every item container located beside, or below the stylesheet in the visual tree. |
-| `reorderableItemHandleUssClassName` | `.unity-list-view__reorderable-handle` | The USS class name for drag handle in reorderable animated ListView.  Unity adds this USS class to drag handles in the ListView when `reorderMode` is set to `Animated`. Any styling applied to this class affects every drag handle located beside, or below the stylesheet in the visual tree. |
-| `reorderableItemHandleBarUssClassName` | `.unity-list-view__reorderable-handle-bar` | The USS class name for drag handle bar in reorderable animated ListView.  Unity adds this USS class to every drag handle bar in the ListView when `reorderMode` is set to `Animated`. Any styling applied to this class affects every drag handle bar located beside, or below the stylesheet in the visual tree. |
-| `footerUssClassName` | `.unity-list-view__footer` | The USS class name for the footer of the ListView.  Unity adds this USS class to the footer element in the ListView. Any styling applied to this class affects every ListView located beside, or below the stylesheet in the visual tree. |
-| `foldoutHeaderUssClassName` | `.unity-list-view__foldout-header` | The USS class name for the foldout header of the ListView.  Unity adds this USS class to the foldout element in the ListView. Any styling applied to this class affects every foldout located beside, or below the stylesheet in the visual tree. |
-| `arraySizeFieldUssClassName` | `.unity-list-view__size-field` | The USS class name for the size field of the ListView when show bound collection size is enabled  Unity adds this USS class to the size field element in the ListView when `showBoundCollectionSize` is set to `true`. Any styling applied to this class affects every size field located beside, or below the stylesheet in the visual tree. |
-| `arraySizeFieldWithHeaderUssClassName` | `.unity-list-view__size-field--with-header` | The USS class name for the size field of the ListView when foldout header is enabled.  Unity adds this USS class to the size field element in the ListView when `showBoundCollectionSize` is set to `true`. Any styling applied to this class affects every size field located beside, or below the stylesheet in the visual tree. |
-| `arraySizeFieldWithFooterUssClassName` | `.unity-list-view__size-field--with-footer` | The USS class name for the size field of the ListView when the footer is enabled.  Unity adds this USS class to the size field element in the ListView when `showBoundCollectionSize` is set to `true`. Any styling applied to this class affects every size field located beside, or below the stylesheet in the visual tree. |
-| `listViewWithHeaderUssClassName` | `.unity-list-view--with-header` | The USS class name for ListView when foldout header is enabled.  Unity adds this USS class to ListView when `showFoldoutHeader` is set to `true`. Any styling applied to this class affects every list located beside, or below the stylesheet in the visual tree. |
-| `listViewWithFooterUssClassName` | `.unity-list-view--with-footer` | The USS class name for ListView when add/remove footer is enabled.  Unity adds this USS class to ListView when `showAddRemoveFooter` is set to `true`. Any styling applied to this class affects every list located beside, or below the stylesheet in the visual tree. |
-| `scrollViewWithFooterUssClassName` | `.unity-list-view__scroll-view--with-footer` | The USS class name for scroll view when add/remove footer is enabled.  Unity adds this USS class scroll view of `BaseListView`when `showAddRemoveFooter` is set to `true`. Any styling applied to this class affects every list located beside, or below the stylesheet in the visual tree. |
-| `ussClassName` | `.unity-collection-view` | The USS class name for BaseVerticalCollectionView elements.  Unity adds this USS class to every instance of the BaseVerticalCollectionView element. Any styling applied to this class affects every BaseVerticalCollectionView located beside, or below the stylesheet in the visual tree. |
-| `borderUssClassName` | `.unity-collection-view--with-border` | The USS class name for BaseVerticalCollectionView elements with a border.  Unity adds this USS class to an instance of the BaseVerticalCollectionView element if the instance’s `BaseVerticalCollectionView.showBorder` property is set to true. Any styling applied to this class affects every such BaseVerticalCollectionView located beside, or below the stylesheet in the visual tree. |
-| `itemUssClassName` | `.unity-collection-view__item` | The USS class name of item elements in BaseVerticalCollectionView elements.  Unity adds this USS class to every item element the BaseVerticalCollectionView contains. Any styling applied to this class affects every item element located beside, or below the stylesheet in the visual tree. |
-| `dragHoverBarUssClassName` | `.unity-collection-view__drag-hover-bar` | The USS class name of the drag hover bar.  Unity adds this USS class to the bar that appears when the user drags an item in the list. Any styling applied to this class affects every BaseVerticalCollectionView located beside, or below the stylesheet in the visual tree. |
-| `dragHoverMarkerUssClassName` | `.unity-collection-view__drag-hover-marker` | The USS class name of the drag hover circular marker used to indicate depth.  Unity adds this USS class to the bar that appears when the user drags an item in the list. Any styling applied to this class affects every BaseVerticalCollectionView located beside, or below the stylesheet in the visual tree. |
-| `itemDragHoverUssClassName` | `.unity-collection-view__item--drag-hover` | The USS class name applied to an item element on drag hover.  Unity adds this USS class to the item element when it’s being dragged. Any styling applied to this class affects every BaseVerticalCollectionView item located beside, or below the stylesheet in the visual tree. |
-| `itemSelectedVariantUssClassName` | `.unity-collection-view__item--selected` | The USS class name of selected item elements in the BaseVerticalCollectionView.  Unity adds this USS class to every selected element in the BaseVerticalCollectionView. The `BaseVerticalCollectionView.selectionType` property decides if zero, one, or more elements can be selected. Any styling applied to this class affects every BaseVerticalCollectionView item located beside, or below the stylesheet in the visual tree. |
-| `itemAlternativeBackgroundUssClassName` | `.unity-collection-view__item--alternative-background` | The USS class name for odd rows in the BaseVerticalCollectionView.  Unity adds this USS class to every odd-numbered item in the BaseVerticalCollectionView when the `BaseVerticalCollectionView.showAlternatingRowBackgrounds` property is set to `ContentOnly` or `All`. When the `showAlternatingRowBackgrounds` property is set to either of those values, odd-numbered items are displayed with a different background color than even-numbered items. This USS class is used to differentiate odd-numbered items from even-numbered items. When the `showAlternatingRowBackgrounds` property is set to `None`, the USS class is not added, and any styling or behavior that relies on it’s invalidated. |
-| `listScrollViewUssClassName` | `.unity-collection-view__scroll-view` | The USS class name of the scroll view in the BaseVerticalCollectionView.  Unity adds this USS class to the BaseVerticalCollectionView’s scroll view. Any styling applied to this class affects every BaseVerticalCollectionView scroll view located beside, or below the stylesheet in the visual tree. |
-| `disabledUssClassName` | `.unity-disabled` | USS class name of local disabled elements. |
+| ``` ussClassName ``` | ``` .unity-list-view ``` | The USS class name for ListView elements.  Unity adds this USS class to every instance of the ListView element. Any styling applied to this class affects every ListView located beside, or below the stylesheet in the visual tree. |
+| ``` itemUssClassName ``` | ``` .unity-list-view__item ``` | The USS class name of item elements in ListView elements.  Unity adds this USS class to every item element the ListView contains. Any styling applied to this class affects every item element located beside, or below the stylesheet in the visual tree. |
+| ``` emptyLabelUssClassName ``` | ``` .unity-list-view__empty-label ``` | The USS class name for label displayed when ListView is empty.  Unity adds this USS class to the label displayed if the ListView is empty. Any styling applied to this class affects every empty label located beside, or below the stylesheet in the visual tree. |
+| ``` reorderableUssClassName ``` | ``` .unity-list-view__reorderable ``` | The USS class name for reorderable animated ListView elements.  Unity adds this USS class to every instance of the ListView element when ``` reorderMode ``` is set to ``` Animated ``` . Any styling applied to this class affects every ListView located beside, or below the stylesheet in the visual tree. |
+| ``` reorderableItemUssClassName ``` | ``` .unity-list-view__reorderable-item ``` | The USS class name for item elements in reorderable animated ListView.  Unity adds this USS class to every element in the ListView when ``` reorderMode ``` is set to ``` Animated ``` . Any styling applied to this class affects every element located beside, or below the stylesheet in the visual tree. |
+| ``` reorderableItemContainerUssClassName ``` | ``` .unity-list-view__reorderable-item__container ``` | The USS class name for item container in reorderable animated ListView.  Unity adds this USS class to every item container in the ListView when ``` reorderMode ``` is set to ``` Animated ``` . Any styling applied to this class affects every item container located beside, or below the stylesheet in the visual tree. |
+| ``` reorderableItemHandleUssClassName ``` | ``` .unity-list-view__reorderable-handle ``` | The USS class name for drag handle in reorderable animated ListView.  Unity adds this USS class to drag handles in the ListView when ``` reorderMode ``` is set to ``` Animated ``` . Any styling applied to this class affects every drag handle located beside, or below the stylesheet in the visual tree. |
+| ``` reorderableItemHandleBarUssClassName ``` | ``` .unity-list-view__reorderable-handle-bar ``` | The USS class name for drag handle bar in reorderable animated ListView.  Unity adds this USS class to every drag handle bar in the ListView when ``` reorderMode ``` is set to ``` Animated ``` . Any styling applied to this class affects every drag handle bar located beside, or below the stylesheet in the visual tree. |
+| ``` footerUssClassName ``` | ``` .unity-list-view__footer ``` | The USS class name for the footer of the ListView.  Unity adds this USS class to the footer element in the ListView. Any styling applied to this class affects every ListView located beside, or below the stylesheet in the visual tree. |
+| ``` foldoutHeaderUssClassName ``` | ``` .unity-list-view__foldout-header ``` | The USS class name for the foldout header of the ListView.  Unity adds this USS class to the foldout element in the ListView. Any styling applied to this class affects every foldout located beside, or below the stylesheet in the visual tree. |
+| ``` arraySizeFieldUssClassName ``` | ``` .unity-list-view__size-field ``` | The USS class name for the size field of the ListView when show bound collection size is enabled  Unity adds this USS class to the size field element in the ListView when ``` showBoundCollectionSize ``` is set to ``` true ``` . Any styling applied to this class affects every size field located beside, or below the stylesheet in the visual tree. |
+| ``` arraySizeFieldWithHeaderUssClassName ``` | ``` .unity-list-view__size-field--with-header ``` | The USS class name for the size field of the ListView when foldout header is enabled.  Unity adds this USS class to the size field element in the ListView when ``` showBoundCollectionSize ``` is set to ``` true ``` . Any styling applied to this class affects every size field located beside, or below the stylesheet in the visual tree. |
+| ``` arraySizeFieldWithFooterUssClassName ``` | ``` .unity-list-view__size-field--with-footer ``` | The USS class name for the size field of the ListView when the footer is enabled.  Unity adds this USS class to the size field element in the ListView when ``` showBoundCollectionSize ``` is set to ``` true ``` . Any styling applied to this class affects every size field located beside, or below the stylesheet in the visual tree. |
+| ``` listViewWithHeaderUssClassName ``` | ``` .unity-list-view--with-header ``` | The USS class name for ListView when foldout header is enabled.  Unity adds this USS class to ListView when ``` showFoldoutHeader ``` is set to ``` true ``` . Any styling applied to this class affects every list located beside, or below the stylesheet in the visual tree. |
+| ``` listViewWithFooterUssClassName ``` | ``` .unity-list-view--with-footer ``` | The USS class name for ListView when add/remove footer is enabled.  Unity adds this USS class to ListView when ``` showAddRemoveFooter ``` is set to ``` true ``` . Any styling applied to this class affects every list located beside, or below the stylesheet in the visual tree. |
+| ``` scrollViewWithFooterUssClassName ``` | ``` .unity-list-view__scroll-view--with-footer ``` | The USS class name for scroll view when add/remove footer is enabled.  Unity adds this USS class scroll view of ``` BaseListView ``` when ``` showAddRemoveFooter ``` is set to ``` true ``` . Any styling applied to this class affects every list located beside, or below the stylesheet in the visual tree. |
+| ``` ussClassName ``` | ``` .unity-collection-view ``` | The USS class name for BaseVerticalCollectionView elements.  Unity adds this USS class to every instance of the BaseVerticalCollectionView element. Any styling applied to this class affects every BaseVerticalCollectionView located beside, or below the stylesheet in the visual tree. |
+| ``` borderUssClassName ``` | ``` .unity-collection-view--with-border ``` | The USS class name for BaseVerticalCollectionView elements with a border.  Unity adds this USS class to an instance of the BaseVerticalCollectionView element if the instance's ``` BaseVerticalCollectionView.showBorder ``` property is set to true. Any styling applied to this class affects every such BaseVerticalCollectionView located beside, or below the stylesheet in the visual tree. |
+| ``` itemUssClassName ``` | ``` .unity-collection-view__item ``` | The USS class name of item elements in BaseVerticalCollectionView elements.  Unity adds this USS class to every item element the BaseVerticalCollectionView contains. Any styling applied to this class affects every item element located beside, or below the stylesheet in the visual tree. |
+| ``` dragHoverBarUssClassName ``` | ``` .unity-collection-view__drag-hover-bar ``` | The USS class name of the drag hover bar.  Unity adds this USS class to the bar that appears when the user drags an item in the list. Any styling applied to this class affects every BaseVerticalCollectionView located beside, or below the stylesheet in the visual tree. |
+| ``` dragHoverMarkerUssClassName ``` | ``` .unity-collection-view__drag-hover-marker ``` | The USS class name of the drag hover circular marker used to indicate depth.  Unity adds this USS class to the bar that appears when the user drags an item in the list. Any styling applied to this class affects every BaseVerticalCollectionView located beside, or below the stylesheet in the visual tree. |
+| ``` itemDragHoverUssClassName ``` | ``` .unity-collection-view__item--drag-hover ``` | The USS class name applied to an item element on drag hover.  Unity adds this USS class to the item element when it's being dragged. Any styling applied to this class affects every BaseVerticalCollectionView item located beside, or below the stylesheet in the visual tree. |
+| ``` itemSelectedVariantUssClassName ``` | ``` .unity-collection-view__item--selected ``` | The USS class name of selected item elements in the BaseVerticalCollectionView.  Unity adds this USS class to every selected element in the BaseVerticalCollectionView. The ``` BaseVerticalCollectionView.selectionType ``` property decides if zero, one, or more elements can be selected. Any styling applied to this class affects every BaseVerticalCollectionView item located beside, or below the stylesheet in the visual tree. |
+| ``` itemAlternativeBackgroundUssClassName ``` | ``` .unity-collection-view__item--alternative-background ``` | The USS class name for odd rows in the BaseVerticalCollectionView.  Unity adds this USS class to every odd-numbered item in the BaseVerticalCollectionView when the ``` BaseVerticalCollectionView.showAlternatingRowBackgrounds ``` property is set to ``` ContentOnly ``` or ``` All ``` . When the ``` showAlternatingRowBackgrounds ``` property is set to either of those values, odd-numbered items are displayed with a different background color than even-numbered items. This USS class is used to differentiate odd-numbered items from even-numbered items. When the ``` showAlternatingRowBackgrounds ``` property is set to ``` None ``` , the USS class is not added, and any styling or behavior that relies on it's invalidated. |
+| ``` listScrollViewUssClassName ``` | ``` .unity-collection-view__scroll-view ``` | The USS class name of the scroll view in the BaseVerticalCollectionView.  Unity adds this USS class to the BaseVerticalCollectionView's scroll view. Any styling applied to this class affects every BaseVerticalCollectionView scroll view located beside, or below the stylesheet in the visual tree. |
+| ``` disabledUssClassName ``` | ``` .unity-disabled ``` | USS class name of local disabled elements. |
 
-You can also use the [Matching Selectors section in the Inspector or the UI Toolkit Debugger](UIB-testing-ui.html#matching-selectors) to see which USS selectors affect the components of the `VisualElement` at every level of its hierarchy.
+You can also use the [Matching Selectors section in the Inspector or the UI Toolkit Debugger](/en-us/engine/6000.6/manual/uitoolkits/uielements/uibuilder/uib-testing-ui#matching-selectors) to see which USS selectors affect the components of the
+
+```
+VisualElement
+```
+
+at every level of its hierarchy.
 
 ## Additional resources
 
-* [MultiColumnListView](UIE-uxml-element-MultiColumnListView.html)
-* [MultiColumnTreeView](UIE-uxml-element-MultiColumnTreeView.html)
-* [ScrollView](UIE-uxml-element-ScrollView.html)
-* [TreeView](UIE-uxml-element-TreeView.html)
+* [MultiColumnListView](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-multi-column-list-view)
+* [MultiColumnTreeView](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-multi-column-tree-view)
+* [ScrollView](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-scroll-view)
+* [TreeView](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-element-ref/uie-uxml-element-tree-view)
 
-LongField
+---
 
-MaskField
+Copyright © 2026 Unity Technologies
 
-Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 78264252. Built on: 2026-10-23.
+[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Documentation Terms of Use](https://unity.com/legal/docs-terms)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)Your Privacy Choices (Cookie Settings)
 
-[Tutorials](https://learn.unity.com/)[Community Answers](https://answers.unity3d.com)[Knowledge Base](https://support.unity3d.com/hc/en-us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-store)[Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy Policy](https://unity.com/legal/privacy-policy)[Cookies](https://unity.com/legal/cookie-policy)[Documentation Terms of Use](https://unity.com/legal/docs-terms)[Do Not Sell or Share My Personal Information](https://unity.com/legal/do-not-sell-my-personal-information)
+"Unity", Unity logos, and other Unity trademarks are trademarks or registered trademarks of Unity Technologies or its affiliates in the U.S and elsewhere ([more info here](https://unity.com/legal/trademarks)). Other names or brands are trademarks of their respective owners.
 
-Your Privacy Choices (Cookie Settings)
+Some pages are machine-translated for convenience, and may contain inaccuracies. In the event of conflicting information, the English version is authoritative.
+
+* On this page
+* + [Create a ListView](#create-a-listview)
+  + [ListView versus ScrollView](#listview-versus-scrollview)
+  + [Refresh the collection view](#refresh-the-collection-view)
+  + [Set item height](#set-item-height)
+  + [Control the scroll speed](#control-the-scroll-speed)
+  + [Make a list reorderable](#make-a-list-reorderable)
+  + [Implement drag-and-drop operations for ListView](#implement-drag-and-drop-operations-for-listview)
+  + [Use controller and keyboard navigation with ListView](#use-controller-and-keyboard-navigation-with-listview)
+  + [ListView FAQs](#listview-faqs)
+  + [Examples](#examples)
+  + [C# base class and namespace](#c-base-class-and-namespace)
+  + [Member UXML attributes](#member-uxml-attributes)
+  + [Inherited UXML attributes](#inherited-uxml-attributes)
+  + [USS classes](#uss-classes)
+  + [Additional resources](#additional-resources)
+
+---
+
+Report a problem with this page
+
+Feedback
+
+Back to top
+
+​
+
+​
