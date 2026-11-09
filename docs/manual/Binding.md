@@ -57,6 +57,8 @@ Legacy
 
 [### User Manual](/en-us/engine/6000.6/manual)[### Script Reference](/en-us/engine/6000.6/script-reference)
 
+[Download Unity](https://unity.com/download)
+
 ### Unity Engine
 
 Version: 7000.0
@@ -184,7 +186,7 @@ Unity User Manual
 
 Get started with SerializedObject data binding.
 
-Read time 7 minutesLast updated 3 days ago
+Read time 7 minutesLast updated 10 days ago
 
 ---
 

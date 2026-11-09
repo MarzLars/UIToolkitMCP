@@ -32,37 +32,41 @@ For complete source code, see: [IgnoreUIChangesScope.cs](https://github.com/Unit
 ### Public Properties
 
 - **BindingLogLevel**: `enum`
+- **owner**: `VisualElement`
 - **localDataSource**: `object`
-- **localDataSourcePath**: `PropertyPath`
 - **hasHierarchicalContext**: `bool`
 - **isContextResolved**: `bool`
 - **hierarchicalContext**: `DataSourceContext`
 - **context**: `DataSourceContext`
-- **boundElements**: `HashSet<VisualElement>`
-- **results**: `List<VisualElement>`
+- **source**: `object`
 - **lastVersion**: `long`
 - **refCount**: `int`
+- **versionStamp**: `int`
+- **versionAtUpdateStart**: `long`
+- **changesStamp**: `int`
+- **boundElements**: `HashSet<VisualElement>`
+- **results**: `List<VisualElement>`
 
 ### Public Methods
 
 - **CancelRequest()**: Returns `BindingRequest`
-- **Create()**: Returns `BindingDataCollection`
 - **AddBindingData()**: Returns `void`
 - **TryGetBindingData()**: Returns `bool`
 - **RemoveBindingData()**: Returns `bool`
 - **GetBindings()**: Returns `List<BindingData>`
 - **GetBindingCount()**: Returns `int`
-- **Dispose()**: Returns `void`
+- **Clear()**: Returns `void`
 - **Reset()**: Returns `void`
 - **SetHierarchicalContext()**: Returns `void`
 - **InvalidateHierarchicalContext()**: Returns `void`
 - **TraverseRecursive()**: Returns `void`
 - **GetTrackedElementsCount()**: Returns `int`
 - **GetBoundElements()**: Returns `List<VisualElement>`
+- **GetOrderedBindingCollections()**: Returns `List<BindingDataCollection>`
 - **GetUnorderedBoundElements()**: Returns `HashSet<VisualElement>`
 - **SetDirty()**: Returns `void`
 - **TryGetBindingCollection()**: Returns `bool`
 - **IsTrackingElement()**: Returns `bool`
-- **StartTrackingBinding()**: Returns `void`
-- **StopTrackingBinding()**: Returns `void`
+- **IsTrackingAnyElementInHierarchy()**: Returns `bool`
+- **IsTrackingAnyElement()**: Returns `bool`
 

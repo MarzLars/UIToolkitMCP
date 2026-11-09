@@ -28,6 +28,7 @@ For complete source code, see: [PageStatistics.cs](https://github.com/Unity-Tech
 - **Update()**: Returns `void`
 - **Free()**: Returns `void`
 - **OnFrameRenderingBegin()**: Returns `void`
+- **CallImmediateCommands()**: Returns `void`
 - **AdvanceFrame()**: Returns `void`
 - **ProcessDeviceFreeQueue()**: Returns `void`
 

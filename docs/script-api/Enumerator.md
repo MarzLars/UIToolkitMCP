@@ -14,6 +14,7 @@ For complete source code, see: [Enumerator.cs](https://github.com/Unity-Technolo
 
 - **None()**: Returns `CustomPropertyList`
 - **Create()**: Returns `CustomPropertyList`
+- **Release()**: Returns `void`
 - **SafeRelease()**: Returns `void`
 - **CopyFrom()**: Returns `void`
 - **MoveNext()**: Returns `bool`

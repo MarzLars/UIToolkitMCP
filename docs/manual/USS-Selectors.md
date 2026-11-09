@@ -57,6 +57,8 @@ Legacy
 
 [### User Manual](/en-us/engine/6000.6/manual)[### Script Reference](/en-us/engine/6000.6/script-reference)
 
+[Download Unity](https://unity.com/download)
+
 ### Unity Engine
 
 Version: 7000.0

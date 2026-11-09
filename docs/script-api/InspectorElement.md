@@ -29,9 +29,20 @@ The currently bound serialized object.
 
 The root element of this inspector. This can either be a full visual hierarchy or an IMGUIContainer.
 
-Placed either inline (non-sticky) or in the PropertyEditor header container (sticky).
 
-Populated once on attach; avoids repeated ancestor walks on subsequent rebuilds while attached.
+        VisualElement m_NotSupportedDisabledElement;
+
+The header element returned by `Editor.CreateInspectorHeaderGUI`.
+
+
+        VisualElement m_InspectorHeaderElement;
+
+Cached reference to the sticky header container found in the PropertyEditor UXML hierarchy.
+
+
+        VisualElement m_StickyHeaderContainer;
+
+        VisualElement m_ObsoleteElement;
 
 
         DefaultInspectorFramework m_DefaultInspectorFramework;

@@ -57,6 +57,8 @@ Legacy
 
 [### User Manual](/en-us/engine/6000.6/manual)[### Script Reference](/en-us/engine/6000.6/script-reference)
 
+[Download Unity](https://unity.com/download)
+
 ### Unity Engine
 
 Version: 7000.0
@@ -190,7 +192,7 @@ Unity User Manual
 
 Understand the steps to create and use custom controls.
 
-Read time 1 minuteLast updated 2 months ago
+Read time 1 minuteLast updated 5 days ago
 
 ---
 
@@ -210,7 +212,7 @@ You can create custom controls and implement custom logic for user interface ele
 ## Additional resources
 
 * [Migrate custom controls from an earlier version to Unity 6](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-migration-guides/migrate-custom-control)
-* [Custom control examples](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-structure-ui/uie-uxml-examples#custom-controls)
+* [Custom control examples](/en-us/engine/6000.6/manual/uitoolkits/uielements/uie-structure-ui/uie-uxml-examples)
 * 📖 **E-Book**: [UI Toolkit for advanced Unity developers - Custom controls](/en-us/engine/6000.6/manual/best-practice-guides/bpg-uiad-index/custom-controls)
 
 ---
