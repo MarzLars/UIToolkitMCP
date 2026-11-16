@@ -2,93 +2,97 @@
 
 **Namespace:** `UnityEngine.UIElements`
 
-**Source:** [Modules/UIElements/Core/VisualElementStyleAccess.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/VisualElementStyleAccess.cs)
+**Source:** [Modules/UIElements/Core/VisualElementDataBinding.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/VisualElementDataBinding.cs)
 
 ---
 
 ## Documentation
 
-The returned style data, computed from USS files or inline styles written to this object
+<returns>A path for the property.</returns>
 
-a VisualElement.
+<returns>A path for the property.</returns>
 
-For information about how to use this property and all the supported USS properties, refer to the
+<returns>The property.</returns>
 
-[wiki:UIE-USS-Properties-Reference|USS properties reference] manual pages.
+<returns>The property.</returns>
 
-<example>
+<returns><see langword="true"/> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false"/>.</returns>
 
-<![CDATA[
+<inheritdoc/>
 
-element.style.backgroundColor = Color.red;
+<inheritdoc/>
 
-</code>
+<undoc/>
 
+<undoc/>
 
-**Remarks:**
+This event does not bubble up or trickle down.
 
+creating new events. Events obtained using this method need to be released back to the pool. You can use
 
+<returns>A `PropertyChangedEvent`.</returns>
 
-        [CreateProperty]
-
-Use @@resolvedStyle@@ to find the actual rendered styling of a [VisualElement] in the
-
-the resolved style value of an element to make layout decisions, troubleshoot styling issues,
-
-The final rendered style is computed from applied classes, inherited styles from ancestors, and
-
-you set through the [VisualElement.style] property, depending on the other styles applied to the element.
-
-
-**Remarks:**
-
-
-If the element's geometry remains unchanged, consider adding a [IVisualElementScheduler|scheduler] to periodically check the element's
-
-For a list of all the style properties supported by UI Toolkit, refer to [wiki:UIE-USS-Properties-Reference|USS properties reference].
-
-
-**Remarks:**
-
-
-refer to [wiki:UIE-apply-styles-with-csharp|Apply styles in C# scripts].
-
-<example>
-
-<![CDATA[
-
-float width = element.resolvedStyle.width;
-
-</code>
-
-
-**Remarks:**
-
+inherited by all children.
 
 
         [CreateProperty]
 
-To get the custom styles properties of an element, call the `ICustomStyle.TryGetValue`
+Passing a value of <see langword="null"/> for <paramref name="binding"/> removes the binding.
 
-For more information about how to use this property, refer to the
+<param name="bindingId">The binding ID.</param>
 
-For a list of all the supported style properties, refer
+<returns>The binding instance, if it exists.</returns>
 
-SA: [VisualElement.style], [VisualElement.resolvedStyle]
+<param name="binding">When this method returns, contains the binding associated with the target property, if it exists; otherwise contains <see langword="null"/></param>
 
 
-        [CreateProperty(ReadOnly = true)]
+**Remarks:**
+The order in which the binding information is returned is undefined.
+
+
+**Remarks:**
+The order in which the binding information is returned is undefined.
+
+<returns><see langword="true"/> if the property has a binding; <see langword="false"/> otherwise.</returns>
+
+This is equivalent to calling `SetBinding` with a <see langword="null"/> value./>
+
+<param name="bindingId">The id of the binding to unbind on this element.</param>
+
+<returns>A context object with the data source and data source path of a binding object.</returns>
+
+<param name="context">The resulting context object.</param>
+
+<param name="result">The result of the last binding operation to the UI.</param>
+
+<param name="result">The result of the last binding operation to the data source.</param>
 
 ## Source Code Reference
 
-For complete source code, see: [VisualElement.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/VisualElementStyleAccess.cs)
+For complete source code, see: [VisualElement.cs](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/UIElements/Core/VisualElementDataBinding.cs)
 
 ### Public Properties
 
-- **style**: `IStyle`
-- **resolvedStyle**: `IResolvedStyle`
+- **property**: `BindingId`
+- **dataSource**: `object`
+- **dataSourcePath**: `PropertyPath`
 
 ### Public Methods
 
-- **TryGetValue()**: Returns `bool`
+- **Equals()**: Returns `bool`
+- **ToString()**: Returns `string`
+- **GetHashCode()**: Returns `int`
+- **GetPooled()**: Returns `PropertyChangedEvent`
+- **SetBinding()**: Returns `void`
+- **GetBinding()**: Returns `Binding`
+- **TryGetBinding()**: Returns `bool`
+- **GetBindingInfos()**: Returns `IEnumerable<BindingInfo>`
+- **HasBinding()**: Returns `bool`
+- **ClearBinding()**: Returns `void`
+- **ClearBindings()**: Returns `void`
+- **GetHierarchicalDataSourceContext()**: Returns `DataSourceContext`
+- **GetDataSourceContext()**: Returns `DataSourceContext`
+- **TryGetDataSourceContext()**: Returns `bool`
+- **TryGetLastBindingToUIResult()**: Returns `bool`
+- **TryGetLastBindingToSourceResult()**: Returns `bool`
 

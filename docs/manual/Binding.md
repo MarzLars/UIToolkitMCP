@@ -186,7 +186,7 @@ Unity User Manual
 
 Get started with SerializedObject data binding.
 
-Read time 7 minutesLast updated 10 days ago
+Read time 7 minutesLast updated 17 days ago
 
 ---
 

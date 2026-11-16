@@ -198,7 +198,7 @@ Unity User Manual
 
 Describes the most common USS properties, their syntax and accepted values, and differences from CSS.
 
-Read time 10 minutesLast updated 10 days ago
+Read time 10 minutesLast updated 17 days ago
 
 ---
 
